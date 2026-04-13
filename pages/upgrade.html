@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unlock Pro — FluentSaigon</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇻🇳</text></svg>">
+<style>
+.upgrade-hero {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 24px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.upgrade-hero::before {
+  content: '🔒';
+  position: absolute;
+  font-size: 200px;
+  opacity: 0.04;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.mini-pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.mini-card {
+  background: rgba(0,0,0,0.25);
+  border: 2px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 22px 18px;
+  text-align: center;
+  transition: 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+.mini-card:hover { transform: translateY(-3px); border-color: rgba(245,197,24,0.3); }
+.mini-card.featured { border-color: var(--gold); background: rgba(245,197,24,0.06); }
+.mini-card.featured::before {
+  content: 'POPULAR';
+  position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+  background: var(--gold); color: var(--red-deeper);
+  font-size: 0.58rem; font-weight: 900; letter-spacing: 0.12em;
+  padding: 2px 12px; border-radius: 20px; white-space: nowrap;
+}
+.mini-price { font-family: var(--font-display); font-size: 2.2rem; color: var(--white); line-height: 1; }
+.mini-period { font-size: 0.72rem; color: rgba(255,255,255,0.4); margin: 4px 0 12px; }
+.mini-name { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.mini-features { list-style: none; margin-bottom: 16px; }
+.mini-features li { font-size: 0.78rem; color: rgba(255,255,255,0.65); padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 6px; text-align: left; }
+.mini-features li::before { content: '✓'; color: var(--green); font-weight: 900; font-size: 0.7rem; flex-shrink: 0; }
+</style>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+<div id="nav-placeholder" data-page="subjects"></div>
+<div id="modal-placeholder"></div>
+
+<div class="upgrade-hero">
+  <div style="display:inline-block;background:rgba(231,76,60,0.2);border:1px solid rgba(231,76,60,0.4);color:#ff8a80;font-size:0.7rem;font-weight:900;letter-spacing:0.14em;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:16px;" id="subjectBadge">
+    Pro Subject
+  </div>
+  <h1 style="font-family:var(--font-display);font-size:clamp(2.2rem,7vw,4rem);letter-spacing:0.03em;margin-bottom:12px;line-height:1;">
+    Unlock <em style="color:var(--gold);" id="subjectName">This Subject</em><br>With Pro
+  </h1>
+  <p style="color:rgba(255,255,255,0.65);max-width:480px;line-height:1.7;font-size:1rem;font-weight:600;margin-bottom:8px;" id="subjectDesc">
+    This subject is available with a FluentSaigon Pro subscription.
+  </p>
+  <p style="color:rgba(255,255,255,0.4);font-size:0.82rem;">Start your 7-day free trial — cancel anytime before day 7 and you won't be charged.</p>
+</div>
+
+<!-- WHAT YOU GET -->
+<div style="background:rgba(0,0,0,0.2);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);padding:32px 24px;text-align:center;position:relative;z-index:1;">
+  <div style="max-width:700px;margin:0 auto;">
+    <div style="font-size:0.68rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">What Pro Unlocks</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;">
+      <div style="padding:16px;background:rgba(255,255,255,0.05);border-radius:10px;">
+        <div style="font-size:1.5rem;margin-bottom:8px;">🎯</div>
+        <div style="font-weight:800;font-size:0.85rem;margin-bottom:4px;">All 9+ Subjects</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);">Every topic, unlocked</div>
+      </div>
+      <div style="padding:16px;background:rgba(255,255,255,0.05);border-radius:10px;">
+        <div style="font-size:1.5rem;margin-bottom:8px;">⚡</div>
+        <div style="font-weight:800;font-size:0.85rem;margin-bottom:4px;">All Difficulty Levels</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);">Beginner → Expert</div>
+      </div>
+      <div style="padding:16px;background:rgba(255,255,255,0.05);border-radius:10px;">
+        <div style="font-size:1.5rem;margin-bottom:8px;">📈</div>
+        <div style="font-weight:800;font-size:0.85rem;margin-bottom:4px;">Progress Tracking</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);">Streaks & scores saved</div>
+      </div>
+      <div style="padding:16px;background:rgba(255,255,255,0.05);border-radius:10px;">
+        <div style="font-size:1.5rem;margin-bottom:8px;">🆕</div>
+        <div style="font-weight:800;font-size:0.85rem;margin-bottom:4px;">New Monthly</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);">Fresh content always</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div style="padding:48px 24px;position:relative;z-index:1;">
+  <div style="text-align:center;margin-bottom:32px;">
+    <div style="font-size:0.68rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Choose Your Plan</div>
+    <h2 style="font-family:var(--font-display);font-size:2.2rem;letter-spacing:0.03em;">Start Your 7-Day Free Trial</h2>
+  </div>
+
+  <div class="mini-pricing">
+
+    <div class="mini-card" onclick="startCheckout('pro_monthly')">
+      <div class="mini-name">Monthly</div>
+      <div class="mini-price">$9<span style="font-size:1rem;font-family:var(--font-body);font-weight:900;">.99</span></div>
+      <div class="mini-period">per month</div>
+      <ul class="mini-features">
+        <li>All subjects & levels</li>
+        <li>Cancel anytime</li>
+        <li>7-day free trial</li>
+      </ul>
+      <button class="btn btn-secondary" style="width:100%;justify-content:center;font-size:0.85rem;padding:10px;">Start Free Trial →</button>
+    </div>
+
+    <div class="mini-card featured" onclick="startCheckout('pro_annual')">
+      <div class="mini-name" style="color:#2ecc71;">Best Value ⭐</div>
+      <div class="mini-price" style="color:#2ecc71;">$79</div>
+      <div class="mini-period">per year · save 34%</div>
+      <ul class="mini-features">
+        <li>Everything in Monthly</li>
+        <li>2 months free</li>
+        <li>7-day free trial</li>
+      </ul>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:0.85rem;padding:10px;background:#2ecc71;color:#0a3d1f;">Start Free Trial →</button>
+    </div>
+
+    <div class="mini-card" onclick="startCheckout('lifetime')">
+      <div class="mini-name">Lifetime</div>
+      <div class="mini-price">$149</div>
+      <div class="mini-period">one-time forever</div>
+      <ul class="mini-features">
+        <li>Everything, forever</li>
+        <li>All future subjects</li>
+        <li>No subscription</li>
+      </ul>
+      <button class="btn btn-outline" style="width:100%;justify-content:center;font-size:0.85rem;padding:10px;">Buy Lifetime →</button>
+    </div>
+
+    <div class="mini-card" onclick="startCheckout('travel_prep')">
+      <div class="mini-name">✈️ Travel Prep</div>
+      <div class="mini-price">$29</div>
+      <div class="mini-period">one-time course</div>
+      <ul class="mini-features">
+        <li>30-day crash course</li>
+        <li>Vietnam trip focused</li>
+        <li>No subscription</li>
+      </ul>
+      <button class="btn btn-outline" style="width:100%;justify-content:center;font-size:0.85rem;padding:10px;">Get Course →</button>
+    </div>
+
+  </div>
+
+  <!-- Already have account -->
+  <div style="text-align:center;margin-top:32px;">
+    <p style="color:rgba(255,255,255,0.4);font-size:0.85rem;">
+      Already have a Pro account? <a href="#" onclick="AuthModal.open('login');return false;" style="color:var(--gold);font-weight:700;">Sign in →</a>
+    </p>
+    <p style="color:rgba(255,255,255,0.3);font-size:0.78rem;margin-top:8px;">
+      🛡️ 30-day money-back guarantee · Cancel anytime
+    </p>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="../js/components.js"></script>
+<script src="../js/auth.js"></script>
+<script>
+// Read subject info from URL params
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const subject = params.get('subject') || 'This Subject';
+  const from = params.get('from') || '';
+
+  // Map subject slugs to readable names and descriptions
+  const subjects = {
+    'greetings': { name: 'Real Greetings', desc: 'Learn how locals actually say hello — not the tourist phrases every app teaches.' },
+    'alphabet': { name: 'Alphabet & Tones', desc: 'Master the 6 tones and pronunciation that make Vietnamese click.' },
+    'food': { name: 'Food & Street Eats', desc: 'Order off-menu and eat where the locals eat, not the tourist traps.' },
+    'directions': { name: 'Getting Around', desc: 'Navigate Saigon\'s streets, Grab bikes, and xe ôm without looking lost.' },
+    'market': { name: 'Markets & Bargaining', desc: 'Stop paying tourist prices — learn to negotiate like you\'ve been here before.' },
+    'colors': { name: 'Colors & Descriptions', desc: 'Describe what you see and what you want in Vietnamese.' },
+    'cafe': { name: 'Café Culture', desc: 'Order cà phê sữa đá and more like you\'ve been doing it for years.' },
+    'intermediate': { name: 'Intermediate Level', desc: 'Level up from Beginner and start thinking in Vietnamese patterns.' },
+    'expert': { name: 'Expert Level', desc: 'Push to full fluency with complex expressions and real-world Vietnamese.' },
+  };
+
+  const info = subjects[subject] || { name: subject, desc: 'This content is available with a Pro subscription.' };
+  document.getElementById('subjectName').textContent = info.name;
+  document.getElementById('subjectDesc').textContent = info.desc;
+  document.getElementById('subjectBadge').textContent = '🔒 Pro Required — ' + info.name;
+  document.title = `Unlock ${info.name} — FluentSaigon`;
+
+  // Store which page triggered the upgrade (for analytics later)
+  if (from) localStorage.setItem('upgrade_from', from);
+});
+
+function startCheckout(plan) {
+  // Store the source for conversion tracking
+  const from = new URLSearchParams(window.location.search).get('from') || 'upgrade-page';
+  localStorage.setItem('checkout_source', from);
+
+  const user = Auth.getUser();
+  const email = user ? encodeURIComponent(user.email) : '';
+  window.location.href = '/.netlify/functions/create-checkout?plan=' + plan + (email ? '&email=' + email : '');
+}
+</script>
+</body>
+</html>

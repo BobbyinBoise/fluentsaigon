@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dates & Times Quiz — LearnVietnamese</title>
+<link rel="stylesheet" href="../css/style.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<div id="nav-placeholder" data-page="subjects"></div>
+<div id="modal-placeholder"></div>
+<div id="paywall-placeholder"></div>
+
+<div class="quiz-page">
+  <div class="quiz-header">
+    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">← Back</a>
+    <div class="quiz-header-title">📅 Dates & Times</div>
+    <a href="ref-dates.html" class="btn btn-outline" style="padding:6px 16px;font-size:0.78rem;">📖 Cheat Sheet</a>
+  </div>
+
+  <div class="quiz-body">
+    <div class="difficulty-bar">
+      <button class="diff-btn active" id="btn-beginner" onclick="setDifficulty('beginner',this)">Beginner</button>
+      <button class="diff-btn" id="btn-intermediate" onclick="setDifficulty('intermediate',this)">Intermediate</button>
+      <button class="diff-btn" id="btn-expert" onclick="setDifficulty('expert',this)">Expert</button>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-box"><div class="label">Score</div><div class="value" id="score">0</div></div>
+      <div class="stat-box"><div class="label">Card</div><div class="value" id="card">1/20</div></div>
+      <div class="stat-box"><div class="label">Streak</div><div class="value" id="streak">0</div></div>
+    </div>
+
+    <div class="progress-track"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+
+    <div id="quizArea" style="width:100%;display:flex;flex-direction:column;align-items:center;">
+      <div class="category-tag" id="categoryTag">Days of the Week</div>
+      <div class="question-card">
+        <div class="q-prompt">What is this in Vietnamese?</div>
+        <div class="q-text" id="qText">Monday</div>
+        <div class="q-sub" id="qSub"></div>
+        <div class="q-instruction">Select the correct Vietnamese translation:</div>
+      </div>
+      <div class="answers" id="answers"></div>
+      <div class="feedback" id="feedback"></div>
+      <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next →</button>
+    </div>
+
+    <div class="results-screen" id="results">
+      <div class="results-title">🎉 Round Complete!</div>
+      <div class="results-score" id="finalScore">0/20</div>
+      <div class="results-msg" id="resultsMsg"></div>
+      <button class="btn btn-primary" onclick="restartQuiz()">Play Again</button>
+    </div>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script src="../js/components.js"></script>
+<script src="../js/auth.js"></script>
+<script>
+const data = {
+  beginner: [
+    {cat:"Days of the Week",en:"Monday",vn:"Thứ Hai",d:["Thứ Ba","Thứ Tư","Thứ Năm"]},
+    {cat:"Days of the Week",en:"Tuesday",vn:"Thứ Ba",d:["Thứ Hai","Thứ Tư","Thứ Sáu"]},
+    {cat:"Days of the Week",en:"Wednesday",vn:"Thứ Tư",d:["Thứ Ba","Thứ Năm","Thứ Bảy"]},
+    {cat:"Days of the Week",en:"Thursday",vn:"Thứ Năm",d:["Thứ Tư","Thứ Sáu","Chủ Nhật"]},
+    {cat:"Days of the Week",en:"Friday",vn:"Thứ Sáu",d:["Thứ Năm","Thứ Bảy","Thứ Hai"]},
+    {cat:"Days of the Week",en:"Saturday",vn:"Thứ Bảy",d:["Thứ Sáu","Chủ Nhật","Thứ Ba"]},
+    {cat:"Days of the Week",en:"Sunday",vn:"Chủ Nhật",d:["Thứ Bảy","Thứ Hai","Thứ Sáu"]},
+    {cat:"Months",en:"January",vn:"Tháng Một",d:["Tháng Hai","Tháng Ba","Tháng Tư"]},
+    {cat:"Months",en:"February",vn:"Tháng Hai",d:["Tháng Một","Tháng Ba","Tháng Năm"]},
+    {cat:"Months",en:"March",vn:"Tháng Ba",d:["Tháng Hai","Tháng Tư","Tháng Sáu"]},
+    {cat:"Months",en:"April",vn:"Tháng Tư",d:["Tháng Ba","Tháng Năm","Tháng Bảy"]},
+    {cat:"Months",en:"May",vn:"Tháng Năm",d:["Tháng Tư","Tháng Sáu","Tháng Tám"]},
+    {cat:"Months",en:"June",vn:"Tháng Sáu",d:["Tháng Năm","Tháng Bảy","Tháng Chín"]},
+    {cat:"Months",en:"July",vn:"Tháng Bảy",d:["Tháng Sáu","Tháng Tám","Tháng Mười"]},
+    {cat:"Months",en:"August",vn:"Tháng Tám",d:["Tháng Bảy","Tháng Chín","Tháng Một"]},
+    {cat:"Months",en:"September",vn:"Tháng Chín",d:["Tháng Tám","Tháng Mười","Tháng Hai"]},
+    {cat:"Months",en:"October",vn:"Tháng Mười",d:["Tháng Chín","Tháng Mười Một","Tháng Ba"]},
+    {cat:"Months",en:"November",vn:"Tháng Mười Một",d:["Tháng Mười","Tháng Mười Hai","Tháng Tư"]},
+    {cat:"Months",en:"December",vn:"Tháng Mười Hai",d:["Tháng Mười Một","Tháng Một","Tháng Năm"]},
+    {cat:"Telling Time",en:"6:00 AM",vn:"6 giờ sáng",d:["6 giờ tối","7 giờ sáng","5 giờ sáng"]},
+    {cat:"Telling Time",en:"12:00 PM (noon)",vn:"12 giờ trưa",d:["12 giờ đêm","11 giờ trưa","1 giờ chiều"]},
+    {cat:"Telling Time",en:"3:00 PM",vn:"3 giờ chiều",d:["3 giờ sáng","4 giờ chiều","2 giờ chiều"]},
+    {cat:"Telling Time",en:"8:00 PM",vn:"8 giờ tối",d:["8 giờ sáng","7 giờ tối","9 giờ tối"]},
+    {cat:"Telling Time",en:"Midnight",vn:"12 giờ đêm",d:["12 giờ trưa","11 giờ đêm","1 giờ sáng"]},
+  ],
+  intermediate: [
+    {cat:"Days + Context",en:"This Monday",vn:"Thứ Hai tuần này",d:["Thứ Hai tuần trước","Thứ Hai tuần sau","Thứ Ba tuần này"]},
+    {cat:"Days + Context",en:"Last Friday",vn:"Thứ Sáu tuần trước",d:["Thứ Sáu tuần sau","Thứ Năm tuần trước","Thứ Bảy tuần trước"]},
+    {cat:"Days + Context",en:"Next Wednesday",vn:"Thứ Tư tuần sau",d:["Thứ Tư tuần này","Thứ Ba tuần sau","Thứ Năm tuần sau"]},
+    {cat:"Dates",en:"March 15th",vn:"ngày 15 tháng 3",d:["ngày 15 tháng 5","ngày 13 tháng 3","ngày 5 tháng 3"]},
+    {cat:"Dates",en:"July 4th",vn:"ngày 4 tháng 7",d:["ngày 7 tháng 4","ngày 4 tháng 6","ngày 14 tháng 7"]},
+    {cat:"Dates",en:"December 25th",vn:"ngày 25 tháng 12",d:["ngày 25 tháng 11","ngày 12 tháng 25","ngày 25 tháng 1"]},
+    {cat:"Dates",en:"February 14th",vn:"ngày 14 tháng 2",d:["ngày 14 tháng 12","ngày 4 tháng 2","ngày 24 tháng 2"]},
+    {cat:"Telling Time",en:"7:30 AM",vn:"7 giờ 30 sáng",d:["7 giờ 13 sáng","3 giờ 30 sáng","7 giờ 30 tối"]},
+    {cat:"Telling Time",en:"2:15 PM",vn:"2 giờ 15 chiều",d:["2 giờ 50 chiều","2 giờ 15 sáng","12 giờ 15 chiều"]},
+    {cat:"Telling Time",en:"Half past 3",vn:"3 giờ rưỡi",d:["3 giờ 30 sáng","4 giờ rưỡi","3 giờ kém rưỡi"]},
+    {cat:"Time Periods",en:"In the morning",vn:"buổi sáng",d:["buổi chiều","buổi tối","buổi trưa"]},
+    {cat:"Time Periods",en:"In the afternoon",vn:"buổi chiều",d:["buổi sáng","buổi tối","ban đêm"]},
+    {cat:"Time Periods",en:"At night",vn:"ban đêm",d:["buổi sáng","buổi chiều","buổi trưa"]},
+    {cat:"Time Periods",en:"This week",vn:"tuần này",d:["tuần trước","tuần sau","tháng này"]},
+    {cat:"Time Periods",en:"Last year",vn:"năm ngoái",d:["năm nay","năm sau","năm trước"]},
+    {cat:"Time Periods",en:"Next month",vn:"tháng sau",d:["tháng này","tháng trước","năm sau"]},
+    {cat:"Years",en:"The year 2000",vn:"năm 2000",d:["năm 2001","năm 1999","năm 2010"]},
+    {cat:"Years",en:"The year 1975",vn:"năm 1975",d:["năm 1957","năm 1976","năm 1945"]},
+    {cat:"Years",en:"The year 2025",vn:"năm 2025",d:["năm 2024","năm 2026","năm 2520"]},
+    {cat:"Telling Time",en:"10:45 PM",vn:"10 giờ 45 tối",d:["10 giờ 54 tối","10 giờ 45 sáng","11 giờ 45 tối"]},
+  ],
+  expert: [
+    {cat:"Full Dates",en:"Monday, June 5th, 2023",vn:"Thứ Hai, ngày 5 tháng 6 năm 2023",d:["Thứ Ba, ngày 5 tháng 6 năm 2023","Thứ Hai, ngày 6 tháng 5 năm 2023","Thứ Hai, ngày 5 tháng 6 năm 2024"]},
+    {cat:"Full Dates",en:"Sunday, December 31st, 2024",vn:"Chủ Nhật, ngày 31 tháng 12 năm 2024",d:["Thứ Bảy, ngày 31 tháng 12 năm 2024","Chủ Nhật, ngày 13 tháng 12 năm 2024","Chủ Nhật, ngày 31 tháng 11 năm 2024"]},
+    {cat:"Full Dates",en:"Friday, March 8th, 2025",vn:"Thứ Sáu, ngày 8 tháng 3 năm 2025",d:["Thứ Năm, ngày 8 tháng 3 năm 2025","Thứ Sáu, ngày 8 tháng 3 năm 2024","Thứ Sáu, ngày 3 tháng 8 năm 2025"]},
+    {cat:"Telling Time",en:"Quarter past 4",vn:"4 giờ 15 phút",d:["4 giờ 45 phút","4 giờ rưỡi","3 giờ 45 phút"]},
+    {cat:"Telling Time",en:"Quarter to 9",vn:"8 giờ 45 phút",d:["9 giờ 15 phút","8 giờ 15 phút","9 giờ 45 phút"]},
+    {cat:"Telling Time",en:"5:55 AM",vn:"5 giờ 55 phút sáng",d:["5 giờ 15 phút sáng","5 giờ 55 phút tối","6 giờ 55 phút sáng"]},
+    {cat:"Duration",en:"For 2 hours",vn:"trong 2 tiếng",d:["trong 2 phút","được 2 tiếng","mỗi 2 tiếng"]},
+    {cat:"Duration",en:"For 3 days",vn:"trong 3 ngày",d:["trong 3 tuần","được 3 ngày","mỗi 3 ngày"]},
+    {cat:"Duration",en:"For 6 months",vn:"trong 6 tháng",d:["trong 6 tuần","được 6 tháng","mỗi 6 tháng"]},
+    {cat:"Frequency",en:"Every day",vn:"mỗi ngày",d:["hàng tuần","mỗi tuần","thỉnh thoảng"]},
+    {cat:"Frequency",en:"Every week",vn:"mỗi tuần",d:["mỗi ngày","hàng tháng","mỗi tháng"]},
+    {cat:"Frequency",en:"Twice a week",vn:"hai lần một tuần",d:["một lần một tuần","ba lần một tuần","hai lần một tháng"]},
+    {cat:"Frequency",en:"Once a month",vn:"một lần một tháng",d:["một lần một tuần","hai lần một tháng","mỗi tháng"]},
+    {cat:"Relative Time",en:"3 hours ago",vn:"3 tiếng trước",d:["3 tiếng sau","3 ngày trước","sau 3 tiếng"]},
+    {cat:"Relative Time",en:"In 2 weeks",vn:"2 tuần nữa",d:["2 tuần trước","2 tháng nữa","trong 2 tuần"]},
+    {cat:"Relative Time",en:"5 days from now",vn:"5 ngày nữa",d:["5 ngày trước","5 tuần nữa","được 5 ngày"]},
+    {cat:"Relative Time",en:"The day before yesterday",vn:"hôm kia",d:["hôm qua","ngày mai","hôm nay"]},
+    {cat:"Relative Time",en:"The day after tomorrow",vn:"ngày kia",d:["ngày mai","hôm qua","hôm nay"]},
+    {cat:"Frequency",en:"Three times a day",vn:"ba lần một ngày",d:["ba lần một tuần","hai lần một ngày","mỗi ba ngày"]},
+    {cat:"Full Dates",en:"Wednesday, November 11th, 2026",vn:"Thứ Tư, ngày 11 tháng 11 năm 2026",d:["Thứ Ba, ngày 11 tháng 11 năm 2026","Thứ Tư, ngày 11 tháng 1 năm 2026","Thứ Tư, ngày 11 tháng 11 năm 2025"]},
+  ]
+};
+
+let difficulty = 'beginner', questions = [], current = 0, score = 0, streak = 0, answered = false;
+const TOTAL = 20;
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length-1; i>0; i--) { const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+  return a;
+}
+
+function setDifficulty(d, btn) {
+  if (checkPaywall(d)) { showPaywall(d === 'intermediate' ? 'intermediate' : 'expert', 'quiz-dates'); return; }
+  difficulty = d;
+  document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  restartQuiz();
+}
+
+function restartQuiz() {
+  current = 0; score = 0; streak = 0; answered = false;
+  questions = shuffle(data[difficulty]).slice(0, TOTAL);
+  document.getElementById('results').classList.remove('visible');
+  document.getElementById('quizArea').style.display = 'flex';
+  updateStats(); renderQuestion();
+}
+
+function renderQuestion() {
+  answered = false;
+  const q = questions[current];
+  document.getElementById('categoryTag').textContent = q.cat;
+  document.getElementById('qText').textContent = q.en;
+  document.getElementById('qSub').textContent = '';
+  document.getElementById('feedback').textContent = '';
+  document.getElementById('feedback').className = 'feedback';
+  document.getElementById('nextBtn').classList.remove('visible');
+  const choices = shuffle([q.vn, ...q.d.slice(0,3)]);
+  const container = document.getElementById('answers');
+  container.innerHTML = '';
+  choices.forEach(c => {
+    const btn = document.createElement('button');
+    btn.className = 'answer-btn';
+    btn.textContent = c;
+    btn.onclick = () => handleAnswer(btn, c, q.vn);
+    container.appendChild(btn);
+  });
+  updateStats();
+}
+
+function handleAnswer(btn, selected, correct) {
+  if (answered) return;
+  answered = true;
+  document.querySelectorAll('.answer-btn').forEach(b => {
+    b.disabled = true;
+    if (b.textContent === correct) b.classList.add('correct');
+  });
+  const fb = document.getElementById('feedback');
+  if (selected === correct) {
+    score++; streak++;
+    btn.classList.add('correct');
+    fb.textContent = streak >= 3 ? `🔥 Correct! ${streak} in a row!` : '✓ Correct!';
+    fb.className = 'feedback correct';
+  } else {
+    streak = 0;
+    btn.classList.add('wrong');
+    fb.textContent = `✗ The answer is: ${correct}`;
+    fb.className = 'feedback wrong';
+  }
+  updateStats();
+  document.getElementById('nextBtn').classList.add('visible');
+}
+
+function nextQuestion() {
+  current++;
+  if (current >= TOTAL) showResults();
+  else renderQuestion();
+}
+
+function updateStats() {
+  document.getElementById('score').textContent = score;
+  document.getElementById('card').textContent = `${Math.min(current+1,TOTAL)}/${TOTAL}`;
+  document.getElementById('streak').textContent = streak;
+  document.getElementById('progress').style.width = `${(current/TOTAL)*100}%`;
+}
+
+function showResults() {
+  document.getElementById('quizArea').style.display = 'none';
+  document.getElementById('results').classList.add('visible');
+  document.getElementById('finalScore').textContent = `${score}/${TOTAL}`;
+  const pct = score/TOTAL;
+  const msgs = [
+    [1, '🏆 Perfect! Xuất sắc lắm! (Outstanding!)'],
+    [0.8, '🌟 Giỏi lắm! (Very good!) Keep it up!'],
+    [0.6, '👍 Khá tốt! (Pretty good!) Almost there!'],
+    [0, 'Keep practicing! Bạn sẽ tiến bộ! (You will improve!)']
+  ];
+  document.getElementById('resultsMsg').textContent = msgs.find(([t]) => pct >= t)[1];
+}
+
+document.addEventListener('DOMContentLoaded', restartQuiz);
+</script>
+</body>
+</html>

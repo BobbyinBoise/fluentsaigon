@@ -39,6 +39,7 @@ const Auth = {
   }
 };
 
+// ── PAYWALL ───────────────────────────────────────────────────────────────────
 function checkPaywall(difficulty) {
   if (difficulty === 'beginner') return false;
   if (Auth.isPro()) return false;
@@ -56,6 +57,7 @@ function hidePaywall() {
   if (pw) pw.style.display = 'none';
 }
 
+// ── NAV ───────────────────────────────────────────────────────────────────────
 function updateNavForUser() {
   const user = Auth.getUser();
   const navCta = document.getElementById('navCta');
@@ -79,6 +81,7 @@ function updateNavForUser() {
   }
 }
 
+// ── TOAST ─────────────────────────────────────────────────────────────────────
 function showToast(message, type) {
   const existing = document.querySelector('.toast');
   if (existing) existing.remove();
@@ -90,6 +93,7 @@ function showToast(message, type) {
   setTimeout(function() { toast.remove(); }, 3500);
 }
 
+// ── NETLIFY IDENTITY EVENTS ───────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof netlifyIdentity === 'undefined') {
     console.warn('Netlify Identity not loaded');
@@ -129,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
   netlifyIdentity.init();
 });
 
+// ── AUTH MODAL BRIDGE ─────────────────────────────────────────────────────────
 var AuthModal = {
   open: function(mode) {
     if (typeof netlifyIdentity !== 'undefined') {

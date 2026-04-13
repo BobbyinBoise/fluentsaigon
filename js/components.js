@@ -27,9 +27,11 @@ function getNav(activePage = '') {
 }
 
 function getAuthModal() {
-  // Netlify Identity widget handles all auth UI
+  // Netlify Identity handles its own modal UI
+  // No custom modal HTML needed
   return '<div id="authModal"></div>';
 }
+
 
 function getFooter() {
   return `
