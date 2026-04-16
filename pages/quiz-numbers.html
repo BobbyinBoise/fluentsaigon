@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Numbers Quiz — FluentSaigon</title>
+<meta name="description" content="Learn Vietnamese numbers from 1 to 1,000,000. Interactive quiz with beginner, intermediate, and expert levels.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<div id="nav-placeholder" data-page="subjects"></div>
+<div id="modal-placeholder"></div>
+<div id="paywall-placeholder"></div>
+
+<div class="quiz-page">
+
+  <div class="quiz-header">
+    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">← All Subjects</a>
+    <h1 style="margin:12px 0 4px;">🔢 Numbers</h1>
+    <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">From 1 to 1,000,000 — master the Vietnamese number system</p>
+  </div>
+
+  <!-- CHEAT SHEET CALLOUT -->
+  <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">💡 PRO TIP</div>
+        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Vietnamese numbers follow a beautiful logical pattern. Read the cheat sheet first — the quiz becomes 10x easier.</div>
+      </div>
+      <a href="cheat-numbers.html" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;text-decoration:none;white-space:nowrap;">View Cheat Sheet →</a>
+    </div>
+  </div>
+
+  <!-- DIFFICULTY TABS -->
+  <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
+    <div style="display:flex;gap:8px;background:rgba(255,255,255,0.05);border-radius:12px;padding:6px;">
+      <button id="tab-beginner" onclick="setDifficulty('beginner')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:var(--gold);color:#000;">Beginner</button>
+      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate 🔒</button>
+      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert 🔒</button>
+    </div>
+  </div>
+
+  <!-- QUIZ CARD -->
+  <div style="max-width:680px;margin:0 auto;padding:0 16px;">
+    <div id="quizCard" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px 28px;">
+
+      <!-- Progress -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+        <span id="progressText" style="font-size:0.8rem;color:rgba(255,255,255,0.4);font-weight:700;">Question 1 of 10</span>
+        <span id="scoreText" style="font-size:0.8rem;color:var(--gold);font-weight:800;">Score: 0</span>
+      </div>
+      <div style="height:4px;background:rgba(255,255,255,0.1);border-radius:2px;margin-bottom:28px;">
+        <div id="progressBar" style="height:100%;background:var(--gold);border-radius:2px;width:10%;transition:width 0.3s ease;"></div>
+      </div>
+
+      <!-- Category badge -->
+      <div id="categoryBadge" style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.1em;margin-bottom:12px;text-transform:uppercase;"></div>
+
+      <!-- Question -->
+      <div id="questionText" style="font-size:2rem;font-weight:900;color:white;margin-bottom:8px;line-height:1.2;"></div>
+      <div id="questionSub" style="font-size:0.85rem;color:rgba(255,255,255,0.4);margin-bottom:28px;">What is this in Vietnamese?</div>
+
+      <!-- Answer choices -->
+      <div id="choicesGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;"></div>
+
+      <!-- Feedback -->
+      <div id="feedback" style="display:none;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;"></div>
+
+      <!-- Next button -->
+      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question →</button>
+    </div>
+
+    <!-- Results card (hidden until done) -->
+    <div id="resultsCard" style="display:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 28px;text-align:center;">
+      <div style="font-size:3rem;margin-bottom:16px;">🎉</div>
+      <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</h2>
+      <div id="finalScore" style="font-size:1.1rem;color:var(--gold);font-weight:800;margin-bottom:8px;"></div>
+      <div id="resultsMsg" style="font-size:0.9rem;color:rgba(255,255,255,0.6);margin-bottom:28px;"></div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button onclick="restartQuiz()" style="padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Try Again</button>
+        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">← Back to All Subjects</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script src="../js/components.js"></script>
+<script src="../js/auth.js"></script>
+<script>
+
+// ── QUIZ DATA ────────────────────────────────────────────────────────────────
+
+const quizData = {
+  beginner: [
+    // Basic digits
+    {cat:"Basic Numbers", en:"Zero", vn:"không", d:["một","hai","ba"]},
+    {cat:"Basic Numbers", en:"One", vn:"một", d:["không","hai","ba"]},
+    {cat:"Basic Numbers", en:"Two", vn:"hai", d:["một","ba","bốn"]},
+    {cat:"Basic Numbers", en:"Three", vn:"ba", d:["hai","bốn","năm"]},
+    {cat:"Basic Numbers", en:"Four", vn:"bốn", d:["ba","năm","sáu"]},
+    {cat:"Basic Numbers", en:"Five", vn:"năm", d:["bốn","sáu","bảy"]},
+    {cat:"Basic Numbers", en:"Six", vn:"sáu", d:["năm","bảy","tám"]},
+    {cat:"Basic Numbers", en:"Seven", vn:"bảy", d:["sáu","tám","chín"]},
+    {cat:"Basic Numbers", en:"Eight", vn:"tám", d:["bảy","chín","mười"]},
+    {cat:"Basic Numbers", en:"Nine", vn:"chín", d:["tám","mười","mười một"]},
+    {cat:"Basic Numbers", en:"Ten", vn:"mười", d:["chín","mười một","hai mươi"]},
+    {cat:"Teens", en:"Eleven", vn:"mười một", d:["mười","mười hai","mười lăm"]},
+    {cat:"Teens", en:"Twelve", vn:"mười hai", d:["mười một","mười ba","mười lăm"]},
+    {cat:"Teens", en:"Fifteen", vn:"mười lăm", d:["mười bốn","mười sáu","mười hai"]},
+    {cat:"Teens", en:"Twenty", vn:"hai mươi", d:["mười","ba mươi","mười hai"]},
+  ],
+  intermediate: [
+    {cat:"Tens", en:"Thirty", vn:"ba mươi", d:["hai mươi","bốn mươi","ba mươi lăm"]},
+    {cat:"Tens", en:"Forty-five", vn:"bốn mươi lăm", d:["bốn mươi","bốn mươi bốn","năm mươi lăm"]},
+    {cat:"Tens", en:"Fifty", vn:"năm mươi", d:["bốn mươi","sáu mươi","năm mươi lăm"]},
+    {cat:"Tens", en:"Seventy-two", vn:"bảy mươi hai", d:["bảy mươi","bảy mươi mốt","tám mươi hai"]},
+    {cat:"Hundreds", en:"One hundred", vn:"một trăm", d:["mười","một nghìn","hai trăm"]},
+    {cat:"Hundreds", en:"Two hundred", vn:"hai trăm", d:["một trăm","ba trăm","hai mươi"]},
+    {cat:"Hundreds", en:"Five hundred", vn:"năm trăm", d:["bốn trăm","sáu trăm","năm mươi"]},
+    {cat:"Hundreds", en:"Three hundred and fifty", vn:"ba trăm năm mươi", d:["ba trăm","ba trăm lăm","ba mươi lăm"]},
+    {cat:"Currency", en:"How much? (price question)", vn:"bao nhiêu tiền?", d:["bao giờ?","bao xa?","cái gì?"]},
+    {cat:"Currency", en:"Cheap", vn:"rẻ", d:["đắt","tiền","mua"]},
+    {cat:"Currency", en:"Expensive", vn:"đắt", d:["rẻ","tiền","bán"]},
+    {cat:"Currency", en:"10,000 dong (ten thousand)", vn:"mười nghìn", d:["một nghìn","một trăm nghìn","mười triệu"]},
+    {cat:"Currency", en:"50,000 dong (fifty thousand)", vn:"năm mươi nghìn", d:["năm nghìn","năm trăm nghìn","năm mươi triệu"]},
+    {cat:"Currency", en:"100,000 dong (one hundred thousand)", vn:"một trăm nghìn", d:["mười nghìn","một nghìn","một triệu"]},
+    {cat:"Currency", en:"Too expensive!", vn:"đắt quá!", d:["rẻ quá!","nhiều quá!","tốt quá!"]},
+  ],
+  expert: [
+    {cat:"Large Numbers", en:"One million", vn:"một triệu", d:["một nghìn","một tỷ","mười triệu"]},
+    {cat:"Large Numbers", en:"One billion", vn:"một tỷ", d:["một triệu","mười tỷ","một nghìn tỷ"]},
+    {cat:"Large Numbers", en:"Half (0.5)", vn:"rưỡi", d:["nửa","một phần tư","ba phần tư"]},
+    {cat:"Large Numbers", en:"1,500,000 dong", vn:"một triệu năm trăm nghìn", d:["một triệu","năm trăm nghìn","một triệu năm mươi nghìn"]},
+    {cat:"Ordering", en:"First", vn:"thứ nhất", d:["thứ hai","thứ ba","đầu tiên"]},
+    {cat:"Ordering", en:"Second", vn:"thứ hai", d:["thứ nhất","thứ ba","hai"]},
+    {cat:"Ordering", en:"Third", vn:"thứ ba", d:["thứ hai","thứ tư","ba"]},
+    {cat:"Fractions", en:"One quarter (1/4)", vn:"một phần tư", d:["một phần ba","một phần hai","ba phần tư"]},
+    {cat:"Fractions", en:"Three quarters (3/4)", vn:"ba phần tư", d:["một phần tư","hai phần ba","ba phần ba"]},
+    {cat:"Math", en:"Plus / and (in math)", vn:"cộng", d:["trừ","nhân","chia"]},
+    {cat:"Math", en:"Minus / subtract", vn:"trừ", d:["cộng","nhân","chia"]},
+    {cat:"Math", en:"Multiply", vn:"nhân", d:["cộng","trừ","chia"]},
+    {cat:"Math", en:"Divide", vn:"chia", d:["nhân","trừ","cộng"]},
+    {cat:"Real World", en:"Give me a discount!", vn:"bớt giá đi!", d:["đắt quá!","tôi mua!","bao nhiêu?"]},
+    {cat:"Real World", en:"I'll take it (buying something)", vn:"tôi mua cái này", d:["tôi không mua","bao nhiêu tiền?","cái này đẹp"]},
+  ]
+};
+
+// ── QUIZ ENGINE ──────────────────────────────────────────────────────────────
+
+let currentDifficulty = 'beginner';
+let questions = [];
+let current = 0;
+let score = 0;
+let answered = false;
+
+function setDifficulty(level) {
+  if ((level === 'intermediate' || level === 'expert') && checkPaywall(level)) {
+    showPaywall();
+    return;
+  }
+  currentDifficulty = level;
+
+  // Update tab styles
+  ['beginner','intermediate','expert'].forEach(l => {
+    const tab = document.getElementById('tab-' + l);
+    if (l === level) {
+      tab.style.background = 'var(--gold)';
+      tab.style.color = '#000';
+    } else {
+      tab.style.background = 'transparent';
+      tab.style.color = 'rgba(255,255,255,0.5)';
+    }
+  });
+
+  restartQuiz();
+}
+
+function shuffle(arr) {
+  return [...arr].sort(() => Math.random() - 0.5);
+}
+
+function restartQuiz() {
+  questions = shuffle(quizData[currentDifficulty]).slice(0, 10);
+  current = 0;
+  score = 0;
+  answered = false;
+  document.getElementById('resultsCard').style.display = 'none';
+  document.getElementById('quizCard').style.display = 'block';
+  showQuestion();
+}
+
+function showQuestion() {
+  if (current >= questions.length) {
+    showResults();
+    return;
+  }
+
+  answered = false;
+  const q = questions[current];
+
+  // Progress
+  document.getElementById('progressText').textContent = `Question ${current + 1} of ${questions.length}`;
+  document.getElementById('scoreText').textContent = `Score: ${score}`;
+  document.getElementById('progressBar').style.width = `${((current) / questions.length) * 100}%`;
+  document.getElementById('categoryBadge').textContent = q.cat;
+  document.getElementById('questionText').textContent = q.en;
+  document.getElementById('questionSub').textContent = 'What is this in Vietnamese?';
+
+  // Build choices — correct + 3 distractors, shuffled
+  const choices = shuffle([q.vn, ...q.d.slice(0, 3)]);
+  const grid = document.getElementById('choicesGrid');
+  grid.innerHTML = '';
+  choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.textContent = choice;
+    btn.onclick = () => selectAnswer(btn, choice, q.vn);
+    btn.style.cssText = `
+      padding: 14px 10px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      color: white;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.15s;
+    `;
+    grid.appendChild(btn);
+  });
+
+  // Hide feedback + next
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('nextBtn').style.display = 'none';
+}
+
+function selectAnswer(btn, selected, correct) {
+  if (answered) return;
+  answered = true;
+
+  const feedback = document.getElementById('feedback');
+  const allBtns = document.getElementById('choicesGrid').querySelectorAll('button');
+
+  // Disable all buttons
+  allBtns.forEach(b => {
+    b.style.cursor = 'default';
+    if (b.textContent === correct) {
+      b.style.background = 'rgba(46,204,113,0.3)';
+      b.style.borderColor = '#2ecc71';
+    }
+  });
+
+  if (selected === correct) {
+    score++;
+    btn.style.background = 'rgba(46,204,113,0.3)';
+    btn.style.borderColor = '#2ecc71';
+    feedback.style.display = 'block';
+    feedback.style.background = 'rgba(46,204,113,0.15)';
+    feedback.style.borderLeft = '3px solid #2ecc71';
+    feedback.style.color = '#2ecc71';
+    feedback.textContent = '✓ Correct! ' + getNumberFact(questions[current]);
+  } else {
+    btn.style.background = 'rgba(231,76,60,0.3)';
+    btn.style.borderColor = '#e74c3c';
+    feedback.style.display = 'block';
+    feedback.style.background = 'rgba(231,76,60,0.15)';
+    feedback.style.borderLeft = '3px solid #e74c3c';
+    feedback.style.color = '#e74c3c';
+    feedback.textContent = '✗ The answer is: ' + correct;
+  }
+
+  document.getElementById('scoreText').textContent = `Score: ${score}`;
+  document.getElementById('nextBtn').style.display = 'block';
+  current++;
+}
+
+function nextQuestion() {
+  showQuestion();
+}
+
+// Fun facts shown after correct answers
+function getNumberFact(q) {
+  const facts = {
+    'Basic Numbers': 'Vietnamese numbers are logical — once you know 1-10, the rest follows a pattern!',
+    'Teens': 'Teens are just "mười" (ten) + the digit. Mười một = 10+1 = 11. Simple!',
+    'Tens': 'Tens work the same way — "hai mươi" means 2 tens = 20. You\'re thinking in Vietnamese!',
+    'Hundreds': '"Trăm" means hundred. Stack the numbers: ba trăm = 3 hundreds = 300.',
+    'Currency': 'Vietnamese dong (VND) uses large numbers — 10,000 VND is about $0.40 USD.',
+    'Large Numbers': '"Nghìn" = thousand, "triệu" = million, "tỷ" = billion. Same logic, bigger scale!',
+    'Ordering': 'Ordinal numbers use "thứ" — thứ nhất (1st), thứ hai (2nd), thứ ba (3rd).',
+    'Fractions': 'Fractions use "phần" (part) — một phần tư = one part four = 1/4.',
+    'Math': 'Vietnamese math terms are used in everyday market bargaining!',
+    'Real World': 'Bargaining is expected at Vietnamese markets — these phrases will save you money!'
+  };
+  return facts[q.cat] || 'Keep going!';
+}
+
+function showResults() {
+  document.getElementById('quizCard').style.display = 'none';
+  document.getElementById('resultsCard').style.display = 'block';
+
+  const pct = score / questions.length;
+  document.getElementById('finalScore').textContent = `You scored ${score} out of ${questions.length}`;
+
+  const msgs = [
+    [0.9, '🏆 Xuất sắc lắm! (Outstanding!) You\'re a natural!'],
+    [0.8, '🌟 Giỏi lắm! (Very good!) Keep it up!'],
+    [0.6, '👍 Khá tốt! (Pretty good!) Almost there!'],
+    [0, '💪 Keep practicing! Bạn sẽ tiến bộ! (You will improve!)']
+  ];
+  document.getElementById('resultsMsg').textContent = msgs.find(([t]) => pct >= t)[1];
+}
+
+document.addEventListener('DOMContentLoaded', restartQuiz);
+</script>
+</body>
+</html>
