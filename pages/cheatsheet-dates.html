@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dates & Times Cheat Sheet – FluentSaigon</title>
+<meta name="description" content="Vietnamese dates and times cheat sheet — days, months, telling time, full dates, and relative time.">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇻🇳</text></svg>">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+
+@media print {
+  body { background: #fff !important; color: #000 !important; }
+  nav, #nav-placeholder, #footer-placeholder, #modal-placeholder,
+  #paywall-placeholder, .no-print { display: none !important; }
+  .cs-hero { background: #fff !important; padding: 16px 0 8px !important; }
+  .cs-hero h1 { color: #000 !important; font-size: 2rem !important; }
+  .cs-hero p { color: #444 !important; }
+  .cs-section { background: #fff !important; border: 1px solid #ddd !important; box-shadow: none !important; break-inside: avoid; }
+  .cs-section-title { color: #000 !important; border-bottom-color: #ccc !important; }
+  .cs-table th { background: #f0f0f0 !important; color: #000 !important; }
+  .cs-table td { color: #000 !important; border-bottom-color: #eee !important; }
+  .cs-tag { background: #eee !important; color: #333 !important; }
+  .cs-tip { background: #fffbe6 !important; border-color: #e6c200 !important; color: #333 !important; }
+  .cs-tip strong { color: #000 !important; }
+  .pattern-box { background: #f8f8f8 !important; border: 1px solid #ddd !important; color: #000 !important; }
+  .pattern-box code { color: #c0392b !important; }
+  .tab-bar { display: none !important; }
+  .tab-section { display: block !important; opacity: 1 !important; }
+}
+
+.cs-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+.cs-hero {
+  padding: 48px 0 32px;
+  text-align: center;
+}
+.cs-hero .breadcrumb {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+}
+.cs-hero .breadcrumb:hover { color: var(--gold); }
+.cs-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  letter-spacing: 0.03em;
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1;
+}
+.cs-hero h1 span { color: var(--gold); }
+.cs-hero p {
+  color: rgba(255,255,255,0.55);
+  font-size: 1rem;
+  font-weight: 600;
+  max-width: 480px;
+  margin: 0 auto 24px;
+  line-height: 1.6;
+}
+.cs-hero-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-quiz {
+  background: var(--gold);
+  color: #000;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-quiz:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn-print {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.7);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+}
+.btn-print:hover { background: rgba(255,255,255,0.14); color: #fff; }
+
+.tab-bar {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-pill);
+  padding: 5px;
+}
+.tab-btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 9px 16px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.45);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+.tab-btn.active { background: var(--gold); color: #000; }
+.tab-btn:not(.active):hover { background: rgba(255,255,255,0.08); color: #fff; }
+.tab-section { display: none; }
+.tab-section.active { display: block; }
+
+.cs-section {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 20px;
+}
+.cs-section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.cs-table th {
+  background: rgba(245,197,24,0.1);
+  color: var(--gold);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  text-align: left;
+}
+.cs-table th:first-child { border-radius: 8px 0 0 8px; }
+.cs-table th:last-child { border-radius: 0 8px 8px 0; }
+.cs-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+  vertical-align: middle;
+}
+.cs-table tr:last-child td { border-bottom: none; }
+.cs-table tr:hover td { background: rgba(255,255,255,0.03); }
+.vn {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+}
+.cs-tag {
+  display: inline-block;
+  background: rgba(245,197,24,0.12);
+  color: var(--gold);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.cs-tag.green { background: rgba(46,204,113,0.12); color: var(--green); }
+
+.pattern-box {
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(245,197,24,0.2);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 16px 0;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.8);
+}
+.pattern-box strong { color: #fff; }
+.pattern-box code {
+  color: var(--gold);
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: monospace;
+}
+
+.cs-tip {
+  background: rgba(245,197,24,0.07);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  margin: 16px 0 0;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+}
+.cs-tip strong { color: var(--gold); }
+
+.cs-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 580px) {
+  .cs-grid-2 { grid-template-columns: 1fr; }
+}
+
+.pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.pill {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.8);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.pill .en { color: rgba(255,255,255,0.45); font-size: 0.75rem; }
+.pill .vn-p { color: #fff; font-weight: 800; }
+
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder" data-page="subjects"></div>
+<div id="modal-placeholder"></div>
+<div id="paywall-placeholder"></div>
+
+<div class="cs-page">
+
+  <!-- HERO -->
+  <div class="cs-hero">
+    <a href="subjects.html" class="breadcrumb">← All Subjects</a>
+    <h1>📅 Dates & Times <span>Cheat Sheet</span></h1>
+    <p>Days, months, telling time, full dates, and relative time — the complete reference.</p>
+    <div class="cs-hero-actions no-print">
+      <button onclick="openQuiz('quiz-dates.html')" class="btn-quiz">🎯 Take the Quiz →</button>
+      <button class="btn-print" onclick="window.print()">🖨️ Print</button>
+    </div>
+  </div>
+
+  <!-- TAB BAR -->
+  <div class="tab-bar no-print">
+    <button class="tab-btn active" onclick="showTab('days')">Days</button>
+    <button class="tab-btn" onclick="showTab('months')">Months</button>
+    <button class="tab-btn" onclick="showTab('time')">Telling Time</button>
+    <button class="tab-btn" onclick="showTab('dates')">Full Dates</button>
+    <button class="tab-btn" onclick="showTab('relative')">Relative Time</button>
+  </div>
+
+  <!-- TAB: DAYS -->
+  <div class="tab-section active" id="tab-days">
+
+    <div class="cs-section">
+      <div class="cs-section-title">📆 Days of the Week</div>
+      <div class="pattern-box">
+        <strong>The big insight:</strong> Vietnamese days are just <code>Thứ</code> (ordinal marker) + a number.<br>
+        Monday = Thứ Hai (2nd) · Tuesday = Thứ Ba (3rd) · Wednesday = Thứ Tư (4th) · and so on.<br>
+        <strong>Exception:</strong> Sunday = <code>Chủ Nhật</code> (Lord's Day) — the only irregular day.
+      </div>
+      <table class="cs-table">
+        <thead><tr><th>Day</th><th>Vietnamese</th><th>Literal meaning</th></tr></thead>
+        <tbody>
+          <tr><td>Monday</td><td class="vn">Thứ Hai</td><td>2nd day</td></tr>
+          <tr><td>Tuesday</td><td class="vn">Thứ Ba</td><td>3rd day</td></tr>
+          <tr><td>Wednesday</td><td class="vn">Thứ Tư</td><td>4th day</td></tr>
+          <tr><td>Thursday</td><td class="vn">Thứ Năm</td><td>5th day</td></tr>
+          <tr><td>Friday</td><td class="vn">Thứ Sáu</td><td>6th day</td></tr>
+          <tr><td>Saturday</td><td class="vn">Thứ Bảy</td><td>7th day</td></tr>
+          <tr><td>Sunday</td><td class="vn">Chủ Nhật</td><td>Lord's Day <span class="cs-tag">⚡ irregular</span></td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>Memory trick:</strong> The week starts on Monday = Thứ Hai (two). Count up from there — Thứ Ba (3), Thứ Tư (4)... and you'll never forget a day again.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Days + Context (This / Last / Next)</div>
+      <div class="pattern-box">
+        <strong>Pattern:</strong> Day + <code>tuần này</code> (this week) / <code>tuần trước</code> (last week) / <code>tuần sau</code> (next week)
+      </div>
+      <table class="cs-table">
+        <thead><tr><th>Phrase</th><th>Vietnamese</th></tr></thead>
+        <tbody>
+          <tr><td>This Monday</td><td class="vn">Thứ Hai tuần này</td></tr>
+          <tr><td>Last Friday</td><td class="vn">Thứ Sáu tuần trước</td></tr>
+          <tr><td>Next Wednesday</td><td class="vn">Thứ Tư tuần sau</td></tr>
+          <tr><td>This weekend</td><td class="vn">cuối tuần này</td></tr>
+          <tr><td>Every Monday</td><td class="vn">mỗi thứ Hai</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- TAB: MONTHS -->
+  <div class="tab-section" id="tab-months">
+
+    <div class="cs-section">
+      <div class="cs-section-title">🗓️ Months of the Year</div>
+      <div class="pattern-box">
+        <strong>Even simpler than days:</strong> Months are just <code>Tháng</code> (month) + a number.<br>
+        January = Tháng Một (Month 1) · February = Tháng Hai (Month 2) · and so on to December = Tháng Mười Hai (Month 12).
+      </div>
+      <table class="cs-table">
+        <thead><tr><th>Month</th><th>Vietnamese</th><th>Literal</th></tr></thead>
+        <tbody>
+          <tr><td>January</td><td class="vn">Tháng Một</td><td>Month 1</td></tr>
+          <tr><td>February</td><td class="vn">Tháng Hai</td><td>Month 2</td></tr>
+          <tr><td>March</td><td class="vn">Tháng Ba</td><td>Month 3</td></tr>
+          <tr><td>April</td><td class="vn">Tháng Tư</td><td>Month 4 <span class="cs-tag">⚡ tư not bốn</span></td></tr>
+          <tr><td>May</td><td class="vn">Tháng Năm</td><td>Month 5</td></tr>
+          <tr><td>June</td><td class="vn">Tháng Sáu</td><td>Month 6</td></tr>
+          <tr><td>July</td><td class="vn">Tháng Bảy</td><td>Month 7</td></tr>
+          <tr><td>August</td><td class="vn">Tháng Tám</td><td>Month 8</td></tr>
+          <tr><td>September</td><td class="vn">Tháng Chín</td><td>Month 9</td></tr>
+          <tr><td>October</td><td class="vn">Tháng Mười</td><td>Month 10</td></tr>
+          <tr><td>November</td><td class="vn">Tháng Mười Một</td><td>Month 11</td></tr>
+          <tr><td>December</td><td class="vn">Tháng Mười Hai</td><td>Month 12</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>One exception:</strong> April uses <strong>Tư</strong> (not Bốn) for the number 4. This same rule applies in telling time — 4 o'clock is "4 giờ" but the 4th month is "Tháng Tư."</div>
+    </div>
+
+  </div>
+
+  <!-- TAB: TELLING TIME -->
+  <div class="tab-section" id="tab-time">
+
+    <div class="cs-section">
+      <div class="cs-section-title">🕐 How Time Works</div>
+      <div class="pattern-box">
+        <strong>Pattern:</strong> number + <code>giờ</code> (hour) + minutes + time-of-day word<br><br>
+        <code>sáng</code> = morning · <code>trưa</code> = noon · <code>chiều</code> = afternoon · <code>tối</code> = evening · <code>đêm</code> = late night
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Common Times</div>
+      <table class="cs-table">
+        <thead><tr><th>Time</th><th>Vietnamese</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>6:00 AM</td><td class="vn">6 giờ sáng</td><td></td></tr>
+          <tr><td>7:30 AM</td><td class="vn">7 giờ 30 sáng</td><td></td></tr>
+          <tr><td>12:00 PM</td><td class="vn">12 giờ trưa</td><td>trưa = midday</td></tr>
+          <tr><td>2:15 PM</td><td class="vn">2 giờ 15 chiều</td><td></td></tr>
+          <tr><td>3:30 PM</td><td class="vn">3 giờ rưỡi</td><td><span class="cs-tag">⚡ rưỡi = half past</span></td></tr>
+          <tr><td>8:00 PM</td><td class="vn">8 giờ tối</td><td></td></tr>
+          <tr><td>10:45 PM</td><td class="vn">10 giờ 45 tối</td><td></td></tr>
+          <tr><td>Midnight</td><td class="vn">12 giờ đêm</td><td>đêm = late night</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>rưỡi</strong> means "half" — so "3 giờ rưỡi" = 3 and a half hours = 3:30. Very commonly used, memorize this one first.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Time Periods</div>
+      <table class="cs-table">
+        <thead><tr><th>Period</th><th>Vietnamese</th></tr></thead>
+        <tbody>
+          <tr><td>In the morning</td><td class="vn">buổi sáng</td></tr>
+          <tr><td>At noon / midday</td><td class="vn">buổi trưa</td></tr>
+          <tr><td>In the afternoon</td><td class="vn">buổi chiều</td></tr>
+          <tr><td>In the evening</td><td class="vn">buổi tối</td></tr>
+          <tr><td>At night</td><td class="vn">ban đêm</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Asking & Answering</div>
+      <table class="cs-table">
+        <thead><tr><th>Phrase</th><th>Vietnamese</th></tr></thead>
+        <tbody>
+          <tr><td>What time is it?</td><td class="vn">Mấy giờ rồi?</td></tr>
+          <tr><td>It's 3 o'clock</td><td class="vn">3 giờ rồi</td></tr>
+          <tr><td>About 4 PM</td><td class="vn">Khoảng 4 giờ chiều</td></tr>
+          <tr><td>Quarter past 4</td><td class="vn">4 giờ 15 phút</td></tr>
+          <tr><td>Quarter to 9</td><td class="vn">8 giờ 45 phút</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- TAB: FULL DATES -->
+  <div class="tab-section" id="tab-dates">
+
+    <div class="cs-section">
+      <div class="cs-section-title">📋 Writing Full Dates</div>
+      <div class="pattern-box">
+        <strong>Pattern:</strong> <code>ngày</code> (day) + number + <code>tháng</code> (month) + number + <code>năm</code> (year) + number<br><br>
+        <strong>March 15, 2025</strong> = ngày 15 tháng 3 năm 2025<br>
+        <strong>December 31, 2024</strong> = ngày 31 tháng 12 năm 2024
+      </div>
+      <div class="cs-tip">💡 Vietnamese dates go <strong>day → month → year</strong> — the opposite of American English (month/day/year), but the same as most of the world.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Full Date with Day of Week</div>
+      <div class="pattern-box">
+        <strong>Pattern:</strong> Day of week + <code>,</code> + ngày + day + tháng + month + năm + year<br><br>
+        <strong>Monday, June 5, 2023</strong> = Thứ Hai, ngày 5 tháng 6 năm 2023<br>
+        <strong>Sunday, December 31, 2024</strong> = Chủ Nhật, ngày 31 tháng 12 năm 2024
+      </div>
+      <table class="cs-table">
+        <thead><tr><th>English</th><th>Vietnamese</th></tr></thead>
+        <tbody>
+          <tr><td>Today is Monday</td><td class="vn">Hôm nay là thứ Hai</td></tr>
+          <tr><td>What day is today?</td><td class="vn">Hôm nay là thứ mấy?</td></tr>
+          <tr><td>What is today's date?</td><td class="vn">Hôm nay là ngày mấy?</td></tr>
+          <tr><td>My birthday is March 15</td><td class="vn">Sinh nhật tôi là ngày 15 tháng 3</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">This / Last / Next — Weeks, Months, Years</div>
+      <table class="cs-table">
+        <thead><tr><th>Phrase</th><th>Vietnamese</th></tr></thead>
+        <tbody>
+          <tr><td>This week</td><td class="vn">tuần này</td></tr>
+          <tr><td>Last week</td><td class="vn">tuần trước</td></tr>
+          <tr><td>Next week</td><td class="vn">tuần sau</td></tr>
+          <tr><td>This month</td><td class="vn">tháng này</td></tr>
+          <tr><td>Last month</td><td class="vn">tháng trước</td></tr>
+          <tr><td>Next month</td><td class="vn">tháng sau</td></tr>
+          <tr><td>This year</td><td class="vn">năm nay</td></tr>
+          <tr><td>Last year</td><td class="vn">năm ngoái</td></tr>
+          <tr><td>Next year</td><td class="vn">năm sau</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>năm ngoái</strong> (last year) is the only irregular one — everything else uses tuần/tháng/năm + này/trước/sau.</div>
+    </div>
+
+  </div>
+
+  <!-- TAB: RELATIVE TIME -->
+  <div class="tab-section" id="tab-relative">
+
+    <div class="cs-section">
+      <div class="cs-section-title">⏱️ Today, Yesterday, Tomorrow</div>
+      <table class="cs-table">
+        <thead><tr><th>Phrase</th><th>Vietnamese</th></tr></thead>
+        <tbody>
+          <tr><td>Today</td><td class="vn">hôm nay</td></tr>
+          <tr><td>Yesterday</td><td class="vn">hôm qua</td></tr>
+          <tr><td>Tomorrow</td><td class="vn">ngày mai</td></tr>
+          <tr><td>The day before yesterday</td><td class="vn">hôm kia</td></tr>
+          <tr><td>The day after tomorrow</td><td class="vn">ngày kia</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>kia</strong> means "over there / that one further away" — so hôm kia = "that day further back" = day before yesterday. Same logic for ngày kia.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Time Ago & From Now</div>
+      <div class="pattern-box">
+        <strong>Ago:</strong> number + unit + <code>trước</code><br>
+        <strong>From now:</strong> number + unit + <code>nữa</code><br><br>
+        3 hours ago = 3 tiếng trước &nbsp;·&nbsp; In 2 weeks = 2 tuần nữa
+      </div>
+      <table class="cs-table">
+        <thead><tr><th>Phrase</th><th>Vietnamese</th></tr></thead>
+        <tbody>
+          <tr><td>3 hours ago</td><td class="vn">3 tiếng trước</td></tr>
+          <tr><td>2 days ago</td><td class="vn">2 ngày trước</td></tr>
+          <tr><td>Last week</td><td class="vn">tuần trước</td></tr>
+          <tr><td>In 2 weeks</td><td class="vn">2 tuần nữa</td></tr>
+          <tr><td>In 5 days</td><td class="vn">5 ngày nữa</td></tr>
+          <tr><td>In 3 months</td><td class="vn">3 tháng nữa</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Duration & Frequency</div>
+      <div class="cs-grid-2">
+        <div>
+          <div style="font-weight:800;color:var(--gold);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Duration — "for X time"</div>
+          <table class="cs-table">
+            <thead><tr><th>Phrase</th><th>Vietnamese</th></tr></thead>
+            <tbody>
+              <tr><td>For 2 hours</td><td class="vn">trong 2 tiếng</td></tr>
+              <tr><td>For 3 days</td><td class="vn">trong 3 ngày</td></tr>
+              <tr><td>For 6 months</td><td class="vn">trong 6 tháng</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div style="font-weight:800;color:var(--gold);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Frequency — "how often"</div>
+          <table class="cs-table">
+            <thead><tr><th>Phrase</th><th>Vietnamese</th></tr></thead>
+            <tbody>
+              <tr><td>Every day</td><td class="vn">mỗi ngày</td></tr>
+              <tr><td>Every week</td><td class="vn">mỗi tuần</td></tr>
+              <tr><td>Twice a week</td><td class="vn">hai lần một tuần</td></tr>
+              <tr><td>Once a month</td><td class="vn">một lần một tháng</td></tr>
+              <tr><td>Three times a day</td><td class="vn">ba lần một ngày</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="cs-tip">💡 <strong>Frequency pattern:</strong> number + <code>lần</code> (times) + một + unit. Hai lần một tuần = two times one week = twice a week.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">✅ Ready to Test Yourself?</div>
+      <p style="color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.6;">You've read the cheat sheet — now lock it in with the quiz.</p>
+      <button onclick="openQuiz('quiz-dates.html')" class="btn-quiz no-print" style="border:none;cursor:pointer;">🎯 Take the Dates & Times Quiz →</button>
+    </div>
+
+  </div>
+
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="../js/components.js"></script>
+<script src="../js/auth.js"></script>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function openQuiz(url) {
+  const isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
+  if (isMobile) { window.location.href = url; } else { window.open(url, '_blank'); }
+}
+</script>
+
+</body>
+</html>
