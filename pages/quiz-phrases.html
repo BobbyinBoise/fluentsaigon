@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Common Phrases & Greetings Quiz — FluentSaigon</title>
+<meta name="description" content="Learn essential Vietnamese phrases and greetings. Interactive quiz with beginner, intermediate, and expert levels.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<div id="nav-placeholder" data-page="subjects"></div>
+<div id="modal-placeholder"></div>
+<div id="paywall-placeholder"></div>
+
+<div class="quiz-page">
+
+  <div class="quiz-header">
+    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">← All Subjects</a>
+    <h1 style="margin:12px 0 4px;">👋 Common Phrases & Greetings</h1>
+    <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">The phrases locals actually use — from hello to thank you and beyond</p>
+  </div>
+
+  <!-- CHEAT SHEET CALLOUT -->
+  <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">💡 PRO TIP</div>
+        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Vietnamese greetings change based on who you're talking to. Read the cheat sheet first — it explains the pronoun system that makes everything click.</div>
+      </div>
+      <button onclick="openCheatSheet('cheatsheet-phrases.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet →</button>
+    </div>
+  </div>
+
+  <!-- DIFFICULTY TABS -->
+  <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
+    <div style="display:flex;gap:8px;background:rgba(255,255,255,0.05);border-radius:12px;padding:6px;">
+      <button id="tab-beginner" onclick="setDifficulty('beginner')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:var(--gold);color:#000;">Beginner</button>
+      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate 🔒</button>
+      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert 🔒</button>
+    </div>
+  </div>
+
+  <!-- QUIZ CARD -->
+  <div style="max-width:680px;margin:0 auto;padding:0 16px;">
+    <div id="quizCard" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px 28px;">
+
+      <!-- Progress -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+        <span id="progressText" style="font-size:0.8rem;color:rgba(255,255,255,0.4);font-weight:700;">Question 1 of 10</span>
+        <span id="scoreText" style="font-size:0.8rem;color:var(--gold);font-weight:800;">Score: 0</span>
+      </div>
+      <div style="height:4px;background:rgba(255,255,255,0.1);border-radius:2px;margin-bottom:28px;">
+        <div id="progressBar" style="height:100%;background:var(--gold);border-radius:2px;width:10%;transition:width 0.3s ease;"></div>
+      </div>
+
+      <!-- Category badge -->
+      <div id="categoryBadge" style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.1em;margin-bottom:12px;text-transform:uppercase;"></div>
+
+      <!-- Question -->
+      <div id="questionText" style="font-size:2rem;font-weight:900;color:white;margin-bottom:8px;line-height:1.2;"></div>
+      <div id="questionSub" style="font-size:0.85rem;color:rgba(255,255,255,0.4);margin-bottom:28px;">What is this in Vietnamese?</div>
+
+      <!-- Answer choices -->
+      <div id="choicesGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;"></div>
+
+      <!-- Feedback -->
+      <div id="feedback" style="display:none;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;"></div>
+
+      <!-- Next button -->
+      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question →</button>
+    </div>
+
+    <!-- Results card (hidden until done) -->
+    <div id="resultsCard" style="display:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 28px;text-align:center;">
+      <div style="font-size:3rem;margin-bottom:16px;">🎉</div>
+      <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</h2>
+      <div id="finalScore" style="font-size:1.1rem;color:var(--gold);font-weight:800;margin-bottom:8px;"></div>
+      <div id="resultsMsg" style="font-size:0.9rem;color:rgba(255,255,255,0.6);margin-bottom:28px;"></div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button onclick="restartQuiz()" style="padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Try Again</button>
+        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">← Back to All Subjects</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script src="../js/components.js"></script>
+<script src="../js/auth.js"></script>
+<script>
+
+// ── SMART CHEAT SHEET OPENER ─────────────────────────────────────────────────
+function openCheatSheet(url) {
+  const isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
+  if (isMobile) {
+    window.location.href = url;
+  } else {
+    window.open(url, '_blank');
+  }
+}
+
+// ── QUIZ DATA ────────────────────────────────────────────────────────────────
+
+const quizData = {
+  beginner: [
+    {cat:"Greetings", en:"Hello (informal, Southern Vietnam)", vn:"Xin chào", d:["Tạm biệt","Cảm ơn","Xin lỗi"]},
+    {cat:"Greetings", en:"Goodbye", vn:"Tạm biệt", d:["Xin chào","Hẹn gặp lại","Cảm ơn"]},
+    {cat:"Greetings", en:"See you again", vn:"Hẹn gặp lại", d:["Tạm biệt","Xin chào","Tốt lắm"]},
+    {cat:"Greetings", en:"Good morning", vn:"Chào buổi sáng", d:["Chào buổi tối","Chào buổi chiều","Xin chào"]},
+    {cat:"Greetings", en:"Good evening", vn:"Chào buổi tối", d:["Chào buổi sáng","Chào buổi chiều","Tạm biệt"]},
+    {cat:"Polite Words", en:"Thank you", vn:"Cảm ơn", d:["Xin lỗi","Không có gì","Dạ"]},
+    {cat:"Polite Words", en:"You're welcome", vn:"Không có gì", d:["Cảm ơn","Xin lỗi","Dạ"]},
+    {cat:"Polite Words", en:"Sorry / Excuse me", vn:"Xin lỗi", d:["Cảm ơn","Không có gì","Tạm biệt"]},
+    {cat:"Polite Words", en:"Yes (polite)", vn:"Dạ", d:["Không","Vâng","Ừ"]},
+    {cat:"Polite Words", en:"No", vn:"Không", d:["Dạ","Vâng","Ừ"]},
+    {cat:"Basic Questions", en:"How are you?", vn:"Bạn khỏe không?", d:["Bạn tên gì?","Bạn ở đâu?","Bạn bao nhiêu tuổi?"]},
+    {cat:"Basic Questions", en:"I'm fine", vn:"Tôi khỏe", d:["Tôi không khỏe","Cảm ơn","Xin lỗi"]},
+    {cat:"Basic Questions", en:"What is your name?", vn:"Bạn tên gì?", d:["Bạn khỏe không?","Bạn ở đâu?","Tên tôi là"]},
+    {cat:"Basic Questions", en:"My name is...", vn:"Tên tôi là...", d:["Tôi là...","Bạn tên gì?","Tôi khỏe"]},
+    {cat:"Basic Questions", en:"Nice to meet you", vn:"Rất vui được gặp bạn", d:["Hẹn gặp lại","Tạm biệt","Xin chào"]},
+  ],
+  intermediate: [
+    {cat:"Getting Help", en:"I don't understand", vn:"Tôi không hiểu", d:["Tôi hiểu","Tôi không biết","Nói lại đi"]},
+    {cat:"Getting Help", en:"Please say that again", vn:"Nói lại đi", d:["Nói chậm hơn","Tôi không hiểu","Bạn nói gì?"]},
+    {cat:"Getting Help", en:"Please speak more slowly", vn:"Nói chậm hơn", d:["Nói lại đi","Tôi không hiểu","Nói tiếng Anh không?"]},
+    {cat:"Getting Help", en:"Do you speak English?", vn:"Bạn nói tiếng Anh không?", d:["Tôi không nói tiếng Việt","Nói chậm hơn","Bạn hiểu không?"]},
+    {cat:"Getting Help", en:"I don't speak Vietnamese well", vn:"Tôi nói tiếng Việt không giỏi", d:["Tôi nói tiếng Anh","Tôi không hiểu","Tôi học tiếng Việt"]},
+    {cat:"Directions", en:"Where is...?", vn:"...ở đâu?", d:["...là gì?","...bao nhiêu?","...khi nào?"]},
+    {cat:"Directions", en:"Turn left", vn:"Rẽ trái", d:["Rẽ phải","Đi thẳng","Quay lại"]},
+    {cat:"Directions", en:"Turn right", vn:"Rẽ phải", d:["Rẽ trái","Đi thẳng","Quay lại"]},
+    {cat:"Directions", en:"Go straight", vn:"Đi thẳng", d:["Rẽ trái","Rẽ phải","Quay lại"]},
+    {cat:"Directions", en:"How far is it?", vn:"Bao xa?", d:["Bao lâu?","Bao nhiêu?","Ở đâu?"]},
+    {cat:"Eating Out", en:"I want to order", vn:"Tôi muốn gọi món", d:["Tính tiền đi","Ngon lắm","Cho tôi xem thực đơn"]},
+    {cat:"Eating Out", en:"The bill please", vn:"Tính tiền đi", d:["Tôi muốn gọi món","Ngon lắm","Thêm nữa đi"]},
+    {cat:"Eating Out", en:"Delicious!", vn:"Ngon lắm!", d:["Không ngon","Cay quá","Thêm nữa đi"]},
+    {cat:"Eating Out", en:"Too spicy", vn:"Cay quá", d:["Ngon lắm","Không cay","Thêm ớt đi"]},
+    {cat:"Eating Out", en:"No ice please", vn:"Không đá", d:["Thêm đá","Không đường","Ít đá"]},
+  ],
+  expert: [
+    {cat:"Social Phrases", en:"How long have you been in Vietnam?", vn:"Bạn ở Việt Nam bao lâu rồi?", d:["Bạn từ đâu đến?","Bạn làm gì?","Bạn thích Việt Nam không?"]},
+    {cat:"Social Phrases", en:"I love Vietnam", vn:"Tôi yêu Việt Nam", d:["Tôi ghét Việt Nam","Tôi thích Việt Nam","Việt Nam đẹp lắm"]},
+    {cat:"Social Phrases", en:"The weather is very hot", vn:"Thời tiết nóng quá", d:["Thời tiết lạnh quá","Trời mưa","Thời tiết đẹp"]},
+    {cat:"Social Phrases", en:"I miss Vietnam", vn:"Tôi nhớ Việt Nam", d:["Tôi yêu Việt Nam","Tôi ghét Việt Nam","Tôi ở Việt Nam"]},
+    {cat:"Bargaining", en:"Give me a better price", vn:"Bớt giá đi", d:["Đắt quá","Tôi mua","Giá bao nhiêu?"]},
+    {cat:"Bargaining", en:"That's too expensive", vn:"Đắt quá", d:["Rẻ lắm","Bớt giá đi","Tôi không mua"]},
+    {cat:"Bargaining", en:"I'll buy it", vn:"Tôi mua", d:["Tôi không mua","Bớt giá đi","Cái này bao nhiêu?"]},
+    {cat:"Bargaining", en:"I'm just looking", vn:"Tôi chỉ xem thôi", d:["Tôi muốn mua","Cái này bao nhiêu?","Cho tôi thử"]},
+    {cat:"Compliments", en:"Your Vietnamese is very good!", vn:"Tiếng Việt của bạn giỏi lắm!", d:["Bạn nói tiếng Anh không?","Tôi học tiếng Việt","Tiếng Việt khó lắm"]},
+    {cat:"Compliments", en:"You are very kind", vn:"Bạn tốt lắm", d:["Cảm ơn","Bạn đẹp lắm","Bạn giỏi lắm"]},
+    {cat:"Feelings", en:"I'm happy", vn:"Tôi vui", d:["Tôi buồn","Tôi mệt","Tôi khỏe"]},
+    {cat:"Feelings", en:"I'm tired", vn:"Tôi mệt", d:["Tôi vui","Tôi buồn","Tôi đói"]},
+    {cat:"Feelings", en:"I'm hungry", vn:"Tôi đói", d:["Tôi khát","Tôi mệt","Tôi no"]},
+    {cat:"Feelings", en:"I'm full (after eating)", vn:"Tôi no", d:["Tôi đói","Tôi khát","Tôi mệt"]},
+    {cat:"Feelings", en:"I'm lost", vn:"Tôi bị lạc", d:["Tôi không hiểu","Tôi cần giúp đỡ","Tôi ở đâu?"]},
+  ]
+};
+
+// ── QUIZ ENGINE ──────────────────────────────────────────────────────────────
+
+let currentDifficulty = 'beginner';
+let questions = [];
+let current = 0;
+let score = 0;
+let answered = false;
+
+function setDifficulty(level) {
+  if ((level === 'intermediate' || level === 'expert') && checkPaywall(level)) {
+    showPaywall();
+    return;
+  }
+  currentDifficulty = level;
+
+  ['beginner','intermediate','expert'].forEach(l => {
+    const tab = document.getElementById('tab-' + l);
+    if (l === level) {
+      tab.style.background = 'var(--gold)';
+      tab.style.color = '#000';
+    } else {
+      tab.style.background = 'transparent';
+      tab.style.color = 'rgba(255,255,255,0.5)';
+    }
+  });
+
+  restartQuiz();
+}
+
+function shuffle(arr) {
+  return [...arr].sort(() => Math.random() - 0.5);
+}
+
+function restartQuiz() {
+  questions = shuffle(quizData[currentDifficulty]).slice(0, 10);
+  current = 0;
+  score = 0;
+  answered = false;
+  document.getElementById('resultsCard').style.display = 'none';
+  document.getElementById('quizCard').style.display = 'block';
+  showQuestion();
+}
+
+function showQuestion() {
+  if (current >= questions.length) {
+    showResults();
+    return;
+  }
+
+  answered = false;
+  const q = questions[current];
+
+  document.getElementById('progressText').textContent = `Question ${current + 1} of ${questions.length}`;
+  document.getElementById('scoreText').textContent = `Score: ${score}`;
+  document.getElementById('progressBar').style.width = `${((current) / questions.length) * 100}%`;
+  document.getElementById('categoryBadge').textContent = q.cat;
+  document.getElementById('questionText').textContent = q.en;
+  document.getElementById('questionSub').textContent = 'What is this in Vietnamese?';
+
+  const choices = shuffle([q.vn, ...q.d.slice(0, 3)]);
+  const grid = document.getElementById('choicesGrid');
+  grid.innerHTML = '';
+  choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.textContent = choice;
+    btn.onclick = () => selectAnswer(btn, choice, q.vn);
+    btn.style.cssText = `
+      padding: 14px 10px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      color: white;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.15s;
+    `;
+    grid.appendChild(btn);
+  });
+
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('nextBtn').style.display = 'none';
+}
+
+function selectAnswer(btn, selected, correct) {
+  if (answered) return;
+  answered = true;
+
+  const feedback = document.getElementById('feedback');
+  const allBtns = document.getElementById('choicesGrid').querySelectorAll('button');
+
+  allBtns.forEach(b => {
+    b.style.cursor = 'default';
+    if (b.textContent === correct) {
+      b.style.background = 'rgba(46,204,113,0.3)';
+      b.style.borderColor = '#2ecc71';
+    }
+  });
+
+  if (selected === correct) {
+    score++;
+    btn.style.background = 'rgba(46,204,113,0.3)';
+    btn.style.borderColor = '#2ecc71';
+    feedback.style.display = 'block';
+    feedback.style.background = 'rgba(46,204,113,0.15)';
+    feedback.style.borderLeft = '3px solid #2ecc71';
+    feedback.style.color = '#2ecc71';
+    feedback.textContent = '✓ Correct! ' + getPhraseFact(questions[current]);
+  } else {
+    btn.style.background = 'rgba(231,76,60,0.3)';
+    btn.style.borderColor = '#e74c3c';
+    feedback.style.display = 'block';
+    feedback.style.background = 'rgba(231,76,60,0.15)';
+    feedback.style.borderLeft = '3px solid #e74c3c';
+    feedback.style.color = '#e74c3c';
+    feedback.textContent = '✗ The answer is: ' + correct;
+  }
+
+  document.getElementById('scoreText').textContent = `Score: ${score}`;
+  document.getElementById('nextBtn').style.display = 'block';
+  current++;
+}
+
+function nextQuestion() {
+  showQuestion();
+}
+
+function getPhraseFact(q) {
+  const facts = {
+    'Greetings': 'In Vietnam, greetings change based on age — "anh", "chị", "em" replace "bạn" depending on who you\'re talking to.',
+    'Polite Words': '"Dạ" is a Southern Vietnamese way of saying yes politely — you\'ll hear it constantly in Saigon!',
+    'Basic Questions': 'Vietnamese uses pronouns based on relationship. "Bạn" (friend) works with strangers your own age.',
+    'Getting Help': 'Locals appreciate any effort to speak Vietnamese — even a simple "xin lỗi" goes a long way.',
+    'Directions': 'When asking directions, point and use "ở đâu?" — locals will understand even if your accent isn\'t perfect.',
+    'Eating Out': 'Street food vendors love when foreigners order in Vietnamese — you might even get a better price!',
+    'Bargaining': 'Bargaining is normal at markets but not in shops with fixed prices. Start at 50% of the asking price.',
+    'Social Phrases': 'Vietnamese people love asking personal questions — it\'s friendly curiosity, not rudeness!',
+    'Compliments': 'Complimenting someone\'s Vietnamese always gets a big smile — they rarely expect foreigners to try!',
+    'Feelings': 'Expressing feelings simply is totally fine in Vietnamese — locals will appreciate the effort.',
+  };
+  return facts[q.cat] || 'Keep going!';
+}
+
+function showResults() {
+  document.getElementById('quizCard').style.display = 'none';
+  document.getElementById('resultsCard').style.display = 'block';
+
+  const pct = score / questions.length;
+  document.getElementById('finalScore').textContent = `You scored ${score} out of ${questions.length}`;
+
+  const msgs = [
+    [0.9, '🏆 Xuất sắc lắm! (Outstanding!) You\'re a natural!'],
+    [0.8, '🌟 Giỏi lắm! (Very good!) Keep it up!'],
+    [0.6, '👍 Khá tốt! (Pretty good!) Almost there!'],
+    [0, '💪 Keep practicing! Bạn sẽ tiến bộ! (You will improve!)']
+  ];
+  document.getElementById('resultsMsg').textContent = msgs.find(([t]) => pct >= t)[1];
+}
+
+document.addEventListener('DOMContentLoaded', restartQuiz);
+</script>
+</body>
+</html>
