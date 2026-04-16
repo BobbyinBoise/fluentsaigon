@@ -29,7 +29,7 @@
         <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">💡 PRO TIP</div>
         <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Vietnamese numbers follow a beautiful logical pattern. Read the cheat sheet first — the quiz becomes 10x easier.</div>
       </div>
-      <a href="cheat-numbers.html" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;text-decoration:none;white-space:nowrap;">View Cheat Sheet →</a>
+      <button onclick="openCheatSheet('cheatsheet-numbers.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet →</button>
     </div>
   </div>
 
@@ -93,11 +93,20 @@
 <script src="../js/auth.js"></script>
 <script>
 
+// ── SMART CHEAT SHEET OPENER (same tab on mobile, new tab on desktop) ────────
+function openCheatSheet(url) {
+  const isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
+  if (isMobile) {
+    window.location.href = url;
+  } else {
+    window.open(url, '_blank');
+  }
+}
+
 // ── QUIZ DATA ────────────────────────────────────────────────────────────────
 
 const quizData = {
   beginner: [
-    // Basic digits
     {cat:"Basic Numbers", en:"Zero", vn:"không", d:["một","hai","ba"]},
     {cat:"Basic Numbers", en:"One", vn:"một", d:["không","hai","ba"]},
     {cat:"Basic Numbers", en:"Two", vn:"hai", d:["một","ba","bốn"]},
@@ -165,7 +174,6 @@ function setDifficulty(level) {
   }
   currentDifficulty = level;
 
-  // Update tab styles
   ['beginner','intermediate','expert'].forEach(l => {
     const tab = document.getElementById('tab-' + l);
     if (l === level) {
@@ -203,7 +211,6 @@ function showQuestion() {
   answered = false;
   const q = questions[current];
 
-  // Progress
   document.getElementById('progressText').textContent = `Question ${current + 1} of ${questions.length}`;
   document.getElementById('scoreText').textContent = `Score: ${score}`;
   document.getElementById('progressBar').style.width = `${((current) / questions.length) * 100}%`;
@@ -211,7 +218,6 @@ function showQuestion() {
   document.getElementById('questionText').textContent = q.en;
   document.getElementById('questionSub').textContent = 'What is this in Vietnamese?';
 
-  // Build choices — correct + 3 distractors, shuffled
   const choices = shuffle([q.vn, ...q.d.slice(0, 3)]);
   const grid = document.getElementById('choicesGrid');
   grid.innerHTML = '';
@@ -235,7 +241,6 @@ function showQuestion() {
     grid.appendChild(btn);
   });
 
-  // Hide feedback + next
   document.getElementById('feedback').style.display = 'none';
   document.getElementById('nextBtn').style.display = 'none';
 }
@@ -247,7 +252,6 @@ function selectAnswer(btn, selected, correct) {
   const feedback = document.getElementById('feedback');
   const allBtns = document.getElementById('choicesGrid').querySelectorAll('button');
 
-  // Disable all buttons
   allBtns.forEach(b => {
     b.style.cursor = 'default';
     if (b.textContent === correct) {
@@ -284,7 +288,6 @@ function nextQuestion() {
   showQuestion();
 }
 
-// Fun facts shown after correct answers
 function getNumberFact(q) {
   const facts = {
     'Basic Numbers': 'Vietnamese numbers are logical — once you know 1-10, the rest follows a pattern!',
