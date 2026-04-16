@@ -1,188 +1,496 @@
-<!-- FluentSaigon - Last updated April 2026 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FluentSaigon — Speak Vietnamese Like a Local, Not a Tourist</title>
-<meta name="description" content="Learn Vietnamese the way locals actually speak it. Interactive flashcard quizzes, cheat sheets, and structured lessons built by someone who's been there. Free to start.">
-<meta property="og:title" content="FluentSaigon — Speak Vietnamese Like a Local">
-<meta property="og:description" content="Skip the tourist phrases. Learn real Vietnamese through interactive quizzes and cheat sheets.">
-<meta property="og:url" content="https://fluentsaigon.com">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇻🇳</text></svg>">
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<title>FluentSaigon — Speak Vietnamese Like a Local</title>
+<meta name="description" content="Stop sounding like a tourist. FluentSaigon teaches street-level Vietnamese — the way people in Saigon actually talk. Launching soon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b3e;
+    --navy-mid: #112050;
+    --navy-light: #1a2f6e;
+    --red: #c0392b;
+    --gold: #f5c518;
+    --gold-light: #ffd740;
+    --white: #ffffff;
+    --green: #2ecc71;
+    --font-display: 'Bebas Neue', cursive;
+    --font-body: 'Nunito', sans-serif;
+    --radius: 12px;
+    --radius-pill: 50px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--navy);
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(26,47,110,0.7) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 85% 85%, rgba(245,197,24,0.05) 0%, transparent 60%),
+      linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 50%, #080e23 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  .top-stripe {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--red), var(--gold), var(--red));
+    z-index: 10;
+  }
+
+  .bg-word {
+    position: fixed;
+    font-family: var(--font-display);
+    font-size: clamp(100px, 25vw, 280px);
+    color: rgba(255,255,255,0.025);
+    pointer-events: none;
+    white-space: nowrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    letter-spacing: -0.02em;
+    user-select: none;
+  }
+
+  .page-wrap {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .logo {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 8vw, 3.6rem);
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    line-height: 1;
+    margin-bottom: 4px;
+    animation: fadeDown 0.7s ease both;
+  }
+
+  .logo-tagline {
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 44px;
+    animation: fadeDown 0.7s 0.08s ease both;
+  }
+
+  .coming-badge {
+    display: inline-block;
+    background: rgba(245,197,24,0.12);
+    border: 1px solid rgba(245,197,24,0.4);
+    color: var(--gold);
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    padding: 6px 20px;
+    border-radius: var(--radius-pill);
+    margin-bottom: 24px;
+    animation: fadeDown 0.7s 0.14s ease both;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 11vw, 6rem);
+    line-height: 0.93;
+    letter-spacing: 0.03em;
+    margin-bottom: 24px;
+    animation: fadeDown 0.7s 0.2s ease both;
+    max-width: 760px;
+  }
+
+  h1 em { color: var(--gold); font-style: normal; }
+
+  .subtext {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    color: rgba(255,255,255,0.62);
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto 40px;
+    font-weight: 600;
+    animation: fadeDown 0.7s 0.28s ease both;
+  }
+
+  .subtext strong { color: var(--white); font-weight: 800; }
+
+  .proof-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 44px;
+    animation: fadeDown 0.7s 0.34s ease both;
+  }
+
+  .proof-pill {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-pill);
+    padding: 7px 16px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.65);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .proof-pill span { color: var(--gold); font-weight: 900; }
+
+  .form-wrap {
+    width: 100%;
+    max-width: 460px;
+    animation: fadeDown 0.7s 0.4s ease both;
+    margin-bottom: 16px;
+  }
+
+  .form-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 2px solid rgba(245,197,24,0.3);
+    border-radius: var(--radius);
+    padding: 6px 6px 6px 18px;
+    transition: border-color 0.2s ease;
+  }
+
+  .form-row:focus-within { border-color: var(--gold); }
+
+  .form-row input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 8px 0;
+    min-width: 0;
+  }
+
+  .form-row input::placeholder { color: rgba(255,255,255,0.25); }
+
+  .form-row button {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    padding: 12px 22px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-weight: 900;
+  }
+
+  .form-row button:hover { background: var(--gold-light); transform: scale(1.03); }
+  .form-row button:active { transform: scale(0.98); }
+
+  .form-note {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.25);
+    margin-top: 10px;
+    font-weight: 600;
+  }
+
+  .success-msg {
+    display: none;
+    background: rgba(46,204,113,0.1);
+    border: 2px solid rgba(46,204,113,0.35);
+    border-radius: var(--radius);
+    padding: 18px 24px;
+    color: #4cd964;
+    font-weight: 800;
+    font-size: 1rem;
+    max-width: 460px;
+  }
+
+  .success-msg.visible { display: block; animation: popIn 0.4s ease both; }
+
+  .video-callout {
+    margin-top: 40px;
+    padding: 18px 26px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(245,197,24,0.15);
+    border-radius: var(--radius);
+    max-width: 400px;
+    animation: fadeDown 0.7s 0.48s ease both;
+  }
+
+  .video-callout p {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.35);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  .video-callout a { color: var(--gold); font-weight: 800; text-decoration: none; font-size: 0.9rem; }
+  .video-callout a:hover { text-decoration: underline; }
+
+  .preview-section {
+    width: 100%;
+    max-width: 680px;
+    margin-top: 56px;
+    animation: fadeDown 0.8s 0.54s ease both;
+  }
+
+  .preview-label {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 18px;
+  }
+
+  .preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+    gap: 12px;
+  }
+
+  .preview-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+    padding: 20px 16px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .preview-card:hover { border-color: rgba(245,197,24,0.3); transform: translateY(-3px); }
+
+  .preview-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+  }
+
+  .preview-card:hover::after { transform: scaleX(1); }
+
+  .preview-card .icon { font-size: 1.5rem; margin-bottom: 8px; }
+
+  .preview-card h3 { font-size: 0.82rem; font-weight: 800; margin-bottom: 4px; color: var(--gold); }
+
+  .preview-card p { font-size: 0.7rem; color: rgba(255,255,255,0.45); line-height: 1.5; font-weight: 600; }
+
+  .card-badge {
+    position: absolute;
+    top: 10px; right: 10px;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 2px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  .badge-free { background: rgba(46,204,113,0.15); color: #2ecc71; border: 1px solid rgba(46,204,113,0.3); }
+  .badge-pro  { background: rgba(245,197,24,0.12); color: var(--gold); border: 1px solid rgba(245,197,24,0.3); }
+
+  .page-footer {
+    margin-top: 56px;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.18);
+    font-weight: 700;
+    animation: fadeDown 0.7s 0.6s ease both;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.94); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  @media (max-width: 500px) {
+    .form-row { flex-direction: column; padding: 10px; gap: 8px; }
+    .form-row input { padding: 8px; }
+    .form-row button { width: 100%; padding: 14px; }
+    .preview-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
 </head>
 <body>
 
-<div id="nav-placeholder" data-page="home"></div>
-<div id="modal-placeholder"></div>
+<div class="top-stripe"></div>
+<div class="bg-word">SAIGON</div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-badge fade-up">🇻🇳 Built by a Traveler, For Travelers</div>
-    <h1 class="fade-up fade-up-delay-1">Speak Vietnamese<br><em>Like a Local.</em><br>Not a Tourist.</h1>
-    <p class="hero-sub fade-up fade-up-delay-2">Most apps teach you textbook Vietnamese. FluentSaigon teaches you how people in Saigon, Hanoi, and Hội An actually talk. Interactive quizzes, honest cheat sheets, zero fluff.</p>
-    <div class="hero-actions fade-up fade-up-delay-3">
-      <a href="pages/subjects.html" class="btn btn-primary">Start Learning Free →</a>
-      <a href="pages/pricing.html" class="btn btn-secondary">View Pro Plans</a>
+<div class="page-wrap">
+
+  <div class="logo">FluentSaigon</div>
+  <div class="logo-tagline">Real Street Vietnamese · Launching Soon</div>
+
+  <div class="coming-badge">🇻🇳 &nbsp;Coming Soon</div>
+
+  <h1>Stop Sounding Like<br><em>A Tourist</em></h1>
+
+  <p class="subtext">
+    Most apps teach you <strong>textbook Vietnamese</strong> that locals smile politely at — and immediately know you've never been.<br>
+    FluentSaigon teaches the real thing.
+  </p>
+
+  <div class="proof-row">
+    <div class="proof-pill">📚 <span>12+</span> Subject Areas</div>
+    <div class="proof-pill">❓ <span>500+</span> Quiz Questions</div>
+    <div class="proof-pill">🎯 <span>3</span> Difficulty Levels</div>
+    <div class="proof-pill">✅ <span>100%</span> Free to Start</div>
+  </div>
+
+  <div class="form-wrap">
+    <span class="form-label">Get notified when we launch</span>
+    <div class="form-row" id="formRow">
+      <input type="email" id="emailInput" placeholder="your@email.com" autocomplete="email">
+      <button onclick="handleSubmit()">Notify Me →</button>
     </div>
+    <div class="form-note" id="formNote">No spam. Just a single launch email.</div>
   </div>
-</section>
 
-<!-- SOCIAL PROOF BAR -->
-<div class="stats-bar">
-  <div class="stat"><div class="stat-num">12+</div><div class="stat-label">Subject Areas</div></div>
-  <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Quiz Questions</div></div>
-  <div class="stat"><div class="stat-num">3</div><div class="stat-label">Difficulty Levels</div></div>
-  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free to Start</div></div>
-</div>
-
-<!-- THE REAL DIFFERENCE -->
-<div style="background:rgba(0,0,0,0.2);position:relative;z-index:1;">
-  <div class="section" style="text-align:center;">
-    <div class="section-label">Why FluentSaigon</div>
-    <h2 class="section-title">Most Apps Teach You<br><em style="color:var(--gold)">The Wrong Vietnamese</em></h2>
-    <p class="section-sub" style="margin:0 auto 48px;">Say "Xin chào" to a local and they'll smile politely — and know instantly you're a tourist. FluentSaigon is built around how Vietnamese is actually spoken on the street, at the market, and over a bowl of phở.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:900px;margin:0 auto;">
-      <div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:28px;border:1px solid rgba(255,255,255,0.08);text-align:left;">
-        <div style="font-size:2rem;margin-bottom:12px;">🗣️</div>
-        <h3 style="font-weight:800;color:var(--gold);margin-bottom:8px;">Street-Level Vocabulary</h3>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">We teach the words and phrases that locals actually use — not the formal register you'd find in a textbook or language app built by people who've never been to Vietnam.</p>
-      </div>
-      <div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:28px;border:1px solid rgba(255,255,255,0.08);text-align:left;">
-        <div style="font-size:2rem;margin-bottom:12px;">🧠</div>
-        <h3 style="font-weight:800;color:var(--gold);margin-bottom:8px;">Logic-First Learning</h3>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">Vietnamese has beautiful patterns. Days of the week are just numbers. Months are just numbers. Once you understand the logic, you stop memorizing and start thinking in Vietnamese.</p>
-      </div>
-      <div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:28px;border:1px solid rgba(255,255,255,0.08);text-align:left;">
-        <div style="font-size:2rem;margin-bottom:12px;">🎯</div>
-        <h3 style="font-weight:800;color:var(--gold);margin-bottom:8px;">Quiz Before You Forget</h3>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">Spaced repetition works. Our randomized flashcard quizzes with instant feedback are designed to move vocabulary from short-term to long-term memory fast.</p>
-      </div>
-    </div>
+  <div class="success-msg" id="successMsg">
+    🎉 &nbsp;You're on the list! We'll email you the moment FluentSaigon launches.
   </div>
-</div>
 
-<!-- SUBJECTS -->
-<div class="section">
-  <div class="section-label">What You'll Learn</div>
-  <h2 class="section-title">Choose Your Subject</h2>
-  <p class="section-sub">Every subject includes an interactive quiz and a cheat sheet that explains the logic — not just the words.</p>
-
-  <div class="subject-grid">
-    <a href="pages/quiz-numbers.html" class="subject-card">
-      <span class="badge badge-free">Free</span>
-      <div class="icon">🔢</div>
-      <h3>Numbers</h3>
-      <p>From 1 to 1,000,000 — master the Vietnamese number system at every scale.</p>
-    </a>
-    <a href="pages/quiz-dates.html" class="subject-card">
-      <span class="badge badge-free">Free</span>
-      <div class="icon">📅</div>
-      <h3>Dates & Times</h3>
-      <p>Days, months, telling time, full dates — once you see the pattern, it clicks forever.</p>
-    </a>
-    <a href="pages/quiz-greetings.html" class="subject-card">
-      <span class="badge badge-pro">Pro</span>
-      <div class="icon">👋</div>
-      <h3>Real Greetings</h3>
-      <p>How locals actually say hello — not the tourist phrases every app teaches.</p>
-    </a>
-    <a href="pages/quiz-alphabet.html" class="subject-card">
-      <span class="badge badge-pro">Pro</span>
-      <div class="icon">🔤</div>
-      <h3>Alphabet & Tones</h3>
-      <p>Vietnamese has 6 tones. Understanding them changes everything about how you sound.</p>
-    </a>
-    <a href="pages/quiz-food.html" class="subject-card">
-      <span class="badge badge-pro">Pro</span>
-      <div class="icon">🍜</div>
-      <h3>Food & Street Eats</h3>
-      <p>Order off-menu, ask what's fresh, and eat where the locals eat — not the tourist spots.</p>
-    </a>
-    <a href="pages/quiz-directions.html" class="subject-card">
-      <span class="badge badge-pro">Pro</span>
-      <div class="icon">🛵</div>
-      <h3>Getting Around</h3>
-      <p>Motorbikes, Grab, xe ôm — navigate Vietnamese cities like you've done it before.</p>
-    </a>
-    <a href="pages/quiz-market.html" class="subject-card">
-      <span class="badge badge-pro">Pro</span>
-      <div class="icon">🛍️</div>
-      <h3>Markets & Bargaining</h3>
-      <p>Prices, negotiating, quantities — stop paying tourist prices at the market.</p>
-    </a>
-    <a href="pages/quiz-colors.html" class="subject-card">
-      <span class="badge badge-pro">Pro</span>
-      <div class="icon">🎨</div>
-      <h3>Colors & Descriptions</h3>
-      <p>Describe what you see, what you want, what you're looking for.</p>
-    </a>
-    <a href="pages/quiz-family.html" class="subject-card">
-      <span class="badge badge-soon">Coming Soon</span>
-      <div class="icon">👨‍👩‍👧</div>
-      <h3>Family & Relationships</h3>
-      <p>Vietnamese family terms are unique and important to get right.</p>
+  <div class="video-callout">
+    <p>Just found us from the video?</p>
+    <a href="#" onclick="document.getElementById('emailInput').focus(); return false;">
+      Drop your email above — you'll be first in line 👆
     </a>
   </div>
-</div>
 
-<!-- HOW IT WORKS -->
-<div style="background:rgba(0,0,0,0.2);position:relative;z-index:1;">
-  <div class="section">
-    <div class="section-label">The Method</div>
-    <h2 class="section-title">Read. Quiz. Repeat.</h2>
-    <p class="section-sub">Three steps. No apps to download. No accounts required to start.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;">
-      <div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:28px;border:1px solid rgba(255,255,255,0.08);position:relative;">
-        <div style="position:absolute;top:-14px;left:24px;background:var(--gold);color:var(--red-deeper);font-family:var(--font-display);font-size:1.4rem;padding:2px 14px;border-radius:20px;">01</div>
-        <div style="font-size:2rem;margin:14px 0 12px;">📖</div>
-        <h3 style="font-size:1rem;font-weight:800;margin-bottom:8px;color:var(--gold);">Read the Cheat Sheet</h3>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">Each subject starts with a reference guide that explains the logic. Spend 3 minutes here and the quiz becomes 10x easier.</p>
+  <div class="preview-section">
+    <div class="preview-label">A taste of what's inside</div>
+    <div class="preview-grid">
+      <div class="preview-card">
+        <div class="card-badge badge-free">Free</div>
+        <div class="icon">🔢</div>
+        <h3>Numbers & Counting</h3>
+        <p>Days, months, money — one pattern, used everywhere.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:28px;border:1px solid rgba(255,255,255,0.08);position:relative;">
-        <div style="position:absolute;top:-14px;left:24px;background:var(--gold);color:var(--red-deeper);font-family:var(--font-display);font-size:1.4rem;padding:2px 14px;border-radius:20px;">02</div>
-        <div style="font-size:2rem;margin:14px 0 12px;">🎯</div>
-        <h3 style="font-size:1rem;font-weight:800;margin-bottom:8px;color:var(--gold);">Take the Quiz</h3>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">20 randomized questions per round. Beginner builds confidence. Expert builds mastery. Instant feedback on every answer.</p>
+      <div class="preview-card">
+        <div class="card-badge badge-free">Free</div>
+        <div class="icon">🗣️</div>
+        <h3>Greetings & Basics</h3>
+        <p>Go beyond "Xin chào" — how locals actually say it.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:28px;border:1px solid rgba(255,255,255,0.08);position:relative;">
-        <div style="position:absolute;top:-14px;left:24px;background:var(--gold);color:var(--red-deeper);font-family:var(--font-display);font-size:1.4rem;padding:2px 14px;border-radius:20px;">03</div>
-        <div style="font-size:2rem;margin:14px 0 12px;">🔁</div>
-        <h3 style="font-size:1rem;font-weight:800;margin-bottom:8px;color:var(--gold);">Come Back Daily</h3>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">10 minutes a day beats 2 hours on the weekend. Pro members track progress across all subjects and see their streaks grow.</p>
+      <div class="preview-card">
+        <div class="card-badge badge-pro">Pro</div>
+        <div class="icon">🍜</div>
+        <h3>Food & Street Eats</h3>
+        <p>Order off-menu, eat where the locals eat.</p>
+      </div>
+      <div class="preview-card">
+        <div class="card-badge badge-pro">Pro</div>
+        <div class="icon">🛍️</div>
+        <h3>Markets & Bargaining</h3>
+        <p>Stop paying tourist prices at the market.</p>
       </div>
     </div>
   </div>
+
+  <div class="page-footer">© 2025 FluentSaigon · HelpMeGrow LLC · Boise, Idaho</div>
+
 </div>
 
-<!-- PRICING TEASER -->
-<div class="section" style="text-align:center;">
-  <div class="section-label">Pricing</div>
-  <h2 class="section-title">Free Forever.<br><em style="color:var(--gold);">Pro When You're Ready.</em></h2>
-  <p class="section-sub" style="margin:0 auto 36px;">Numbers and Dates are free, always. Unlock every subject, every level, and progress tracking with Pro for less than a coffee a month.</p>
-  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-    <a href="pages/subjects.html" class="btn btn-secondary">Start Free — No Account Needed</a>
-    <a href="pages/pricing.html" class="btn btn-primary">See Pro Plans →</a>
-  </div>
-</div>
+<script>
+  function handleSubmit() {
+    const input = document.getElementById('emailInput');
+    const email = input.value.trim();
 
-<!-- FOUNDER NOTE -->
-<div style="background:rgba(0,0,0,0.25);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.06);">
-  <div class="section" style="max-width:680px;text-align:center;">
-    <div style="font-size:3rem;margin-bottom:16px;">✈️</div>
-    <h2 style="font-family:var(--font-display);font-size:2rem;color:var(--gold);margin-bottom:16px;letter-spacing:0.03em;">Built After a Trip to Vietnam</h2>
-    <p style="color:rgba(255,255,255,0.7);line-height:1.8;font-size:0.95rem;">I came back from Vietnam wanting to actually learn the language — not the version in every app and textbook, but the one people use at the markets in Hội An, the coffee shops in Saigon, the street food stalls everywhere. FluentSaigon is what I built to get there. I hope it helps you too.</p>
-    <p style="color:var(--gold);font-weight:800;margin-top:16px;">— Bobby, Boise Idaho</p>
-  </div>
-</div>
+    if (!email || !email.includes('@')) {
+      input.style.border = '2px solid #e74c3c';
+      input.focus();
+      setTimeout(() => input.style.border = '', 1500);
+      return;
+    }
 
-<div id="footer-placeholder"></div>
+    const formData = new FormData();
+    formData.append('form-name', 'waitlist');
+    formData.append('email', email);
 
-<script src="js/components.js"></script>
-<script src="js/auth.js"></script>
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    }).catch(() => {});
+
+    document.getElementById('formRow').style.display = 'none';
+    document.querySelector('.form-label').style.display = 'none';
+    document.getElementById('formNote').style.display = 'none';
+    document.getElementById('successMsg').classList.add('visible');
+  }
+
+  document.getElementById('emailInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') handleSubmit();
+  });
+</script>
+
+<form name="waitlist" netlify netlify-honeypot="bot-field" hidden>
+  <input type="email" name="email">
+  <input name="bot-field">
+</form>
+
 </body>
 </html>
