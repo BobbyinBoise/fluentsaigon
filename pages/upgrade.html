@@ -62,7 +62,14 @@
 .mini-features li::before { content: '✓'; color: var(--green); font-weight: 900; font-size: 0.7rem; flex-shrink: 0; }
 </style>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LN51VD3PC5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LN51VD3PC5');
+  </script></head>
 <body>
 <div id="nav-placeholder" data-page="subjects"></div>
 <div id="modal-placeholder"></div>
