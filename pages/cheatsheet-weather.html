@@ -64,14 +64,15 @@
 .btn-print:hover { background: rgba(255,255,255,0.14); color: #fff; }
 
 .tab-bar {
-  display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 28px;
+  display: flex; gap: 6px; flex-wrap: nowrap; margin-bottom: 28px;
   background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
-  border-radius: var(--radius-pill); padding: 5px;
+  border-radius: var(--radius-pill); padding: 4px;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
 }
 .tab-btn {
-  flex: 1; min-width: 100px; padding: 9px 16px; border-radius: var(--radius-pill);
+  flex: 1; min-width: 90px; padding: 9px 10px; border-radius: var(--radius-pill);
   border: none; background: transparent; color: rgba(255,255,255,0.45);
-  font-family: var(--font-body); font-size: 0.78rem; font-weight: 800;
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 800;
   letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: 0.2s; white-space: nowrap;
 }
 .tab-btn.active { background: var(--gold); color: #000; }
