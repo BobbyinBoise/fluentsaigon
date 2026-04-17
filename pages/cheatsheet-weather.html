@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather & Seasons Cheat Sheet — FluentSaigon</title>
+<meta name="description" content="Vietnamese weather and seasons cheat sheet — the two seasons, weather vocabulary, regional differences, useful phrases, and travel tips.">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇻🇳</text></svg>">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+
+@media print {
+  body { background: #fff !important; color: #000 !important; }
+  nav, #nav-placeholder, #footer-placeholder, #modal-placeholder,
+  #paywall-placeholder, .no-print { display: none !important; }
+  .cs-hero { background: #fff !important; padding: 16px 0 8px !important; }
+  .cs-hero h1 { color: #000 !important; font-size: 2rem !important; }
+  .cs-hero p { color: #444 !important; }
+  .cs-section { background: #fff !important; border: 1px solid #ddd !important; box-shadow: none !important; break-inside: avoid; }
+  .cs-section-title { color: #000 !important; border-bottom-color: #ccc !important; }
+  .cs-table th { background: #f0f0f0 !important; color: #000 !important; }
+  .cs-table td { color: #000 !important; border-bottom-color: #eee !important; }
+  .cs-tag { background: #eee !important; color: #333 !important; }
+  .cs-tip { background: #fffbe6 !important; border-color: #e6c200 !important; color: #333 !important; }
+  .pattern-box { background: #f8f8f8 !important; border: 1px solid #ddd !important; color: #000 !important; }
+  .tab-bar { display: none !important; }
+  .tab-section { display: block !important; }
+  .season-card { background: #f5f5f5 !important; border: 1px solid #ddd !important; }
+}
+
+.cs-page { max-width: 860px; margin: 0 auto; padding: 0 20px 80px; }
+
+.cs-hero { padding: 48px 0 32px; text-align: center; }
+.cs-hero .breadcrumb {
+  color: rgba(255,255,255,0.45); font-size: 0.8rem; font-weight: 700;
+  text-decoration: none; letter-spacing: 0.04em; display: inline-flex;
+  align-items: center; gap: 6px; margin-bottom: 20px; transition: color 0.2s;
+}
+.cs-hero .breadcrumb:hover { color: var(--gold); }
+.cs-hero h1 {
+  font-family: var(--font-display); font-size: clamp(2.8rem, 8vw, 5rem);
+  letter-spacing: 0.03em; color: var(--white); margin-bottom: 10px; line-height: 1;
+}
+.cs-hero h1 span { color: var(--gold); }
+.cs-hero p {
+  color: rgba(255,255,255,0.55); font-size: 1rem; font-weight: 600;
+  max-width: 480px; margin: 0 auto 24px; line-height: 1.6;
+}
+.cs-hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.btn-quiz {
+  background: var(--gold); color: #000; font-weight: 800; font-size: 0.85rem;
+  padding: 10px 22px; border-radius: var(--radius-pill); text-decoration: none;
+  letter-spacing: 0.04em; transition: 0.2s; display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-quiz:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn-print {
+  background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); font-weight: 800;
+  font-size: 0.85rem; padding: 10px 22px; border-radius: var(--radius-pill);
+  border: 1px solid rgba(255,255,255,0.15); cursor: pointer; letter-spacing: 0.04em;
+  transition: 0.2s; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-body);
+}
+.btn-print:hover { background: rgba(255,255,255,0.14); color: #fff; }
+
+.tab-bar {
+  display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 28px;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-pill); padding: 5px;
+}
+.tab-btn {
+  flex: 1; min-width: 100px; padding: 9px 16px; border-radius: var(--radius-pill);
+  border: none; background: transparent; color: rgba(255,255,255,0.45);
+  font-family: var(--font-body); font-size: 0.78rem; font-weight: 800;
+  letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: 0.2s; white-space: nowrap;
+}
+.tab-btn.active { background: var(--gold); color: #000; }
+.tab-btn:not(.active):hover { background: rgba(255,255,255,0.08); color: #fff; }
+.tab-section { display: none; }
+.tab-section.active { display: block; }
+
+.cs-section {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 28px; margin-bottom: 20px;
+}
+.cs-section-title {
+  font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.05em;
+  color: var(--gold); margin-bottom: 16px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px;
+}
+
+.cs-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.cs-table th {
+  background: rgba(245,197,24,0.1); color: var(--gold); font-size: 0.68rem; font-weight: 800;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 14px; text-align: left;
+}
+.cs-table th:first-child { border-radius: 8px 0 0 8px; }
+.cs-table th:last-child { border-radius: 0 8px 8px 0; }
+.cs-table td {
+  padding: 11px 14px; border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.85); font-weight: 600; vertical-align: middle;
+}
+.cs-table tr:last-child td { border-bottom: none; }
+.cs-table tr:hover td { background: rgba(255,255,255,0.03); }
+.vn { font-size: 1.1rem; font-weight: 800; color: #fff; }
+.pr { font-size: 0.82rem; color: rgba(255,255,255,0.4); font-style: italic; font-weight: 500; }
+.en { font-size: 0.88rem; color: rgba(255,255,255,0.7); font-weight: 600; }
+
+.cs-tag {
+  display: inline-block; background: rgba(245,197,24,0.12); color: var(--gold);
+  font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 4px;
+}
+.cs-tag.blue { background: rgba(100,160,255,0.12); color: #64a0ff; }
+.cs-tag.green { background: rgba(46,204,113,0.12); color: var(--green); }
+.cs-tag.red { background: rgba(231,76,60,0.15); color: #e74c3c; }
+.cs-tag.purple { background: rgba(155,89,182,0.15); color: #9b59b6; }
+
+.pattern-box {
+  background: rgba(0,0,0,0.2); border: 1px solid rgba(245,197,24,0.2);
+  border-radius: 10px; padding: 18px 20px; margin: 16px 0;
+  font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.8);
+}
+.pattern-box strong { color: #fff; }
+.pattern-box code { color: var(--gold); font-size: 1rem; font-weight: 800; font-family: monospace; }
+
+.cs-tip {
+  background: rgba(245,197,24,0.07); border-left: 3px solid var(--gold);
+  border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 16px 0 0;
+  font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.6;
+}
+.cs-tip strong { color: var(--gold); }
+
+/* Season cards */
+.season-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+@media (max-width: 580px) { .season-grid { grid-template-columns: 1fr; } }
+.season-card {
+  border-radius: 14px; padding: 24px 20px;
+}
+.season-card.dry {
+  background: rgba(245,197,24,0.08); border: 1px solid rgba(245,197,24,0.25);
+}
+.season-card.rainy {
+  background: rgba(100,160,255,0.08); border: 1px solid rgba(100,160,255,0.25);
+}
+.season-name { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.04em; margin-bottom: 4px; }
+.season-vn { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+.season-months { font-size: 0.9rem; font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 8px; }
+.season-desc { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+/* Travel tip cards */
+.travel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 8px; }
+.travel-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 12px; padding: 18px 16px;
+}
+.travel-region { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.travel-best { font-size: 0.88rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.travel-avoid { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-bottom: 8px; }
+.travel-note { font-size: 0.78rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder" data-page="subjects"></div>
+<div id="modal-placeholder"></div>
+<div id="paywall-placeholder"></div>
+
+<div class="cs-page">
+
+  <!-- HERO -->
+  <div class="cs-hero">
+    <a href="subjects.html" class="breadcrumb">← All Subjects</a>
+    <h1>🌦️ Weather & Seasons <span>Cheat Sheet</span></h1>
+    <p>Vietnam's two-season system, weather vocabulary, and what to expect region by region.</p>
+    <div class="cs-hero-actions no-print">
+      <a href="quiz-weather.html" class="btn-quiz">🎯 Take the Quiz →</a>
+      <button class="btn-print" onclick="window.print()">🖨️ Print</button>
+    </div>
+  </div>
+
+  <!-- TAB BAR -->
+  <div class="tab-bar no-print">
+    <button class="tab-btn active" onclick="showTab('seasons')">The Two Seasons</button>
+    <button class="tab-btn" onclick="showTab('vocab')">Weather Vocab</button>
+    <button class="tab-btn" onclick="showTab('regions')">Regional Differences</button>
+    <button class="tab-btn" onclick="showTab('phrases')">Useful Phrases</button>
+    <button class="tab-btn" onclick="showTab('travel')">Travel Tips</button>
+  </div>
+
+  <!-- TAB: THE TWO SEASONS -->
+  <div class="tab-section active" id="tab-seasons">
+
+    <div class="cs-section">
+      <div class="cs-section-title">🌍 Vietnam's Two-Season System</div>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:20px;line-height:1.7;">Forget spring, summer, autumn, winter. Southern Vietnam runs on two seasons only — and once you know the pattern, you can dress, plan, and talk about the weather like a local.</p>
+
+      <div class="season-grid">
+        <div class="season-card dry">
+          <div class="season-name" style="color:var(--gold);">Dry Season</div>
+          <div class="season-vn" style="color:var(--gold);">Mùa Khô</div>
+          <div class="season-months">☀️ November → April</div>
+          <div class="season-desc">Clear skies, lower humidity, cooler evenings. The most popular time for travelers. Saigon sits around 28–34°C. Almost no rain in the south.</div>
+        </div>
+        <div class="season-card rainy">
+          <div class="season-name" style="color:#64a0ff;">Rainy Season</div>
+          <div class="season-vn" style="color:#64a0ff;">Mùa Mưa</div>
+          <div class="season-months">🌧️ May → October</div>
+          <div class="season-desc">Heavy afternoon downpours — usually 1–2 hours then it clears. Mornings stay sunny. Lush and green. Temperatures actually feel cooler after rain.</div>
+        </div>
+      </div>
+
+      <div class="cs-tip">💡 <strong>Rainy season myth:</strong> Most travelers avoid the rainy season — which means fewer tourists, cheaper hotels, and the same sunny mornings. The rain hits hard around 3–5pm and clears by evening. Locals barely break stride.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">📅 Month-by-Month — South Vietnam (Saigon)</div>
+      <table class="cs-table">
+        <thead><tr><th>Month</th><th>Season</th><th>What to Expect</th></tr></thead>
+        <tbody>
+          <tr><td class="vn">Tháng 1–2</td><td><span class="cs-tag">Dry ☀️</span></td><td class="en">Coolest, least humid. Tet holiday in Jan/Feb — very busy</td></tr>
+          <tr><td class="vn">Tháng 3–4</td><td><span class="cs-tag">Dry ☀️</span></td><td class="en">Getting hotter — hottest months of the year, up to 38°C</td></tr>
+          <tr><td class="vn">Tháng 5</td><td><span class="cs-tag blue">Transition 🌦️</span></td><td class="en">First rains arrive — humidity spikes, afternoon showers begin</td></tr>
+          <tr><td class="vn">Tháng 6–8</td><td><span class="cs-tag blue">Rainy 🌧️</span></td><td class="en">Peak rainy season — daily afternoon downpours, lush scenery</td></tr>
+          <tr><td class="vn">Tháng 9–10</td><td><span class="cs-tag blue">Rainy 🌧️</span></td><td class="en">Heaviest rainfall — flooding possible in low-lying areas</td></tr>
+          <tr><td class="vn">Tháng 11–12</td><td><span class="cs-tag">Dry ☀️</span></td><td class="en">Rain easing off — excellent conditions, best travel weather</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>Tháng</strong> means "month." Vietnamese months are just numbers — Tháng 1 (January), Tháng 2 (February), all the way to Tháng 12 (December). No names to memorize.</div>
+    </div>
+
+  </div>
+
+  <!-- TAB: WEATHER VOCAB -->
+  <div class="tab-section" id="tab-vocab">
+
+    <div class="cs-section">
+      <div class="cs-section-title">☀️ Core Weather Words</div>
+      <table class="cs-table">
+        <thead><tr><th>Vietnamese</th><th>Pronunciation</th><th>Meaning</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td class="vn">Trời</td><td class="pr">choy (South) / troi (North)</td><td class="en">Sky / weather / heaven</td><td class="en">Used in most weather sentences — "trời nóng" = it's hot</td></tr>
+          <tr><td class="vn">Thời tiết</td><td class="pr">thoy tyet</td><td class="en">Weather (general)</td><td class="en">Used for forecasts and conversation</td></tr>
+          <tr><td class="vn">Mùa</td><td class="pr">moo-ah</td><td class="en">Season</td><td class="en">Mùa khô = dry · Mùa mưa = rainy</td></tr>
+          <tr><td class="vn">Mưa</td><td class="pr">muh-ah</td><td class="en">Rain / to rain</td><td class="en">Both noun and verb — "trời mưa" = it's raining</td></tr>
+          <tr><td class="vn">Nắng</td><td class="pr">nahng</td><td class="en">Sunshine / sunny</td><td class="en">Nắng đẹp = beautiful sunny day</td></tr>
+          <tr><td class="vn">Nóng</td><td class="pr">nawng</td><td class="en">Hot</td><td class="en">Nóng bức = sweltering / oppressively hot</td></tr>
+          <tr><td class="vn">Lạnh</td><td class="pr">lahng</td><td class="en">Cold</td><td class="en">Mainly used in the north or highlands</td></tr>
+          <tr><td class="vn">Mát</td><td class="pr">maht</td><td class="en">Cool / pleasant</td><td class="en">Mát mẻ = nicely cool — the ideal Vietnamese weather</td></tr>
+          <tr><td class="vn">Gió</td><td class="pr">yoh (South)</td><td class="en">Wind</td><td class="en">Có gió = there's wind / breezy</td></tr>
+          <tr><td class="vn">Mây</td><td class="pr">may</td><td class="en">Cloud</td><td class="en">Nhiều mây = cloudy · ít mây = partly cloudy</td></tr>
+          <tr><td class="vn">Ẩm</td><td class="pr">uhm</td><td class="en">Humid / damp</td><td class="en">Ẩm ướt = humid and wet</td></tr>
+          <tr><td class="vn">Khô</td><td class="pr">khoh</td><td class="en">Dry</td><td class="en">Trời khô = dry weather</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">⛈️ Extreme Weather Words</div>
+      <table class="cs-table">
+        <thead><tr><th>Vietnamese</th><th>Pronunciation</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="vn">Bão</td><td class="pr">bow</td><td class="en">Storm / typhoon</td></tr>
+          <tr><td class="vn">Mưa rào</td><td class="pr">muh-ah row</td><td class="en">Shower (short, heavy downpour)</td></tr>
+          <tr><td class="vn">Mưa to / Mưa lớn</td><td class="pr">muh-ah taw / lun</td><td class="en">Heavy rain</td></tr>
+          <tr><td class="vn">Lũ lụt</td><td class="pr">loo loot</td><td class="en">Flood</td></tr>
+          <tr><td class="vn">Sét / Sấm</td><td class="pr">set / sum</td><td class="en">Lightning / Thunder</td></tr>
+          <tr><td class="vn">Mưa đá</td><td class="pr">muh-ah dah</td><td class="en">Hail (literally "ice rain")</td></tr>
+          <tr><td class="vn">Sóng nhiệt</td><td class="pr">sawng nyeet</td><td class="en">Heat wave</td></tr>
+          <tr><td class="vn">Hạn hán</td><td class="pr">hahn hahn</td><td class="en">Drought</td></tr>
+          <tr><td class="vn">Sương mù</td><td class="pr">suh-ung moo</td><td class="en">Fog / mist</td></tr>
+          <tr><td class="vn">Gió mùa</td><td class="pr">yoh moo-ah</td><td class="en">Monsoon (literally "seasonal wind")</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>Mưa + [modifier] = rain type:</strong> Mưa to (heavy) · Mưa nhỏ (light) · Mưa rào (shower) · Mưa phùn (drizzle) · Mưa đá (hail). Once you know mưa, the combinations are logical.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">🌡️ Temperature & Conditions</div>
+      <table class="cs-table">
+        <thead><tr><th>Vietnamese</th><th>Meaning</th><th>Context</th></tr></thead>
+        <tbody>
+          <tr><td class="vn">Nhiệt độ</td><td class="en">Temperature</td><td class="en">Nhiệt độ hôm nay = today's temperature</td></tr>
+          <tr><td class="vn">Độ ẩm</td><td class="en">Humidity level</td><td class="en">Độ ẩm cao = high humidity</td></tr>
+          <tr><td class="vn">Khí hậu</td><td class="en">Climate (long-term)</td><td class="en">Khí hậu nhiệt đới = tropical climate</td></tr>
+          <tr><td class="vn">Nóng bức</td><td class="en">Hot and stuffy / sweltering</td><td class="en">Stronger than just nóng — oppressive heat</td></tr>
+          <tr><td class="vn">Mát mẻ</td><td class="en">Cool and pleasant</td><td class="en">The ideal — what everyone hopes for</td></tr>
+          <tr><td class="vn">Ấm áp</td><td class="en">Warm and cozy</td><td class="en">Used for Hanoi spring/autumn</td></tr>
+          <tr><td class="vn">Se lạnh</td><td class="en">Slightly chilly</td><td class="en">Cool enough to need a light jacket</td></tr>
+          <tr><td class="vn">Lạnh lẽo</td><td class="en">Cold and bleak</td><td class="en">Used for winter in the north</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- TAB: REGIONAL DIFFERENCES -->
+  <div class="tab-section" id="tab-regions">
+
+    <div class="cs-section">
+      <div class="cs-section-title">🗺️ Three Very Different Climates</div>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:20px;line-height:1.7;">Vietnam is 1,650km long — roughly London to Rome. The climate in Hanoi and Saigon can feel like different countries. The Central region adds a third pattern entirely.</p>
+
+      <table class="cs-table">
+        <thead><tr><th>Region</th><th>Season Pattern</th><th>Temperature Range</th><th>Standout Feature</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:#fff;">Miền Nam 🏙️</strong><br><span class="pr">Southern Vietnam (Saigon)</span></td>
+            <td><span class="cs-tag">2 seasons</span></td>
+            <td class="en">26–38°C year-round</td>
+            <td class="en">Hot always. Afternoon rain May–Oct. Zero winter.</td>
+          </tr>
+          <tr>
+            <td><strong style="color:#fff;">Miền Trung 🌊</strong><br><span class="pr">Central Vietnam (Đà Nẵng, Hội An, Huế)</span></td>
+            <td><span class="cs-tag blue">Reversed seasons</span></td>
+            <td class="en">18–36°C</td>
+            <td class="en">Dry when south is wet. Typhoon season Oct–Dec.</td>
+          </tr>
+          <tr>
+            <td><strong style="color:#fff;">Miền Bắc 🏛️</strong><br><span class="pr">Northern Vietnam (Hanoi)</span></td>
+            <td><span class="cs-tag green">4 seasons</span></td>
+            <td class="en">10–38°C</td>
+            <td class="en">Real winter Jan–Feb. Humid spring. Hot summers.</td>
+          </tr>
+          <tr>
+            <td><strong style="color:#fff;">Tây Nguyên ⛰️</strong><br><span class="pr">Central Highlands (Đà Lạt)</span></td>
+            <td><span class="cs-tag purple">Cool year-round</span></td>
+            <td class="en">15–24°C</td>
+            <td class="en">"City of eternal spring." Mist, flowers, pine trees.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>The reversed rainy season trick:</strong> When it's dry in Saigon (November–April), it's rainy in Central Vietnam. This is why Hội An floods in October–November — when Saigon is having its best weather. Always check the specific region before you travel.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">❄️ Hanoi's Four Seasons</div>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:16px;line-height:1.7;">Unlike Saigon, Hanoi has recognizable seasons — including a genuine cool winter. Temperatures can drop to 10°C in January, cold enough that locals bundle up in heavy coats.</p>
+      <table class="cs-table">
+        <thead><tr><th>Season</th><th>Vietnamese</th><th>Months</th><th>What It's Like</th></tr></thead>
+        <tbody>
+          <tr><td class="en">Spring</td><td class="vn">Mùa xuân</td><td class="en">Feb–Apr</td><td class="en">Warm and misty. Drizzle (mưa phùn). Cherry blossoms.</td></tr>
+          <tr><td class="en">Summer</td><td class="vn">Mùa hè</td><td class="en">May–Aug</td><td class="en">Hot and humid. Thunderstorms. Up to 38°C.</td></tr>
+          <tr><td class="en">Autumn</td><td class="vn">Mùa thu</td><td class="en">Sep–Nov</td><td class="en">Mild and pleasant. The best season in Hanoi.</td></tr>
+          <tr><td class="en">Winter</td><td class="vn">Mùa đông</td><td class="en">Dec–Jan</td><td class="en">Cool to cold. 10–18°C. Bring a real jacket.</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>Four season vocab:</strong> Xuân (spring) · Hè (summer) · Thu (autumn) · Đông (winter). These words appear in poetry, songs, and place names — worth knowing even if you're only visiting the south.</div>
+    </div>
+
+  </div>
+
+  <!-- TAB: USEFUL PHRASES -->
+  <div class="tab-section" id="tab-phrases">
+
+    <div class="cs-section">
+      <div class="cs-section-title">💬 Talking About Weather — Everyday Phrases</div>
+      <table class="cs-table">
+        <thead><tr><th>Vietnamese</th><th>Pronunciation</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="vn">Hôm nay trời nóng quá!</td><td class="pr">hom nay choy nawng kwah</td><td class="en">It's so hot today!</td></tr>
+          <tr><td class="vn">Trời đang mưa.</td><td class="pr">choy dahng muh-ah</td><td class="en">It's raining right now.</td></tr>
+          <tr><td class="vn">Trời sắp mưa rồi.</td><td class="pr">choy sahp muh-ah roy</td><td class="en">It's about to rain.</td></tr>
+          <tr><td class="vn">Thời tiết hôm nay thế nào?</td><td class="pr">thoy tyet hom nay theh now</td><td class="en">What's the weather like today?</td></tr>
+          <tr><td class="vn">Ngày mai trời có nắng không?</td><td class="pr">ngay my choy koh nahng khom</td><td class="en">Will it be sunny tomorrow?</td></tr>
+          <tr><td class="vn">Mát mẻ thật!</td><td class="pr">maht meh thut</td><td class="en">How pleasant! (about weather)</td></tr>
+          <tr><td class="vn">Nóng bức quá, chịu không nổi!</td><td class="pr">nawng buhk kwah</td><td class="en">It's unbearably hot!</td></tr>
+          <tr><td class="vn">Mưa to lắm.</td><td class="pr">muh-ah taw lahm</td><td class="en">It's raining really hard.</td></tr>
+          <tr><td class="vn">Trời có gió không?</td><td class="pr">choy koh yoh khom</td><td class="en">Is it windy?</td></tr>
+          <tr><td class="vn">Mang theo ô đi — trời sắp mưa.</td><td class="pr">mahng theh-oh oh dee</td><td class="en">Bring an umbrella — it's about to rain.</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>"Trời ơi!"</strong> (literally "Oh heavens!") is the most common Vietnamese exclamation — used for surprise, heat, frustration, delight, and everything in between. Say it when Saigon's afternoon rain hits you unprepared and you'll fit right in.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">🕐 Tense in Weather Sentences</div>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:16px;line-height:1.7;">Vietnamese doesn't change the verb — you add a time word or marker to show when something happens.</p>
+      <div class="pattern-box">
+        <strong>Past:</strong> <code>Hôm qua</code> trời mưa. — It rained yesterday.<br>
+        <strong>Present:</strong> Trời <code>đang</code> mưa. — It's raining right now.<br>
+        <strong>Near future:</strong> Trời <code>sắp</code> mưa rồi. — It's about to rain.<br>
+        <strong>Future:</strong> Ngày mai trời <code>sẽ</code> mưa. — It will rain tomorrow.<br>
+        <strong>Habitual:</strong> Ở đây <code>hay</code> mưa vào buổi chiều. — It often rains here in the afternoon.
+      </div>
+      <div class="cs-tip">💡 The verb "mưa" (rain) never changes. Only the time marker changes. This is one of the most freeing things about Vietnamese grammar — learn the markers, not conjugations.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">☔ Practical Rain Phrases</div>
+      <table class="cs-table">
+        <thead><tr><th>Vietnamese</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="vn">Mang theo ô</td><td class="en">Bring an umbrella</td></tr>
+          <tr><td class="vn">Mặc áo mưa vào</td><td class="en">Put on your raincoat</td></tr>
+          <tr><td class="vn">Trú mưa ở đây</td><td class="en">Take shelter from the rain here</td></tr>
+          <tr><td class="vn">Bị ướt hết rồi!</td><td class="en">I'm completely soaked!</td></tr>
+          <tr><td class="vn">Mưa tạnh chưa?</td><td class="en">Has the rain stopped yet?</td></tr>
+          <tr><td class="vn">Mưa tạnh rồi.</td><td class="en">The rain has stopped.</td></tr>
+          <tr><td class="vn">Chờ mưa tạnh đã</td><td class="en">Let's wait for the rain to stop first</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- TAB: TRAVEL TIPS -->
+  <div class="tab-section" id="tab-travel">
+
+    <div class="cs-section">
+      <div class="cs-section-title">✈️ Best Time to Visit — By Region</div>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:20px;line-height:1.7;">There is no single "best time to visit Vietnam" — it depends entirely on where you're going. Here's the honest breakdown.</p>
+
+      <div class="travel-grid">
+        <div class="travel-card">
+          <div class="travel-region">Saigon / Mekong Delta</div>
+          <div class="travel-best">✅ Best: Nov → Apr</div>
+          <div class="travel-avoid">⚠️ Avoid: Sep–Oct (peak flooding)</div>
+          <div class="travel-note">Dry season = clear skies, lower humidity. Rainy season mornings are still fine — just plan around afternoon showers.</div>
+        </div>
+        <div class="travel-card">
+          <div class="travel-region">Hội An / Đà Nẵng</div>
+          <div class="travel-best">✅ Best: Feb → Aug</div>
+          <div class="travel-avoid">⚠️ Avoid: Oct–Dec (typhoon + flood season)</div>
+          <div class="travel-note">Central Vietnam has reversed seasons. When Saigon is dry and pleasant, Hội An can be underwater.</div>
+        </div>
+        <div class="travel-card">
+          <div class="travel-region">Hanoi / Sapa</div>
+          <div class="travel-best">✅ Best: Oct → Apr</div>
+          <div class="travel-avoid">⚠️ Avoid: Jun–Aug (hot, humid, rainy)</div>
+          <div class="travel-note">Autumn (Oct–Nov) is stunning in Hanoi. Sapa in December can have frost — pack accordingly.</div>
+        </div>
+        <div class="travel-card">
+          <div class="travel-region">Đà Lạt</div>
+          <div class="travel-best">✅ Best: Nov → Apr</div>
+          <div class="travel-avoid">⚠️ Avoid: Jul–Aug (rainiest months)</div>
+          <div class="travel-note">Cool year-round. Always bring a light jacket — even in "summer." The flower festival is usually in December.</div>
+        </div>
+        <div class="travel-card">
+          <div class="travel-region">Phú Quốc</div>
+          <div class="travel-best">✅ Best: Nov → Apr</div>
+          <div class="travel-avoid">⚠️ Avoid: May–Oct (rough seas, rain)</div>
+          <div class="travel-note">Best beach weather aligns with Saigon's dry season. Monsoon months bring strong winds and murky water.</div>
+        </div>
+        <div class="travel-card">
+          <div class="travel-region">Hà Giang / North</div>
+          <div class="travel-best">✅ Best: Oct (buckwheat flowers)</div>
+          <div class="travel-avoid">⚠️ Avoid: Jun–Aug (landslides)</div>
+          <div class="travel-note">The famous tam giác mạch (buckwheat) flowers bloom October–November. Worth timing your trip around this.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">🎒 What to Pack — Weather Edition</div>
+      <table class="cs-table">
+        <thead><tr><th>Item</th><th>Vietnamese</th><th>When You Need It</th></tr></thead>
+        <tbody>
+          <tr><td class="en">Umbrella</td><td class="vn">Ô / dù</td><td class="en">Rainy season essential — street vendors sell them everywhere</td></tr>
+          <tr><td class="en">Rain poncho</td><td class="vn">Áo mưa</td><td class="en">Better than umbrella on a motorbike — buy locally for ~30,000₫</td></tr>
+          <tr><td class="en">Light jacket</td><td class="vn">Áo khoác nhẹ</td><td class="en">Air-con in restaurants and buses is arctic — always carry one</td></tr>
+          <tr><td class="en">Warm jacket</td><td class="vn">Áo ấm</td><td class="en">Hanoi winter, Sapa, Đà Lạt evenings</td></tr>
+          <tr><td class="en">Sunscreen</td><td class="vn">Kem chống nắng</td><td class="en">UV is intense year-round — especially on beaches and motorbikes</td></tr>
+          <tr><td class="en">Flip flops</td><td class="vn">Dép</td><td class="en">Rainy season — your good shoes will get soaked on flooded streets</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>The air-con trap:</strong> Vietnam's outdoor heat is extreme — so restaurants, buses, and shopping malls crank the air-con to near-freezing. Always carry a light layer even in 38°C heat. The locals do.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">✅ Ready to Test Yourself?</div>
+      <p style="color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.6;">You've read the cheat sheet — now put it to the test.</p>
+      <a href="quiz-weather.html" class="btn-quiz no-print" style="display:inline-flex;">🎯 Take the Weather & Seasons Quiz →</a>
+    </div>
+
+  </div>
+
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="../js/components.js"></script>
+<script src="../js/auth.js"></script>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>

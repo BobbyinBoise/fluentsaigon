@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather & Seasons Quiz — FluentSaigon</title>
+<meta name="description" content="Learn Vietnamese weather and seasons vocabulary. Vietnam has two seasons, not four — know what's coming and how to talk about it.">
+<link rel="stylesheet" href="../css/style.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<div id="nav-placeholder" data-page="subjects"></div>
+<div id="modal-placeholder"></div>
+<div id="paywall-placeholder"></div>
+
+<div class="quiz-page">
+
+  <div class="quiz-header">
+    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">← All Subjects</a>
+    <h1 style="margin:12px 0 4px;">🌦️ Weather & Seasons</h1>
+    <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">Vietnam has two seasons, not four. Know what's coming — and how to talk about it.</p>
+  </div>
+
+  <!-- CHEAT SHEET CALLOUT -->
+  <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">💡 PRO TIP</div>
+        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Vietnam's climate is nothing like home. Read the cheat sheet first — understanding the two-season system makes the vocabulary click instantly.</div>
+      </div>
+      <button onclick="openCheatSheet('cheatsheet-weather.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet →</button>
+    </div>
+  </div>
+
+  <!-- DIFFICULTY TABS -->
+  <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
+    <div style="display:flex;gap:8px;background:rgba(255,255,255,0.05);border-radius:12px;padding:6px;">
+      <button id="tab-beginner" onclick="setDifficulty('beginner')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:var(--gold);color:#000;">Beginner</button>
+      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate 🔒</button>
+      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert 🔒</button>
+    </div>
+  </div>
+
+  <!-- QUIZ CARD -->
+  <div style="max-width:680px;margin:0 auto;padding:0 16px;">
+    <div id="quizCard" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px 28px;">
+
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+        <span id="progressText" style="font-size:0.8rem;color:rgba(255,255,255,0.4);font-weight:700;">Question 1 of 10</span>
+        <span id="scoreText" style="font-size:0.8rem;color:var(--gold);font-weight:800;">Score: 0</span>
+      </div>
+      <div style="height:4px;background:rgba(255,255,255,0.1);border-radius:2px;margin-bottom:28px;">
+        <div id="progressBar" style="height:100%;background:var(--gold);border-radius:2px;width:10%;transition:width 0.3s ease;"></div>
+      </div>
+
+      <div id="categoryBadge" style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.1em;margin-bottom:12px;text-transform:uppercase;"></div>
+      <div id="questionText" style="font-size:2rem;font-weight:900;color:white;margin-bottom:8px;line-height:1.2;"></div>
+      <div id="questionSub" style="font-size:0.85rem;color:rgba(255,255,255,0.4);margin-bottom:28px;"></div>
+
+      <div id="choicesGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;"></div>
+      <div id="feedback" style="display:none;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;"></div>
+      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question →</button>
+    </div>
+
+    <div id="resultsCard" style="display:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 28px;text-align:center;">
+      <div style="font-size:3rem;margin-bottom:16px;">🎉</div>
+      <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</h2>
+      <div id="finalScore" style="font-size:1.1rem;color:var(--gold);font-weight:800;margin-bottom:8px;"></div>
+      <div id="resultsMsg" style="font-size:0.9rem;color:rgba(255,255,255,0.6);margin-bottom:28px;"></div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button onclick="restartQuiz()" style="padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Try Again</button>
+        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">← Back to All Subjects</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="../js/components.js"></script>
+<script src="../js/auth.js"></script>
+<script>
+
+function openCheatSheet(url) {
+  const isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
+  if (isMobile) { window.location.href = url; } else { window.open(url, '_blank'); }
+}
+
+const quizData = {
+  beginner: [
+    {cat:"The Two Seasons", en:"How many seasons does Vietnam have?", vn:"2 seasons", pr:"Mùa khô (dry) and Mùa mưa (rainy)",
+      sub:"Choose the correct answer",
+      d:[{vn:"4 seasons",pr:"Vietnam has no spring or autumn"},{vn:"3 seasons",pr:"not quite"},{vn:"1 season",pr:"it varies significantly by region"}]},
+    {cat:"The Two Seasons", en:"What does 'mùa mưa' mean?", vn:"Rainy season", pr:"mùa = season · mưa = rain",
+      sub:"What is the meaning?",
+      d:[{vn:"Dry season",pr:"dry season = mùa khô"},{vn:"Hot season",pr:"hot = nóng"},{vn:"Cool season",pr:"cool = mát"}]},
+    {cat:"The Two Seasons", en:"What does 'mùa khô' mean?", vn:"Dry season", pr:"mùa = season · khô = dry",
+      sub:"What is the meaning?",
+      d:[{vn:"Rainy season",pr:"rainy season = mùa mưa"},{vn:"Cold season",pr:"cold = lạnh"},{vn:"Windy season",pr:"wind = gió"}]},
+    {cat:"The Two Seasons", en:"When is the rainy season in Saigon (Southern Vietnam)?", vn:"May to November", pr:"Heavy afternoon downpours — usually over in an hour",
+      sub:"Choose the correct answer",
+      d:[{vn:"December to April",pr:"that's the dry season in Saigon"},{vn:"January to June",pr:"January is dry season in the south"},{vn:"All year round",pr:"Saigon has a clear dry season"}]},
+    {cat:"Weather Words", en:"How do you say 'rain' in Vietnamese?", vn:"Mưa", pr:"muh-ah — falling tone",
+      sub:"What is the Vietnamese word?",
+      d:[{vn:"Nắng",pr:"nắng = sunshine / sunny"},{vn:"Gió",pr:"gió = wind"},{vn:"Mây",pr:"mây = cloud"}]},
+    {cat:"Weather Words", en:"How do you say 'hot' in Vietnamese?", vn:"Nóng", pr:"nawng — flat tone",
+      sub:"What is the Vietnamese word?",
+      d:[{vn:"Lạnh",pr:"lạnh = cold"},{vn:"Mát",pr:"mát = cool / pleasant"},{vn:"Ẩm",pr:"ẩm = humid"}]},
+    {cat:"Weather Words", en:"How do you say 'cold' in Vietnamese?", vn:"Lạnh", pr:"lahng — heavy tone",
+      sub:"What is the Vietnamese word?",
+      d:[{vn:"Nóng",pr:"nóng = hot"},{vn:"Mát",pr:"mát = cool / pleasant"},{vn:"Khô",pr:"khô = dry"}]},
+    {cat:"Weather Words", en:"How do you say 'wind' in Vietnamese?", vn:"Gió", pr:"yoh (South) / zoh (North) — rising tone",
+      sub:"What is the Vietnamese word?",
+      d:[{vn:"Mưa",pr:"mưa = rain"},{vn:"Nắng",pr:"nắng = sunshine"},{vn:"Sấm",pr:"sấm = thunder"}]},
+    {cat:"Weather Words", en:"How do you say 'sunny / sunshine' in Vietnamese?", vn:"Nắng", pr:"nahng — rising tone",
+      sub:"What is the Vietnamese word?",
+      d:[{vn:"Mưa",pr:"mưa = rain"},{vn:"Mây",pr:"mây = cloud"},{vn:"Bão",pr:"bão = storm / typhoon"}]},
+    {cat:"Weather Words", en:"What does 'mây' mean?", vn:"Cloud", pr:"mây — falling tone",
+      sub:"What is the meaning?",
+      d:[{vn:"Rain",pr:"rain = mưa"},{vn:"Fog",pr:"fog = sương mù"},{vn:"Wind",pr:"wind = gió"}]},
+    {cat:"Simple Phrases", en:"How do you say 'It's hot today'?", vn:"Hôm nay trời nóng", pr:"hom nay = today · trời = sky/weather · nóng = hot",
+      sub:"Choose the correct phrase",
+      d:[{vn:"Hôm nay trời lạnh",pr:"lạnh = cold — wrong temperature"},{vn:"Ngày mai trời nóng",pr:"ngày mai = tomorrow — wrong day"},{vn:"Hôm nay mưa nhiều",pr:"mưa nhiều = raining a lot — different meaning"}]},
+    {cat:"Simple Phrases", en:"How do you say 'It's raining'?", vn:"Trời đang mưa", pr:"trời = sky/weather · đang = currently happening · mưa = rain",
+      sub:"Choose the correct phrase",
+      d:[{vn:"Trời sẽ mưa",pr:"sẽ = will — future tense"},{vn:"Trời đang nắng",pr:"nắng = sunny — opposite"},{vn:"Mưa to lắm",pr:"mưa to = heavy rain — slightly different"}]},
+    {cat:"Simple Phrases", en:"How do you ask 'What's the weather like today?'", vn:"Hôm nay thời tiết thế nào?", pr:"hôm nay = today · thời tiết = weather · thế nào = how is it?",
+      sub:"Choose the correct phrase",
+      d:[{vn:"Ngày mai thời tiết thế nào?",pr:"ngày mai = tomorrow — wrong day"},{vn:"Hôm nay trời thế nào?",pr:"also acceptable but less formal"},{vn:"Thời tiết ở đâu?",pr:"ở đâu = where — wrong question word"}]},
+    {cat:"Simple Phrases", en:"How do you say 'cool and pleasant' weather?", vn:"Mát mẻ", pr:"maht meh — both rising tones · very common phrase",
+      sub:"What is the Vietnamese phrase?",
+      d:[{vn:"Nóng bức",pr:"nóng bức = hot and stuffy"},{vn:"Lạnh lẽo",pr:"lạnh lẽo = cold and desolate"},{vn:"Ẩm ướt",pr:"ẩm ướt = damp and wet"}]},
+    {cat:"Simple Phrases", en:"What does 'trời' literally mean?", vn:"Sky / heaven / weather", pr:"trời is used for sky, weather, and 'God' in some contexts",
+      sub:"What is the meaning?",
+      d:[{vn:"Sun",pr:"sun = mặt trời (literally 'face of the sky')"},{vn:"Temperature",pr:"temperature = nhiệt độ"},{vn:"Season",pr:"season = mùa"}]},
+  ],
+  intermediate: [
+    {cat:"Regional Climate", en:"What is Hanoi's climate like compared to Saigon?", vn:"Hanoi has 4 seasons including a cool winter", pr:"Saigon = 2 seasons · Hanoi = 4 seasons with temps dropping to 10°C",
+      sub:"Choose the correct answer",
+      d:[{vn:"Hanoi is always hotter than Saigon",pr:"Hanoi is often cooler, especially in winter"},{vn:"Both cities have identical climates",pr:"they are very different — 1700km apart"},{vn:"Hanoi has 2 seasons like Saigon",pr:"Hanoi has distinct spring, summer, autumn and winter"}]},
+    {cat:"Regional Climate", en:"What is Đà Lạt famous for weather-wise?", vn:"Cool temperatures year-round — called 'the city of eternal spring'", pr:"Đà Lạt sits at 1,500m altitude — averages 18°C while Saigon hits 35°C",
+      sub:"Choose the correct answer",
+      d:[{vn:"Extreme heat and drought",pr:"Đà Lạt is famous for being cool, not hot"},{vn:"Heavy typhoons",pr:"typhoons hit the coast, not highland Đà Lạt"},{vn:"Freezing winters with snow",pr:"it doesn't snow in Đà Lạt — just cool and misty"}]},
+    {cat:"Regional Climate", en:"Which part of Vietnam is most affected by typhoons?", vn:"Central Vietnam — especially Đà Nẵng and Huế", pr:"Typhoon season: September to December for central Vietnam",
+      sub:"Choose the correct answer",
+      d:[{vn:"Saigon and the Mekong Delta",pr:"Saigon rarely gets direct typhoon hits"},{vn:"Hanoi and the north",pr:"the north gets some typhoons but central Vietnam is most exposed"},{vn:"The Central Highlands",pr:"highlands are inland — less typhoon impact"}]},
+    {cat:"Weather Vocabulary", en:"What does 'bão' mean?", vn:"Storm / typhoon", pr:"bão — rising tone · used for both storms and typhoons",
+      sub:"What is the meaning?",
+      d:[{vn:"Flood",pr:"flood = lũ lụt"},{vn:"Drought",pr:"drought = hạn hán"},{vn:"Lightning",pr:"lightning = sét"}]},
+    {cat:"Weather Vocabulary", en:"What does 'lũ lụt' mean?", vn:"Flood", pr:"lũ lụt — common in rainy season, especially Mekong Delta",
+      sub:"What is the meaning?",
+      d:[{vn:"Typhoon",pr:"typhoon = bão"},{vn:"Mudslide",pr:"mudslide = lở đất"},{vn:"Drought",pr:"drought = hạn hán"}]},
+    {cat:"Weather Vocabulary", en:"How do you say 'humid' in Vietnamese?", vn:"Ẩm ướt", pr:"uhm uht — questioning tone + falling tone",
+      sub:"What is the Vietnamese phrase?",
+      d:[{vn:"Khô hạn",pr:"khô hạn = dry / drought-like"},{vn:"Mát mẻ",pr:"mát mẻ = cool and pleasant"},{vn:"Nóng bức",pr:"nóng bức = hot and stuffy"}]},
+    {cat:"Weather Vocabulary", en:"What does 'nóng bức' mean?", vn:"Hot and stuffy / sweltering", pr:"nóng = hot · bức = stuffy, oppressive — used for the worst heat",
+      sub:"What is the meaning?",
+      d:[{vn:"Warm and nice",pr:"warm and nice = ấm áp"},{vn:"Hot and dry",pr:"hot and dry = nóng khô"},{vn:"Sunny and breezy",pr:"sunny and breezy = nắng có gió"}]},
+    {cat:"Weather Vocabulary", en:"How do you say 'temperature' in Vietnamese?", vn:"Nhiệt độ", pr:"nyeet doh — degrees Celsius used throughout Vietnam",
+      sub:"What is the Vietnamese word?",
+      d:[{vn:"Thời tiết",pr:"thời tiết = weather (general)"},{vn:"Khí hậu",pr:"khí hậu = climate (long-term)"},{vn:"Độ ẩm",pr:"độ ẩm = humidity level"}]},
+    {cat:"Weather Vocabulary", en:"What does 'sương mù' mean?", vn:"Fog / mist", pr:"sương = dew/mist · mù = blind/opaque · common in highlands",
+      sub:"What is the meaning?",
+      d:[{vn:"Heavy rain",pr:"heavy rain = mưa lớn / mưa to"},{vn:"Hail",pr:"hail = mưa đá"},{vn:"Snow",pr:"snow = tuyết — rare in Vietnam"}]},
+    {cat:"Weather Vocabulary", en:"How do you say 'it's going to rain' (future)?", vn:"Trời sẽ mưa", pr:"trời = weather · sẽ = will (future marker) · mưa = rain",
+      sub:"Choose the correct phrase",
+      d:[{vn:"Trời đang mưa",pr:"đang = currently — present tense"},{vn:"Trời mưa rồi",pr:"rồi = already — past tense"},{vn:"Trời hay mưa",pr:"hay = often — habitual"}]},
+    {cat:"Monsoon & Travel", en:"What is the Vietnamese word for monsoon?", vn:"Gió mùa", pr:"gió = wind · mùa = season — literally 'seasonal wind'",
+      sub:"What is the Vietnamese word?",
+      d:[{vn:"Mưa lớn",pr:"mưa lớn = heavy rain"},{vn:"Bão mùa",pr:"not a standard term"},{vn:"Mùa mưa",pr:"mùa mưa = rainy season — related but different"}]},
+    {cat:"Monsoon & Travel", en:"What does 'mang theo ô' mean?", vn:"Bring an umbrella", pr:"mang theo = bring along · ô = umbrella",
+      sub:"What is the meaning?",
+      d:[{vn:"Bring a raincoat",pr:"raincoat = áo mưa"},{vn:"It's raining heavily",pr:"heavy rain = mưa to / mưa lớn"},{vn:"Take shelter",pr:"take shelter = trú mưa"}]},
+    {cat:"Monsoon & Travel", en:"How do you say 'raincoat' in Vietnamese?", vn:"Áo mưa", pr:"áo = shirt/jacket · mưa = rain — motorbike rain ponchos are everywhere",
+      sub:"What is the Vietnamese word?",
+      d:[{vn:"Ô mưa",pr:"ô = umbrella — not raincoat"},{vn:"Áo lạnh",pr:"áo lạnh = cold weather jacket"},{vn:"Giày mưa",pr:"giày = shoes — not a coat"}]},
+    {cat:"Monsoon & Travel", en:"What does 'trú mưa' mean?", vn:"To shelter from the rain", pr:"trú = to shelter/hide · mưa = rain · very practical phrase",
+      sub:"What is the meaning?",
+      d:[{vn:"To enjoy the rain",pr:"enjoy = thích / tận hưởng"},{vn:"To get soaked",pr:"getting soaked = bị ướt"},{vn:"To predict rain",pr:"predict = dự báo"}]},
+    {cat:"Monsoon & Travel", en:"How do you say 'weather forecast' in Vietnamese?", vn:"Dự báo thời tiết", pr:"dự báo = forecast/prediction · thời tiết = weather",
+      sub:"What is the Vietnamese phrase?",
+      d:[{vn:"Thời tiết hôm nay",pr:"hôm nay = today — just 'today's weather'"},{vn:"Tin tức thời tiết",pr:"tin tức = news — weather news, not forecast"},{vn:"Báo cáo thời tiết",pr:"báo cáo = report — close but dự báo is standard"}]},
+  ],
+  expert: [
+    {cat:"Full Sentences", en:"How do you say 'The weather in Saigon is hot and humid all year'?", vn:"Thời tiết Sài Gòn nóng ẩm quanh năm", pr:"quanh năm = all year round · nóng ẩm = hot and humid",
+      sub:"Choose the correct sentence",
+      d:[{vn:"Thời tiết Sài Gòn lạnh quanh năm",pr:"lạnh = cold — opposite of Saigon's climate"},{vn:"Sài Gòn có bốn mùa rõ ràng",pr:"bốn mùa = four seasons — wrong for Saigon"},{vn:"Thời tiết Sài Gòn thay đổi nhiều",pr:"thay đổi = changes a lot — not accurate"}]},
+    {cat:"Full Sentences", en:"How do you say 'It rained a lot yesterday'?", vn:"Hôm qua trời mưa nhiều", pr:"hôm qua = yesterday · trời = weather · mưa = rain · nhiều = a lot",
+      sub:"Choose the correct sentence",
+      d:[{vn:"Hôm nay trời mưa nhiều",pr:"hôm nay = today — wrong day"},{vn:"Ngày mai trời sẽ mưa nhiều",pr:"ngày mai / sẽ = tomorrow/will — future tense"},{vn:"Hôm qua trời nắng đẹp",pr:"nắng đẹp = beautiful sunshine — opposite"}]},
+    {cat:"Full Sentences", en:"How do you say 'Is it going to be sunny tomorrow?'", vn:"Ngày mai trời có nắng không?", pr:"ngày mai = tomorrow · có...không = question structure · nắng = sunny",
+      sub:"Choose the correct sentence",
+      d:[{vn:"Ngày mai trời nắng đẹp",pr:"statement, not question"},{vn:"Hôm nay trời có nắng không?",pr:"hôm nay = today — wrong day"},{vn:"Ngày mai thời tiết mưa không?",pr:"grammatically weak — missing có"}]},
+    {cat:"Full Sentences", en:"How do you say 'I'm not used to this heat'?", vn:"Tôi không quen với cái nóng này", pr:"không quen = not used to · cái nóng = this heat · này = this",
+      sub:"Choose the correct sentence",
+      d:[{vn:"Tôi không thích cái lạnh này",pr:"lạnh = cold — different temperature"},{vn:"Tôi quen với cái nóng này rồi",pr:"quen rồi = already used to — opposite meaning"},{vn:"Tôi không biết trời nóng",pr:"không biết = don't know — wrong construction"}]},
+    {cat:"Full Sentences", en:"How do you say 'Bring an umbrella — it might rain this afternoon'?", vn:"Mang theo ô đi — chiều nay có thể mưa", pr:"chiều nay = this afternoon · có thể = might/maybe · mang theo = bring along",
+      sub:"Choose the correct sentence",
+      d:[{vn:"Mang theo ô đi — sáng nay có thể mưa",pr:"sáng nay = this morning — wrong time"},{vn:"Mang theo áo mưa — tối nay có thể mưa",pr:"áo mưa = raincoat · tối nay = tonight — different items/time"},{vn:"Để ô ở nhà — chiều nay có thể mưa",pr:"để ở nhà = leave at home — opposite advice!"}]},
+    {cat:"Climate & Regions", en:"What does 'khí hậu' mean and how does it differ from 'thời tiết'?", vn:"Khí hậu = climate (long-term patterns) vs thời tiết = weather (day-to-day)", pr:"khí hậu is used for 'Vietnam has a tropical climate' — thời tiết for 'what's the weather today'",
+      sub:"What is the difference?",
+      d:[{vn:"They mean exactly the same thing",pr:"they are related but used in different contexts"},{vn:"Khí hậu = indoor temperature, thời tiết = outdoor",pr:"no — both refer to outdoor conditions"},{vn:"Khí hậu = rainy season, thời tiết = dry season",pr:"no — they differ in time scale, not season"}]},
+    {cat:"Climate & Regions", en:"The phrase 'mùa khô' describes the dry season. What does 'hạn hán' mean?", vn:"Drought — a severe lack of rainfall", pr:"hạn hán is more extreme than mùa khô — used when the dry season causes water shortages",
+      sub:"What is the meaning?",
+      d:[{vn:"Dry season (same as mùa khô)",pr:"hạn hán is more extreme — an actual drought"},{vn:"Heat wave",pr:"heat wave = sóng nhiệt / đợt nắng nóng"},{vn:"Sandstorm",pr:"sandstorm = bão cát — not common in Vietnam"}]},
+    {cat:"Climate & Regions", en:"What does 'miền Bắc' mean in a weather context?", vn:"The North — where Vietnam has cooler winters", pr:"miền Bắc = Northern region · miền Nam = South · miền Trung = Central",
+      sub:"What is the meaning?",
+      d:[{vn:"The Mekong Delta region",pr:"Mekong = đồng bằng sông Cửu Long"},{vn:"The Central Highlands",pr:"Central Highlands = Tây Nguyên"},{vn:"The coastal region",pr:"coast = vùng ven biển"}]},
+    {cat:"Reading Weather", en:"A Vietnamese weather app says 'Mưa rào buổi chiều.' What does this mean?", vn:"Afternoon shower / rain in the afternoon", pr:"mưa rào = shower (short heavy rain) · buổi chiều = afternoon",
+      sub:"What does this weather description mean?",
+      d:[{vn:"Heavy rain all day",pr:"all day = cả ngày — mưa rào is a shower, not all-day rain"},{vn:"Morning drizzle",pr:"morning = buổi sáng · drizzle = mưa phùn"},{vn:"Thunderstorm at night",pr:"thunderstorm = mưa dông · night = buổi tối"}]},
+    {cat:"Reading Weather", en:"A forecast reads 'Nhiệt độ cao nhất 36°C, thấp nhất 27°C.' What does this mean?", vn:"High of 36°C, low of 27°C", pr:"cao nhất = highest · thấp nhất = lowest · a typical Saigon day",
+      sub:"What does this weather report say?",
+      d:[{vn:"Average temperature 36°C, minimum 27°C",pr:"cao nhất = highest (max), not average"},{vn:"Feels like 36°C, actual 27°C",pr:"feels like = cảm giác như — not used here"},{vn:"36°C in the north, 27°C in the south",pr:"no regional reference — these are max/min for one location"}]},
+    {cat:"Reading Weather", en:"Someone says 'Trời se lạnh, mặc thêm áo vào.' What are they telling you?", vn:"It's a bit chilly — put on an extra layer", pr:"se lạnh = slightly cold/chilly · mặc thêm = wear more · áo = clothing",
+      sub:"What does this mean?",
+      d:[{vn:"It's freezing — stay inside",pr:"se lạnh is mild chill, not freezing"},{vn:"Take off your jacket — it's warm",pr:"opposite — they're telling you to add clothing"},{vn:"The rain is light today",pr:"no mention of rain here"}]},
+    {cat:"Seasonal Travel", en:"A traveler asks 'Khi nào là thời điểm tốt nhất để đến Hội An?' What are they asking?", vn:"When is the best time to visit Hội An?", pr:"khi nào = when · thời điểm tốt nhất = best time · đến = to go to",
+      sub:"What is this person asking?",
+      d:[{vn:"How long does it take to get to Hội An?",pr:"how long = mất bao lâu — different question"},{vn:"What is the weather like in Hội An?",pr:"weather = thời tiết — different question"},{vn:"Is Hội An worth visiting?",pr:"worth it = có đáng không — different question"}]},
+    {cat:"Seasonal Travel", en:"What does 'tránh bão' mean for a traveler?", vn:"Avoid the typhoon / storm season", pr:"tránh = to avoid · bão = typhoon/storm · practical travel planning phrase",
+      sub:"What is the meaning?",
+      d:[{vn:"Chase storms for photos",pr:"chase = đuổi theo — opposite of tránh"},{vn:"Prepare for the storm",pr:"prepare = chuẩn bị — different verb"},{vn:"The typhoon has passed",pr:"has passed = đã qua rồi — different meaning"}]},
+    {cat:"Seasonal Travel", en:"Someone says 'Đà Lạt quanh năm mát mẻ, thích hợp để nghỉ dưỡng.' What does this mean?", vn:"Đà Lạt is cool all year — great for relaxation/retreat", pr:"quanh năm = all year · mát mẻ = cool/pleasant · thích hợp = suitable · nghỉ dưỡng = rest/resort",
+      sub:"What does this sentence mean?",
+      d:[{vn:"Đà Lạt is too cold for tourists",pr:"mát mẻ = pleasantly cool, not too cold"},{vn:"Đà Lạt has the best food in Vietnam",pr:"no mention of food here"},{vn:"Đà Lạt is crowded all year",pr:"crowded = đông đúc — not mentioned"}]},
+    {cat:"Seasonal Travel", en:"What does 'mùa hoa' refer to in the context of Vietnamese travel?", vn:"Flower season — when specific flowers bloom in certain regions", pr:"mùa hoa = flower season · e.g. Hà Giang buckwheat flowers (October), Đà Lạt flowers (December)",
+      sub:"What is the meaning?",
+      d:[{vn:"The rainy season in the mountains",pr:"rainy = mùa mưa — not flower-related"},{vn:"A Vietnamese spring festival",pr:"festival = lễ hội — mùa hoa is about blooming, not festivals"},{vn:"The harvest season",pr:"harvest = mùa thu hoạch — different season"}]},
+  ]
+};
+
+let currentDifficulty = 'beginner';
+let questions = [], current = 0, score = 0, answered = false;
+
+function setDifficulty(level) {
+  if ((level === 'intermediate' || level === 'expert') && checkPaywall(level)) { showPaywall(); return; }
+  currentDifficulty = level;
+  ['beginner','intermediate','expert'].forEach(l => {
+    const tab = document.getElementById('tab-' + l);
+    tab.style.background = l === level ? 'var(--gold)' : 'transparent';
+    tab.style.color = l === level ? '#000' : 'rgba(255,255,255,0.5)';
+  });
+  restartQuiz();
+}
+
+function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+function restartQuiz() {
+  questions = shuffle(quizData[currentDifficulty]).slice(0, 10);
+  current = 0; score = 0; answered = false;
+  document.getElementById('resultsCard').style.display = 'none';
+  document.getElementById('quizCard').style.display = 'block';
+  showQuestion();
+}
+
+function showQuestion() {
+  if (current >= questions.length) { showResults(); return; }
+  answered = false;
+  const q = questions[current];
+  document.getElementById('progressText').textContent = `Question ${current + 1} of ${questions.length}`;
+  document.getElementById('scoreText').textContent = `Score: ${score}`;
+  document.getElementById('progressBar').style.width = `${(current / questions.length) * 100}%`;
+  document.getElementById('categoryBadge').textContent = q.cat;
+  document.getElementById('questionText').textContent = q.en;
+  document.getElementById('questionSub').textContent = q.sub || 'What is this in Vietnamese?';
+
+  const choices = shuffle([{vn: q.vn, pr: q.pr}, ...q.d.slice(0, 3)]);
+  const grid = document.getElementById('choicesGrid');
+  grid.innerHTML = '';
+  choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.innerHTML = `<span class="choice-vn">${choice.vn}</span><span class="choice-pr">${choice.pr}</span>`;
+    btn.onclick = () => selectAnswer(btn, choice.vn, q.vn, q.pr);
+    btn.style.cssText = `padding:12px 10px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;color:white;font-family:var(--font-body);cursor:pointer;text-align:center;transition:background 0.15s;`;
+    grid.appendChild(btn);
+  });
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('nextBtn').style.display = 'none';
+}
+
+function selectAnswer(btn, selected, correct, correctPr) {
+  if (answered) return;
+  answered = true;
+  const feedback = document.getElementById('feedback');
+  document.getElementById('choicesGrid').querySelectorAll('button').forEach(b => {
+    b.style.cursor = 'default';
+    if (b.querySelector('.choice-vn').textContent === correct) {
+      b.style.background = 'rgba(46,204,113,0.3)'; b.style.borderColor = '#2ecc71';
+    }
+  });
+  if (selected === correct) {
+    score++;
+    btn.style.background = 'rgba(46,204,113,0.3)'; btn.style.borderColor = '#2ecc71';
+    feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(46,204,113,0.15);border-left:3px solid #2ecc71;color:#2ecc71;';
+    feedback.textContent = '✓ Correct! ' + getFact(questions[current]);
+  } else {
+    btn.style.background = 'rgba(231,76,60,0.3)'; btn.style.borderColor = '#e74c3c';
+    feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(231,76,60,0.15);border-left:3px solid #e74c3c;color:#e74c3c;';
+    feedback.textContent = `✗ The answer is: ${correct} — ${correctPr}`;
+  }
+  document.getElementById('scoreText').textContent = `Score: ${score}`;
+  document.getElementById('nextBtn').style.display = 'block';
+  current++;
+}
+
+function nextQuestion() { showQuestion(); }
+
+function getFact(q) {
+  const facts = {
+    'The Two Seasons': 'Saigon\'s rainy season runs May–November. Rain usually comes in the afternoon and clears within an hour — locals barely break stride.',
+    'Weather Words': 'Vietnamese weather words are highly logical. "Mưa to" = big rain, "mưa nhỏ" = small rain, "mưa rào" = shower. Once you know the core words, combinations are easy.',
+    'Simple Phrases': '"Trời" literally means sky or heaven — Vietnamese use it to describe all weather. "Trời ơi!" (Oh heavens!) is also the most common exclamation you\'ll hear.',
+    'Regional Climate': 'Vietnam spans 1,650km from north to south — roughly the distance from London to Rome. The climate difference between Hanoi and Saigon is dramatic.',
+    'Weather Vocabulary': 'The word "bão" covers everything from a tropical storm to a full typhoon. Always check the category level when warnings are issued.',
+    'Monsoon & Travel': 'Rainy season in Saigon doesn\'t mean ruined plans. Showers are intense but short — pack a cheap poncho (áo mưa) from any street vendor.',
+    'Full Sentences': 'Vietnamese tense is handled by time words — hôm qua (yesterday), hôm nay (today), ngày mai (tomorrow) — not verb changes. The verb stays the same.',
+    'Climate & Regions': 'Đà Lạt is Vietnam\'s escape hatch from the heat. At 1,500m altitude, it averages 18°C year-round while Saigon bakes at 35°C just 300km away.',
+    'Reading Weather': 'Vietnamese weather forecasts use the same Celsius system as most of the world. 36°C is a typical Saigon afternoon — 27°C at night is the "cool" relief.',
+    'Seasonal Travel': 'The best time to visit Vietnam depends entirely on which region. Saigon: November–April. Hanoi: October–April. Hội An: February–August. Central coast: avoid October–December.',
+  };
+  return facts[q.cat] || 'Keep going!';
+}
+
+function showResults() {
+  document.getElementById('quizCard').style.display = 'none';
+  document.getElementById('resultsCard').style.display = 'block';
+  const pct = score / questions.length;
+  document.getElementById('finalScore').textContent = `You scored ${score} out of ${questions.length}`;
+  const msgs = [
+    [0.9, "🏆 Xuất sắc lắm! (Outstanding!) You know your seasons!"],
+    [0.8, "🌟 Giỏi lắm! (Very good!) Almost weatherproof!"],
+    [0.6, "👍 Khá tốt! (Pretty good!) Keep at it!"],
+    [0,   "💪 Keep practicing! Bạn sẽ tiến bộ! (You will improve!)"]
+  ];
+  document.getElementById('resultsMsg').textContent = msgs.find(([t]) => pct >= t)[1];
+}
+
+document.addEventListener('DOMContentLoaded', restartQuiz);
+</script>
+
+<style>
+.choice-vn { display:block;font-size:0.95rem;font-weight:700;line-height:1.3; }
+.choice-pr { display:block;font-size:0.72rem;font-weight:500;color:rgba(255,255,255,0.4);margin-top:3px;font-style:italic; }
+</style>
+
+</body>
+</html>
