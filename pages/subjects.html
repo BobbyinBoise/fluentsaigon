@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All Subjects — FluentSaigon</title>
-<meta name="description" content="Choose a Vietnamese subject to study. Numbers and Dates are free. Unlock all 12+ subjects with Pro.">
+<meta name="description" content="Choose a Vietnamese subject to study. Numbers, Dates, Phrases, and Alphabet are free. Unlock all subjects with Pro.">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇻🇳</text></svg>">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -22,6 +22,7 @@
 
 <div class="section" style="padding-top:32px;">
 
+  <!-- FREE SECTION -->
   <div style="margin-bottom:32px;">
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
       <div style="height:1px;flex:1;background:rgba(255,255,255,0.1);"></div>
@@ -66,9 +67,22 @@
         </div>
       </div>
 
+      <!-- ALPHABET CARD — moved to Free -->
+      <div class="subject-card" style="display:flex;flex-direction:column;">
+        <span class="badge badge-free">Free</span>
+        <div class="icon">🔤</div>
+        <h3>Alphabet & Tones</h3>
+        <p>Vietnamese has 6 tones. This is where most learners give up. Don't be most learners.</p>
+        <div style="margin-top:auto;padding-top:16px;display:flex;gap:8px;">
+          <a href="quiz-alphabet.html" style="flex:1;text-align:center;background:var(--gold);color:#000;padding:8px 10px;border-radius:8px;font-size:0.75rem;font-weight:800;text-decoration:none;line-height:1.4;">🎯<br>Quiz →</a>
+          <button onclick="openCheatSheet('cheatsheet-alphabet.html')" style="flex:1;text-align:center;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8);padding:8px 10px;border-radius:8px;font-size:0.75rem;font-weight:800;border:1px solid rgba(255,255,255,0.15);cursor:pointer;font-family:var(--font-body);line-height:1.4;">📄<br>Cheat Sheet</button>
+        </div>
+      </div>
+
     </div>
   </div>
 
+  <!-- PRO SECTION -->
   <div>
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
       <div style="height:1px;flex:1;background:rgba(255,255,255,0.1);"></div>
@@ -76,12 +90,6 @@
       <div style="height:1px;flex:1;background:rgba(255,255,255,0.1);"></div>
     </div>
     <div class="subject-grid">
-      <a href="quiz-alphabet.html" class="subject-card">
-        <span class="badge badge-pro">Pro</span>
-        <div class="icon">🔤</div>
-        <h3>Alphabet & Tones</h3>
-        <p>Vietnamese has 6 tones. This is where most learners give up. Don't be most learners.</p>
-      </a>
       <a href="quiz-food.html" class="subject-card">
         <span class="badge badge-pro">Pro</span>
         <div class="icon">🍜</div>
@@ -123,6 +131,12 @@
         <div class="icon">🏥</div>
         <h3>Health & Emergencies</h3>
         <p>The vocabulary you hope you never need, but absolutely should have.</p>
+      </a>
+      <a href="quiz-weather.html" class="subject-card">
+        <span class="badge badge-pro">Pro</span>
+        <div class="icon">🌦️</div>
+        <h3>Weather & Seasons</h3>
+        <p>Vietnam has two seasons, not four. Know what's coming — and how to talk about it.</p>
       </a>
     </div>
   </div>

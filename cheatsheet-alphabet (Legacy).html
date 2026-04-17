@@ -149,27 +149,6 @@
 .tone-desc { font-size: 0.82rem; color: rgba(255,255,255,0.7); line-height: 1.5; }
 .tone-mark { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-top: 6px; font-style: italic; }
 
-/* Tone name pronunciation cards */
-.tone-name-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-top: 8px; }
-.tone-name-card {
-  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px; padding: 18px 16px; display: flex; flex-direction: column; gap: 6px;
-}
-.tnc-label { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
-.tnc-name { font-size: 1.6rem; font-weight: 900; color: #fff; line-height: 1; }
-.tnc-pronun { font-size: 0.85rem; font-style: italic; color: rgba(255,255,255,0.45); }
-.tnc-desc { font-size: 0.78rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
-.tnc-badge {
-  display: inline-block; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.08em;
-  text-transform: uppercase; padding: 3px 8px; border-radius: 4px; margin-top: 2px; width: fit-content;
-}
-.tnc-badge.flat   { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); }
-.tnc-badge.falling { background: rgba(100,160,255,0.12); color: #64a0ff; }
-.tnc-badge.rising  { background: rgba(46,204,113,0.12); color: #2ecc71; }
-.tnc-badge.questioning { background: rgba(245,197,24,0.12); color: var(--gold); }
-.tnc-badge.broken  { background: rgba(155,89,182,0.15); color: #9b59b6; }
-.tnc-badge.heavy   { background: rgba(231,76,60,0.12); color: #e74c3c; }
-
 </style>
 </head>
 <body>
@@ -261,69 +240,10 @@
       <div class="cs-tip">💡 <strong>Southern Vietnam shortcut:</strong> In Saigon, the Ngã (broken) tone often sounds identical to the Hỏi (questioning) tone. Many southerners merge them. So you effectively have 5 distinct sounds to learn, not 6.</div>
     </div>
 
-    <!-- NEW: TONE NAME PRONUNCIATION SECTION -->
-    <div class="cs-section">
-      <div class="cs-section-title">🗣️ How to Say the Tone Names</div>
-      <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:20px;line-height:1.7;">Each tone has an official Vietnamese name — and each name is itself spoken with a tone. This is worth memorizing: teachers, tutors, and language resources all use these names, and each one <em style="color:rgba(255,255,255,0.85);">demonstrates itself</em> when you say it correctly.</p>
-
-      <div class="tone-name-grid">
-
-        <div class="tone-name-card">
-          <div class="tnc-label">Tone ①</div>
-          <div class="tnc-name">Ngang</div>
-          <div class="tnc-pronun">ngang — "ngang" (flat, steady)</div>
-          <div class="tnc-desc">Said with the flat tone — level mid pitch, no rise or fall. The name sounds exactly like the tone it describes.</div>
-          <div class="tnc-badge flat">Flat tone</div>
-        </div>
-
-        <div class="tone-name-card">
-          <div class="tnc-label">Tone ②</div>
-          <div class="tnc-name">Huyền</div>
-          <div class="tnc-pronun">hwee-en — low and falling</div>
-          <div class="tnc-desc">Said with the falling tone — start low, let it drop gently. The name itself demonstrates the tone.</div>
-          <div class="tnc-badge falling">Falling tone</div>
-        </div>
-
-        <div class="tone-name-card">
-          <div class="tnc-label">Tone ③</div>
-          <div class="tnc-name">Sắc</div>
-          <div class="tnc-pronun">sak — short and rising</div>
-          <div class="tnc-desc">Said with the rising tone — short, sharp, climbs up. The name has the rising mark on the A (ắ).</div>
-          <div class="tnc-badge rising">Rising tone</div>
-        </div>
-
-        <div class="tone-name-card">
-          <div class="tnc-label">Tone ④</div>
-          <div class="tnc-name">Hỏi</div>
-          <div class="tnc-pronun">hoy — dips then rises</div>
-          <div class="tnc-desc">Said with the questioning tone — dips then lifts back up. Sounds like a confused "huh?" It means "to ask."</div>
-          <div class="tnc-badge questioning">Questioning tone</div>
-        </div>
-
-        <div class="tone-name-card">
-          <div class="tnc-label">Tone ⑤</div>
-          <div class="tnc-name">Ngã</div>
-          <div class="tnc-pronun">nga — rises then breaks</div>
-          <div class="tnc-desc">Said with the broken tone — rises and catches with a creaky glottal stop. In Southern Vietnamese, sounds like Hỏi.</div>
-          <div class="tnc-badge broken">Broken tone</div>
-        </div>
-
-        <div class="tone-name-card">
-          <div class="tnc-label">Tone ⑥</div>
-          <div class="tnc-name">Nặng</div>
-          <div class="tnc-pronun">nuhng — low, heavy, short</div>
-          <div class="tnc-desc">Said with the heavy tone — drops low and stops abruptly. The name means "heavy." It sounds exactly like what it is.</div>
-          <div class="tnc-badge heavy">Heavy tone</div>
-        </div>
-
-      </div>
-      <div class="cs-tip">💡 <strong>The self-referential trick:</strong> Every tone name, said correctly, demonstrates the tone it names. Say <strong>Nặng</strong> with a heavy falling drop. Say <strong>Sắc</strong> with a sharp rise. Say <strong>Hỏi</strong> with a dip-then-lift. The names teach themselves.</div>
-    </div>
-
     <div class="cs-section">
       <div class="cs-section-title">⚡ Why Tones Matter — One Syllable, Six Meanings</div>
       <table class="cs-table">
-        <thead><tr><th>Word</th><th>Tone Name</th><th>Mark</th><th>Pronunciation</th><th>Meaning</th></tr></thead>
+        <thead><tr><th>Word</th><th>Tone</th><th>Mark</th><th>Pronunciation</th><th>Meaning</th></tr></thead>
         <tbody>
           <tr><td class="vn">ma</td><td>Ngang (flat)</td><td>none</td><td class="pr">mah</td><td>Ghost</td></tr>
           <tr><td class="vn">mà</td><td>Huyền (falling)</td><td>`</td><td class="pr">mah ↘</td><td>But / however</td></tr>
@@ -339,7 +259,7 @@
     <div class="cs-section">
       <div class="cs-section-title">🔑 More Tone Examples You'll Actually Use</div>
       <table class="cs-table">
-        <thead><tr><th>Word</th><th>Pronunciation</th><th>Meaning</th><th>Tone Name</th></tr></thead>
+        <thead><tr><th>Word</th><th>Pronunciation</th><th>Meaning</th><th>Tone</th></tr></thead>
         <tbody>
           <tr><td class="vn">bạn</td><td class="pr">bahn (heavy)</td><td>Friend / you</td><td><span class="cs-tag red">Nặng .</span></td></tr>
           <tr><td class="vn">bán</td><td class="pr">bahn (rising)</td><td>To sell</td><td><span class="cs-tag green">Sắc ´</span></td></tr>
