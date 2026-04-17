@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Family & People Quiz — FluentSaigon</title>
-<meta name="description" content="Family vocabulary and the pronoun system that makes Vietnamese relationships make sense.">
+<meta name="description" content="Learn Vietnamese family vocabulary and the pronoun system. Understand how Vietnamese people address each other.">
 <link rel="stylesheet" href="../css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇻🇳</text></svg>">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+
 <div id="nav-placeholder" data-page="subjects"></div>
 <div id="modal-placeholder"></div>
 <div id="paywall-placeholder"></div>
@@ -22,59 +22,275 @@
     <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">Vietnamese address terms are unique — getting them right shows real respect.</p>
   </div>
 
+  <!-- CHEAT SHEET CALLOUT -->
+  <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">💡 PRO TIP</div>
+        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Vietnamese family terms double as pronouns — understanding this system is the key to sounding natural rather than robotic.</div>
+      </div>
+      <button onclick="openCheatSheet('cheatsheet-family.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet →</button>
+    </div>
+  </div>
+
+  <!-- DIFFICULTY TABS -->
+  <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
+    <div style="display:flex;gap:8px;background:rgba(255,255,255,0.05);border-radius:12px;padding:6px;">
+      <button id="tab-beginner" onclick="setDifficulty('beginner')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:var(--gold);color:#000;">Beginner</button>
+      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate 🔒</button>
+      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert 🔒</button>
+    </div>
+  </div>
+
+  <!-- QUIZ CARD -->
   <div style="max-width:680px;margin:0 auto;padding:0 16px;">
+    <div id="quizCard" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px 28px;">
 
-    <!-- PRO LOCK CARD -->
-    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:20px;padding:40px 32px;text-align:center;margin-bottom:24px;">
-      <div style="font-size:3rem;margin-bottom:16px;">⭐</div>
-      <div style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;">Pro Subject</div>
-      <h2 style="font-family:var(--font-display);font-size:2rem;letter-spacing:0.03em;margin-bottom:12px;">Unlock Family & People</h2>
-      <p style="color:rgba(255,255,255,0.6);font-size:0.95rem;line-height:1.7;max-width:440px;margin:0 auto 28px;">Understanding how Vietnamese people address each other — in families and in public — is the key to sounding natural rather than robotic. This subject unlocks the social side of the language.</p>
-
-      <!-- WHAT'S INSIDE -->
-      <div style="background:rgba(0,0,0,0.2);border-radius:12px;padding:20px 24px;margin-bottom:28px;text-align:left;">
-        <div style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;">What's inside</div>
-        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">Full family vocabulary — parents, siblings, grandparents</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">The pronoun system explained in plain English</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">How to introduce your family</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">Relationship and social vocabulary</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">Cheat sheet included</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+        <span id="progressText" style="font-size:0.8rem;color:rgba(255,255,255,0.4);font-weight:700;">Question 1 of 10</span>
+        <span id="scoreText" style="font-size:0.8rem;color:var(--gold);font-weight:800;">Score: 0</span>
+      </div>
+      <div style="height:4px;background:rgba(255,255,255,0.1);border-radius:2px;margin-bottom:28px;">
+        <div id="progressBar" style="height:100%;background:var(--gold);border-radius:2px;width:10%;transition:width 0.3s ease;"></div>
       </div>
 
-      <!-- DIFFICULTY PREVIEW -->
-      <div style="display:flex;gap:8px;margin-bottom:28px;">
-        <div style="flex:1;background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.3);border-radius:10px;padding:12px 8px;text-align:center;">
-          <div style="font-size:0.7rem;font-weight:800;color:#2ecc71;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Beginner</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">15 questions</div>
-        </div>
-        <div style="flex:1;background:rgba(245,197,24,0.1);border:1px solid rgba(245,197,24,0.3);border-radius:10px;padding:12px 8px;text-align:center;">
-          <div style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Intermediate</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">15 questions</div>
-        </div>
-        <div style="flex:1;background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.3);border-radius:10px;padding:12px 8px;text-align:center;">
-          <div style="font-size:0.7rem;font-weight:800;color:#e74c3c;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Expert</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">15 questions</div>
-        </div>
-      </div>
+      <div id="categoryBadge" style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.1em;margin-bottom:12px;text-transform:uppercase;"></div>
+      <div id="questionText" style="font-size:2rem;font-weight:900;color:white;margin-bottom:8px;line-height:1.2;"></div>
+      <div id="questionSub" style="font-size:0.85rem;color:rgba(255,255,255,0.4);margin-bottom:28px;">What is this in Vietnamese?</div>
 
-      <!-- CTA BUTTONS -->
-      <a href="pricing.html" style="display:block;width:100%;padding:16px;background:var(--gold);color:#000;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;text-decoration:none;margin-bottom:12px;box-sizing:border-box;">Start 7-Day Free Trial →</a>
-      <a href="pricing.html" style="display:block;width:100%;padding:14px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.12);border-radius:10px;font-family:var(--font-body);font-weight:700;font-size:0.85rem;text-decoration:none;box-sizing:border-box;">See all Pro plans →</a>
-      <p style="color:rgba(255,255,255,0.3);font-size:0.75rem;margin-top:12px;">No credit card required · Cancel anytime · 30-day money-back guarantee</p>
+      <div id="choicesGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;"></div>
+      <div id="feedback" style="display:none;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;"></div>
+      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question →</button>
     </div>
 
-    <!-- FREE SUBJECTS REMINDER -->
-    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px;text-align:center;">
-      <div style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">Not ready to upgrade?</div>
-      <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin-bottom:16px;line-height:1.6;">Numbers and Phrases & Greetings are completely free — no account needed.</p>
-      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
-        <a href="quiz-numbers.html" style="background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.1);">🔢 Numbers Quiz</a>
-        <a href="quiz-phrases.html" style="background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.1);">👋 Phrases Quiz</a>
-        <a href="quiz-dates.html" style="background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.1);">📅 Dates Quiz</a>
+    <div id="resultsCard" style="display:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 28px;text-align:center;">
+      <div style="font-size:3rem;margin-bottom:16px;">🎉</div>
+      <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</h2>
+      <div id="finalScore" style="font-size:1.1rem;color:var(--gold);font-weight:800;margin-bottom:8px;"></div>
+      <div id="resultsMsg" style="font-size:0.9rem;color:rgba(255,255,255,0.6);margin-bottom:28px;"></div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button onclick="restartQuiz()" style="padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Try Again</button>
+        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">← Back to All Subjects</a>
       </div>
     </div>
-
   </div>
 </div>
 
 <div id="footer-placeholder"></div>
 <script src="../js/components.js"></script>
 <script src="../js/auth.js"></script>
+<script>
+
+function openCheatSheet(url) {
+  const isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
+  if (isMobile) { window.location.href = url; } else { window.open(url, '_blank'); }
+}
+
+const quizData = {
+  beginner: [
+    {cat:"Immediate Family", en:"Mother", vn:"mẹ", pr:"meh",
+      d:[{vn:"bố / ba",pr:"boh / bah"},{vn:"chị",pr:"chee"},{vn:"bà",pr:"bah"}]},
+    {cat:"Immediate Family", en:"Father", vn:"bố / ba", pr:"boh / bah",
+      d:[{vn:"mẹ",pr:"meh"},{vn:"anh",pr:"anh"},{vn:"ông",pr:"ohng"}]},
+    {cat:"Immediate Family", en:"Older sister", vn:"chị", pr:"chee",
+      d:[{vn:"em gái",pr:"em gai"},{vn:"anh",pr:"anh"},{vn:"mẹ",pr:"meh"}]},
+    {cat:"Immediate Family", en:"Older brother", vn:"anh", pr:"anh",
+      d:[{vn:"em trai",pr:"em chai"},{vn:"chị",pr:"chee"},{vn:"bố",pr:"boh"}]},
+    {cat:"Immediate Family", en:"Younger sibling (boy or girl)", vn:"em", pr:"em",
+      d:[{vn:"anh",pr:"anh"},{vn:"chị",pr:"chee"},{vn:"con",pr:"kawn"}]},
+    {cat:"Immediate Family", en:"Child / children", vn:"con", pr:"kawn",
+      d:[{vn:"em",pr:"em"},{vn:"cháu",pr:"chow"},{vn:"bé",pr:"beh"}]},
+    {cat:"Immediate Family", en:"Husband", vn:"chồng", pr:"chohng",
+      d:[{vn:"vợ",pr:"vuh"},{vn:"bạn trai",pr:"bahn chai"},{vn:"anh",pr:"anh"}]},
+    {cat:"Immediate Family", en:"Wife", vn:"vợ", pr:"vuh",
+      d:[{vn:"chồng",pr:"chohng"},{vn:"bạn gái",pr:"bahn gai"},{vn:"chị",pr:"chee"}]},
+    {cat:"Extended Family", en:"Grandmother", vn:"bà", pr:"bah",
+      d:[{vn:"ông",pr:"ohng"},{vn:"mẹ",pr:"meh"},{vn:"dì",pr:"dee"}]},
+    {cat:"Extended Family", en:"Grandfather", vn:"ông", pr:"ohng",
+      d:[{vn:"bà",pr:"bah"},{vn:"bố",pr:"boh"},{vn:"chú",pr:"choo"}]},
+    {cat:"Extended Family", en:"Aunt (mother's younger sister)", vn:"dì", pr:"dee",
+      d:[{vn:"cô",pr:"koh"},{vn:"bà",pr:"bah"},{vn:"chị",pr:"chee"}]},
+    {cat:"Extended Family", en:"Uncle (father's younger brother)", vn:"chú", pr:"choo",
+      d:[{vn:"cậu",pr:"koh"},{vn:"ông",pr:"ohng"},{vn:"anh",pr:"anh"}]},
+    {cat:"Extended Family", en:"Niece or nephew", vn:"cháu", pr:"chow",
+      d:[{vn:"con",pr:"kawn"},{vn:"em",pr:"em"},{vn:"bé",pr:"beh"}]},
+    {cat:"Extended Family", en:"Cousin", vn:"anh/chị/em họ", pr:"anh/chee/em haw",
+      d:[{vn:"cháu",pr:"chow"},{vn:"anh em",pr:"anh em"},{vn:"bạn bè",pr:"bahn beh"}]},
+    {cat:"Relationships", en:"Boyfriend", vn:"bạn trai", pr:"bahn chai",
+      d:[{vn:"bạn gái",pr:"bahn gai"},{vn:"chồng",pr:"chohng"},{vn:"bạn",pr:"bahn"}]},
+  ],
+  intermediate: [
+    {cat:"Pronouns as Family Terms", en:"I (neutral, general use)", vn:"tôi", pr:"toy",
+      d:[{vn:"em",pr:"em"},{vn:"mình",pr:"ming"},{vn:"tao",pr:"tow"}]},
+    {cat:"Pronouns as Family Terms", en:"I (when speaking to elders)", vn:"em", pr:"em",
+      d:[{vn:"tôi",pr:"toy"},{vn:"mình",pr:"ming"},{vn:"con",pr:"kawn"}]},
+    {cat:"Pronouns as Family Terms", en:"You (addressing older male)", vn:"anh", pr:"anh",
+      d:[{vn:"chị",pr:"chee"},{vn:"bạn",pr:"bahn"},{vn:"em",pr:"em"}]},
+    {cat:"Pronouns as Family Terms", en:"You (addressing older female)", vn:"chị", pr:"chee",
+      d:[{vn:"anh",pr:"anh"},{vn:"bạn",pr:"bahn"},{vn:"cô",pr:"koh"}]},
+    {cat:"Pronouns as Family Terms", en:"You (addressing someone your age)", vn:"bạn", pr:"bahn",
+      d:[{vn:"anh",pr:"anh"},{vn:"chị",pr:"chee"},{vn:"em",pr:"em"}]},
+    {cat:"Pronouns as Family Terms", en:"You (addressing much older male — uncle age)", vn:"chú", pr:"choo",
+      d:[{vn:"ông",pr:"ohng"},{vn:"anh",pr:"anh"},{vn:"cậu",pr:"koh"}]},
+    {cat:"Pronouns as Family Terms", en:"You (addressing much older female — auntie age)", vn:"cô", pr:"koh",
+      d:[{vn:"bà",pr:"bah"},{vn:"chị",pr:"chee"},{vn:"dì",pr:"dee"}]},
+    {cat:"Pronouns as Family Terms", en:"You (addressing elderly man)", vn:"ông", pr:"ohng",
+      d:[{vn:"bà",pr:"bah"},{vn:"chú",pr:"choo"},{vn:"anh",pr:"anh"}]},
+    {cat:"Pronouns as Family Terms", en:"You (addressing elderly woman)", vn:"bà", pr:"bah",
+      d:[{vn:"ông",pr:"ohng"},{vn:"cô",pr:"koh"},{vn:"chị",pr:"chee"}]},
+    {cat:"Introducing Family", en:"This is my mother", vn:"Đây là mẹ tôi", pr:"day lah meh toy",
+      d:[{vn:"Đây là bố tôi",pr:"day lah boh toy"},{vn:"Mẹ tôi tên là...",pr:"meh toy ten lah"},{vn:"Tôi có mẹ",pr:"toy kaw meh"}]},
+    {cat:"Introducing Family", en:"My family has four people", vn:"Gia đình tôi có bốn người", pr:"yah ding toy kaw bone nguh-ee",
+      d:[{vn:"Gia đình tôi lớn",pr:"yah ding toy luhn"},{vn:"Tôi có hai anh chị em",pr:"toy kaw hi anh chee em"},{vn:"Gia đình tôi nhỏ",pr:"yah ding toy nyaw"}]},
+    {cat:"Introducing Family", en:"I have two siblings", vn:"Tôi có hai anh chị em", pr:"toy kaw hi anh chee em",
+      d:[{vn:"Tôi là con một",pr:"toy lah kawn moht"},{vn:"Tôi có ba anh chị em",pr:"toy kaw bah anh chee em"},{vn:"Tôi không có anh chị em",pr:"toy khome kaw anh chee em"}]},
+    {cat:"Introducing Family", en:"I'm an only child", vn:"Tôi là con một", pr:"toy lah kawn moht",
+      d:[{vn:"Tôi có anh chị em",pr:"toy kaw anh chee em"},{vn:"Tôi là con cả",pr:"toy lah kawn kah"},{vn:"Tôi là con út",pr:"toy lah kawn oot"}]},
+    {cat:"Introducing Family", en:"I'm the oldest child", vn:"Tôi là con cả", pr:"toy lah kawn kah",
+      d:[{vn:"Tôi là con út",pr:"toy lah kawn oot"},{vn:"Tôi là con một",pr:"toy lah kawn moht"},{vn:"Tôi là con giữa",pr:"toy lah kawn yuh-ah"}]},
+    {cat:"Introducing Family", en:"I'm the youngest child", vn:"Tôi là con út", pr:"toy lah kawn oot",
+      d:[{vn:"Tôi là con cả",pr:"toy lah kawn kah"},{vn:"Tôi là con một",pr:"toy lah kawn moht"},{vn:"Tôi là con giữa",pr:"toy lah kawn yuh-ah"}]},
+  ],
+  expert: [
+    {cat:"Marriage & Relationships", en:"Are you married?", vn:"Bạn có gia đình chưa?", pr:"bahn kaw yah ding chuh-ah",
+      d:[{vn:"Bạn có bạn trai/gái không?",pr:"bahn kaw bahn chai/gai khome"},{vn:"Bạn đã kết hôn chưa?",pr:"bahn dah ket hohn chuh-ah"},{vn:"Gia đình bạn có mấy người?",pr:"yah ding bahn kaw may nguh-ee"}]},
+    {cat:"Marriage & Relationships", en:"I'm married", vn:"Tôi đã kết hôn rồi", pr:"toy dah ket hohn roy",
+      d:[{vn:"Tôi còn độc thân",pr:"toy kawn dawk thun"},{vn:"Tôi có bạn trai",pr:"toy kaw bahn chai"},{vn:"Tôi đã ly hôn",pr:"toy dah lee hohn"}]},
+    {cat:"Marriage & Relationships", en:"I'm single", vn:"Tôi còn độc thân", pr:"toy kawn dawk thun",
+      d:[{vn:"Tôi đã kết hôn",pr:"toy dah ket hohn"},{vn:"Tôi có bạn gái",pr:"toy kaw bahn gai"},{vn:"Tôi đã ly hôn",pr:"toy dah lee hohn"}]},
+    {cat:"Marriage & Relationships", en:"I'm divorced", vn:"Tôi đã ly hôn", pr:"toy dah lee hohn",
+      d:[{vn:"Tôi đã kết hôn",pr:"toy dah ket hohn"},{vn:"Tôi còn độc thân",pr:"toy kawn dawk thun"},{vn:"Tôi góa vợ/chồng",pr:"toy gwah vuh/chohng"}]},
+    {cat:"Children", en:"Do you have children?", vn:"Bạn có con chưa?", pr:"bahn kaw kawn chuh-ah",
+      d:[{vn:"Con bạn mấy tuổi?",pr:"kawn bahn may too-oy"},{vn:"Bạn muốn có con không?",pr:"bahn moo-uhn kaw kawn khome"},{vn:"Con bạn tên gì?",pr:"kawn bahn ten yee"}]},
+    {cat:"Children", en:"I have one child", vn:"Tôi có một đứa con", pr:"toy kaw moht duh-ah kawn",
+      d:[{vn:"Tôi chưa có con",pr:"toy chuh-ah kaw kawn"},{vn:"Tôi có hai đứa con",pr:"toy kaw hi duh-ah kawn"},{vn:"Con tôi còn nhỏ",pr:"kawn toy kawn nyaw"}]},
+    {cat:"Children", en:"How old is your child?", vn:"Con bạn mấy tuổi?", pr:"kawn bahn may too-oy",
+      d:[{vn:"Bạn có con chưa?",pr:"bahn kaw kawn chuh-ah"},{vn:"Con bạn tên gì?",pr:"kawn bahn ten yee"},{vn:"Con bạn học lớp mấy?",pr:"kawn bahn hawk lup may"}]},
+    {cat:"Vietnamese Family Culture", en:"Family (the whole unit)", vn:"gia đình", pr:"yah ding",
+      d:[{vn:"họ hàng",pr:"haw hahng"},{vn:"anh chị em",pr:"anh chee em"},{vn:"bố mẹ",pr:"boh meh"}]},
+    {cat:"Vietnamese Family Culture", en:"Relatives / extended family", vn:"họ hàng", pr:"haw hahng",
+      d:[{vn:"gia đình",pr:"yah ding"},{vn:"bạn bè",pr:"bahn beh"},{vn:"hàng xóm",pr:"hahng sohm"}]},
+    {cat:"Vietnamese Family Culture", en:"Ancestors / grandparents (reverence)", vn:"tổ tiên", pr:"toh tyen",
+      d:[{vn:"ông bà",pr:"ohng bah"},{vn:"họ hàng",pr:"haw hahng"},{vn:"gia đình",pr:"yah ding"}]},
+    {cat:"Vietnamese Family Culture", en:"Lunar New Year family gathering", vn:"Tết", pr:"tet",
+      d:[{vn:"giỗ",pr:"yoh"},{vn:"đám cưới",pr:"dahm kyuh-ee"},{vn:"sinh nhật",pr:"sing nyut"}]},
+    {cat:"Vietnamese Family Culture", en:"Wedding", vn:"đám cưới", pr:"dahm kyuh-ee",
+      d:[{vn:"Tết",pr:"tet"},{vn:"sinh nhật",pr:"sing nyut"},{vn:"giỗ",pr:"yoh"}]},
+    {cat:"Vietnamese Family Culture", en:"Death anniversary / memorial day", vn:"giỗ", pr:"yoh",
+      d:[{vn:"đám cưới",pr:"dahm kyuh-ee"},{vn:"Tết",pr:"tet"},{vn:"sinh nhật",pr:"sing nyut"}]},
+    {cat:"Vietnamese Family Culture", en:"Birthday", vn:"sinh nhật", pr:"sing nyut",
+      d:[{vn:"giỗ",pr:"yoh"},{vn:"đám cưới",pr:"dahm kyuh-ee"},{vn:"Tết",pr:"tet"}]},
+    {cat:"Vietnamese Family Culture", en:"Happy birthday!", vn:"Chúc mừng sinh nhật!", pr:"chook mung sing nyut",
+      d:[{vn:"Chúc mừng năm mới!",pr:"chook mung num muh-ee"},{vn:"Chúc mừng!",pr:"chook mung"},{vn:"Sinh nhật vui vẻ!",pr:"sing nyut voo-ee veh"}]},
+  ]
+};
+
+let currentDifficulty = 'beginner';
+let questions = [], current = 0, score = 0, answered = false;
+
+function setDifficulty(level) {
+  if ((level === 'intermediate' || level === 'expert') && checkPaywall(level)) { showPaywall(); return; }
+  currentDifficulty = level;
+  ['beginner','intermediate','expert'].forEach(l => {
+    const tab = document.getElementById('tab-' + l);
+    tab.style.background = l === level ? 'var(--gold)' : 'transparent';
+    tab.style.color = l === level ? '#000' : 'rgba(255,255,255,0.5)';
+  });
+  restartQuiz();
+}
+
+function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+function restartQuiz() {
+  questions = shuffle(quizData[currentDifficulty]).slice(0, 10);
+  current = 0; score = 0; answered = false;
+  document.getElementById('resultsCard').style.display = 'none';
+  document.getElementById('quizCard').style.display = 'block';
+  showQuestion();
+}
+
+function showQuestion() {
+  if (current >= questions.length) { showResults(); return; }
+  answered = false;
+  const q = questions[current];
+  document.getElementById('progressText').textContent = `Question ${current + 1} of ${questions.length}`;
+  document.getElementById('scoreText').textContent = `Score: ${score}`;
+  document.getElementById('progressBar').style.width = `${(current / questions.length) * 100}%`;
+  document.getElementById('categoryBadge').textContent = q.cat;
+  document.getElementById('questionText').textContent = q.en;
+  document.getElementById('questionSub').textContent = 'What is this in Vietnamese?';
+
+  const choices = shuffle([{vn: q.vn, pr: q.pr}, ...q.d.slice(0, 3)]);
+  const grid = document.getElementById('choicesGrid');
+  grid.innerHTML = '';
+  choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.innerHTML = `<span class="choice-vn">${choice.vn}</span><span class="choice-pr">${choice.pr}</span>`;
+    btn.onclick = () => selectAnswer(btn, choice.vn, q.vn, q.pr);
+    btn.style.cssText = `padding:12px 10px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;color:white;font-family:var(--font-body);cursor:pointer;text-align:center;transition:background 0.15s;`;
+    grid.appendChild(btn);
+  });
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('nextBtn').style.display = 'none';
+}
+
+function selectAnswer(btn, selected, correct, correctPr) {
+  if (answered) return;
+  answered = true;
+  const feedback = document.getElementById('feedback');
+  document.getElementById('choicesGrid').querySelectorAll('button').forEach(b => {
+    b.style.cursor = 'default';
+    if (b.querySelector('.choice-vn').textContent === correct) {
+      b.style.background = 'rgba(46,204,113,0.3)'; b.style.borderColor = '#2ecc71';
+    }
+  });
+  if (selected === correct) {
+    score++;
+    btn.style.background = 'rgba(46,204,113,0.3)'; btn.style.borderColor = '#2ecc71';
+    feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(46,204,113,0.15);border-left:3px solid #2ecc71;color:#2ecc71;';
+    feedback.textContent = '✓ Correct! ' + getFact(questions[current]);
+  } else {
+    btn.style.background = 'rgba(231,76,60,0.3)'; btn.style.borderColor = '#e74c3c';
+    feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(231,76,60,0.15);border-left:3px solid #e74c3c;color:#e74c3c;';
+    feedback.textContent = `✗ The answer is: ${correct} (${correctPr})`;
+  }
+  document.getElementById('scoreText').textContent = `Score: ${score}`;
+  document.getElementById('nextBtn').style.display = 'block';
+  current++;
+}
+
+function nextQuestion() { showQuestion(); }
+
+function getFact(q) {
+  const facts = {
+    'Immediate Family': 'Vietnamese has separate words for older and younger siblings — there\'s no neutral word for "sibling." Age order matters deeply in Vietnamese culture.',
+    'Extended Family': 'Vietnamese has different words for maternal vs paternal aunts and uncles — the family tree is tracked with remarkable precision.',
+    'Relationships': '"Bạn trai" literally means "male friend" and "bạn gái" means "female friend" — context makes it clear when it means boyfriend/girlfriend.',
+    'Pronouns as Family Terms': 'Using the right pronoun shows respect and social awareness. Calling an older woman "chị" instead of "bạn" immediately signals you understand Vietnamese culture.',
+    'Introducing Family': 'Vietnamese people love talking about family — it\'s the most common small talk topic. Being able to describe your family earns instant warmth.',
+    'Marriage & Relationships': 'Vietnamese people often ask about marriage and children quite directly — it\'s a sign of friendly interest, not rudeness.',
+    'Children': 'In Vietnam, grandparents often live with their children\'s family and help raise grandchildren — multigenerational households are common and respected.',
+    'Vietnamese Family Culture': 'Tết (Lunar New Year) is the most important holiday in Vietnam — families travel from across the country to be together. It\'s deeply family-centered.',
+  };
+  return facts[q.cat] || 'Keep going!';
+}
+
+function showResults() {
+  document.getElementById('quizCard').style.display = 'none';
+  document.getElementById('resultsCard').style.display = 'block';
+  const pct = score / questions.length;
+  document.getElementById('finalScore').textContent = `You scored ${score} out of ${questions.length}`;
+  const msgs = [[0.9,"🏆 Xuất sắc lắm! (Outstanding!) You're a natural!"],[0.8,"🌟 Giỏi lắm! (Very good!) Keep it up!"],[0.6,"👍 Khá tốt! (Pretty good!) Almost there!"],[0,"💪 Keep practicing! Bạn sẽ tiến bộ! (You will improve!)"]];
+  document.getElementById('resultsMsg').textContent = msgs.find(([t]) => pct >= t)[1];
+}
+
+document.addEventListener('DOMContentLoaded', restartQuiz);
+</script>
+
+<style>
+.choice-vn { display:block;font-size:0.95rem;font-weight:700;line-height:1.3; }
+.choice-pr { display:block;font-size:0.72rem;font-weight:500;color:rgba(255,255,255,0.4);margin-top:3px;font-style:italic; }
+</style>
+
 </body>
 </html>

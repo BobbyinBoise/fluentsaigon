@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Café Culture Quiz — FluentSaigon</title>
-<meta name="description" content="Coffee, tea, and café vocabulary — because Vietnamese café culture deserves its own subject.">
+<meta name="description" content="Learn Vietnamese café vocabulary. Order cà phê sữa đá, customize your drink, and chat like a local.">
 <link rel="stylesheet" href="../css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇻🇳</text></svg>">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+
 <div id="nav-placeholder" data-page="subjects"></div>
 <div id="modal-placeholder"></div>
 <div id="paywall-placeholder"></div>
@@ -22,59 +22,276 @@
     <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">Vietnamese coffee culture is serious. Order cà phê sữa đá like you've been doing it for years.</p>
   </div>
 
+  <!-- CHEAT SHEET CALLOUT -->
+  <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">💡 PRO TIP</div>
+        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Vietnam is the world's second largest coffee producer. Knowing the drinks and how to customize them is half the café experience.</div>
+      </div>
+      <button onclick="openCheatSheet('cheatsheet-cafe.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet →</button>
+    </div>
+  </div>
+
+  <!-- DIFFICULTY TABS -->
+  <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
+    <div style="display:flex;gap:8px;background:rgba(255,255,255,0.05);border-radius:12px;padding:6px;">
+      <button id="tab-beginner" onclick="setDifficulty('beginner')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:var(--gold);color:#000;">Beginner</button>
+      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate 🔒</button>
+      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert 🔒</button>
+    </div>
+  </div>
+
+  <!-- QUIZ CARD -->
   <div style="max-width:680px;margin:0 auto;padding:0 16px;">
+    <div id="quizCard" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px 28px;">
 
-    <!-- PRO LOCK CARD -->
-    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:20px;padding:40px 32px;text-align:center;margin-bottom:24px;">
-      <div style="font-size:3rem;margin-bottom:16px;">⭐</div>
-      <div style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;">Pro Subject</div>
-      <h2 style="font-family:var(--font-display);font-size:2rem;letter-spacing:0.03em;margin-bottom:12px;">Unlock Café Culture</h2>
-      <p style="color:rgba(255,255,255,0.6);font-size:0.95rem;line-height:1.7;max-width:440px;margin:0 auto 28px;">Vietnam has one of the world's great coffee cultures. Knowing how to order properly, customize your drink, and chat with the café owner is a daily pleasure you don't want to miss.</p>
-
-      <!-- WHAT'S INSIDE -->
-      <div style="background:rgba(0,0,0,0.2);border-radius:12px;padding:20px 24px;margin-bottom:28px;text-align:left;">
-        <div style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;">What's inside</div>
-        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">Vietnamese coffee types and how to order them</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">Hot vs iced, sweet vs black — all the variations</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">Tea, juice, and smoothie vocabulary</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">Café small talk phrases</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">Cheat sheet included</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+        <span id="progressText" style="font-size:0.8rem;color:rgba(255,255,255,0.4);font-weight:700;">Question 1 of 10</span>
+        <span id="scoreText" style="font-size:0.8rem;color:var(--gold);font-weight:800;">Score: 0</span>
+      </div>
+      <div style="height:4px;background:rgba(255,255,255,0.1);border-radius:2px;margin-bottom:28px;">
+        <div id="progressBar" style="height:100%;background:var(--gold);border-radius:2px;width:10%;transition:width 0.3s ease;"></div>
       </div>
 
-      <!-- DIFFICULTY PREVIEW -->
-      <div style="display:flex;gap:8px;margin-bottom:28px;">
-        <div style="flex:1;background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.3);border-radius:10px;padding:12px 8px;text-align:center;">
-          <div style="font-size:0.7rem;font-weight:800;color:#2ecc71;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Beginner</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">15 questions</div>
-        </div>
-        <div style="flex:1;background:rgba(245,197,24,0.1);border:1px solid rgba(245,197,24,0.3);border-radius:10px;padding:12px 8px;text-align:center;">
-          <div style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Intermediate</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">15 questions</div>
-        </div>
-        <div style="flex:1;background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.3);border-radius:10px;padding:12px 8px;text-align:center;">
-          <div style="font-size:0.7rem;font-weight:800;color:#e74c3c;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Expert</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">15 questions</div>
-        </div>
-      </div>
+      <div id="categoryBadge" style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.1em;margin-bottom:12px;text-transform:uppercase;"></div>
+      <div id="questionText" style="font-size:2rem;font-weight:900;color:white;margin-bottom:8px;line-height:1.2;"></div>
+      <div id="questionSub" style="font-size:0.85rem;color:rgba(255,255,255,0.4);margin-bottom:28px;">What is this in Vietnamese?</div>
 
-      <!-- CTA BUTTONS -->
-      <a href="pricing.html" style="display:block;width:100%;padding:16px;background:var(--gold);color:#000;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;text-decoration:none;margin-bottom:12px;box-sizing:border-box;">Start 7-Day Free Trial →</a>
-      <a href="pricing.html" style="display:block;width:100%;padding:14px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.12);border-radius:10px;font-family:var(--font-body);font-weight:700;font-size:0.85rem;text-decoration:none;box-sizing:border-box;">See all Pro plans →</a>
-      <p style="color:rgba(255,255,255,0.3);font-size:0.75rem;margin-top:12px;">No credit card required · Cancel anytime · 30-day money-back guarantee</p>
+      <div id="choicesGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;"></div>
+      <div id="feedback" style="display:none;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;"></div>
+      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question →</button>
     </div>
 
-    <!-- FREE SUBJECTS REMINDER -->
-    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px;text-align:center;">
-      <div style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">Not ready to upgrade?</div>
-      <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin-bottom:16px;line-height:1.6;">Numbers and Phrases & Greetings are completely free — no account needed.</p>
-      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
-        <a href="quiz-numbers.html" style="background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.1);">🔢 Numbers Quiz</a>
-        <a href="quiz-phrases.html" style="background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.1);">👋 Phrases Quiz</a>
-        <a href="quiz-dates.html" style="background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.1);">📅 Dates Quiz</a>
+    <div id="resultsCard" style="display:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 28px;text-align:center;">
+      <div style="font-size:3rem;margin-bottom:16px;">🎉</div>
+      <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</h2>
+      <div id="finalScore" style="font-size:1.1rem;color:var(--gold);font-weight:800;margin-bottom:8px;"></div>
+      <div id="resultsMsg" style="font-size:0.9rem;color:rgba(255,255,255,0.6);margin-bottom:28px;"></div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button onclick="restartQuiz()" style="padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Try Again</button>
+        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">← Back to All Subjects</a>
       </div>
     </div>
-
   </div>
 </div>
 
 <div id="footer-placeholder"></div>
 <script src="../js/components.js"></script>
 <script src="../js/auth.js"></script>
+<script>
+
+function openCheatSheet(url) {
+  const isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
+  if (isMobile) { window.location.href = url; } else { window.open(url, '_blank'); }
+}
+
+const quizData = {
+  beginner: [
+    {cat:"Coffee Basics", en:"Iced coffee with condensed milk", vn:"cà phê sữa đá", pr:"kah feh shuh-ah dah",
+      d:[{vn:"cà phê đen đá",pr:"kah feh den dah"},{vn:"cà phê sữa nóng",pr:"kah feh shuh-ah nawng"},{vn:"bạc xỉu",pr:"bahk syew"}]},
+    {cat:"Coffee Basics", en:"Hot coffee with condensed milk", vn:"cà phê sữa nóng", pr:"kah feh shuh-ah nawng",
+      d:[{vn:"cà phê sữa đá",pr:"kah feh shuh-ah dah"},{vn:"cà phê đen nóng",pr:"kah feh den nawng"},{vn:"cà phê trứng",pr:"kah feh chung"}]},
+    {cat:"Coffee Basics", en:"Iced black coffee", vn:"cà phê đen đá", pr:"kah feh den dah",
+      d:[{vn:"cà phê sữa đá",pr:"kah feh shuh-ah dah"},{vn:"cà phê đen nóng",pr:"kah feh den nawng"},{vn:"bạc xỉu",pr:"bahk syew"}]},
+    {cat:"Coffee Basics", en:"Hot black coffee", vn:"cà phê đen nóng", pr:"kah feh den nawng",
+      d:[{vn:"cà phê đen đá",pr:"kah feh den dah"},{vn:"cà phê sữa nóng",pr:"kah feh shuh-ah nawng"},{vn:"cà phê phin",pr:"kah feh fin"}]},
+    {cat:"Coffee Basics", en:"Drip filter coffee", vn:"cà phê phin", pr:"kah feh fin",
+      d:[{vn:"cà phê pha máy",pr:"kah feh fah my"},{vn:"cà phê đen đá",pr:"kah feh den dah"},{vn:"espresso",pr:"es-press-oh"}]},
+    {cat:"Tea & Other Drinks", en:"Iced tea (usually free)", vn:"trà đá", pr:"chah dah",
+      d:[{vn:"trà nóng",pr:"chah nawng"},{vn:"nước lọc",pr:"nyuhk lawk"},{vn:"sinh tố",pr:"sing toh"}]},
+    {cat:"Tea & Other Drinks", en:"Hot tea", vn:"trà nóng", pr:"chah nawng",
+      d:[{vn:"trà đá",pr:"chah dah"},{vn:"trà sữa",pr:"chah shuh-ah"},{vn:"trà xanh",pr:"chah sahn"}]},
+    {cat:"Tea & Other Drinks", en:"Milk tea / bubble tea", vn:"trà sữa", pr:"chah shuh-ah",
+      d:[{vn:"trà đá",pr:"chah dah"},{vn:"trà nóng",pr:"chah nawng"},{vn:"sinh tố",pr:"sing toh"}]},
+    {cat:"Tea & Other Drinks", en:"Fruit smoothie", vn:"sinh tố", pr:"sing toh",
+      d:[{vn:"nước ép",pr:"nyuhk ep"},{vn:"trà sữa",pr:"chah shuh-ah"},{vn:"nước dừa",pr:"nyuhk yuh-ah"}]},
+    {cat:"Tea & Other Drinks", en:"Fresh fruit juice", vn:"nước ép", pr:"nyuhk ep",
+      d:[{vn:"sinh tố",pr:"sing toh"},{vn:"trà đá",pr:"chah dah"},{vn:"nước dừa",pr:"nyuhk yuh-ah"}]},
+    {cat:"Ordering", en:"For here or to go?", vn:"Uống ở đây hay mang về?", pr:"oo-ung uh day hay mang veh",
+      d:[{vn:"Cho tôi uống ở đây",pr:"chaw toy oo-ung uh day"},{vn:"Mang về",pr:"mang veh"},{vn:"Cho tôi gọi",pr:"chaw toy goy"}]},
+    {cat:"Ordering", en:"To go / takeaway", vn:"Mang về", pr:"mang veh",
+      d:[{vn:"Uống ở đây",pr:"oo-ung uh day"},{vn:"Cho tôi ngồi",pr:"chaw toy ngoy"},{vn:"Mang đi",pr:"mang dee"}]},
+    {cat:"Ordering", en:"For here (drinking in)", vn:"Uống ở đây", pr:"oo-ung uh day",
+      d:[{vn:"Mang về",pr:"mang veh"},{vn:"Mang đi",pr:"mang dee"},{vn:"Giao hàng",pr:"yow hahng"}]},
+    {cat:"Ordering", en:"The menu please", vn:"Cho tôi xem thực đơn", pr:"chaw toy sem thuk duhn",
+      d:[{vn:"Cho tôi gọi món",pr:"chaw toy goy mawn"},{vn:"Tính tiền đi",pr:"ting tyen dee"},{vn:"Xin lỗi",pr:"sin loy"}]},
+    {cat:"Ordering", en:"I'd like to order", vn:"Cho tôi gọi", pr:"chaw toy goy",
+      d:[{vn:"Cho tôi xem thực đơn",pr:"chaw toy sem thuk duhn"},{vn:"Tính tiền đi",pr:"ting tyen dee"},{vn:"Cho tôi ngồi",pr:"chaw toy ngoy"}]},
+  ],
+  intermediate: [
+    {cat:"Customizing Your Drink", en:"No ice", vn:"Không đá", pr:"khome dah",
+      d:[{vn:"Ít đá",pr:"it dah"},{vn:"Thêm đá",pr:"tem dah"},{vn:"Đá nhiều",pr:"dah nyew"}]},
+    {cat:"Customizing Your Drink", en:"Less ice", vn:"Ít đá", pr:"it dah",
+      d:[{vn:"Không đá",pr:"khome dah"},{vn:"Đá nhiều",pr:"dah nyew"},{vn:"Thêm đá",pr:"tem dah"}]},
+    {cat:"Customizing Your Drink", en:"No sugar", vn:"Không đường", pr:"khome duh-ung",
+      d:[{vn:"Ít đường",pr:"it duh-ung"},{vn:"Thêm đường",pr:"tem duh-ung"},{vn:"Ngọt lắm",pr:"ngawt lahm"}]},
+    {cat:"Customizing Your Drink", en:"Less sweet", vn:"Ít ngọt", pr:"it ngawt",
+      d:[{vn:"Ngọt lắm",pr:"ngawt lahm"},{vn:"Không đường",pr:"khome duh-ung"},{vn:"Thêm đường",pr:"tem duh-ung"}]},
+    {cat:"Customizing Your Drink", en:"Less milk", vn:"Ít sữa", pr:"it shuh-ah",
+      d:[{vn:"Thêm sữa",pr:"tem shuh-ah"},{vn:"Không sữa",pr:"khome shuh-ah"},{vn:"Nhiều sữa",pr:"nyew shuh-ah"}]},
+    {cat:"Specialty Coffee", en:"Egg coffee (Hanoi specialty)", vn:"cà phê trứng", pr:"kah feh chung",
+      d:[{vn:"cà phê cốt dừa",pr:"kah feh koht yuh-ah"},{vn:"bạc xỉu",pr:"bahk syew"},{vn:"cà phê muối",pr:"kah feh moo-oy"}]},
+    {cat:"Specialty Coffee", en:"Coconut coffee", vn:"cà phê cốt dừa", pr:"kah feh koht yuh-ah",
+      d:[{vn:"cà phê trứng",pr:"kah feh chung"},{vn:"cà phê muối",pr:"kah feh moo-oy"},{vn:"bạc xỉu",pr:"bahk syew"}]},
+    {cat:"Specialty Coffee", en:"Salt coffee (Hue specialty)", vn:"cà phê muối", pr:"kah feh moo-oy",
+      d:[{vn:"cà phê trứng",pr:"kah feh chung"},{vn:"cà phê cốt dừa",pr:"kah feh koht yuh-ah"},{vn:"cà phê sữa đá",pr:"kah feh shuh-ah dah"}]},
+    {cat:"Specialty Coffee", en:"White coffee — more milk, lighter (Saigon)", vn:"bạc xỉu", pr:"bahk syew",
+      d:[{vn:"cà phê sữa đá",pr:"kah feh shuh-ah dah"},{vn:"cà phê trứng",pr:"kah feh chung"},{vn:"cà phê đen đá",pr:"kah feh den dah"}]},
+    {cat:"Café Phrases", en:"Is there WiFi?", vn:"Có WiFi không?", pr:"kaw wai-fai khome",
+      d:[{vn:"Mật khẩu WiFi là gì?",pr:"mut khoh wai-fai lah yee"},{vn:"Có ổ điện không?",pr:"kaw oh dyen khome"},{vn:"Có chỗ ngồi không?",pr:"kaw choh ngoy khome"}]},
+    {cat:"Café Phrases", en:"What's the WiFi password?", vn:"Mật khẩu WiFi là gì?", pr:"mut khoh wai-fai lah yee",
+      d:[{vn:"Có WiFi không?",pr:"kaw wai-fai khome"},{vn:"Có ổ điện không?",pr:"kaw oh dyen khome"},{vn:"WiFi miễn phí không?",pr:"wai-fai myen fee khome"}]},
+    {cat:"Café Phrases", en:"Is there a power outlet?", vn:"Có ổ điện không?", pr:"kaw oh dyen khome",
+      d:[{vn:"Có WiFi không?",pr:"kaw wai-fai khome"},{vn:"Có chỗ ngồi không?",pr:"kaw choh ngoy khome"},{vn:"Có sạc điện thoại không?",pr:"kaw sahk dyen thwai khome"}]},
+    {cat:"Café Phrases", en:"Is there a seat available?", vn:"Có chỗ ngồi không?", pr:"kaw choh ngoy khome",
+      d:[{vn:"Có WiFi không?",pr:"kaw wai-fai khome"},{vn:"Cho tôi ngồi đây",pr:"chaw toy ngoy day"},{vn:"Bàn này có ai không?",pr:"bahn nay kaw eye khome"}]},
+    {cat:"Café Phrases", en:"Is this seat taken?", vn:"Bàn này có ai không?", pr:"bahn nay kaw eye khome",
+      d:[{vn:"Cho tôi ngồi đây",pr:"chaw toy ngoy day"},{vn:"Có chỗ ngồi không?",pr:"kaw choh ngoy khome"},{vn:"Ngồi đây được không?",pr:"ngoy day duh-uk khome"}]},
+    {cat:"Café Phrases", en:"Can I sit here?", vn:"Ngồi đây được không?", pr:"ngoy day duh-uk khome",
+      d:[{vn:"Bàn này có ai không?",pr:"bahn nay kaw eye khome"},{vn:"Cho tôi ngồi",pr:"chaw toy ngoy"},{vn:"Có chỗ không?",pr:"kaw choh khome"}]},
+  ],
+  expert: [
+    {cat:"Coffee Knowledge", en:"Robusta beans (most Vietnamese coffee)", vn:"cà phê robusta", pr:"kah feh roh-boo-stah",
+      d:[{vn:"cà phê arabica",pr:"kah feh ah-rah-bee-kah"},{vn:"cà phê chồn",pr:"kah feh chohn"},{vn:"cà phê culi",pr:"kah feh koo-lee"}]},
+    {cat:"Coffee Knowledge", en:"Arabica beans (higher end, less bitter)", vn:"cà phê arabica", pr:"kah feh ah-rah-bee-kah",
+      d:[{vn:"cà phê robusta",pr:"kah feh roh-boo-stah"},{vn:"cà phê chồn",pr:"kah feh chohn"},{vn:"cà phê moka",pr:"kah feh moh-kah"}]},
+    {cat:"Coffee Knowledge", en:"Weasel / civet coffee (most expensive)", vn:"cà phê chồn", pr:"kah feh chohn",
+      d:[{vn:"cà phê robusta",pr:"kah feh roh-boo-stah"},{vn:"cà phê arabica",pr:"kah feh ah-rah-bee-kah"},{vn:"cà phê culi",pr:"kah feh koo-lee"}]},
+    {cat:"Coffee Knowledge", en:"The drip filter (brewing tool)", vn:"phin cà phê", pr:"fin kah feh",
+      d:[{vn:"máy pha cà phê",pr:"my fah kah feh"},{vn:"bình pha cà phê",pr:"bing fah kah feh"},{vn:"ấm pha cà phê",pr:"um fah kah feh"}]},
+    {cat:"Tea Culture", en:"Green tea", vn:"trà xanh", pr:"chah sahn",
+      d:[{vn:"trà đen",pr:"chah den"},{vn:"trà ô long",pr:"chah oh long"},{vn:"trà hoa cúc",pr:"chah hwah kook"}]},
+    {cat:"Tea Culture", en:"Lotus tea (Vietnamese specialty)", vn:"trà sen", pr:"chah sen",
+      d:[{vn:"trà xanh",pr:"chah sahn"},{vn:"trà hoa cúc",pr:"chah hwah kook"},{vn:"trà gừng",pr:"chah yung"}]},
+    {cat:"Tea Culture", en:"Ginger tea", vn:"trà gừng", pr:"chah yung",
+      d:[{vn:"trà sen",pr:"chah sen"},{vn:"trà xanh",pr:"chah sahn"},{vn:"trà hoa cúc",pr:"chah hwah kook"}]},
+    {cat:"Tea Culture", en:"Chamomile tea", vn:"trà hoa cúc", pr:"chah hwah kook",
+      d:[{vn:"trà xanh",pr:"chah sahn"},{vn:"trà gừng",pr:"chah yung"},{vn:"trà sen",pr:"chah sen"}]},
+    {cat:"Café Small Talk", en:"This coffee is very strong", vn:"Cà phê này đậm lắm", pr:"kah feh nay dum lahm",
+      d:[{vn:"Cà phê này nhạt lắm",pr:"kah feh nay nyat lahm"},{vn:"Cà phê này ngon lắm",pr:"kah feh nay ngawn lahm"},{vn:"Cà phê này đắng lắm",pr:"kah feh nay dung lahm"}]},
+    {cat:"Café Small Talk", en:"This coffee is very bitter", vn:"Cà phê này đắng lắm", pr:"kah feh nay dung lahm",
+      d:[{vn:"Cà phê này ngọt lắm",pr:"kah feh nay ngawt lahm"},{vn:"Cà phê này đậm lắm",pr:"kah feh nay dum lahm"},{vn:"Cà phê này nhạt lắm",pr:"kah feh nay nyat lahm"}]},
+    {cat:"Café Small Talk", en:"Can I have a refill?", vn:"Cho tôi thêm một ly nữa", pr:"chaw toy tem moht lee nyuh",
+      d:[{vn:"Cho tôi ly khác",pr:"chaw toy lee khahk"},{vn:"Thêm nước đi",pr:"tem nyuhk dee"},{vn:"Cho tôi đổi",pr:"chaw toy doy"}]},
+    {cat:"Café Small Talk", en:"The coffee is not hot enough", vn:"Cà phê không đủ nóng", pr:"kah feh khome doo nawng",
+      d:[{vn:"Cà phê quá nóng",pr:"kah feh kwah nawng"},{vn:"Cà phê nguội rồi",pr:"kah feh ngwoy roy"},{vn:"Hâm nóng lại đi",pr:"hum nawng lie dee"}]},
+    {cat:"Café Small Talk", en:"Warm it up please", vn:"Hâm nóng lại đi", pr:"hum nawng lie dee",
+      d:[{vn:"Để nguội thôi",pr:"deh ngwoy thoy"},{vn:"Thêm đá vào",pr:"tem dah vow"},{vn:"Đổi ly mới",pr:"doy lee muh-ee"}]},
+    {cat:"Café Small Talk", en:"I'll have the same again", vn:"Cho tôi thêm cái giống vậy", pr:"chaw toy tem kai yohng vay",
+      d:[{vn:"Cho tôi cái khác",pr:"chaw toy kai khahk"},{vn:"Thực đơn đâu?",pr:"thuk duhn doh"},{vn:"Gọi món khác",pr:"goy mawn khahk"}]},
+    {cat:"Café Small Talk", en:"This place has a great atmosphere", vn:"Quán này có không khí rất đẹp", pr:"kwahn nay kaw khome khee rut dep",
+      d:[{vn:"Quán này ồn quá",pr:"kwahn nay ohn kwah"},{vn:"Quán này nhỏ quá",pr:"kwahn nay nyaw kwah"},{vn:"Quán này đông quá",pr:"kwahn nay dome kwah"}]},
+  ]
+};
+
+let currentDifficulty = 'beginner';
+let questions = [], current = 0, score = 0, answered = false;
+
+function setDifficulty(level) {
+  if ((level === 'intermediate' || level === 'expert') && checkPaywall(level)) { showPaywall(); return; }
+  currentDifficulty = level;
+  ['beginner','intermediate','expert'].forEach(l => {
+    const tab = document.getElementById('tab-' + l);
+    tab.style.background = l === level ? 'var(--gold)' : 'transparent';
+    tab.style.color = l === level ? '#000' : 'rgba(255,255,255,0.5)';
+  });
+  restartQuiz();
+}
+
+function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+function restartQuiz() {
+  questions = shuffle(quizData[currentDifficulty]).slice(0, 10);
+  current = 0; score = 0; answered = false;
+  document.getElementById('resultsCard').style.display = 'none';
+  document.getElementById('quizCard').style.display = 'block';
+  showQuestion();
+}
+
+function showQuestion() {
+  if (current >= questions.length) { showResults(); return; }
+  answered = false;
+  const q = questions[current];
+  document.getElementById('progressText').textContent = `Question ${current + 1} of ${questions.length}`;
+  document.getElementById('scoreText').textContent = `Score: ${score}`;
+  document.getElementById('progressBar').style.width = `${(current / questions.length) * 100}%`;
+  document.getElementById('categoryBadge').textContent = q.cat;
+  document.getElementById('questionText').textContent = q.en;
+  document.getElementById('questionSub').textContent = 'What is this in Vietnamese?';
+
+  const choices = shuffle([{vn: q.vn, pr: q.pr}, ...q.d.slice(0, 3)]);
+  const grid = document.getElementById('choicesGrid');
+  grid.innerHTML = '';
+  choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.innerHTML = `<span class="choice-vn">${choice.vn}</span><span class="choice-pr">${choice.pr}</span>`;
+    btn.onclick = () => selectAnswer(btn, choice.vn, q.vn, q.pr);
+    btn.style.cssText = `padding:12px 10px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;color:white;font-family:var(--font-body);cursor:pointer;text-align:center;transition:background 0.15s;`;
+    grid.appendChild(btn);
+  });
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('nextBtn').style.display = 'none';
+}
+
+function selectAnswer(btn, selected, correct, correctPr) {
+  if (answered) return;
+  answered = true;
+  const feedback = document.getElementById('feedback');
+  document.getElementById('choicesGrid').querySelectorAll('button').forEach(b => {
+    b.style.cursor = 'default';
+    if (b.querySelector('.choice-vn').textContent === correct) {
+      b.style.background = 'rgba(46,204,113,0.3)'; b.style.borderColor = '#2ecc71';
+    }
+  });
+  if (selected === correct) {
+    score++;
+    btn.style.background = 'rgba(46,204,113,0.3)'; btn.style.borderColor = '#2ecc71';
+    feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(46,204,113,0.15);border-left:3px solid #2ecc71;color:#2ecc71;';
+    feedback.textContent = '✓ Correct! ' + getFact(questions[current]);
+  } else {
+    btn.style.background = 'rgba(231,76,60,0.3)'; btn.style.borderColor = '#e74c3c';
+    feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(231,76,60,0.15);border-left:3px solid #e74c3c;color:#e74c3c;';
+    feedback.textContent = `✗ The answer is: ${correct} (${correctPr})`;
+  }
+  document.getElementById('scoreText').textContent = `Score: ${score}`;
+  document.getElementById('nextBtn').style.display = 'block';
+  current++;
+}
+
+function nextQuestion() { showQuestion(); }
+
+function getFact(q) {
+  const facts = {
+    'Coffee Basics': 'Vietnamese coffee uses sweetened condensed milk, not fresh milk — it was originally used because fresh milk was scarce and expensive.',
+    'Tea & Other Drinks': 'Trà đá (iced tea) is served free at most Vietnamese restaurants and street food stalls. Always ask for it.',
+    'Ordering': 'Many Vietnamese cafés don\'t have a counter — find a seat first, then a server will come to you. "Cho tôi gọi" flags them down.',
+    'Customizing Your Drink': '"Không đá, không đường" (no ice, no sugar) is the health-conscious order. Locals who watch their sugar say this constantly.',
+    'Specialty Coffee': 'Cà phê trứng (egg coffee) was invented in Hanoi in 1946 when milk was scarce. Whipped egg yolk replaced fresh milk — and became iconic.',
+    'Café Phrases': 'Vietnamese cafés, especially in Saigon, are social hubs. People spend hours there — working, meeting friends, or just watching the street.',
+    'Coffee Knowledge': 'Vietnam produces mostly robusta beans, which are stronger and more caffeinated than arabica. That\'s why Vietnamese coffee hits so hard.',
+    'Tea Culture': 'Trà sen (lotus tea) is made by stuffing green tea leaves inside lotus flowers overnight to absorb the scent. It\'s delicate and expensive.',
+    'Café Small Talk': 'Commenting positively on a café\'s atmosphere or coffee quality is a great way to start a conversation with the owner.',
+  };
+  return facts[q.cat] || 'Keep going!';
+}
+
+function showResults() {
+  document.getElementById('quizCard').style.display = 'none';
+  document.getElementById('resultsCard').style.display = 'block';
+  const pct = score / questions.length;
+  document.getElementById('finalScore').textContent = `You scored ${score} out of ${questions.length}`;
+  const msgs = [[0.9,"🏆 Xuất sắc lắm! (Outstanding!) You're a natural!"],[0.8,"🌟 Giỏi lắm! (Very good!) Keep it up!"],[0.6,"👍 Khá tốt! (Pretty good!) Almost there!"],[0,"💪 Keep practicing! Bạn sẽ tiến bộ! (You will improve!)"]];
+  document.getElementById('resultsMsg').textContent = msgs.find(([t]) => pct >= t)[1];
+}
+
+document.addEventListener('DOMContentLoaded', restartQuiz);
+</script>
+
+<style>
+.choice-vn { display:block;font-size:0.95rem;font-weight:700;line-height:1.3; }
+.choice-pr { display:block;font-size:0.72rem;font-weight:500;color:rgba(255,255,255,0.4);margin-top:3px;font-style:italic; }
+</style>
+
 </body>
 </html>
