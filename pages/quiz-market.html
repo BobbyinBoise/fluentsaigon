@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Markets & Bargaining Quiz — FluentSaigon</title>
-<meta name="description" content="The phrases that save you money — from Ben Thanh to Hội An night market.">
+<meta name="description" content="Learn Vietnamese market and bargaining vocabulary. Stop paying tourist prices at Vietnamese markets.">
 <link rel="stylesheet" href="../css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇻🇳</text></svg>">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+
 <div id="nav-placeholder" data-page="subjects"></div>
 <div id="modal-placeholder"></div>
 <div id="paywall-placeholder"></div>
@@ -22,59 +22,278 @@
     <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">Stop paying tourist prices. Learn to negotiate at the market like you mean it.</p>
   </div>
 
+  <!-- CHEAT SHEET CALLOUT -->
+  <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">💡 PRO TIP</div>
+        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Bargaining is an art in Vietnam. A smile and a few key phrases will save you money and earn you respect. Read the cheat sheet for the full script.</div>
+      </div>
+      <button onclick="openCheatSheet('cheatsheet-market.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet →</button>
+    </div>
+  </div>
+
+  <!-- DIFFICULTY TABS -->
+  <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
+    <div style="display:flex;gap:8px;background:rgba(255,255,255,0.05);border-radius:12px;padding:6px;">
+      <button id="tab-beginner" onclick="setDifficulty('beginner')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:var(--gold);color:#000;">Beginner</button>
+      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate 🔒</button>
+      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert 🔒</button>
+    </div>
+  </div>
+
+  <!-- QUIZ CARD -->
   <div style="max-width:680px;margin:0 auto;padding:0 16px;">
+    <div id="quizCard" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px 28px;">
 
-    <!-- PRO LOCK CARD -->
-    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:20px;padding:40px 32px;text-align:center;margin-bottom:24px;">
-      <div style="font-size:3rem;margin-bottom:16px;">⭐</div>
-      <div style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;">Pro Subject</div>
-      <h2 style="font-family:var(--font-display);font-size:2rem;letter-spacing:0.03em;margin-bottom:12px;">Unlock Markets & Bargaining</h2>
-      <p style="color:rgba(255,255,255,0.6);font-size:0.95rem;line-height:1.7;max-width:440px;margin:0 auto 28px;">Every traveler overpays at Vietnamese markets. Not because they have to — but because they don't know the right words. This subject gives you the full bargaining toolkit.</p>
-
-      <!-- WHAT'S INSIDE -->
-      <div style="background:rgba(0,0,0,0.2);border-radius:12px;padding:20px 24px;margin-bottom:28px;text-align:left;">
-        <div style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;">What's inside</div>
-        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">Full bargaining script from start to finish</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">Prices, discounts, and haggling phrases</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">Clothing and souvenir vocabulary</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">How to walk away (and when to come back)</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">Cheat sheet included</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+        <span id="progressText" style="font-size:0.8rem;color:rgba(255,255,255,0.4);font-weight:700;">Question 1 of 10</span>
+        <span id="scoreText" style="font-size:0.8rem;color:var(--gold);font-weight:800;">Score: 0</span>
+      </div>
+      <div style="height:4px;background:rgba(255,255,255,0.1);border-radius:2px;margin-bottom:28px;">
+        <div id="progressBar" style="height:100%;background:var(--gold);border-radius:2px;width:10%;transition:width 0.3s ease;"></div>
       </div>
 
-      <!-- DIFFICULTY PREVIEW -->
-      <div style="display:flex;gap:8px;margin-bottom:28px;">
-        <div style="flex:1;background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.3);border-radius:10px;padding:12px 8px;text-align:center;">
-          <div style="font-size:0.7rem;font-weight:800;color:#2ecc71;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Beginner</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">15 questions</div>
-        </div>
-        <div style="flex:1;background:rgba(245,197,24,0.1);border:1px solid rgba(245,197,24,0.3);border-radius:10px;padding:12px 8px;text-align:center;">
-          <div style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Intermediate</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">15 questions</div>
-        </div>
-        <div style="flex:1;background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.3);border-radius:10px;padding:12px 8px;text-align:center;">
-          <div style="font-size:0.7rem;font-weight:800;color:#e74c3c;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Expert</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">15 questions</div>
-        </div>
-      </div>
+      <div id="categoryBadge" style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.1em;margin-bottom:12px;text-transform:uppercase;"></div>
+      <div id="questionText" style="font-size:2rem;font-weight:900;color:white;margin-bottom:8px;line-height:1.2;"></div>
+      <div id="questionSub" style="font-size:0.85rem;color:rgba(255,255,255,0.4);margin-bottom:28px;">What is this in Vietnamese?</div>
 
-      <!-- CTA BUTTONS -->
-      <a href="pricing.html" style="display:block;width:100%;padding:16px;background:var(--gold);color:#000;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;text-decoration:none;margin-bottom:12px;box-sizing:border-box;">Start 7-Day Free Trial →</a>
-      <a href="pricing.html" style="display:block;width:100%;padding:14px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.12);border-radius:10px;font-family:var(--font-body);font-weight:700;font-size:0.85rem;text-decoration:none;box-sizing:border-box;">See all Pro plans →</a>
-      <p style="color:rgba(255,255,255,0.3);font-size:0.75rem;margin-top:12px;">No credit card required · Cancel anytime · 30-day money-back guarantee</p>
+      <div id="choicesGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;"></div>
+      <div id="feedback" style="display:none;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;"></div>
+      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question →</button>
     </div>
 
-    <!-- FREE SUBJECTS REMINDER -->
-    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px;text-align:center;">
-      <div style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">Not ready to upgrade?</div>
-      <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin-bottom:16px;line-height:1.6;">Numbers and Phrases & Greetings are completely free — no account needed.</p>
-      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
-        <a href="quiz-numbers.html" style="background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.1);">🔢 Numbers Quiz</a>
-        <a href="quiz-phrases.html" style="background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.1);">👋 Phrases Quiz</a>
-        <a href="quiz-dates.html" style="background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.1);">📅 Dates Quiz</a>
+    <div id="resultsCard" style="display:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 28px;text-align:center;">
+      <div style="font-size:3rem;margin-bottom:16px;">🎉</div>
+      <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</h2>
+      <div id="finalScore" style="font-size:1.1rem;color:var(--gold);font-weight:800;margin-bottom:8px;"></div>
+      <div id="resultsMsg" style="font-size:0.9rem;color:rgba(255,255,255,0.6);margin-bottom:28px;"></div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button onclick="restartQuiz()" style="padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Try Again</button>
+        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">← Back to All Subjects</a>
       </div>
     </div>
-
   </div>
 </div>
 
 <div id="footer-placeholder"></div>
 <script src="../js/components.js"></script>
 <script src="../js/auth.js"></script>
+<script>
+
+function openCheatSheet(url) {
+  const isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
+  if (isMobile) { window.location.href = url; } else { window.open(url, '_blank'); }
+}
+
+const quizData = {
+  beginner: [
+    {cat:"Prices", en:"How much?", vn:"Bao nhiêu tiền?", pr:"bow nyew tyen",
+      d:[{vn:"Cái này là gì?",pr:"kai nay lah yee"},{vn:"Có không?",pr:"kaw khome"},{vn:"Tôi muốn mua",pr:"toy moo-uhn moo-ah"}]},
+    {cat:"Prices", en:"Too expensive!", vn:"Đắt quá!", pr:"dat kwah",
+      d:[{vn:"Rẻ quá!",pr:"reh kwah"},{vn:"Vừa thôi",pr:"vyuh-ah thoy"},{vn:"Được rồi",pr:"duh-uk roy"}]},
+    {cat:"Prices", en:"Cheap / inexpensive", vn:"Rẻ", pr:"reh",
+      d:[{vn:"Đắt",pr:"dat"},{vn:"Vừa",pr:"vyuh-ah"},{vn:"Giảm giá",pr:"yahm yah"}]},
+    {cat:"Prices", en:"Give me a discount", vn:"Bớt giá đi", pr:"buht yah dee",
+      d:[{vn:"Đắt quá",pr:"dat kwah"},{vn:"Tôi mua",pr:"toy moo-ah"},{vn:"Giá bao nhiêu?",pr:"yah bow nyew"}]},
+    {cat:"Prices", en:"I'll buy it", vn:"Tôi mua", pr:"toy moo-ah",
+      d:[{vn:"Tôi không mua",pr:"toy khome moo-ah"},{vn:"Bớt giá đi",pr:"buht yah dee"},{vn:"Cho tôi xem",pr:"chaw toy sem"}]},
+    {cat:"Browsing", en:"I'm just looking", vn:"Tôi chỉ xem thôi", pr:"toy chee sem thoy",
+      d:[{vn:"Tôi muốn mua",pr:"toy moo-uhn moo-ah"},{vn:"Cho tôi thử",pr:"chaw toy thuh"},{vn:"Cái này bao nhiêu?",pr:"kai nay bow nyew"}]},
+    {cat:"Browsing", en:"Can I see it?", vn:"Cho tôi xem", pr:"chaw toy sem",
+      d:[{vn:"Cho tôi thử",pr:"chaw toy thuh"},{vn:"Tôi mua",pr:"toy moo-ah"},{vn:"Cái này là gì?",pr:"kai nay lah yee"}]},
+    {cat:"Browsing", en:"Can I try it on?", vn:"Cho tôi thử", pr:"chaw toy thuh",
+      d:[{vn:"Cho tôi xem",pr:"chaw toy sem"},{vn:"Tôi mua",pr:"toy moo-ah"},{vn:"Có size khác không?",pr:"kaw size khahk khome"}]},
+    {cat:"Browsing", en:"I don't want it", vn:"Tôi không muốn", pr:"toy khome moo-uhn",
+      d:[{vn:"Tôi muốn",pr:"toy moo-uhn"},{vn:"Tôi không mua",pr:"toy khome moo-ah"},{vn:"Không cần",pr:"khome kun"}]},
+    {cat:"Browsing", en:"Do you have...?", vn:"Có... không?", pr:"kaw... khome",
+      d:[{vn:"Cái này là gì?",pr:"kai nay lah yee"},{vn:"Bao nhiêu tiền?",pr:"bow nyew tyen"},{vn:"Cho tôi xem",pr:"chaw toy sem"}]},
+    {cat:"Items", en:"This one", vn:"Cái này", pr:"kai nay",
+      d:[{vn:"Cái kia",pr:"kai kyah"},{vn:"Cái đó",pr:"kai daw"},{vn:"Cái nào?",pr:"kai now"}]},
+    {cat:"Items", en:"That one (further away)", vn:"Cái kia", pr:"kai kyah",
+      d:[{vn:"Cái này",pr:"kai nay"},{vn:"Cái đó",pr:"kai daw"},{vn:"Cái nào?",pr:"kai now"}]},
+    {cat:"Items", en:"Which one?", vn:"Cái nào?", pr:"kai now",
+      d:[{vn:"Cái này",pr:"kai nay"},{vn:"Cái kia",pr:"kai kyah"},{vn:"Cái đó",pr:"kai daw"}]},
+    {cat:"Items", en:"One piece / one item", vn:"một cái", pr:"moht kai",
+      d:[{vn:"hai cái",pr:"hi kai"},{vn:"một bộ",pr:"moht boh"},{vn:"một đôi",pr:"moht doy"}]},
+    {cat:"Items", en:"A pair (shoes, socks etc.)", vn:"một đôi", pr:"moht doy",
+      d:[{vn:"một cái",pr:"moht kai"},{vn:"một bộ",pr:"moht boh"},{vn:"hai cái",pr:"hi kai"}]},
+  ],
+  intermediate: [
+    {cat:"Bargaining Script", en:"What's your best price?", vn:"Giá tốt nhất là bao nhiêu?", pr:"yah tote nyut lah bow nyew",
+      d:[{vn:"Bao nhiêu tiền?",pr:"bow nyew tyen"},{vn:"Bớt nữa đi",pr:"buht nyuh dee"},{vn:"Giá cuối cùng",pr:"yah koo-oy koong"}]},
+    {cat:"Bargaining Script", en:"Lower it more", vn:"Bớt nữa đi", pr:"buht nyuh dee",
+      d:[{vn:"Được rồi",pr:"duh-uk roy"},{vn:"Đắt quá",pr:"dat kwah"},{vn:"Giá tốt nhất",pr:"yah tote nyut"}]},
+    {cat:"Bargaining Script", en:"Final price", vn:"Giá cuối cùng", pr:"yah koo-oy koong",
+      d:[{vn:"Giá tốt nhất",pr:"yah tote nyut"},{vn:"Bớt giá đi",pr:"buht yah dee"},{vn:"Không được",pr:"khome duh-uk"}]},
+    {cat:"Bargaining Script", en:"OK deal / agreed", vn:"Được rồi", pr:"duh-uk roy",
+      d:[{vn:"Không được",pr:"khome duh-uk"},{vn:"Đắt quá",pr:"dat kwah"},{vn:"Bớt nữa đi",pr:"buht nyuh dee"}]},
+    {cat:"Bargaining Script", en:"Not possible / no deal", vn:"Không được", pr:"khome duh-uk",
+      d:[{vn:"Được rồi",pr:"duh-uk roy"},{vn:"Bớt giá đi",pr:"buht yah dee"},{vn:"Thôi vậy",pr:"thoy vay"}]},
+    {cat:"Clothing", en:"Do you have a bigger size?", vn:"Có size lớn hơn không?", pr:"kaw size luhn huhn khome",
+      d:[{vn:"Có size nhỏ hơn không?",pr:"kaw size nyaw huhn khome"},{vn:"Có màu khác không?",pr:"kaw mow khahk khome"},{vn:"Cho tôi thử",pr:"chaw toy thuh"}]},
+    {cat:"Clothing", en:"Do you have a smaller size?", vn:"Có size nhỏ hơn không?", pr:"kaw size nyaw huhn khome",
+      d:[{vn:"Có size lớn hơn không?",pr:"kaw size luhn huhn khome"},{vn:"Vừa lắm",pr:"vyuh-ah lahm"},{vn:"Không vừa",pr:"khome vyuh-ah"}]},
+    {cat:"Clothing", en:"It fits perfectly", vn:"Vừa lắm", pr:"vyuh-ah lahm",
+      d:[{vn:"Không vừa",pr:"khome vyuh-ah"},{vn:"Hơi chật",pr:"huh-ee chut"},{vn:"Hơi rộng",pr:"huh-ee rawng"}]},
+    {cat:"Clothing", en:"Too tight", vn:"Hơi chật", pr:"huh-ee chut",
+      d:[{vn:"Hơi rộng",pr:"huh-ee rawng"},{vn:"Vừa lắm",pr:"vyuh-ah lahm"},{vn:"Không vừa",pr:"khome vyuh-ah"}]},
+    {cat:"Clothing", en:"Do you have another color?", vn:"Có màu khác không?", pr:"kaw mow khahk khome",
+      d:[{vn:"Có size khác không?",pr:"kaw size khahk khome"},{vn:"Màu gì?",pr:"mow yee"},{vn:"Tôi thích màu này",pr:"toy tick mow nay"}]},
+    {cat:"Quality", en:"Is it genuine / authentic?", vn:"Hàng thật không?", pr:"hahng thut khome",
+      d:[{vn:"Hàng giả không?",pr:"hahng yah khome"},{vn:"Chất lượng tốt không?",pr:"chut lyuh-ung tote khome"},{vn:"Bền không?",pr:"ben khome"}]},
+    {cat:"Quality", en:"Is it durable / will it last?", vn:"Bền không?", pr:"ben khome",
+      d:[{vn:"Hàng thật không?",pr:"hahng thut khome"},{vn:"Tốt không?",pr:"tote khome"},{vn:"Mới không?",pr:"muh-ee khome"}]},
+    {cat:"Quality", en:"Fake / counterfeit goods", vn:"hàng giả", pr:"hahng yah",
+      d:[{vn:"hàng thật",pr:"hahng thut"},{vn:"hàng mới",pr:"hahng muh-ee"},{vn:"hàng tốt",pr:"hahng tote"}]},
+    {cat:"Payment", en:"Do you accept card?", vn:"Có nhận thẻ không?", pr:"kaw nyun theh khome",
+      d:[{vn:"Có tiền lẻ không?",pr:"kaw tyen leh khome"},{vn:"Trả bằng tiền mặt",pr:"chah bung tyen mut"},{vn:"Thanh toán thế nào?",pr:"thahn twan theh now"}]},
+    {cat:"Payment", en:"Cash only", vn:"Chỉ nhận tiền mặt", pr:"chee nyun tyen mut",
+      d:[{vn:"Có nhận thẻ",pr:"kaw nyun theh"},{vn:"Thanh toán online",pr:"thahn twan online"},{vn:"Trả sau",pr:"chah sow"}]},
+  ],
+  expert: [
+    {cat:"Advanced Bargaining", en:"I saw it cheaper at the other stall", vn:"Chỗ kia bán rẻ hơn", pr:"choh kyah bahn reh huhn",
+      d:[{vn:"Ở đây đắt hơn",pr:"uh day dat huhn"},{vn:"Giá như nhau",pr:"yah nyuh nyow"},{vn:"Bớt giá đi",pr:"buht yah dee"}]},
+    {cat:"Advanced Bargaining", en:"I'll buy two if you lower the price", vn:"Nếu bớt giá tôi mua hai cái", pr:"neh-oo buht yah toy moo-ah hi kai",
+      d:[{vn:"Tôi chỉ mua một",pr:"toy chee moo-ah moht"},{vn:"Giá tốt nhất",pr:"yah tote nyut"},{vn:"Mua nhiều được giảm không?",pr:"moo-ah nyew duh-uk yahm khome"}]},
+    {cat:"Advanced Bargaining", en:"Bulk discount? (buying a lot)", vn:"Mua nhiều được giảm giá không?", pr:"moo-ah nyew duh-uk yahm yah khome",
+      d:[{vn:"Mua một cái thôi",pr:"moo-ah moht kai thoy"},{vn:"Bao nhiêu tiền một cái?",pr:"bow nyew tyen moht kai"},{vn:"Giảm thêm đi",pr:"yahm tem dee"}]},
+    {cat:"Advanced Bargaining", en:"This is my final offer", vn:"Đây là giá cuối của tôi", pr:"day lah yah koo-oy koo-ah toy",
+      d:[{vn:"Bớt nữa đi",pr:"buht nyuh dee"},{vn:"Được rồi",pr:"duh-uk roy"},{vn:"Giá tốt nhất",pr:"yah tote nyut"}]},
+    {cat:"Market Types", en:"Wet market (fresh produce)", vn:"chợ ướt", pr:"chuh oo-ut",
+      d:[{vn:"chợ khô",pr:"chuh khoh"},{vn:"siêu thị",pr:"syew tee"},{vn:"chợ đêm",pr:"chuh dem"}]},
+    {cat:"Market Types", en:"Night market", vn:"chợ đêm", pr:"chuh dem",
+      d:[{vn:"chợ ướt",pr:"chuh oo-ut"},{vn:"chợ buổi sáng",pr:"chuh boo-oy sahng"},{vn:"siêu thị",pr:"syew tee"}]},
+    {cat:"Market Types", en:"Supermarket", vn:"siêu thị", pr:"syew tee",
+      d:[{vn:"chợ ướt",pr:"chuh oo-ut"},{vn:"chợ đêm",pr:"chuh dem"},{vn:"cửa hàng",pr:"kyuh-ah hahng"}]},
+    {cat:"Market Types", en:"Shop / store", vn:"cửa hàng", pr:"kyuh-ah hahng",
+      d:[{vn:"siêu thị",pr:"syew tee"},{vn:"chợ",pr:"chuh"},{vn:"quầy hàng",pr:"kway hahng"}]},
+    {cat:"Souvenirs", en:"Souvenir", vn:"đồ lưu niệm", pr:"doh lyew nyem",
+      d:[{vn:"quà tặng",pr:"kwah tung"},{vn:"hàng thủ công",pr:"hahng thoo kohng"},{vn:"đặc sản",pr:"dak sahn"}]},
+    {cat:"Souvenirs", en:"Handmade / handicraft", vn:"hàng thủ công", pr:"hahng thoo kohng",
+      d:[{vn:"hàng nhập khẩu",pr:"hahng nyup khoh"},{vn:"đồ lưu niệm",pr:"doh lyew nyem"},{vn:"hàng giả",pr:"hahng yah"}]},
+    {cat:"Souvenirs", en:"Local specialty / regional product", vn:"đặc sản", pr:"dak sahn",
+      d:[{vn:"hàng thủ công",pr:"hahng thoo kohng"},{vn:"đồ lưu niệm",pr:"doh lyew nyem"},{vn:"hàng nhập khẩu",pr:"hahng nyup khoh"}]},
+    {cat:"Souvenirs", en:"Gift / present", vn:"quà tặng", pr:"kwah tung",
+      d:[{vn:"đồ lưu niệm",pr:"doh lyew nyem"},{vn:"đặc sản",pr:"dak sahn"},{vn:"hàng thủ công",pr:"hahng thoo kohng"}]},
+    {cat:"Wrap Up", en:"Can you wrap it as a gift?", vn:"Gói quà được không?", pr:"goy kwah duh-uk khome",
+      d:[{vn:"Bỏ vào túi đi",pr:"baw vow too-ee dee"},{vn:"Cho tôi hóa đơn",pr:"chaw toy hwah duhn"},{vn:"Đóng gói cẩn thận",pr:"dawng goy kun thun"}]},
+    {cat:"Wrap Up", en:"Can I have a receipt?", vn:"Cho tôi hóa đơn", pr:"chaw toy hwah duhn",
+      d:[{vn:"Gói quà được không?",pr:"goy kwah duh-uk khome"},{vn:"Bỏ vào túi",pr:"baw vow too-ee"},{vn:"Cảm ơn",pr:"cahm uhn"}]},
+    {cat:"Wrap Up", en:"Thank you, see you next time", vn:"Cảm ơn, hẹn gặp lại", pr:"cahm uhn, hen gup lie",
+      d:[{vn:"Cảm ơn nhiều",pr:"cahm uhn nyew"},{vn:"Tạm biệt",pr:"tahm byet"},{vn:"Không cần",pr:"khome kun"}]},
+  ]
+};
+
+let currentDifficulty = 'beginner';
+let questions = [], current = 0, score = 0, answered = false;
+
+function setDifficulty(level) {
+  if ((level === 'intermediate' || level === 'expert') && checkPaywall(level)) { showPaywall(); return; }
+  currentDifficulty = level;
+  ['beginner','intermediate','expert'].forEach(l => {
+    const tab = document.getElementById('tab-' + l);
+    tab.style.background = l === level ? 'var(--gold)' : 'transparent';
+    tab.style.color = l === level ? '#000' : 'rgba(255,255,255,0.5)';
+  });
+  restartQuiz();
+}
+
+function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+function restartQuiz() {
+  questions = shuffle(quizData[currentDifficulty]).slice(0, 10);
+  current = 0; score = 0; answered = false;
+  document.getElementById('resultsCard').style.display = 'none';
+  document.getElementById('quizCard').style.display = 'block';
+  showQuestion();
+}
+
+function showQuestion() {
+  if (current >= questions.length) { showResults(); return; }
+  answered = false;
+  const q = questions[current];
+  document.getElementById('progressText').textContent = `Question ${current + 1} of ${questions.length}`;
+  document.getElementById('scoreText').textContent = `Score: ${score}`;
+  document.getElementById('progressBar').style.width = `${(current / questions.length) * 100}%`;
+  document.getElementById('categoryBadge').textContent = q.cat;
+  document.getElementById('questionText').textContent = q.en;
+  document.getElementById('questionSub').textContent = 'What is this in Vietnamese?';
+
+  const choices = shuffle([{vn: q.vn, pr: q.pr}, ...q.d.slice(0, 3)]);
+  const grid = document.getElementById('choicesGrid');
+  grid.innerHTML = '';
+  choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.innerHTML = `<span class="choice-vn">${choice.vn}</span><span class="choice-pr">${choice.pr}</span>`;
+    btn.onclick = () => selectAnswer(btn, choice.vn, q.vn, q.pr);
+    btn.style.cssText = `padding:12px 10px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;color:white;font-family:var(--font-body);cursor:pointer;text-align:center;transition:background 0.15s;`;
+    grid.appendChild(btn);
+  });
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('nextBtn').style.display = 'none';
+}
+
+function selectAnswer(btn, selected, correct, correctPr) {
+  if (answered) return;
+  answered = true;
+  const feedback = document.getElementById('feedback');
+  document.getElementById('choicesGrid').querySelectorAll('button').forEach(b => {
+    b.style.cursor = 'default';
+    if (b.querySelector('.choice-vn').textContent === correct) {
+      b.style.background = 'rgba(46,204,113,0.3)'; b.style.borderColor = '#2ecc71';
+    }
+  });
+  if (selected === correct) {
+    score++;
+    btn.style.background = 'rgba(46,204,113,0.3)'; btn.style.borderColor = '#2ecc71';
+    feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(46,204,113,0.15);border-left:3px solid #2ecc71;color:#2ecc71;';
+    feedback.textContent = '✓ Correct! ' + getFact(questions[current]);
+  } else {
+    btn.style.background = 'rgba(231,76,60,0.3)'; btn.style.borderColor = '#e74c3c';
+    feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(231,76,60,0.15);border-left:3px solid #e74c3c;color:#e74c3c;';
+    feedback.textContent = `✗ The answer is: ${correct} (${correctPr})`;
+  }
+  document.getElementById('scoreText').textContent = `Score: ${score}`;
+  document.getElementById('nextBtn').style.display = 'block';
+  current++;
+}
+
+function nextQuestion() { showQuestion(); }
+
+function getFact(q) {
+  const facts = {
+    'Prices': 'The opening price at a tourist market is often 3-5x the real price. Start at 40-50% and meet in the middle.',
+    'Browsing': 'Never show too much enthusiasm for an item before you\'ve agreed on a price — vendors will hold firm if they know you love it.',
+    'Items': 'Vietnamese market stalls often have the same items. If a vendor won\'t budge on price, walk to the next stall — they\'ll often call you back.',
+    'Bargaining Script': 'Walking away is the most powerful bargaining tool. A genuine departure triggers real discounts 80% of the time.',
+    'Clothing': 'Vietnamese clothing sizes run small compared to Western standards. Always try before you buy — "Cho tôi thử" is essential.',
+    'Quality': 'Ben Thanh Market in Saigon is famous for souvenirs, but Cho Binh Tay in Cholon has better prices and more authentic goods.',
+    'Payment': 'Most market vendors and small shops are cash only. ATMs are common in cities — withdraw dong before heading to markets.',
+    'Advanced Bargaining': 'Buying multiple items gives you real leverage. "Nếu bớt giá tôi mua hai cái" works especially well on slow market days.',
+    'Market Types': 'Chợ Bến Thành, Chợ Đông Ba (Hue), and Chợ Hội An are the most famous tourist markets. Locals shop at the wet markets for fresh food.',
+    'Souvenirs': 'Lacquerware, silk, embroidery, and conical hats (nón lá) are the most popular Vietnamese souvenirs. Quality varies enormously.',
+    'Wrap Up': 'Always say "cảm ơn" (thank you) even if you don\'t buy anything. Vendors appreciate politeness and you may get a better deal next visit.',
+  };
+  return facts[q.cat] || 'Keep going!';
+}
+
+function showResults() {
+  document.getElementById('quizCard').style.display = 'none';
+  document.getElementById('resultsCard').style.display = 'block';
+  const pct = score / questions.length;
+  document.getElementById('finalScore').textContent = `You scored ${score} out of ${questions.length}`;
+  const msgs = [[0.9,"🏆 Xuất sắc lắm! (Outstanding!) You're a natural!"],[0.8,"🌟 Giỏi lắm! (Very good!) Keep it up!"],[0.6,"👍 Khá tốt! (Pretty good!) Almost there!"],[0,"💪 Keep practicing! Bạn sẽ tiến bộ! (You will improve!)"]];
+  document.getElementById('resultsMsg').textContent = msgs.find(([t]) => pct >= t)[1];
+}
+
+document.addEventListener('DOMContentLoaded', restartQuiz);
+</script>
+
+<style>
+.choice-vn { display:block;font-size:0.95rem;font-weight:700;line-height:1.3; }
+.choice-pr { display:block;font-size:0.72rem;font-weight:500;color:rgba(255,255,255,0.4);margin-top:3px;font-style:italic; }
+</style>
+
 </body>
 </html>

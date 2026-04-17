@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Food & Street Eats Quiz — FluentSaigon</title>
-<meta name="description" content="The vocabulary to eat like a local — from pho to bánh mì to cà phê sữa đá.">
+<meta name="description" content="Learn Vietnamese food vocabulary. Order street food, ask about ingredients, and eat where locals eat.">
 <link rel="stylesheet" href="../css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇻🇳</text></svg>">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+
 <div id="nav-placeholder" data-page="subjects"></div>
 <div id="modal-placeholder"></div>
 <div id="paywall-placeholder"></div>
@@ -22,59 +22,280 @@
     <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">Order off-menu, ask what's fresh, eat where locals eat — not the tourist traps.</p>
   </div>
 
+  <!-- CHEAT SHEET CALLOUT -->
+  <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">💡 PRO TIP</div>
+        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Vietnamese food vocabulary is your most practical investment. Even 10 words will transform your eating experience. Read the cheat sheet first.</div>
+      </div>
+      <button onclick="openCheatSheet('cheatsheet-food.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet →</button>
+    </div>
+  </div>
+
+  <!-- DIFFICULTY TABS -->
+  <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
+    <div style="display:flex;gap:8px;background:rgba(255,255,255,0.05);border-radius:12px;padding:6px;">
+      <button id="tab-beginner" onclick="setDifficulty('beginner')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:var(--gold);color:#000;">Beginner</button>
+      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate 🔒</button>
+      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert 🔒</button>
+    </div>
+  </div>
+
+  <!-- QUIZ CARD -->
   <div style="max-width:680px;margin:0 auto;padding:0 16px;">
+    <div id="quizCard" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px 28px;">
 
-    <!-- PRO LOCK CARD -->
-    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:20px;padding:40px 32px;text-align:center;margin-bottom:24px;">
-      <div style="font-size:3rem;margin-bottom:16px;">⭐</div>
-      <div style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;">Pro Subject</div>
-      <h2 style="font-family:var(--font-display);font-size:2rem;letter-spacing:0.03em;margin-bottom:12px;">Unlock Food & Street Eats</h2>
-      <p style="color:rgba(255,255,255,0.6);font-size:0.95rem;line-height:1.7;max-width:440px;margin:0 auto 28px;">Vietnamese street food is one of the best in the world, and knowing the words to order it properly is half the experience. Impress vendors, find the hidden gems, and never get tourist-priced again.</p>
-
-      <!-- WHAT'S INSIDE -->
-      <div style="background:rgba(0,0,0,0.2);border-radius:12px;padding:20px 24px;margin-bottom:28px;text-align:left;">
-        <div style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px;">What's inside</div>
-        <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">50+ essential food and drink vocabulary words</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">How to order at street stalls and restaurants</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">Ask about ingredients and spice levels</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">Food market phrases for fresh produce</span></div><div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;"><span style="color:#2ecc71;font-weight:900;flex-shrink:0;">✓</span><span style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.5;">Cheat sheet included</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+        <span id="progressText" style="font-size:0.8rem;color:rgba(255,255,255,0.4);font-weight:700;">Question 1 of 10</span>
+        <span id="scoreText" style="font-size:0.8rem;color:var(--gold);font-weight:800;">Score: 0</span>
+      </div>
+      <div style="height:4px;background:rgba(255,255,255,0.1);border-radius:2px;margin-bottom:28px;">
+        <div id="progressBar" style="height:100%;background:var(--gold);border-radius:2px;width:10%;transition:width 0.3s ease;"></div>
       </div>
 
-      <!-- DIFFICULTY PREVIEW -->
-      <div style="display:flex;gap:8px;margin-bottom:28px;">
-        <div style="flex:1;background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.3);border-radius:10px;padding:12px 8px;text-align:center;">
-          <div style="font-size:0.7rem;font-weight:800;color:#2ecc71;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Beginner</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">15 questions</div>
-        </div>
-        <div style="flex:1;background:rgba(245,197,24,0.1);border:1px solid rgba(245,197,24,0.3);border-radius:10px;padding:12px 8px;text-align:center;">
-          <div style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Intermediate</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">15 questions</div>
-        </div>
-        <div style="flex:1;background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.3);border-radius:10px;padding:12px 8px;text-align:center;">
-          <div style="font-size:0.7rem;font-weight:800;color:#e74c3c;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;">Expert</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">15 questions</div>
-        </div>
-      </div>
+      <div id="categoryBadge" style="font-size:0.7rem;font-weight:800;color:var(--gold);letter-spacing:0.1em;margin-bottom:12px;text-transform:uppercase;"></div>
+      <div id="questionText" style="font-size:2rem;font-weight:900;color:white;margin-bottom:8px;line-height:1.2;"></div>
+      <div id="questionSub" style="font-size:0.85rem;color:rgba(255,255,255,0.4);margin-bottom:28px;">What is this in Vietnamese?</div>
 
-      <!-- CTA BUTTONS -->
-      <a href="pricing.html" style="display:block;width:100%;padding:16px;background:var(--gold);color:#000;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;text-decoration:none;margin-bottom:12px;box-sizing:border-box;">Start 7-Day Free Trial →</a>
-      <a href="pricing.html" style="display:block;width:100%;padding:14px;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.12);border-radius:10px;font-family:var(--font-body);font-weight:700;font-size:0.85rem;text-decoration:none;box-sizing:border-box;">See all Pro plans →</a>
-      <p style="color:rgba(255,255,255,0.3);font-size:0.75rem;margin-top:12px;">No credit card required · Cancel anytime · 30-day money-back guarantee</p>
+      <div id="choicesGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;"></div>
+      <div id="feedback" style="display:none;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;"></div>
+      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question →</button>
     </div>
 
-    <!-- FREE SUBJECTS REMINDER -->
-    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px;text-align:center;">
-      <div style="font-size:0.75rem;font-weight:800;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;">Not ready to upgrade?</div>
-      <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin-bottom:16px;line-height:1.6;">Numbers and Phrases & Greetings are completely free — no account needed.</p>
-      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
-        <a href="quiz-numbers.html" style="background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.1);">🔢 Numbers Quiz</a>
-        <a href="quiz-phrases.html" style="background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.1);">👋 Phrases Quiz</a>
-        <a href="quiz-dates.html" style="background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.1);">📅 Dates Quiz</a>
+    <div id="resultsCard" style="display:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 28px;text-align:center;">
+      <div style="font-size:3rem;margin-bottom:16px;">🎉</div>
+      <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</h2>
+      <div id="finalScore" style="font-size:1.1rem;color:var(--gold);font-weight:800;margin-bottom:8px;"></div>
+      <div id="resultsMsg" style="font-size:0.9rem;color:rgba(255,255,255,0.6);margin-bottom:28px;"></div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <button onclick="restartQuiz()" style="padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Try Again</button>
+        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">← Back to All Subjects</a>
       </div>
     </div>
-
   </div>
 </div>
 
 <div id="footer-placeholder"></div>
 <script src="../js/components.js"></script>
 <script src="../js/auth.js"></script>
+<script>
+
+function openCheatSheet(url) {
+  const isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
+  if (isMobile) { window.location.href = url; } else { window.open(url, '_blank'); }
+}
+
+const quizData = {
+  beginner: [
+    {cat:"Iconic Dishes", en:"Pho (noodle soup)", vn:"phở", pr:"fuh",
+      d:[{vn:"bún bò",pr:"boon baw"},{vn:"cơm tấm",pr:"kum tum"},{vn:"bánh mì",pr:"bahn mee"}]},
+    {cat:"Iconic Dishes", en:"Bánh mì (Vietnamese sandwich)", vn:"bánh mì", pr:"bahn mee",
+      d:[{vn:"phở",pr:"fuh"},{vn:"bánh xèo",pr:"bahn say-oh"},{vn:"gỏi cuốn",pr:"goy koo-uhn"}]},
+    {cat:"Iconic Dishes", en:"Fresh spring rolls", vn:"gỏi cuốn", pr:"goy koo-uhn",
+      d:[{vn:"chả giò",pr:"chah yaw"},{vn:"bánh mì",pr:"bahn mee"},{vn:"phở",pr:"fuh"}]},
+    {cat:"Iconic Dishes", en:"Fried spring rolls", vn:"chả giò", pr:"chah yaw",
+      d:[{vn:"gỏi cuốn",pr:"goy koo-uhn"},{vn:"bánh xèo",pr:"bahn say-oh"},{vn:"nem",pr:"nem"}]},
+    {cat:"Iconic Dishes", en:"Broken rice (Southern staple)", vn:"cơm tấm", pr:"kum tum",
+      d:[{vn:"cơm rang",pr:"kum rang"},{vn:"cháo",pr:"chow"},{vn:"bún bò",pr:"boon baw"}]},
+    {cat:"Drinks", en:"Vietnamese iced coffee with milk", vn:"cà phê sữa đá", pr:"kah feh shuh-ah dah",
+      d:[{vn:"cà phê đen",pr:"kah feh den"},{vn:"trà đá",pr:"chah dah"},{vn:"nước dừa",pr:"nyuhk yuh-ah"}]},
+    {cat:"Drinks", en:"Black coffee (no milk)", vn:"cà phê đen", pr:"kah feh den",
+      d:[{vn:"cà phê sữa đá",pr:"kah feh shuh-ah dah"},{vn:"cà phê trứng",pr:"kah feh chung"},{vn:"trà đá",pr:"chah dah"}]},
+    {cat:"Drinks", en:"Iced tea (free at most restaurants)", vn:"trà đá", pr:"chah dah",
+      d:[{vn:"nước lọc",pr:"nyuhk lawk"},{vn:"cà phê đen",pr:"kah feh den"},{vn:"sinh tố",pr:"sing toh"}]},
+    {cat:"Drinks", en:"Coconut water", vn:"nước dừa", pr:"nyuhk yuh-ah",
+      d:[{vn:"trà đá",pr:"chah dah"},{vn:"sinh tố",pr:"sing toh"},{vn:"nước ép",pr:"nyuhk ep"}]},
+    {cat:"Ordering Basics", en:"Delicious!", vn:"Ngon lắm!", pr:"ngawn lahm",
+      d:[{vn:"Cay quá!",pr:"kay kwah"},{vn:"Không ngon",pr:"khome ngawn"},{vn:"Tạm được",pr:"tahm duh-uk"}]},
+    {cat:"Ordering Basics", en:"The bill please", vn:"Tính tiền đi", pr:"ting tyen dee",
+      d:[{vn:"Cho tôi thêm",pr:"chaw toy tem"},{vn:"Gọi món",pr:"goy mawn"},{vn:"Xin lỗi",pr:"sin loy"}]},
+    {cat:"Ordering Basics", en:"I want to order", vn:"Tôi muốn gọi món", pr:"toy moo-uhn goy mawn",
+      d:[{vn:"Tính tiền đi",pr:"ting tyen dee"},{vn:"Cho tôi xem",pr:"chaw toy sem"},{vn:"Ngon lắm",pr:"ngawn lahm"}]},
+    {cat:"Ordering Basics", en:"One bowl / one serving", vn:"một tô", pr:"moht toh",
+      d:[{vn:"hai tô",pr:"hi toh"},{vn:"một đĩa",pr:"moht dyah"},{vn:"một ly",pr:"moht lee"}]},
+    {cat:"Ordering Basics", en:"No ice please", vn:"Không đá", pr:"khome dah",
+      d:[{vn:"Thêm đá",pr:"tem dah"},{vn:"Không đường",pr:"khome duh-ung"},{vn:"Ít đá",pr:"it dah"}]},
+    {cat:"Ordering Basics", en:"Not spicy", vn:"Không cay", pr:"khome kay",
+      d:[{vn:"Cay quá",pr:"kay kwah"},{vn:"Ít cay",pr:"it kay"},{vn:"Rất cay",pr:"rut kay"}]},
+  ],
+  intermediate: [
+    {cat:"Street Food", en:"Sizzling crepe with pork & shrimp", vn:"bánh xèo", pr:"bahn say-oh",
+      d:[{vn:"bánh cuốn",pr:"bahn koo-uhn"},{vn:"bánh khọt",pr:"bahn khawt"},{vn:"bánh căn",pr:"bahn kun"}]},
+    {cat:"Street Food", en:"Beef noodle soup (Hue style)", vn:"bún bò Huế", pr:"boon baw hweh",
+      d:[{vn:"phở bò",pr:"fuh baw"},{vn:"bún riêu",pr:"boon ryew"},{vn:"hủ tiếu",pr:"hoo tyew"}]},
+    {cat:"Street Food", en:"Rice vermicelli with grilled pork", vn:"bún thịt nướng", pr:"boon tit nyuh-ung",
+      d:[{vn:"bún bò",pr:"boon baw"},{vn:"bún chả",pr:"boon chah"},{vn:"bún riêu",pr:"boon ryew"}]},
+    {cat:"Street Food", en:"Grilled pork with rice noodles (Hanoi)", vn:"bún chả", pr:"boon chah",
+      d:[{vn:"bún thịt nướng",pr:"boon tit nyuh-ung"},{vn:"bún bò",pr:"boon baw"},{vn:"cơm tấm",pr:"kum tum"}]},
+    {cat:"Street Food", en:"Steamed rice rolls", vn:"bánh cuốn", pr:"bahn koo-uhn",
+      d:[{vn:"bánh xèo",pr:"bahn say-oh"},{vn:"bánh mì",pr:"bahn mee"},{vn:"bánh khọt",pr:"bahn khawt"}]},
+    {cat:"Ingredients", en:"Beef", vn:"bò", pr:"baw",
+      d:[{vn:"gà",pr:"gah"},{vn:"heo",pr:"hey-oh"},{vn:"tôm",pr:"tome"}]},
+    {cat:"Ingredients", en:"Chicken", vn:"gà", pr:"gah",
+      d:[{vn:"bò",pr:"baw"},{vn:"heo",pr:"hey-oh"},{vn:"cá",pr:"kah"}]},
+    {cat:"Ingredients", en:"Pork", vn:"heo", pr:"hey-oh",
+      d:[{vn:"bò",pr:"baw"},{vn:"gà",pr:"gah"},{vn:"vịt",pr:"vit"}]},
+    {cat:"Ingredients", en:"Shrimp / Prawns", vn:"tôm", pr:"tome",
+      d:[{vn:"cá",pr:"kah"},{vn:"mực",pr:"muk"},{vn:"cua",pr:"koo-ah"}]},
+    {cat:"Ingredients", en:"Fish", vn:"cá", pr:"kah",
+      d:[{vn:"tôm",pr:"tome"},{vn:"mực",pr:"muk"},{vn:"heo",pr:"hey-oh"}]},
+    {cat:"Ordering Details", en:"A little spicy", vn:"ít cay", pr:"it kay",
+      d:[{vn:"không cay",pr:"khome kay"},{vn:"cay nhiều",pr:"kay nyew"},{vn:"cay vừa",pr:"kay vyuh-ah"}]},
+    {cat:"Ordering Details", en:"More please / extra", vn:"thêm nữa đi", pr:"tem nyuh dee",
+      d:[{vn:"bớt đi",pr:"buht dee"},{vn:"đủ rồi",pr:"doo roy"},{vn:"không cần",pr:"khome kun"}]},
+    {cat:"Ordering Details", en:"What is this?", vn:"Cái này là gì?", pr:"kai nay lah yee",
+      d:[{vn:"Cái này ngon không?",pr:"kai nay ngawn khome"},{vn:"Cái này bao nhiêu?",pr:"kai nay bow nyew"},{vn:"Cho tôi cái này",pr:"chaw toy kai nay"}]},
+    {cat:"Ordering Details", en:"Give me one of these", vn:"Cho tôi một cái này", pr:"chaw toy moht kai nay",
+      d:[{vn:"Cho tôi xem",pr:"chaw toy sem"},{vn:"Cái này là gì?",pr:"kai nay lah yee"},{vn:"Không muốn",pr:"khome moo-uhn"}]},
+    {cat:"Ordering Details", en:"Vegetarian / no meat", vn:"ăn chay", pr:"un chay",
+      d:[{vn:"ăn mặn",pr:"un mun"},{vn:"không thịt",pr:"khome tit"},{vn:"ăn kiêng",pr:"un kyeng"}]},
+  ],
+  expert: [
+    {cat:"Regional Dishes", en:"Cao Lau (Hoi An noodles)", vn:"cao lầu", pr:"kow loh",
+      d:[{vn:"mì Quảng",pr:"mee kwang"},{vn:"bún bò",pr:"boon baw"},{vn:"hủ tiếu",pr:"hoo tyew"}]},
+    {cat:"Regional Dishes", en:"Quang noodles", vn:"mì Quảng", pr:"mee kwang",
+      d:[{vn:"cao lầu",pr:"kow loh"},{vn:"bún bò",pr:"boon baw"},{vn:"phở",pr:"fuh"}]},
+    {cat:"Regional Dishes", en:"Southern rice noodle soup", vn:"hủ tiếu", pr:"hoo tyew",
+      d:[{vn:"phở",pr:"fuh"},{vn:"bún riêu",pr:"boon ryew"},{vn:"bún bò",pr:"boon baw"}]},
+    {cat:"Regional Dishes", en:"Crab noodle soup", vn:"bún riêu", pr:"boon ryew",
+      d:[{vn:"bún bò",pr:"boon baw"},{vn:"hủ tiếu",pr:"hoo tyew"},{vn:"phở",pr:"fuh"}]},
+    {cat:"Condiments", en:"Fish sauce (the base of everything)", vn:"nước mắm", pr:"nyuhk mum",
+      d:[{vn:"tương hoisin",pr:"tuh-ung hoy-sin"},{vn:"tương ớt",pr:"tuh-ung uht"},{vn:"dầu hào",pr:"yoh how"}]},
+    {cat:"Condiments", en:"Chili sauce", vn:"tương ớt", pr:"tuh-ung uht",
+      d:[{vn:"nước mắm",pr:"nyuhk mum"},{vn:"tương hoisin",pr:"tuh-ung hoy-sin"},{vn:"mắm tôm",pr:"mum tome"}]},
+    {cat:"Condiments", en:"Hoisin sauce", vn:"tương hoisin", pr:"tuh-ung hoy-sin",
+      d:[{vn:"nước mắm",pr:"nyuhk mum"},{vn:"tương ớt",pr:"tuh-ung uht"},{vn:"dầu hào",pr:"yoh how"}]},
+    {cat:"Condiments", en:"Fresh chili", vn:"ớt tươi", pr:"uht tuh-ee",
+      d:[{vn:"tương ớt",pr:"tuh-ung uht"},{vn:"ớt khô",pr:"uht khoh"},{vn:"tiêu",pr:"tyew"}]},
+    {cat:"Market Phrases", en:"Is this fresh today?", vn:"Hôm nay mới không?", pr:"home nay muh-ee khome",
+      d:[{vn:"Cái này ngon không?",pr:"kai nay ngawn khome"},{vn:"Bao nhiêu tiền?",pr:"bow nyew tyen"},{vn:"Cho tôi xem",pr:"chaw toy sem"}]},
+    {cat:"Market Phrases", en:"I'll take half a kilo", vn:"Cho tôi nửa ký", pr:"chaw toy nyuh kee",
+      d:[{vn:"Cho tôi một ký",pr:"chaw toy moht kee"},{vn:"Cho tôi một chút",pr:"chaw toy moht choot"},{vn:"Bao nhiêu một ký?",pr:"bow nyew moht kee"}]},
+    {cat:"Market Phrases", en:"How much per kilo?", vn:"Bao nhiêu một ký?", pr:"bow nyew moht kee",
+      d:[{vn:"Bao nhiêu tiền?",pr:"bow nyew tyen"},{vn:"Cho tôi nửa ký",pr:"chaw toy nyuh kee"},{vn:"Tươi không?",pr:"tuh-ee khome"}]},
+    {cat:"Café Culture", en:"Egg coffee (Hanoi specialty)", vn:"cà phê trứng", pr:"kah feh chung",
+      d:[{vn:"cà phê sữa đá",pr:"kah feh shuh-ah dah"},{vn:"cà phê cốt dừa",pr:"kah feh koht yuh-ah"},{vn:"bạc xỉu",pr:"bahk syew"}]},
+    {cat:"Café Culture", en:"White coffee (more milk, Saigon style)", vn:"bạc xỉu", pr:"bahk syew",
+      d:[{vn:"cà phê sữa đá",pr:"kah feh shuh-ah dah"},{vn:"cà phê đen",pr:"kah feh den"},{vn:"cà phê trứng",pr:"kah feh chung"}]},
+    {cat:"Café Culture", en:"Coconut coffee", vn:"cà phê cốt dừa", pr:"kah feh koht yuh-ah",
+      d:[{vn:"cà phê trứng",pr:"kah feh chung"},{vn:"bạc xỉu",pr:"bahk syew"},{vn:"cà phê đen",pr:"kah feh den"}]},
+    {cat:"Café Culture", en:"Drip filter coffee", vn:"cà phê phin", pr:"kah feh fin",
+      d:[{vn:"cà phê pha máy",pr:"kah feh fah my"},{vn:"cà phê đen",pr:"kah feh den"},{vn:"bạc xỉu",pr:"bahk syew"}]},
+  ]
+};
+
+let currentDifficulty = 'beginner';
+let questions = [], current = 0, score = 0, answered = false;
+
+function setDifficulty(level) {
+  if ((level === 'intermediate' || level === 'expert') && checkPaywall(level)) { showPaywall(); return; }
+  currentDifficulty = level;
+  ['beginner','intermediate','expert'].forEach(l => {
+    const tab = document.getElementById('tab-' + l);
+    tab.style.background = l === level ? 'var(--gold)' : 'transparent';
+    tab.style.color = l === level ? '#000' : 'rgba(255,255,255,0.5)';
+  });
+  restartQuiz();
+}
+
+function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+function restartQuiz() {
+  questions = shuffle(quizData[currentDifficulty]).slice(0, 10);
+  current = 0; score = 0; answered = false;
+  document.getElementById('resultsCard').style.display = 'none';
+  document.getElementById('quizCard').style.display = 'block';
+  showQuestion();
+}
+
+function showQuestion() {
+  if (current >= questions.length) { showResults(); return; }
+  answered = false;
+  const q = questions[current];
+  document.getElementById('progressText').textContent = `Question ${current + 1} of ${questions.length}`;
+  document.getElementById('scoreText').textContent = `Score: ${score}`;
+  document.getElementById('progressBar').style.width = `${(current / questions.length) * 100}%`;
+  document.getElementById('categoryBadge').textContent = q.cat;
+  document.getElementById('questionText').textContent = q.en;
+  document.getElementById('questionSub').textContent = 'What is this in Vietnamese?';
+
+  const choices = shuffle([{vn: q.vn, pr: q.pr}, ...q.d.slice(0, 3)]);
+  const grid = document.getElementById('choicesGrid');
+  grid.innerHTML = '';
+  choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.innerHTML = `<span class="choice-vn">${choice.vn}</span><span class="choice-pr">${choice.pr}</span>`;
+    btn.onclick = () => selectAnswer(btn, choice.vn, q.vn, q.pr);
+    btn.style.cssText = `padding:12px 10px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;color:white;font-family:var(--font-body);cursor:pointer;text-align:center;transition:background 0.15s;`;
+    grid.appendChild(btn);
+  });
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('nextBtn').style.display = 'none';
+}
+
+function selectAnswer(btn, selected, correct, correctPr) {
+  if (answered) return;
+  answered = true;
+  const feedback = document.getElementById('feedback');
+  document.getElementById('choicesGrid').querySelectorAll('button').forEach(b => {
+    b.style.cursor = 'default';
+    if (b.querySelector('.choice-vn').textContent === correct) {
+      b.style.background = 'rgba(46,204,113,0.3)';
+      b.style.borderColor = '#2ecc71';
+    }
+  });
+  if (selected === correct) {
+    score++;
+    btn.style.background = 'rgba(46,204,113,0.3)';
+    btn.style.borderColor = '#2ecc71';
+    feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(46,204,113,0.15);border-left:3px solid #2ecc71;color:#2ecc71;';
+    feedback.textContent = '✓ Correct! ' + getFoodFact(questions[current]);
+  } else {
+    btn.style.background = 'rgba(231,76,60,0.3)';
+    btn.style.borderColor = '#e74c3c';
+    feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(231,76,60,0.15);border-left:3px solid #e74c3c;color:#e74c3c;';
+    feedback.textContent = `✗ The answer is: ${correct} (${correctPr})`;
+  }
+  document.getElementById('scoreText').textContent = `Score: ${score}`;
+  document.getElementById('nextBtn').style.display = 'block';
+  current++;
+}
+
+function nextQuestion() { showQuestion(); }
+
+function getFoodFact(q) {
+  const facts = {
+    'Iconic Dishes': "Phở originated in the north but Saigon's version is sweeter and comes with more herbs and bean sprouts.",
+    'Drinks': 'Vietnamese coffee is brewed with a phin (drip filter) — much stronger than Western coffee. The condensed milk balances it perfectly.',
+    'Ordering Basics': 'Pointing at what you want and saying "cho tôi một" works at almost any street stall, even without more Vietnamese.',
+    'Street Food': "The best street food is usually found where locals queue — if there's a line of motorbikes outside, that's your sign.",
+    'Ingredients': 'Vietnamese cooking uses incredibly fresh ingredients — herbs, vegetables, and proteins are often sourced from the market that morning.',
+    'Ordering Details': 'Vietnamese restaurants rarely get offended by customization requests — asking for less spice or extra herbs is totally normal.',
+    'Regional Dishes': "Vietnam's cuisine changes dramatically by region — Saigon is sweeter, Hanoi is more savory, and Hue is the spiciest.",
+    'Condiments': 'Nước mắm (fish sauce) is the backbone of Vietnamese cooking. Phu Quoc island produces the most prized variety.',
+    'Market Phrases': 'Wet markets open at 5-6am with the freshest produce. Arrive early for the best selection and most authentic experience.',
+    'Café Culture': "Vietnam is the world's second largest coffee producer. Robusta beans give Vietnamese coffee its distinctive strong, slightly bitter flavor.",
+  };
+  return facts[q.cat] || 'Keep going!';
+}
+
+function showResults() {
+  document.getElementById('quizCard').style.display = 'none';
+  document.getElementById('resultsCard').style.display = 'block';
+  const pct = score / questions.length;
+  document.getElementById('finalScore').textContent = `You scored ${score} out of ${questions.length}`;
+  const msgs = [[0.9,"🏆 Xuất sắc lắm! (Outstanding!) You're a natural!"],[0.8,"🌟 Giỏi lắm! (Very good!) Keep it up!"],[0.6,"👍 Khá tốt! (Pretty good!) Almost there!"],[0,"💪 Keep practicing! Bạn sẽ tiến bộ! (You will improve!)"]];
+  document.getElementById('resultsMsg').textContent = msgs.find(([t]) => pct >= t)[1];
+}
+
+document.addEventListener('DOMContentLoaded', restartQuiz);
+</script>
+
+<style>
+.choice-vn { display:block;font-size:0.95rem;font-weight:700;line-height:1.3; }
+.choice-pr { display:block;font-size:0.72rem;font-weight:500;color:rgba(255,255,255,0.4);margin-top:3px;font-style:italic; }
+</style>
+
 </body>
 </html>
