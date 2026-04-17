@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alphabet & Tones Cheat Sheet – FluentSaigon</title>
+<meta name="description" content="Vietnamese alphabet and tones cheat sheet — all 6 tones, special letters, vowels, and pronunciation guide.">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇻🇳</text></svg>">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+
+@media print {
+  body { background: #fff !important; color: #000 !important; }
+  nav, #nav-placeholder, #footer-placeholder, #modal-placeholder,
+  #paywall-placeholder, .no-print { display: none !important; }
+  .cs-hero { background: #fff !important; padding: 16px 0 8px !important; }
+  .cs-hero h1 { color: #000 !important; font-size: 2rem !important; }
+  .cs-hero p { color: #444 !important; }
+  .cs-section { background: #fff !important; border: 1px solid #ddd !important; box-shadow: none !important; break-inside: avoid; }
+  .cs-section-title { color: #000 !important; border-bottom-color: #ccc !important; }
+  .cs-table th { background: #f0f0f0 !important; color: #000 !important; }
+  .cs-table td { color: #000 !important; border-bottom-color: #eee !important; }
+  .cs-tag { background: #eee !important; color: #333 !important; }
+  .cs-tip { background: #fffbe6 !important; border-color: #e6c200 !important; color: #333 !important; }
+  .pattern-box { background: #f8f8f8 !important; border: 1px solid #ddd !important; color: #000 !important; }
+  .pattern-box code { color: #c0392b !important; }
+  .tab-bar { display: none !important; }
+  .tab-section { display: block !important; }
+  .tone-card { background: #f5f5f5 !important; border: 1px solid #ddd !important; }
+}
+
+.cs-page { max-width: 860px; margin: 0 auto; padding: 0 20px 80px; }
+
+.cs-hero { padding: 48px 0 32px; text-align: center; }
+.cs-hero .breadcrumb {
+  color: rgba(255,255,255,0.45); font-size: 0.8rem; font-weight: 700;
+  text-decoration: none; letter-spacing: 0.04em; display: inline-flex;
+  align-items: center; gap: 6px; margin-bottom: 20px; transition: color 0.2s;
+}
+.cs-hero .breadcrumb:hover { color: var(--gold); }
+.cs-hero h1 {
+  font-family: var(--font-display); font-size: clamp(2.8rem, 8vw, 5rem);
+  letter-spacing: 0.03em; color: var(--white); margin-bottom: 10px; line-height: 1;
+}
+.cs-hero h1 span { color: var(--gold); }
+.cs-hero p {
+  color: rgba(255,255,255,0.55); font-size: 1rem; font-weight: 600;
+  max-width: 480px; margin: 0 auto 24px; line-height: 1.6;
+}
+.cs-hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.btn-quiz {
+  background: var(--gold); color: #000; font-weight: 800; font-size: 0.85rem;
+  padding: 10px 22px; border-radius: var(--radius-pill); text-decoration: none;
+  letter-spacing: 0.04em; transition: 0.2s; display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-quiz:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn-print {
+  background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); font-weight: 800;
+  font-size: 0.85rem; padding: 10px 22px; border-radius: var(--radius-pill);
+  border: 1px solid rgba(255,255,255,0.15); cursor: pointer; letter-spacing: 0.04em;
+  transition: 0.2s; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-body);
+}
+.btn-print:hover { background: rgba(255,255,255,0.14); color: #fff; }
+
+.tab-bar {
+  display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 28px;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-pill); padding: 5px;
+}
+.tab-btn {
+  flex: 1; min-width: 100px; padding: 9px 16px; border-radius: var(--radius-pill);
+  border: none; background: transparent; color: rgba(255,255,255,0.45);
+  font-family: var(--font-body); font-size: 0.78rem; font-weight: 800;
+  letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: 0.2s; white-space: nowrap;
+}
+.tab-btn.active { background: var(--gold); color: #000; }
+.tab-btn:not(.active):hover { background: rgba(255,255,255,0.08); color: #fff; }
+.tab-section { display: none; }
+.tab-section.active { display: block; }
+
+.cs-section {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 28px; margin-bottom: 20px;
+}
+.cs-section-title {
+  font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.05em;
+  color: var(--gold); margin-bottom: 16px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px;
+}
+
+.cs-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.cs-table th {
+  background: rgba(245,197,24,0.1); color: var(--gold); font-size: 0.68rem; font-weight: 800;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 14px; text-align: left;
+}
+.cs-table th:first-child { border-radius: 8px 0 0 8px; }
+.cs-table th:last-child { border-radius: 0 8px 8px 0; }
+.cs-table td {
+  padding: 11px 14px; border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.85); font-weight: 600; vertical-align: middle;
+}
+.cs-table tr:last-child td { border-bottom: none; }
+.cs-table tr:hover td { background: rgba(255,255,255,0.03); }
+.vn { font-size: 1.1rem; font-weight: 800; color: #fff; }
+.pr { font-size: 0.82rem; color: rgba(255,255,255,0.4); font-style: italic; font-weight: 500; }
+.cs-tag {
+  display: inline-block; background: rgba(245,197,24,0.12); color: var(--gold);
+  font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 4px;
+}
+.cs-tag.red { background: rgba(231,76,60,0.15); color: #e74c3c; }
+.cs-tag.green { background: rgba(46,204,113,0.12); color: var(--green); }
+
+.pattern-box {
+  background: rgba(0,0,0,0.2); border: 1px solid rgba(245,197,24,0.2);
+  border-radius: 10px; padding: 18px 20px; margin: 16px 0;
+  font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.8);
+}
+.pattern-box strong { color: #fff; }
+.pattern-box code { color: var(--gold); font-size: 1rem; font-weight: 800; font-family: monospace; }
+
+.cs-tip {
+  background: rgba(245,197,24,0.07); border-left: 3px solid var(--gold);
+  border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 16px 0 0;
+  font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.6;
+}
+.cs-tip strong { color: var(--gold); }
+
+.cs-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 580px) { .cs-grid-2 { grid-template-columns: 1fr; } }
+
+/* Tone cards */
+.tone-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 8px; }
+.tone-card {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px; padding: 18px 16px;
+}
+.tone-card.flat { border-color: rgba(255,255,255,0.25); }
+.tone-card.falling { border-color: rgba(100,160,255,0.4); }
+.tone-card.rising { border-color: rgba(46,204,113,0.4); }
+.tone-card.questioning { border-color: rgba(245,197,24,0.4); }
+.tone-card.broken { border-color: rgba(155,89,182,0.5); }
+.tone-card.heavy { border-color: rgba(231,76,60,0.4); }
+.tone-name { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
+.tone-example { font-size: 2rem; font-weight: 900; color: white; line-height: 1; margin-bottom: 4px; }
+.tone-meaning { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+.tone-desc { font-size: 0.82rem; color: rgba(255,255,255,0.7); line-height: 1.5; }
+.tone-mark { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-top: 6px; font-style: italic; }
+
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder" data-page="subjects"></div>
+<div id="modal-placeholder"></div>
+<div id="paywall-placeholder"></div>
+
+<div class="cs-page">
+
+  <!-- HERO -->
+  <div class="cs-hero">
+    <a href="subjects.html" class="breadcrumb">← All Subjects</a>
+    <h1>🔤 Alphabet & Tones <span>Cheat Sheet</span></h1>
+    <p>The 6 tones, special letters, vowels, and how to read Vietnamese — the foundation everything else builds on.</p>
+    <div class="cs-hero-actions no-print">
+      <a href="quiz-alphabet.html" class="btn-quiz">🎯 Take the Quiz →</a>
+      <button class="btn-print" onclick="window.print()">🖨️ Print</button>
+    </div>
+  </div>
+
+  <!-- TAB BAR -->
+  <div class="tab-bar no-print">
+    <button class="tab-btn active" onclick="showTab('tones')">The 6 Tones</button>
+    <button class="tab-btn" onclick="showTab('consonants')">Consonants</button>
+    <button class="tab-btn" onclick="showTab('vowels')">Vowels</button>
+    <button class="tab-btn" onclick="showTab('northsouth')">North vs South</button>
+    <button class="tab-btn" onclick="showTab('reading')">Reading Practice</button>
+  </div>
+
+  <!-- TAB: THE 6 TONES -->
+  <div class="tab-section active" id="tab-tones">
+
+    <div class="cs-section">
+      <div class="cs-section-title">🎵 The 6 Tones — The Key to Everything</div>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:20px;line-height:1.7;">Every Vietnamese syllable has one of these 6 tones. The same syllable with a different tone = a completely different word. The tone mark sits on the main vowel of the syllable.</p>
+
+      <div class="tone-grid">
+
+        <div class="tone-card flat">
+          <div class="tone-name" style="color:rgba(255,255,255,0.6);">① Ngang — Flat</div>
+          <div class="tone-example">ma</div>
+          <div class="tone-meaning">ghost</div>
+          <div class="tone-desc">Level, mid pitch. Hold the note steady — like singing one note.</div>
+          <div class="tone-mark">No mark needed</div>
+        </div>
+
+        <div class="tone-card falling">
+          <div class="tone-name" style="color:#64a0ff;">② Huyền — Falling</div>
+          <div class="tone-example">mà</div>
+          <div class="tone-meaning">but / however</div>
+          <div class="tone-desc">Low and falling. Start low, let it drop — like a sigh of disappointment.</div>
+          <div class="tone-mark">Grave accent: à è ì ò ù</div>
+        </div>
+
+        <div class="tone-card rising">
+          <div class="tone-name" style="color:#2ecc71;">③ Sắc — Rising</div>
+          <div class="tone-example">má</div>
+          <div class="tone-meaning">cheek / mum (Southern)</div>
+          <div class="tone-desc">High and rising. Start mid, rise up — like asking a quick question.</div>
+          <div class="tone-mark">Acute accent: á é í ó ú</div>
+        </div>
+
+        <div class="tone-card questioning">
+          <div class="tone-name" style="color:var(--gold);">④ Hỏi — Questioning</div>
+          <div class="tone-example">mả</div>
+          <div class="tone-meaning">tomb / grave</div>
+          <div class="tone-desc">Dips down then rises. Like the sound of genuine confusion — "huh?"</div>
+          <div class="tone-mark">Hook above: ả ẻ ỉ ỏ ủ</div>
+        </div>
+
+        <div class="tone-card broken">
+          <div class="tone-name" style="color:#9b59b6;">⑤ Ngã — Broken</div>
+          <div class="tone-example">mã</div>
+          <div class="tone-meaning">horse / code</div>
+          <div class="tone-desc">Rises then breaks with a creaky stop — like your voice cracks. Rare in Southern Vietnamese.</div>
+          <div class="tone-mark">Tilde: ã ẽ ĩ õ ũ</div>
+        </div>
+
+        <div class="tone-card heavy">
+          <div class="tone-name" style="color:#e74c3c;">⑥ Nặng — Heavy</div>
+          <div class="tone-example">mạ</div>
+          <div class="tone-meaning">rice seedling</div>
+          <div class="tone-desc">Low, short, and heavy — drops down and stops abruptly. Like a door slamming.</div>
+          <div class="tone-mark">Dot below: ạ ẹ ị ọ ụ</div>
+        </div>
+
+      </div>
+      <div class="cs-tip">💡 <strong>Southern Vietnam shortcut:</strong> In Saigon, the Ngã (broken) tone often sounds identical to the Hỏi (questioning) tone. Many southerners merge them. So you effectively have 5 distinct sounds to learn, not 6.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">⚡ Why Tones Matter — One Syllable, Six Meanings</div>
+      <table class="cs-table">
+        <thead><tr><th>Word</th><th>Tone</th><th>Mark</th><th>Pronunciation</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="vn">ma</td><td>Ngang (flat)</td><td>none</td><td class="pr">mah</td><td>Ghost</td></tr>
+          <tr><td class="vn">mà</td><td>Huyền (falling)</td><td>`</td><td class="pr">mah ↘</td><td>But / however</td></tr>
+          <tr><td class="vn">má</td><td>Sắc (rising)</td><td>´</td><td class="pr">mah ↗</td><td>Cheek / mum (Southern)</td></tr>
+          <tr><td class="vn">mả</td><td>Hỏi (questioning)</td><td>̉</td><td class="pr">mah ↘↗</td><td>Tomb / grave</td></tr>
+          <tr><td class="vn">mã</td><td>Ngã (broken)</td><td>~</td><td class="pr">mah ↗ (break)</td><td>Horse / code</td></tr>
+          <tr><td class="vn">mạ</td><td>Nặng (heavy)</td><td>.</td><td class="pr">mah ↘ (stop)</td><td>Rice seedling</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>The most important pair:</strong> <strong>mẹ</strong> (dot below = nặng) means MOTHER. <strong>me</strong> (no mark = flat) means tamarind. Say the wrong tone to a Vietnamese person and you've just called their mother a fruit.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">🔑 More Tone Examples You'll Actually Use</div>
+      <table class="cs-table">
+        <thead><tr><th>Word</th><th>Pronunciation</th><th>Meaning</th><th>Tone</th></tr></thead>
+        <tbody>
+          <tr><td class="vn">bạn</td><td class="pr">bahn (heavy)</td><td>Friend / you</td><td><span class="cs-tag red">Nặng .</span></td></tr>
+          <tr><td class="vn">bán</td><td class="pr">bahn (rising)</td><td>To sell</td><td><span class="cs-tag green">Sắc ´</span></td></tr>
+          <tr><td class="vn">bàn</td><td class="pr">bahn (falling)</td><td>Table / to discuss</td><td><span class="cs-tag">Huyền `</span></td></tr>
+          <tr><td class="vn">không</td><td class="pr">khome (flat)</td><td>No / not / zero</td><td><span class="cs-tag">Ngang</span></td></tr>
+          <tr><td class="vn">khổng</td><td class="pr">khome (questioning)</td><td>Huge (as in Khổng Tử)</td><td><span class="cs-tag">Hỏi ̉</span></td></tr>
+          <tr><td class="vn">cảm ơn</td><td class="pr">kahm uhn</td><td>Thank you</td><td><span class="cs-tag">Hỏi ̉</span></td></tr>
+          <tr><td class="vn">ngon</td><td class="pr">ngawn (flat)</td><td>Delicious</td><td><span class="cs-tag">Ngang</span></td></tr>
+          <tr><td class="vn">ngọn</td><td class="pr">ngawn (heavy)</td><td>Tip / flame</td><td><span class="cs-tag red">Nặng .</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- TAB: CONSONANTS -->
+  <div class="tab-section" id="tab-consonants">
+
+    <div class="cs-section">
+      <div class="cs-section-title">🔤 Consonants That Trick English Speakers</div>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:16px;line-height:1.7;">Most Vietnamese consonants are straightforward. These are the ones that behave unexpectedly for English speakers.</p>
+      <table class="cs-table">
+        <thead><tr><th>Letter(s)</th><th>Sounds like</th><th>Example</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td class="vn">Đ / đ</td><td>Hard D — as in "dog"</td><td class="pr">đi = dee (go)</td><td>Has a stroke through it — different from D</td></tr>
+          <tr><td class="vn">D / d</td><td>Y — as in "yes" (Southern)</td><td class="pr">da = yah (skin)</td><td>Z in Northern Vietnamese</td></tr>
+          <tr><td class="vn">GI / gi</td><td>Y — as in "yes" (Southern)</td><td class="pr">giờ = yuh (hour)</td><td>Z in Northern Vietnamese</td></tr>
+          <tr><td class="vn">G / gh</td><td>Hard G — as in "go"</td><td class="pr">gà = gah (chicken)</td><td>GH used before E and I</td></tr>
+          <tr><td class="vn">NG / NGH</td><td>NG — as in "sing"</td><td class="pr">ngon = ngawn</td><td>Can start a word — practice: say "singing" fast</td></tr>
+          <tr><td class="vn">NH</td><td>NY — as in "canyon"</td><td class="pr">nhỏ = nyaw (small)</td><td>One sound, not N + H separately</td></tr>
+          <tr><td class="vn">PH</td><td>F — as in "fish"</td><td class="pr">phở = fuh</td><td>Always F, never P+H</td></tr>
+          <tr><td class="vn">TH</td><td>T with a puff of air</td><td class="pr">thì = tee (then)</td><td>NOT like English "the" — just an aspirated T</td></tr>
+          <tr><td class="vn">KH</td><td>KH — breathy K</td><td class="pr">không = khome</td><td>Like clearing your throat gently</td></tr>
+          <tr><td class="vn">X</td><td>S — as in "sun"</td><td class="pr">xin = sin</td><td>Always S, never KS like English X</td></tr>
+          <tr><td class="vn">C / K / Q</td><td>K — as in "king"</td><td class="pr">cà = kah, khi = khee</td><td>All three make the same K sound</td></tr>
+          <tr><td class="vn">CH</td><td>CH — as in "church"</td><td class="pr">chào = chow</td><td>Standard CH sound</td></tr>
+          <tr><td class="vn">TR</td><td>CH (Southern) / TR (Northern)</td><td class="pr">trà = chah (tea)</td><td>Southern: tr sounds like ch</td></tr>
+          <tr><td class="vn">R</td><td>R/Z/D depending on region</td><td class="pr">rẻ = reh/zeh</td><td>Southern: rolled R · Northern: Z-like</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>The letters NOT in Vietnamese:</strong> F, J, W, Z don't appear in native Vietnamese words (though they're used in foreign loanwords). If you see them, the word is borrowed from another language.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Final Consonants — How Words End</div>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:16px;line-height:1.7;">Vietnamese words can only end in these sounds. This is different from English where almost any consonant can end a word.</p>
+      <table class="cs-table">
+        <thead><tr><th>Ending</th><th>Sounds like</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td class="vn">-n</td><td>N</td><td class="pr">bạn = bahn</td></tr>
+          <tr><td class="vn">-m</td><td>M</td><td class="pr">cảm = kahm</td></tr>
+          <tr><td class="vn">-ng</td><td>NG (as in sing)</td><td class="pr">không = khome-ng</td></tr>
+          <tr><td class="vn">-nh</td><td>NY (softer than ng)</td><td class="pr">anh = anh</td></tr>
+          <tr><td class="vn">-c</td><td>K (stopped, no release)</td><td class="pr">học = hawk</td></tr>
+          <tr><td class="vn">-ch</td><td>CH (stopped)</td><td class="pr">sách = sahk</td></tr>
+          <tr><td class="vn">-p</td><td>P (stopped, no release)</td><td class="pr">hợp = hup</td></tr>
+          <tr><td class="vn">-t</td><td>T (stopped, no release)</td><td class="pr">một = moht</td></tr>
+          <tr><td class="vn">-i / -y</td><td>EE (glide)</td><td class="pr">tôi = toy</td></tr>
+          <tr><td class="vn">-u / -o</td><td>OO/W (glide)</td><td class="pr">mau = mow</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>Stopped consonants:</strong> When a word ends in -c, -ch, -p, or -t, the sound is cut off abruptly — don't release the air. It's like saying "back" but stopping before the K fully releases.</div>
+    </div>
+
+  </div>
+
+  <!-- TAB: VOWELS -->
+  <div class="tab-section" id="tab-vowels">
+
+    <div class="cs-section">
+      <div class="cs-section-title">🔵 The Modified Vowels</div>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:16px;line-height:1.7;">Vietnamese adds hats and hooks to create new vowel sounds. Each modified vowel is a distinct sound — not just a decorated version of the base letter.</p>
+      <table class="cs-table">
+        <thead><tr><th>Vowel</th><th>Sounds like</th><th>Memory tip</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td class="vn">A / a</td><td>AH — as in "father"</td><td>Open mouth wide</td><td class="pr">ba = bah (three)</td></tr>
+          <tr><td class="vn">Ă / ă</td><td>Short AH — clipped</td><td>Like 'a' in "cat" but shorter</td><td class="pr">ăn = un (eat)</td></tr>
+          <tr><td class="vn">Â / â</td><td>UH — very short</td><td>Like 'a' in "about"</td><td class="pr">ân = un (grace)</td></tr>
+          <tr><td class="vn">E / e</td><td>EH — as in "bed"</td><td>Open E sound</td><td class="pr">em = em (younger sibling)</td></tr>
+          <tr><td class="vn">Ê / ê</td><td>EH — as in "set" (tighter)</td><td>Slightly more closed than E</td><td class="pr">đêm = dem (night)</td></tr>
+          <tr><td class="vn">I / i</td><td>EE — as in "see"</td><td>Pure EE sound</td><td class="pr">di = dee (go)</td></tr>
+          <tr><td class="vn">O / o</td><td>AW — as in "law"</td><td>Open O sound</td><td class="pr">con = kawn (child)</td></tr>
+          <tr><td class="vn">Ô / ô</td><td>OH — as in "go"</td><td>Closed O — lips more rounded</td><td class="pr">tôi = toy (I/me)</td></tr>
+          <tr><td class="vn">Ơ / ơ</td><td>UH — as in "fur" (no R)</td><td>Like English "her" without the R</td><td class="pr">ơn = uhn (grace/favor)</td></tr>
+          <tr><td class="vn">U / u</td><td>OO — as in "food"</td><td>Lips forward and rounded</td><td class="pr">uống = oo-ung (drink)</td></tr>
+          <tr><td class="vn">Ư / ư</td><td>UH — deeper, unrounded</td><td>Like OO but lips NOT rounded</td><td class="pr">ừ = uh (casual yes)</td></tr>
+          <tr><td class="vn">Y / y</td><td>EE — same as I</td><td>Interchangeable with I in many words</td><td class="pr">yêu = yew (love)</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>The hardest vowel:</strong> Ư (ư) — say "OO" but pull your lips back instead of pushing them forward. Your mouth shape is like saying "EE" but the sound is "UH". It's unique to Vietnamese and takes practice.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Common Vowel Combinations (Diphthongs)</div>
+      <table class="cs-table">
+        <thead><tr><th>Combo</th><th>Sounds like</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td class="vn">ôi</td><td>OY — as in "boy"</td><td class="pr">tôi = toy (I)</td></tr>
+          <tr><td class="vn">ơi</td><td>UH-ee</td><td class="pr">ơi = uh-ee (hey!)</td></tr>
+          <tr><td class="vn">ai</td><td>AH-ee (like "eye")</td><td class="pr">hai = hi (two)</td></tr>
+          <tr><td class="vn">ao</td><td>OW — as in "cow"</td><td class="pr">chào = chow (hello)</td></tr>
+          <tr><td class="vn">au</td><td>OW — shorter</td><td class="pr">sau = sow (after)</td></tr>
+          <tr><td class="vn">âu</td><td>OH — rounded</td><td class="pr">đâu = doh (where)</td></tr>
+          <tr><td class="vn">ưa</td><td>UH-ah</td><td class="pr">mưa = myuh-ah (rain)</td></tr>
+          <tr><td class="vn">iê / yê</td><td>YEH</td><td class="pr">tiền = tyen (money)</td></tr>
+          <tr><td class="vn">uô</td><td>OO-oh</td><td class="pr">uống = oo-ung (drink)</td></tr>
+          <tr><td class="vn">ươ</td><td>UH-uh</td><td class="pr">được = duh-uk (can/OK)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- TAB: NORTH VS SOUTH -->
+  <div class="tab-section" id="tab-northsouth">
+
+    <div class="cs-section">
+      <div class="cs-section-title">🗺️ Northern vs Southern Pronunciation</div>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:16px;line-height:1.7;">Vietnam has two main dialects. Neither is "correct" — they're just different. FluentSaigon teaches Southern Vietnamese (Saigon dialect). Here's what changes between them.</p>
+
+      <table class="cs-table">
+        <thead><tr><th>Letter(s)</th><th>Southern (Saigon) 🏙️</th><th>Northern (Hanoi) 🏛️</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td class="vn">D / d</td><td>Y sound (yes)</td><td>Z sound (zero)</td><td class="pr">da = yah / zah (skin)</td></tr>
+          <tr><td class="vn">GI / gi</td><td>Y sound (yes)</td><td>Z sound (zero)</td><td class="pr">giờ = yuh / zuh (hour)</td></tr>
+          <tr><td class="vn">V / v</td><td>V sound (van)</td><td>V or Y (varies)</td><td class="pr">về = veh (return)</td></tr>
+          <tr><td class="vn">TR / tr</td><td>CH sound (church)</td><td>TR sound (true)</td><td class="pr">trà = chah / trah (tea)</td></tr>
+          <tr><td class="vn">X / x</td><td>S sound (sun)</td><td>S sound (same)</td><td class="pr">xin = sin (please)</td></tr>
+          <tr><td class="vn">S / s</td><td>S sound (sun)</td><td>SH sound (shoe) — some speakers</td><td class="pr">sáng = sahng (morning)</td></tr>
+          <tr><td class="vn">R / r</td><td>R sound (rolled)</td><td>Z/R (varies by speaker)</td><td class="pr">rẻ = reh (cheap)</td></tr>
+          <tr><td class="vn">Ngã tone (~)</td><td>Merged with Hỏi — sounds same</td><td>Distinct broken/creaky sound</td><td class="pr">mã / mả → both sound like "mah↘↗"</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>Bottom line:</strong> If you learn Southern pronunciation, Northerners will understand you perfectly — they just might smile at your accent. The vocabulary is nearly identical. The pronunciation differences are mainly in consonants D, GI, TR, and the Ngã tone.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Regional Vocabulary Differences</div>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:16px;line-height:1.7;">A few common words are different between North and South — but both versions are understood everywhere.</p>
+      <table class="cs-table">
+        <thead><tr><th>Meaning</th><th>Southern 🏙️</th><th>Northern 🏛️</th></tr></thead>
+        <tbody>
+          <tr><td>Father</td><td class="vn">ba</td><td class="vn">bố</td></tr>
+          <tr><td>Mother</td><td class="vn">má</td><td class="vn">mẹ</td></tr>
+          <tr><td>Thousand</td><td class="vn">ngàn</td><td class="vn">nghìn</td></tr>
+          <tr><td>Yes (polite)</td><td class="vn">dạ</td><td class="vn">vâng</td></tr>
+          <tr><td>Pineapple</td><td class="vn">thơm</td><td class="vn">dứa</td></tr>
+          <tr><td>Airplane</td><td class="vn">máy bay</td><td class="vn">máy bay (same)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- TAB: READING PRACTICE -->
+  <div class="tab-section" id="tab-reading">
+
+    <div class="cs-section">
+      <div class="cs-section-title">📖 Read These Words — Apply What You've Learned</div>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:16px;line-height:1.7;">Cover the pronunciation column and try to read each word yourself first, then check.</p>
+      <table class="cs-table">
+        <thead><tr><th>Vietnamese</th><th>How to Read It</th><th>Meaning</th><th>Key Rule</th></tr></thead>
+        <tbody>
+          <tr><td class="vn">phở</td><td class="pr">fuh</td><td>Pho (noodle soup)</td><td>PH = F · ở = uh · hỏi tone</td></tr>
+          <tr><td class="vn">xin chào</td><td class="pr">sin chow</td><td>Hello</td><td>X = S · ch = ch · ào = falling ow</td></tr>
+          <tr><td class="vn">cảm ơn</td><td class="pr">kahm uhn</td><td>Thank you</td><td>C = K · ả = ah (hỏi) · ơn = uhn</td></tr>
+          <tr><td class="vn">không</td><td class="pr">khome</td><td>No / not</td><td>KH = breathy K · ông = ohm-ng</td></tr>
+          <tr><td class="vn">ngon</td><td class="pr">ngawn</td><td>Delicious</td><td>NG at start — practice in throat</td></tr>
+          <tr><td class="vn">được</td><td class="pr">duh-uk</td><td>OK / can / possible</td><td>Đ = hard D · ươc = uh-uk</td></tr>
+          <tr><td class="vn">bạn</td><td class="pr">bahn</td><td>Friend / you</td><td>ạ = ah with dot below (nặng)</td></tr>
+          <tr><td class="vn">tôi</td><td class="pr">toy</td><td>I / me</td><td>ôi = oy (like "boy")</td></tr>
+          <tr><td class="vn">giờ</td><td class="pr">yuh (South) / zuh (North)</td><td>Hour / o'clock</td><td>GI = Y in South, Z in North</td></tr>
+          <tr><td class="vn">nhỏ</td><td class="pr">nyaw</td><td>Small</td><td>NH = NY · ỏ = aw (hỏi tone)</td></tr>
+          <tr><td class="vn">đường</td><td class="pr">duh-ung</td><td>Road / sugar</td><td>Đ = hard D · ường = uh-ung · huyền</td></tr>
+          <tr><td class="vn">tiền</td><td class="pr">tyen</td><td>Money</td><td>iê = yeh · n = final n</td></tr>
+          <tr><td class="vn">thích</td><td class="pr">tick</td><td>To like</td><td>TH = aspirated T · ich = ick (stopped)</td></tr>
+          <tr><td class="vn">rất</td><td class="pr">rut</td><td>Very</td><td>R · ất = ut (nặng — heavy, short)</td></tr>
+          <tr><td class="vn">người</td><td class="pr">nguh-ee</td><td>Person / people</td><td>NG start · ười = uh-ee (glide)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">🎯 The 10 Rules That Unlock Vietnamese Reading</div>
+      <div class="pattern-box">
+        <strong>1.</strong> <code>PH</code> = F &nbsp;·&nbsp; <strong>2.</strong> <code>X</code> = S &nbsp;·&nbsp; <strong>3.</strong> <code>GI</code> = Y (South) &nbsp;·&nbsp; <strong>4.</strong> <code>D</code> = Y (South)<br>
+        <strong>5.</strong> <code>NH</code> = NY &nbsp;·&nbsp; <strong>6.</strong> <code>NG</code> = ng-sound (as in sing)<br>
+        <strong>7.</strong> <code>TH</code> = aspirated T (not "the") &nbsp;·&nbsp; <strong>8.</strong> <code>TR</code> = CH (South)<br>
+        <strong>9.</strong> <code>Đ</code> = hard D &nbsp;·&nbsp; <strong>10.</strong> Tone mark on vowel = tone of whole syllable
+      </div>
+      <div class="cs-tip">💡 <strong>Vietnamese is highly phonetic.</strong> Once you know these rules, every word is readable. Unlike English, there are almost no exceptions — the same letter always makes the same sound.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">✅ Ready to Test Yourself?</div>
+      <p style="color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.6;">You've read the cheat sheet — now put it to the test.</p>
+      <a href="quiz-alphabet.html" class="btn-quiz no-print" style="display:inline-flex;">🎯 Take the Alphabet & Tones Quiz →</a>
+    </div>
+
+  </div>
+
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="../js/components.js"></script>
+<script src="../js/auth.js"></script>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
