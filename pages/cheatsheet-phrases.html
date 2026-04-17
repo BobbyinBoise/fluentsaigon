@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phrases & Greetings Cheat Sheet – FluentSaigon</title>
+<meta name="description" content="Vietnamese phrases and greetings cheat sheet — hellos, goodbyes, polite words, directions, and real street phrases.">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇻🇳</text></svg>">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+
+/* ── PRINT STYLES ──────────────────────────────────────────── */
+@media print {
+  body { background: #fff !important; color: #000 !important; }
+  nav, #nav-placeholder, #footer-placeholder, #modal-placeholder,
+  #paywall-placeholder, .no-print { display: none !important; }
+  .cs-hero { background: #fff !important; padding: 16px 0 8px !important; }
+  .cs-hero h1 { color: #000 !important; font-size: 2rem !important; }
+  .cs-hero p { color: #444 !important; }
+  .cs-section { background: #fff !important; border: 1px solid #ddd !important; box-shadow: none !important; break-inside: avoid; }
+  .cs-section-title { color: #000 !important; border-bottom-color: #ccc !important; }
+  .cs-table th { background: #f0f0f0 !important; color: #000 !important; }
+  .cs-table td { color: #000 !important; border-bottom-color: #eee !important; }
+  .cs-tag { background: #eee !important; color: #333 !important; }
+  .cs-tip { background: #fffbe6 !important; border-color: #e6c200 !important; color: #333 !important; }
+  .cs-tip strong { color: #000 !important; }
+  .pattern-box { background: #f8f8f8 !important; border: 1px solid #ddd !important; color: #000 !important; }
+  .pattern-box code { color: #c0392b !important; }
+  .tab-bar { display: none !important; }
+  .tab-section { display: block !important; opacity: 1 !important; }
+}
+
+/* ── PAGE LAYOUT ───────────────────────────────────────────── */
+.cs-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+/* ── HERO ──────────────────────────────────────────────────── */
+.cs-hero {
+  padding: 48px 0 32px;
+  text-align: center;
+}
+.cs-hero .breadcrumb {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+}
+.cs-hero .breadcrumb:hover { color: var(--gold); }
+.cs-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  letter-spacing: 0.03em;
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1;
+}
+.cs-hero h1 span { color: var(--gold); }
+.cs-hero p {
+  color: rgba(255,255,255,0.55);
+  font-size: 1rem;
+  font-weight: 600;
+  max-width: 480px;
+  margin: 0 auto 24px;
+  line-height: 1.6;
+}
+.cs-hero-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── BUTTONS ───────────────────────────────────────────────── */
+.btn-quiz {
+  background: var(--gold);
+  color: #000;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-quiz:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn-print {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.7);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+}
+.btn-print:hover { background: rgba(255,255,255,0.14); color: #fff; }
+
+/* ── TAB BAR ───────────────────────────────────────────────── */
+.tab-bar {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-pill);
+  padding: 5px;
+}
+.tab-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 9px 16px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.45);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+.tab-btn.active { background: var(--gold); color: #000; }
+.tab-btn:not(.active):hover { background: rgba(255,255,255,0.08); color: #fff; }
+.tab-section { display: none; }
+.tab-section.active { display: block; }
+
+/* ── SECTION CARD ──────────────────────────────────────────── */
+.cs-section {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 20px;
+}
+.cs-section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── TABLE ─────────────────────────────────────────────────── */
+.cs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.cs-table th {
+  background: rgba(245,197,24,0.1);
+  color: var(--gold);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  text-align: left;
+}
+.cs-table th:first-child { border-radius: 8px 0 0 8px; }
+.cs-table th:last-child { border-radius: 0 8px 8px 0; }
+.cs-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+  vertical-align: middle;
+}
+.cs-table tr:last-child td { border-bottom: none; }
+.cs-table tr:hover td { background: rgba(255,255,255,0.03); }
+.vn {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+}
+.pr {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.4);
+  font-style: italic;
+  font-weight: 500;
+}
+.cs-tag {
+  display: inline-block;
+  background: rgba(245,197,24,0.12);
+  color: var(--gold);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.cs-tag.green { background: rgba(46,204,113,0.12); color: var(--green); }
+
+/* ── PATTERN BOX ───────────────────────────────────────────── */
+.pattern-box {
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(245,197,24,0.2);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 16px 0;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.8);
+}
+.pattern-box strong { color: #fff; }
+.pattern-box code {
+  color: var(--gold);
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: monospace;
+}
+
+/* ── TIP BOX ───────────────────────────────────────────────── */
+.cs-tip {
+  background: rgba(245,197,24,0.07);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  margin: 16px 0 0;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+}
+.cs-tip strong { color: var(--gold); }
+
+/* ── TWO-COL GRID ──────────────────────────────────────────── */
+.cs-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 580px) {
+  .cs-grid-2 { grid-template-columns: 1fr; }
+}
+
+/* ── QUICK REF PILLS ───────────────────────────────────────── */
+.pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.pill {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.pill .en { color: rgba(255,255,255,0.45); font-size: 0.75rem; }
+.pill .vn-p { color: #fff; font-weight: 800; }
+.pill .pr-p { color: rgba(255,255,255,0.35); font-size: 0.7rem; font-style: italic; }
+
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder" data-page="subjects"></div>
+<div id="modal-placeholder"></div>
+<div id="paywall-placeholder"></div>
+
+<div class="cs-page">
+
+  <!-- HERO -->
+  <div class="cs-hero">
+    <a href="subjects.html" class="breadcrumb">← All Subjects</a>
+    <h1>👋 Phrases & Greetings <span>Cheat Sheet</span></h1>
+    <p>The complete reference for Vietnamese greetings, polite words, directions, and real street phrases — with pronunciation guides.</p>
+    <div class="cs-hero-actions no-print">
+      <a href="quiz-phrases.html" class="btn-quiz">🎯 Take the Quiz →</a>
+      <button class="btn-print" onclick="window.print()">🖨️ Print</button>
+    </div>
+  </div>
+
+  <!-- TAB BAR -->
+  <div class="tab-bar no-print">
+    <button class="tab-btn active" onclick="showTab('greetings')">Greetings</button>
+    <button class="tab-btn" onclick="showTab('polite')">Polite Words</button>
+    <button class="tab-btn" onclick="showTab('pronouns')">Pronouns</button>
+    <button class="tab-btn" onclick="showTab('help')">Getting Help</button>
+    <button class="tab-btn" onclick="showTab('street')">Street Phrases</button>
+  </div>
+
+  <!-- TAB: GREETINGS -->
+  <div class="tab-section active" id="tab-greetings">
+
+    <div class="cs-section">
+      <div class="cs-section-title">👋 Essential Greetings</div>
+      <table class="cs-table">
+        <thead><tr><th>English</th><th>Vietnamese</th><th>Pronunciation</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>Hello</td><td class="vn">Xin chào</td><td class="pr">sin chow</td><td>Works everywhere, any time of day</td></tr>
+          <tr><td>Goodbye</td><td class="vn">Tạm biệt</td><td class="pr">tahm byet</td><td>Formal goodbye</td></tr>
+          <tr><td>See you again</td><td class="vn">Hẹn gặp lại</td><td class="pr">hen gup lie</td><td>Friendlier than tạm biệt</td></tr>
+          <tr><td>Good morning</td><td class="vn">Chào buổi sáng</td><td class="pr">chow boo-oy sahng</td><td>Before noon</td></tr>
+          <tr><td>Good afternoon</td><td class="vn">Chào buổi chiều</td><td class="pr">chow boo-oy chyew</td><td>Noon to ~6pm</td></tr>
+          <tr><td>Good evening</td><td class="vn">Chào buổi tối</td><td class="pr">chow boo-oy toy</td><td>After dark</td></tr>
+          <tr><td>Good night</td><td class="vn">Chúc ngủ ngon</td><td class="pr">chook ngoo ngawn</td><td>Only when parting for bed</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>Saigon shortcut:</strong> Most locals just say <strong>"Chào!"</strong> (chow) — short, casual, works any time. You'll hear it constantly on the street.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">🤝 Meeting People</div>
+      <table class="cs-table">
+        <thead><tr><th>English</th><th>Vietnamese</th><th>Pronunciation</th></tr></thead>
+        <tbody>
+          <tr><td>What is your name?</td><td class="vn">Bạn tên gì?</td><td class="pr">bahn ten yee</td></tr>
+          <tr><td>My name is...</td><td class="vn">Tên tôi là...</td><td class="pr">ten toy lah</td></tr>
+          <tr><td>Nice to meet you</td><td class="vn">Rất vui được gặp bạn</td><td class="pr">rut voo-ee duh-uk gup bahn</td></tr>
+          <tr><td>How are you?</td><td class="vn">Bạn khỏe không?</td><td class="pr">bahn khway khome</td></tr>
+          <tr><td>I'm fine</td><td class="vn">Tôi khỏe</td><td class="pr">toy khway</td></tr>
+          <tr><td>And you?</td><td class="vn">Còn bạn?</td><td class="pr">kawn bahn</td></tr>
+          <tr><td>Where are you from?</td><td class="vn">Bạn từ đâu đến?</td><td class="pr">bahn tuh doh den</td></tr>
+          <tr><td>I'm from America</td><td class="vn">Tôi từ Mỹ đến</td><td class="pr">toy tuh mee den</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">✅ Ready to Test Yourself?</div>
+      <p style="color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.6;">You've read the greetings — now lock them in with the quiz.</p>
+      <a href="quiz-phrases.html" class="btn-quiz no-print" style="display:inline-flex;">🎯 Take the Phrases Quiz →</a>
+    </div>
+
+  </div>
+
+  <!-- TAB: POLITE WORDS -->
+  <div class="tab-section" id="tab-polite">
+
+    <div class="cs-section">
+      <div class="cs-section-title">🙏 The Must-Know Polite Words</div>
+      <table class="cs-table">
+        <thead><tr><th>English</th><th>Vietnamese</th><th>Pronunciation</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>Thank you</td><td class="vn">Cảm ơn</td><td class="pr">cahm uhn</td><td>Most common phrase you'll use</td></tr>
+          <tr><td>Thank you very much</td><td class="vn">Cảm ơn nhiều</td><td class="pr">cahm uhn nyew</td><td>More emphatic</td></tr>
+          <tr><td>You're welcome</td><td class="vn">Không có gì</td><td class="pr">khome kaw yee</td><td>Literally "it's nothing"</td></tr>
+          <tr><td>Sorry / Excuse me</td><td class="vn">Xin lỗi</td><td class="pr">sin loy</td><td>Use to get attention too</td></tr>
+          <tr><td>Please</td><td class="vn">Làm ơn</td><td class="pr">lahm uhn</td><td>More formal than English "please"</td></tr>
+          <tr><td>Yes (polite, Southern)</td><td class="vn">Dạ</td><td class="pr">yah</td><td>Very common in Saigon</td></tr>
+          <tr><td>Yes (polite, Northern)</td><td class="vn">Vâng</td><td class="pr">vung</td><td>More common in Hanoi</td></tr>
+          <tr><td>Yes (casual)</td><td class="vn">Ừ</td><td class="pr">uh</td><td>Only with friends/peers</td></tr>
+          <tr><td>No</td><td class="vn">Không</td><td class="pr">khome</td><td>Also means "not" / "zero"</td></tr>
+          <tr><td>No thank you</td><td class="vn">Không, cảm ơn</td><td class="pr">khome, cahm uhn</td><td>Polite refusal</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>North vs South:</strong> Use <strong>Dạ</strong> in Saigon and southern Vietnam, <strong>Vâng</strong> in Hanoi and the north. Either works anywhere — locals will appreciate the effort regardless.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">🗣️ Useful Filler Phrases</div>
+      <table class="cs-table">
+        <thead><tr><th>English</th><th>Vietnamese</th><th>Pronunciation</th></tr></thead>
+        <tbody>
+          <tr><td>OK / Alright</td><td class="vn">Được</td><td class="pr">duh-uk</td></tr>
+          <tr><td>No problem</td><td class="vn">Không sao</td><td class="pr">khome sow</td></tr>
+          <tr><td>Really?</td><td class="vn">Thật không?</td><td class="pr">thut khome</td></tr>
+          <tr><td>I know</td><td class="vn">Tôi biết</td><td class="pr">toy byet</td></tr>
+          <tr><td>I don't know</td><td class="vn">Tôi không biết</td><td class="pr">toy khome byet</td></tr>
+          <tr><td>Maybe</td><td class="vn">Có thể</td><td class="pr">kaw theh</td></tr>
+          <tr><td>Of course</td><td class="vn">Tất nhiên</td><td class="pr">tut nyen</td></tr>
+          <tr><td>Same same</td><td class="vn">Như nhau</td><td class="pr">nyuh nyow</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>"Được"</strong> (duh-uk) is one of the most versatile words in Vietnamese. It means OK, alright, can, possible, and done — you'll hear it dozens of times a day.</div>
+    </div>
+
+  </div>
+
+  <!-- TAB: PRONOUNS -->
+  <div class="tab-section" id="tab-pronouns">
+
+    <div class="cs-section">
+      <div class="cs-section-title">🧠 The Key to Vietnamese — Pronouns</div>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:16px;line-height:1.7;">In Vietnamese, how you address someone depends on their age relative to yours. This is the single most important thing to understand about Vietnamese communication. Once you get this, everything else clicks.</p>
+
+      <div class="pattern-box">
+        <strong>The Core Rule:</strong> Vietnamese doesn't use "I" and "you" the way English does.<br>
+        Instead, you use <code>relationship words</code> that show your relative age and status.<br><br>
+        <strong>Older than you:</strong> You call them <code>anh</code> (older brother) or <code>chị</code> (older sister) and refer to yourself as <code>em</code> (younger sibling)<br>
+        <strong>Same age or younger:</strong> Use <code>bạn</code> (friend) for "you" and <code>tôi</code> for "I"
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">The Pronoun Table</div>
+      <table class="cs-table">
+        <thead><tr><th>Word</th><th>Pronunciation</th><th>Means</th><th>Use When</th></tr></thead>
+        <tbody>
+          <tr><td class="vn">tôi</td><td class="pr">toy</td><td>I / me</td><td>Neutral — works in most situations</td></tr>
+          <tr><td class="vn">bạn</td><td class="pr">bahn</td><td>you (friend)</td><td>Talking to someone roughly your age</td></tr>
+          <tr><td class="vn">anh</td><td class="pr">anh</td><td>you (older male)</td><td>Addressing a man older than you</td></tr>
+          <tr><td class="vn">chị</td><td class="pr">chee</td><td>you (older female)</td><td>Addressing a woman older than you</td></tr>
+          <tr><td class="vn">em</td><td class="pr">em</td><td>I (when speaking to elders)</td><td>When talking UP to someone older</td></tr>
+          <tr><td class="vn">chú</td><td class="pr">choo</td><td>you (uncle-aged male)</td><td>Man clearly older — your dad's age</td></tr>
+          <tr><td class="vn">cô</td><td class="pr">koh</td><td>you (aunt-aged female)</td><td>Woman clearly older — your mum's age</td></tr>
+          <tr><td class="vn">ông</td><td class="pr">ome</td><td>you (grandfather-aged)</td><td>Elderly man — very respectful</td></tr>
+          <tr><td class="vn">bà</td><td class="pr">bah</td><td>you (grandmother-aged)</td><td>Elderly woman — very respectful</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>Don't overthink it:</strong> As a foreigner, just using <strong>tôi / bạn</strong> is totally fine. Locals will be impressed. The nuanced pronoun system is bonus knowledge — not a requirement.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Pronoun in Action</div>
+      <div class="cs-grid-2">
+        <div style="background:rgba(255,183,0,0.06);border:1px solid rgba(255,183,0,0.2);border-radius:12px;padding:20px;">
+          <div style="color:var(--gold);font-weight:800;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Talking to a waiter (older male)</div>
+          <p style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.8;">
+            ❌ Bạn ơi, cho tôi... (too casual)<br>
+            ✅ <strong style="color:#fff;">Anh ơi, cho em...</strong> (natural, respectful)<br>
+            <span style="color:rgba(255,255,255,0.4);font-size:0.8rem;">"anh oy, chaw em" = "Hey (older bro), give me..."</span>
+          </p>
+        </div>
+        <div style="background:rgba(46,204,113,0.06);border:1px solid rgba(46,204,113,0.2);border-radius:12px;padding:20px;">
+          <div style="color:var(--green);font-weight:800;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Talking to a friend (same age)</div>
+          <p style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.8;">
+            ✅ <strong style="color:#fff;">Bạn khỏe không?</strong> (perfect)<br>
+            ✅ <strong style="color:#fff;">Tôi ổn, cảm ơn bạn!</strong><br>
+            <span style="color:rgba(255,255,255,0.4);font-size:0.8rem;">"toy ohn, cahm uhn bahn" = "I'm fine, thanks!"</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TAB: GETTING HELP -->
+  <div class="tab-section" id="tab-help">
+
+    <div class="cs-section">
+      <div class="cs-section-title">🆘 When You're Lost or Confused</div>
+      <table class="cs-table">
+        <thead><tr><th>English</th><th>Vietnamese</th><th>Pronunciation</th></tr></thead>
+        <tbody>
+          <tr><td>I don't understand</td><td class="vn">Tôi không hiểu</td><td class="pr">toy khome hyew</td></tr>
+          <tr><td>I don't speak Vietnamese well</td><td class="vn">Tôi nói tiếng Việt không giỏi</td><td class="pr">toy noy tyeng vyet khome yoy</td></tr>
+          <tr><td>Please say that again</td><td class="vn">Nói lại đi</td><td class="pr">noy lie dee</td></tr>
+          <tr><td>Please speak more slowly</td><td class="vn">Nói chậm hơn</td><td class="pr">noy chum huhn</td></tr>
+          <tr><td>Do you speak English?</td><td class="vn">Bạn nói tiếng Anh không?</td><td class="pr">bahn noy tyeng anh khome</td></tr>
+          <tr><td>Can you help me?</td><td class="vn">Bạn có thể giúp tôi không?</td><td class="pr">bahn kaw theh yoop toy khome</td></tr>
+          <tr><td>I need help</td><td class="vn">Tôi cần giúp đỡ</td><td class="pr">toy kun yoop duh</td></tr>
+          <tr><td>I'm lost</td><td class="vn">Tôi bị lạc</td><td class="pr">toy bee lahk</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>Magic phrase:</strong> Just saying <strong>"Xin lỗi"</strong> (sin loy) with a smile gets attention and signals you need help. Most locals will try to assist even if they don't speak English.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">🗺️ Directions</div>
+      <table class="cs-table">
+        <thead><tr><th>English</th><th>Vietnamese</th><th>Pronunciation</th></tr></thead>
+        <tbody>
+          <tr><td>Where is...?</td><td class="vn">...ở đâu?</td><td class="pr">uh doh</td></tr>
+          <tr><td>Turn left</td><td class="vn">Rẽ trái</td><td class="pr">reh chai</td></tr>
+          <tr><td>Turn right</td><td class="vn">Rẽ phải</td><td class="pr">reh fai</td></tr>
+          <tr><td>Go straight</td><td class="vn">Đi thẳng</td><td class="pr">dee tung</td></tr>
+          <tr><td>Turn around / Go back</td><td class="vn">Quay lại</td><td class="pr">kway lie</td></tr>
+          <tr><td>Near</td><td class="vn">Gần</td><td class="pr">gun</td></tr>
+          <tr><td>Far</td><td class="vn">Xa</td><td class="pr">sah</td></tr>
+          <tr><td>How far?</td><td class="vn">Bao xa?</td><td class="pr">bow sah</td></tr>
+          <tr><td>How long? (time)</td><td class="vn">Bao lâu?</td><td class="pr">bow loh</td></tr>
+          <tr><td>Stop here</td><td class="vn">Dừng ở đây</td><td class="pr">yung uh day</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>Grab tip:</strong> When your Grab driver can't find you, just say <strong>"Dừng ở đây"</strong> (yung uh day — stop here) or point and say <strong>"Đây này"</strong> (day nay — right here).</div>
+    </div>
+
+  </div>
+
+  <!-- TAB: STREET PHRASES -->
+  <div class="tab-section" id="tab-street">
+
+    <div class="cs-section">
+      <div class="cs-section-title">🍜 Ordering Food & Drink</div>
+      <table class="cs-table">
+        <thead><tr><th>English</th><th>Vietnamese</th><th>Pronunciation</th></tr></thead>
+        <tbody>
+          <tr><td>I want to order</td><td class="vn">Tôi muốn gọi món</td><td class="pr">toy moo-uhn goy mawn</td></tr>
+          <tr><td>Give me one of these</td><td class="vn">Cho tôi một cái này</td><td class="pr">chaw toy mot kai nay</td></tr>
+          <tr><td>The bill please</td><td class="vn">Tính tiền đi</td><td class="pr">ting tyen dee</td></tr>
+          <tr><td>Delicious!</td><td class="vn">Ngon lắm!</td><td class="pr">ngawn lahm</td></tr>
+          <tr><td>Too spicy</td><td class="vn">Cay quá</td><td class="pr">kay kwah</td></tr>
+          <tr><td>Not spicy</td><td class="vn">Không cay</td><td class="pr">khome kay</td></tr>
+          <tr><td>No ice</td><td class="vn">Không đá</td><td class="pr">khome dah</td></tr>
+          <tr><td>Less ice</td><td class="vn">Ít đá</td><td class="pr">it dah</td></tr>
+          <tr><td>No sugar</td><td class="vn">Không đường</td><td class="pr">khome duh-ung</td></tr>
+          <tr><td>More please</td><td class="vn">Thêm nữa đi</td><td class="pr">tem nyuh dee</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>Street food ordering hack:</strong> Point at what you want and hold up fingers for quantity. Then add <strong>"Không đá"</strong> or <strong>"Không cay"</strong> as needed. That's 90% of ordering covered.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">🛍️ Shopping & Bargaining</div>
+      <table class="cs-table">
+        <thead><tr><th>English</th><th>Vietnamese</th><th>Pronunciation</th></tr></thead>
+        <tbody>
+          <tr><td>How much?</td><td class="vn">Bao nhiêu tiền?</td><td class="pr">bow nyew tyen</td></tr>
+          <tr><td>Too expensive!</td><td class="vn">Đắt quá!</td><td class="pr">dat kwah</td></tr>
+          <tr><td>Give me a better price</td><td class="vn">Bớt giá đi</td><td class="pr">buht yah dee</td></tr>
+          <tr><td>I'll buy it</td><td class="vn">Tôi mua</td><td class="pr">toy moo-ah</td></tr>
+          <tr><td>I'm just looking</td><td class="vn">Tôi chỉ xem thôi</td><td class="pr">toy chee sem thoy</td></tr>
+          <tr><td>I don't want it</td><td class="vn">Tôi không muốn</td><td class="pr">toy khome moo-uhn</td></tr>
+          <tr><td>Do you have...?</td><td class="vn">Bạn có... không?</td><td class="pr">bahn kaw... khome</td></tr>
+          <tr><td>Cheaper please</td><td class="vn">Rẻ hơn được không?</td><td class="pr">reh huhn duh-uk khome</td></tr>
+        </tbody>
+      </table>
+      <div class="cs-tip">💡 <strong>Bargaining script:</strong> Say <strong>"Đắt quá!"</strong> and start walking away. The vendor will call you back with a lower price. This works at Ben Thanh market, Hoi An, and most tourist markets. Don't bargain in shops with price tags.</div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">🎯 Quick Reference — Phrases That Matter Most</div>
+      <p style="color:rgba(255,255,255,0.5);font-size:0.82rem;margin-bottom:16px;">Learn these first. They cover 80% of daily conversation situations.</p>
+      <div class="pill-grid">
+        <div class="pill"><span class="vn-p">Xin chào</span><span class="pr-p">sin chow</span><span class="en">Hello</span></div>
+        <div class="pill"><span class="vn-p">Cảm ơn</span><span class="pr-p">cahm uhn</span><span class="en">Thank you</span></div>
+        <div class="pill"><span class="vn-p">Xin lỗi</span><span class="pr-p">sin loy</span><span class="en">Sorry / Excuse me</span></div>
+        <div class="pill"><span class="vn-p">Không có gì</span><span class="pr-p">khome kaw yee</span><span class="en">You're welcome</span></div>
+        <div class="pill"><span class="vn-p">Tôi không hiểu</span><span class="pr-p">toy khome hyew</span><span class="en">I don't understand</span></div>
+        <div class="pill"><span class="vn-p">Nói chậm hơn</span><span class="pr-p">noy chum huhn</span><span class="en">Speak more slowly</span></div>
+        <div class="pill"><span class="vn-p">Bao nhiêu tiền?</span><span class="pr-p">bow nyew tyen</span><span class="en">How much?</span></div>
+        <div class="pill"><span class="vn-p">Đắt quá!</span><span class="pr-p">dat kwah</span><span class="en">Too expensive!</span></div>
+        <div class="pill"><span class="vn-p">Ngon lắm!</span><span class="pr-p">ngawn lahm</span><span class="en">Delicious!</span></div>
+        <div class="pill"><span class="vn-p">Không cay</span><span class="pr-p">khome kay</span><span class="en">Not spicy</span></div>
+        <div class="pill"><span class="vn-p">Tạm biệt</span><span class="pr-p">tahm byet</span><span class="en">Goodbye</span></div>
+        <div class="pill"><span class="vn-p">Dạ</span><span class="pr-p">yah</span><span class="en">Yes (polite)</span></div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">✅ Ready to Test Yourself?</div>
+      <p style="color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.6;">You've read the cheat sheet — now lock it in with the quiz. The quiz uses everything on this page.</p>
+      <a href="quiz-phrases.html" class="btn-quiz no-print" style="display:inline-flex;">🎯 Take the Phrases Quiz →</a>
+    </div>
+
+  </div>
+
+</div><!-- end cs-page -->
+
+<div id="footer-placeholder"></div>
+<script src="../js/components.js"></script>
+<script src="../js/auth.js"></script>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
