@@ -26,25 +26,26 @@ const Auth = {
            user.email.split('@')[0];
   },
 
-  nc login(email, password) {
-    const ni = window.netlifyIdentity;
-    if (!ni) throw new Error('Auth not loaded');
-    return new Promise((resolve, reject) => {
-      ni.login(email, password)
-        .then(resolve)
-        .catch(reject);
+  async login(email, password) {
+    const response = await fetch('https://fluentsaigon.com/.netlify/identity/token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'grant_type=password&username=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password)
     });
+    if (!response.ok) {
+      const err = await response.json();
+      throw new Error(err.error_description || 'Login failed');
+    }
+    const data = await response.json();
+    localStorage.setItem('gotrue.user', JSON.stringify(data));
+    return data;
   },
 
   async signup(email, password, name) {
     const response = await fetch('https://fluentsaigon.com/.netlify/identity/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email,
-        password,
-        data: { full_name: name }
-      })
+      body: JSON.stringify({ email, password, data: { full_name: name } })
     });
     if (!response.ok) {
       const err = await response.json();
@@ -55,11 +56,9 @@ const Auth = {
 
   logout() {
     const ni = window.netlifyIdentity;
-    if (ni) {
-      ni.logout();
-    }
+    if (ni) ni.logout();
   },
-asy
+
   loginWithGoogle() {
     window.location.href = 'https://fluentsaigon.com/.netlify/identity/authorize?provider=google';
   },
@@ -102,7 +101,7 @@ const AuthModal = {
       loginForm.style.display = 'none';
       signupForm.style.display = 'block';
       modalTitle.textContent = 'Start Learning Free';
-      modalSub.textContent = '7-day Pro trial included — no charge until day 8';
+      modalSub.textContent = '7-day Pro trial included - no charge until day 8';
     }
   },
 
@@ -117,7 +116,7 @@ const AuthModal = {
       await Auth.login(email, password);
       AuthModal.close();
       updateNavForUser();
-      showToast('Welcome back! 👋');
+      showToast('Welcome back!');
     } catch (err) {
       showToast(err.message || 'Login failed', 'error');
       btn.textContent = 'Sign In';
@@ -136,7 +135,7 @@ const AuthModal = {
     try {
       await Auth.signup(email, password, name);
       AuthModal.close();
-      showToast('Almost there! Check your email to confirm 📧', 'info');
+      showToast('Almost there! Check your email to confirm.', 'info');
       btn.textContent = 'Create Free Account';
       btn.disabled = false;
     } catch (err) {
@@ -180,7 +179,7 @@ function updateNavForUser() {
       const nameEl = document.getElementById('navUserName');
       if (nameEl) nameEl.textContent = Auth.getUserDisplayName();
       const planEl = document.getElementById('navUserPlan');
-      if (planEl) planEl.textContent = Auth.isPro() ? '⭐ PRO' : 'Free';
+      if (planEl) planEl.textContent = Auth.isPro() ? 'PRO' : 'Free';
     }
     if (navLogout) navLogout.style.display = 'list-item';
   } else {
@@ -199,13 +198,7 @@ function showToast(message, type = 'success') {
   toast.className = 'toast';
   toast.textContent = message;
   const bg = type === 'error' ? '#e74c3c' : type === 'info' ? '#3498db' : '#2ecc71';
-  toast.style.cssText = `
-    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
-    background: ${bg}; color: white; padding: 12px 24px; border-radius: 50px;
-    font-family: var(--font-body); font-weight: 700; font-size: 0.9rem;
-    z-index: 9999; box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    animation: fadeUp 0.3s ease;
-  `;
+  toast.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:' + bg + ';color:white;padding:12px 24px;border-radius:50px;font-family:var(--font-body);font-weight:700;font-size:0.9rem;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.3);';
   document.body.appendChild(toast);
   setTimeout(() => toast.remove(), 3500);
 }
@@ -225,15 +218,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const ni = window.netlifyIdentity;
 
   if (ni) {
-    // Suppress the default Netlify widget UI entirely
     ni.on('init', (user) => {
-      // Close any widget popup immediately
       ni.close();
       initNav();
-      // Handle OAuth callback — clean up hash from URL
       if (window.location.hash.includes('access_token')) {
         updateNavForUser();
-        showToast('Welcome! 🎉');
+        showToast('Welcome!');
         history.replaceState(null, '', window.location.pathname);
       }
     });
@@ -241,12 +231,12 @@ document.addEventListener('DOMContentLoaded', () => {
     ni.on('login', (user) => {
       ni.close();
       updateNavForUser();
-      showToast('Welcome back, ' + Auth.getUserDisplayName() + '! 👋');
+      showToast('Welcome back, ' + Auth.getUserDisplayName() + '!');
     });
 
     ni.on('logout', () => {
       updateNavForUser();
-      showToast('You\'ve been logged out.', 'info');
+      showToast('You have been logged out.', 'info');
       window.location.href = '/index.html';
     });
 
