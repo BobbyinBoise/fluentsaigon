@@ -1,33 +1,15 @@
 // ── AUTH & SUBSCRIPTION SYSTEM ──────────────────────────────────────────────
-// Real Netlify Identity auth using GoTrue directly — custom UI, no Netlify popup
-
-let _goTrue = null;
-
-function getGoTrue() {
-  if (_goTrue) return _goTrue;
-  if (window.netlifyIdentity && window.netlifyIdentity.gotrue) {
-    _goTrue = window.netlifyIdentity.gotrue;
-    return _goTrue;
-  }
-  // Fallback: initialize GoTrue directly
-  _goTrue = new window.GoTrue({
-    APIUrl: 'https://fluentsaigon.com/.netlify/identity',
-    setCookie: true,
-  });
-  return _goTrue;
-}
+// Real Netlify Identity auth — custom UI only, widget UI suppressed
 
 const Auth = {
   getUser() {
     try {
-      const gt = getGoTrue();
-      return gt ? gt.currentUser() : null;
+      const ni = window.netlifyIdentity;
+      return ni ? ni.currentUser() : null;
     } catch { return null; }
   },
 
-  isLoggedIn() {
-    return !!this.getUser();
-  },
+  isLoggedIn() { return !!this.getUser(); },
 
   isPro() {
     const user = this.getUser();
@@ -45,32 +27,29 @@ const Auth = {
   },
 
   async login(email, password) {
-    const gt = getGoTrue();
-    const user = await gt.login(email, password, true);
-    return user;
+    const ni = window.netlifyIdentity;
+    if (!ni) throw new Error('Auth not loaded');
+    return new Promise((resolve, reject) => {
+      ni.login(email, password)
+        .then(resolve)
+        .catch(reject);
+    });
   },
 
   async signup(email, password, name) {
-    const gt = getGoTrue();
-    const user = await gt.signup(email, password, { full_name: name });
-    return user;
+    const ni = window.netlifyIdentity;
+    if (!ni) throw new Error('Auth not loaded');
+    return ni.signup(email, password, { full_name: name });
   },
 
   logout() {
-    const user = this.getUser();
-    if (user) {
-      user.logout().then(() => {
-        updateNavForUser();
-        showToast('You\'ve been logged out.', 'info');
-        window.location.href = '/index.html';
-      });
+    const ni = window.netlifyIdentity;
+    if (ni) {
+      ni.logout();
     }
   },
 
   loginWithGoogle() {
-    const gt = getGoTrue();
-    if (!gt) { showToast('Auth not loaded', 'error'); return; }
-    // Redirect to Google OAuth via Netlify Identity
     window.location.href = 'https://fluentsaigon.com/.netlify/identity/authorize?provider=google';
   },
 
@@ -146,7 +125,7 @@ const AuthModal = {
     try {
       await Auth.signup(email, password, name);
       AuthModal.close();
-      showToast('Almost there! Check your email to confirm your account 📧', 'info');
+      showToast('Almost there! Check your email to confirm 📧', 'info');
       btn.textContent = 'Create Free Account';
       btn.disabled = false;
     } catch (err) {
@@ -230,34 +209,43 @@ function initNav() {
   updateNavForUser();
 }
 
-// ── HANDLE OAUTH CALLBACK ────────────────────────────────────────────────────
-function handleOAuthCallback() {
-  // After Google OAuth, Netlify redirects back with a token in the URL hash
-  if (window.location.hash && window.location.hash.includes('access_token')) {
-    const gt = getGoTrue();
-    if (gt) {
-      gt.currentUser()?.reload().then(() => {
-        updateNavForUser();
-        showToast('Welcome! 🎉');
-        // Clean up the URL hash
-        history.replaceState(null, '', window.location.pathname);
-      });
-    }
-  }
-}
-
 // ── INIT ─────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  // Wait for netlifyIdentity to be ready
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('init', () => {
+  const ni = window.netlifyIdentity;
+
+  if (ni) {
+    // Suppress the default Netlify widget UI entirely
+    ni.on('init', (user) => {
+      // Close any widget popup immediately
+      ni.close();
       initNav();
-      handleOAuthCallback();
+      // Handle OAuth callback — clean up hash from URL
+      if (window.location.hash.includes('access_token')) {
+        updateNavForUser();
+        showToast('Welcome! 🎉');
+        history.replaceState(null, '', window.location.pathname);
+      }
     });
-    window.netlifyIdentity.init({ container: '#modal-placeholder' });
+
+    ni.on('login', (user) => {
+      ni.close();
+      updateNavForUser();
+      showToast('Welcome back, ' + Auth.getUserDisplayName() + '! 👋');
+    });
+
+    ni.on('logout', () => {
+      updateNavForUser();
+      showToast('You\'ve been logged out.', 'info');
+      window.location.href = '/index.html';
+    });
+
+    ni.on('error', (err) => {
+      showToast(err.message || 'Something went wrong', 'error');
+    });
+
+    ni.init({ container: '#modal-placeholder' });
   } else {
     initNav();
-    handleOAuthCallback();
   }
 
   const loginForm = document.getElementById('loginForm');
