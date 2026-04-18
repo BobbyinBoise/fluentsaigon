@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vietnamese Getting Around Quiz - FluentSaigon</title>
-<meta name="description" content="Learn Vietnamese transport and directions vocabulary. Navigate Vietnamese cities by Grab, xe �m, or on foot.">
+<meta name="description" content="Learn Vietnamese transport and directions vocabulary. Navigate Vietnamese cities by Grab, xe ôm, or on foot.">
   <!-- SEO + Open Graph -->
   <meta name="robots" content="index, follow">
   <meta name="author" content="FluentSaigon">
@@ -42,19 +42,19 @@
 <div class="quiz-page">
 
   <div class="quiz-header">
-    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">? All Subjects</a>
-    <h1 style="margin:12px 0 4px;">?? Getting Around</h1>
-    <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">Motorbikes, Grab, xe �m � navigate Vietnamese cities without looking lost.</p>
+    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">← All Subjects</a>
+    <h1 style="margin:12px 0 4px;">🛵 Getting Around</h1>
+    <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">Motorbikes, Grab, xe ôm — navigate Vietnamese cities without looking lost.</p>
   </div>
 
   <!-- CHEAT SHEET CALLOUT -->
   <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
     <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
       <div>
-        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">?? PRO TIP</div>
+        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">💡 PRO TIP</div>
         <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Vietnamese cities are chaotic and beautiful. Knowing left, right, stop, and how far will get you anywhere. Read the cheat sheet first.</div>
       </div>
-      <button onclick="openCheatSheet('cheatsheet-directions.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet ?</button>
+      <button onclick="openCheatSheet('cheatsheet-directions.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet →</button>
     </div>
   </div>
 
@@ -62,8 +62,8 @@
   <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
     <div style="display:flex;gap:8px;background:rgba(255,255,255,0.05);border-radius:12px;padding:6px;">
       <button id="tab-beginner" onclick="setDifficulty('beginner')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:var(--gold);color:#000;">Beginner</button>
-      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate ??</button>
-      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert ??</button>
+      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate 🔒</button>
+      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert 🔒</button>
     </div>
   </div>
 
@@ -85,17 +85,17 @@
 
       <div id="choicesGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;"></div>
       <div id="feedback" style="display:none;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;"></div>
-      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question ?</button>
+      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question →</button>
     </div>
 
     <div id="resultsCard" style="display:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 28px;text-align:center;">
-      <div style="font-size:3rem;margin-bottom:16px;">??</div>
+      <div style="font-size:3rem;margin-bottom:16px;">🎉</div>
       <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</h2>
       <div id="finalScore" style="font-size:1.1rem;color:var(--gold);font-weight:800;margin-bottom:8px;"></div>
       <div id="resultsMsg" style="font-size:0.9rem;color:rgba(255,255,255,0.6);margin-bottom:28px;"></div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="restartQuiz()" style="padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Try Again</button>
-        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">? Back to All Subjects</a>
+        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">← Back to All Subjects</a>
       </div>
     </div>
   </div>
@@ -103,7 +103,7 @@
 
 <div id="footer-placeholder"></div>
 <script src="../js/components.js"></script>
-<script src="../js/auth.js?v=2"></script>
+<script src="../js/auth.js"></script>
 <script>
 
 function openCheatSheet(url) {
@@ -113,100 +113,100 @@ function openCheatSheet(url) {
 
 const quizData = {
   beginner: [
-    {cat:"Basic Directions", en:"Turn left", vn:"R? tr�i", pr:"reh chai",
-      d:[{vn:"R? ph?i",pr:"reh fai"},{vn:"�i th?ng",pr:"dee tung"},{vn:"Quay l?i",pr:"kway lie"}]},
-    {cat:"Basic Directions", en:"Turn right", vn:"R? ph?i", pr:"reh fai",
-      d:[{vn:"R? tr�i",pr:"reh chai"},{vn:"�i th?ng",pr:"dee tung"},{vn:"Quay l?i",pr:"kway lie"}]},
-    {cat:"Basic Directions", en:"Go straight", vn:"�i th?ng", pr:"dee tung",
-      d:[{vn:"R? tr�i",pr:"reh chai"},{vn:"R? ph?i",pr:"reh fai"},{vn:"D?ng l?i",pr:"yung lie"}]},
-    {cat:"Basic Directions", en:"Turn around / go back", vn:"Quay l?i", pr:"kway lie",
-      d:[{vn:"�i th?ng",pr:"dee tung"},{vn:"R? tr�i",pr:"reh chai"},{vn:"D?ng l?i",pr:"yung lie"}]},
-    {cat:"Basic Directions", en:"Stop here", vn:"D?ng ? d�y", pr:"yung uh day",
-      d:[{vn:"�i ti?p",pr:"dee tyep"},{vn:"Quay l?i",pr:"kway lie"},{vn:"Ch? t�i",pr:"chuh toy"}]},
-    {cat:"Locations", en:"Where is...?", vn:"...? d�u?", pr:"uh doh",
-      d:[{vn:"...l� g�?",pr:"lah yee"},{vn:"...bao nhi�u?",pr:"bow nyew"},{vn:"...khi n�o?",pr:"khee now"}]},
-    {cat:"Locations", en:"Near / close", vn:"G?n", pr:"gun",
-      d:[{vn:"Xa",pr:"sah"},{vn:"? d�y",pr:"uh day"},{vn:"? d�",pr:"uh daw"}]},
+    {cat:"Basic Directions", en:"Turn left", vn:"Rẽ trái", pr:"reh chai",
+      d:[{vn:"Rẽ phải",pr:"reh fai"},{vn:"Đi thẳng",pr:"dee tung"},{vn:"Quay lại",pr:"kway lie"}]},
+    {cat:"Basic Directions", en:"Turn right", vn:"Rẽ phải", pr:"reh fai",
+      d:[{vn:"Rẽ trái",pr:"reh chai"},{vn:"Đi thẳng",pr:"dee tung"},{vn:"Quay lại",pr:"kway lie"}]},
+    {cat:"Basic Directions", en:"Go straight", vn:"Đi thẳng", pr:"dee tung",
+      d:[{vn:"Rẽ trái",pr:"reh chai"},{vn:"Rẽ phải",pr:"reh fai"},{vn:"Dừng lại",pr:"yung lie"}]},
+    {cat:"Basic Directions", en:"Turn around / go back", vn:"Quay lại", pr:"kway lie",
+      d:[{vn:"Đi thẳng",pr:"dee tung"},{vn:"Rẽ trái",pr:"reh chai"},{vn:"Dừng lại",pr:"yung lie"}]},
+    {cat:"Basic Directions", en:"Stop here", vn:"Dừng ở đây", pr:"yung uh day",
+      d:[{vn:"Đi tiếp",pr:"dee tyep"},{vn:"Quay lại",pr:"kway lie"},{vn:"Chờ tôi",pr:"chuh toy"}]},
+    {cat:"Locations", en:"Where is...?", vn:"...ở đâu?", pr:"uh doh",
+      d:[{vn:"...là gì?",pr:"lah yee"},{vn:"...bao nhiêu?",pr:"bow nyew"},{vn:"...khi nào?",pr:"khee now"}]},
+    {cat:"Locations", en:"Near / close", vn:"Gần", pr:"gun",
+      d:[{vn:"Xa",pr:"sah"},{vn:"Ở đây",pr:"uh day"},{vn:"Ở đó",pr:"uh daw"}]},
     {cat:"Locations", en:"Far", vn:"Xa", pr:"sah",
-      d:[{vn:"G?n",pr:"gun"},{vn:"? d�y",pr:"uh day"},{vn:"? d�",pr:"uh daw"}]},
-    {cat:"Locations", en:"Here / right here", vn:"? d�y", pr:"uh day",
-      d:[{vn:"? d�",pr:"uh daw"},{vn:"Xa",pr:"sah"},{vn:"G?n",pr:"gun"}]},
+      d:[{vn:"Gần",pr:"gun"},{vn:"Ở đây",pr:"uh day"},{vn:"Ở đó",pr:"uh daw"}]},
+    {cat:"Locations", en:"Here / right here", vn:"Ở đây", pr:"uh day",
+      d:[{vn:"Ở đó",pr:"uh daw"},{vn:"Xa",pr:"sah"},{vn:"Gần",pr:"gun"}]},
     {cat:"Locations", en:"How far is it?", vn:"Bao xa?", pr:"bow sah",
-      d:[{vn:"Bao l�u?",pr:"bow loh"},{vn:"Bao nhi�u?",pr:"bow nyew"},{vn:"? d�u?",pr:"uh doh"}]},
-    {cat:"Transport", en:"Motorbike taxi (local)", vn:"xe �m", pr:"seh ohm",
-      d:[{vn:"xe m�y",pr:"seh my"},{vn:"taxi",pr:"tak-see"},{vn:"xe bu�t",pr:"seh bwit"}]},
-    {cat:"Transport", en:"Motorbike / scooter", vn:"xe m�y", pr:"seh my",
-      d:[{vn:"xe �m",pr:"seh ohm"},{vn:"xe d?p",pr:"seh dap"},{vn:"� t�",pr:"oh toh"}]},
-    {cat:"Transport", en:"Bus", vn:"xe bu�t", pr:"seh bwit",
-      d:[{vn:"xe m�y",pr:"seh my"},{vn:"taxi",pr:"tak-see"},{vn:"t�u",pr:"tow"}]},
+      d:[{vn:"Bao lâu?",pr:"bow loh"},{vn:"Bao nhiêu?",pr:"bow nyew"},{vn:"Ở đâu?",pr:"uh doh"}]},
+    {cat:"Transport", en:"Motorbike taxi (local)", vn:"xe ôm", pr:"seh ohm",
+      d:[{vn:"xe máy",pr:"seh my"},{vn:"taxi",pr:"tak-see"},{vn:"xe buýt",pr:"seh bwit"}]},
+    {cat:"Transport", en:"Motorbike / scooter", vn:"xe máy", pr:"seh my",
+      d:[{vn:"xe ôm",pr:"seh ohm"},{vn:"xe đạp",pr:"seh dap"},{vn:"ô tô",pr:"oh toh"}]},
+    {cat:"Transport", en:"Bus", vn:"xe buýt", pr:"seh bwit",
+      d:[{vn:"xe máy",pr:"seh my"},{vn:"taxi",pr:"tak-see"},{vn:"tàu",pr:"tow"}]},
     {cat:"Transport", en:"Taxi", vn:"taxi", pr:"tak-see",
-      d:[{vn:"xe �m",pr:"seh ohm"},{vn:"xe bu�t",pr:"seh bwit"},{vn:"xe m�y",pr:"seh my"}]},
-    {cat:"Transport", en:"I'm lost", vn:"T�i b? l?c", pr:"toy bee lahk",
-      d:[{vn:"T�i kh�ng hi?u",pr:"toy khome hyew"},{vn:"T�i c?n gi�p",pr:"toy kun yoop"},{vn:"T�i ? d�u?",pr:"toy uh doh"}]},
+      d:[{vn:"xe ôm",pr:"seh ohm"},{vn:"xe buýt",pr:"seh bwit"},{vn:"xe máy",pr:"seh my"}]},
+    {cat:"Transport", en:"I'm lost", vn:"Tôi bị lạc", pr:"toy bee lahk",
+      d:[{vn:"Tôi không hiểu",pr:"toy khome hyew"},{vn:"Tôi cần giúp",pr:"toy kun yoop"},{vn:"Tôi ở đâu?",pr:"toy uh doh"}]},
   ],
   intermediate: [
-    {cat:"Grab & Apps", en:"I ordered a Grab", vn:"T�i d?t Grab r?i", pr:"toy dat grab roy",
-      d:[{vn:"Grab ? d�u?",pr:"grab uh doh"},{vn:"T�i c?n Grab",pr:"toy kun grab"},{vn:"Grab bao l�u?",pr:"grab bow loh"}]},
-    {cat:"Grab & Apps", en:"The driver is coming", vn:"T�i x? dang d?n", pr:"tie seh dang den",
-      d:[{vn:"T�i x? ? d�u?",pr:"tie seh uh doh"},{vn:"�?i t�i x?",pr:"duh-ee tie seh"},{vn:"T�i x? dang ch?",pr:"tie seh dang chuh"}]},
-    {cat:"Grab & Apps", en:"Please wait for me here", vn:"Ch? t�i ? d�y", pr:"chuh toy uh day",
-      d:[{vn:"�i ti?p",pr:"dee tyep"},{vn:"D?ng ? d�y",pr:"yung uh day"},{vn:"Quay l?i d�y",pr:"kway lie day"}]},
-    {cat:"Grab & Apps", en:"How long will it take?", vn:"Bao l�u?", pr:"bow loh",
-      d:[{vn:"Bao xa?",pr:"bow sah"},{vn:"Bao nhi�u?",pr:"bow nyew"},{vn:"Khi n�o d?n?",pr:"khee now den"}]},
-    {cat:"Grab & Apps", en:"I'm at the entrance", vn:"T�i ? c?ng v�o", pr:"toy uh kohng vow",
-      d:[{vn:"T�i ? d�y",pr:"toy uh day"},{vn:"T�i ? trong",pr:"toy uh chawng"},{vn:"T�i ? ngo�i",pr:"toy uh ngwai"}]},
-    {cat:"Street Navigation", en:"At the traffic light", vn:"? d�n d?", pr:"uh den daw",
-      d:[{vn:"? ng� tu",pr:"uh ngah tuh"},{vn:"? g�c du?ng",pr:"uh gawk duh-ung"},{vn:"? v�ng xoay",pr:"uh vawng sway"}]},
-    {cat:"Street Navigation", en:"At the intersection / crossroads", vn:"? ng� tu", pr:"uh ngah tuh",
-      d:[{vn:"? d�n d?",pr:"uh den daw"},{vn:"? g�c du?ng",pr:"uh gawk duh-ung"},{vn:"? v�ng xoay",pr:"uh vawng sway"}]},
-    {cat:"Street Navigation", en:"Roundabout", vn:"V�ng xoay", pr:"vawng sway",
-      d:[{vn:"Ng� tu",pr:"ngah tuh"},{vn:"��n d?",pr:"den daw"},{vn:"G�c du?ng",pr:"gawk duh-ung"}]},
-    {cat:"Street Navigation", en:"On the left side", vn:"B�n tr�i", pr:"ben chai",
-      d:[{vn:"B�n ph?i",pr:"ben fai"},{vn:"Ph�a tru?c",pr:"fyah chuh-uk"},{vn:"Ph�a sau",pr:"fyah sow"}]},
-    {cat:"Street Navigation", en:"On the right side", vn:"B�n ph?i", pr:"ben fai",
-      d:[{vn:"B�n tr�i",pr:"ben chai"},{vn:"Ph�a tru?c",pr:"fyah chuh-uk"},{vn:"Ph�a sau",pr:"fyah sow"}]},
-    {cat:"Asking for Help", en:"Can you show me on the map?", vn:"B?n ch? cho t�i tr�n b?n d? du?c kh�ng?", pr:"bahn chee chaw toy chen bahn doh duh-uk khome",
-      d:[{vn:"B?n bi?t du?ng kh�ng?",pr:"bahn byet duh-ung khome"},{vn:"�u?ng n�y di d�u?",pr:"duh-ung nay dee doh"},{vn:"Cho t�i xem d?a ch?",pr:"chaw toy sem dyah chee"}]},
-    {cat:"Asking for Help", en:"How many minutes on foot?", vn:"�i b? m?y ph�t?", pr:"dee boh may fut",
-      d:[{vn:"Bao xa?",pr:"bow sah"},{vn:"�i xe m?y ph�t?",pr:"dee seh may fut"},{vn:"Bao l�u di b??",pr:"bow loh dee boh"}]},
-    {cat:"Asking for Help", en:"Is it walkable from here?", vn:"T? d�y di b? du?c kh�ng?", pr:"tuh day dee boh duh-uk khome",
-      d:[{vn:"�i xe m�y du?c kh�ng?",pr:"dee seh my duh-uk khome"},{vn:"G?n d�y kh�ng?",pr:"gun day khome"},{vn:"Xa l?m kh�ng?",pr:"sah lahm khome"}]},
-    {cat:"Airport & Stations", en:"Airport", vn:"s�n bay", pr:"sun bay",
-      d:[{vn:"b?n xe",pr:"ben seh"},{vn:"nh� ga",pr:"nyah gah"},{vn:"b?n t�u",pr:"ben tow"}]},
-    {cat:"Airport & Stations", en:"Bus station", vn:"b?n xe", pr:"ben seh",
-      d:[{vn:"s�n bay",pr:"sun bay"},{vn:"nh� ga",pr:"nyah gah"},{vn:"b?n t�u",pr:"ben tow"}]},
+    {cat:"Grab & Apps", en:"I ordered a Grab", vn:"Tôi đặt Grab rồi", pr:"toy dat grab roy",
+      d:[{vn:"Grab ở đâu?",pr:"grab uh doh"},{vn:"Tôi cần Grab",pr:"toy kun grab"},{vn:"Grab bao lâu?",pr:"grab bow loh"}]},
+    {cat:"Grab & Apps", en:"The driver is coming", vn:"Tài xế đang đến", pr:"tie seh dang den",
+      d:[{vn:"Tài xế ở đâu?",pr:"tie seh uh doh"},{vn:"Đợi tài xế",pr:"duh-ee tie seh"},{vn:"Tài xế đang chờ",pr:"tie seh dang chuh"}]},
+    {cat:"Grab & Apps", en:"Please wait for me here", vn:"Chờ tôi ở đây", pr:"chuh toy uh day",
+      d:[{vn:"Đi tiếp",pr:"dee tyep"},{vn:"Dừng ở đây",pr:"yung uh day"},{vn:"Quay lại đây",pr:"kway lie day"}]},
+    {cat:"Grab & Apps", en:"How long will it take?", vn:"Bao lâu?", pr:"bow loh",
+      d:[{vn:"Bao xa?",pr:"bow sah"},{vn:"Bao nhiêu?",pr:"bow nyew"},{vn:"Khi nào đến?",pr:"khee now den"}]},
+    {cat:"Grab & Apps", en:"I'm at the entrance", vn:"Tôi ở cổng vào", pr:"toy uh kohng vow",
+      d:[{vn:"Tôi ở đây",pr:"toy uh day"},{vn:"Tôi ở trong",pr:"toy uh chawng"},{vn:"Tôi ở ngoài",pr:"toy uh ngwai"}]},
+    {cat:"Street Navigation", en:"At the traffic light", vn:"Ở đèn đỏ", pr:"uh den daw",
+      d:[{vn:"Ở ngã tư",pr:"uh ngah tuh"},{vn:"Ở góc đường",pr:"uh gawk duh-ung"},{vn:"Ở vòng xoay",pr:"uh vawng sway"}]},
+    {cat:"Street Navigation", en:"At the intersection / crossroads", vn:"Ở ngã tư", pr:"uh ngah tuh",
+      d:[{vn:"Ở đèn đỏ",pr:"uh den daw"},{vn:"Ở góc đường",pr:"uh gawk duh-ung"},{vn:"Ở vòng xoay",pr:"uh vawng sway"}]},
+    {cat:"Street Navigation", en:"Roundabout", vn:"Vòng xoay", pr:"vawng sway",
+      d:[{vn:"Ngã tư",pr:"ngah tuh"},{vn:"Đèn đỏ",pr:"den daw"},{vn:"Góc đường",pr:"gawk duh-ung"}]},
+    {cat:"Street Navigation", en:"On the left side", vn:"Bên trái", pr:"ben chai",
+      d:[{vn:"Bên phải",pr:"ben fai"},{vn:"Phía trước",pr:"fyah chuh-uk"},{vn:"Phía sau",pr:"fyah sow"}]},
+    {cat:"Street Navigation", en:"On the right side", vn:"Bên phải", pr:"ben fai",
+      d:[{vn:"Bên trái",pr:"ben chai"},{vn:"Phía trước",pr:"fyah chuh-uk"},{vn:"Phía sau",pr:"fyah sow"}]},
+    {cat:"Asking for Help", en:"Can you show me on the map?", vn:"Bạn chỉ cho tôi trên bản đồ được không?", pr:"bahn chee chaw toy chen bahn doh duh-uk khome",
+      d:[{vn:"Bạn biết đường không?",pr:"bahn byet duh-ung khome"},{vn:"Đường này đi đâu?",pr:"duh-ung nay dee doh"},{vn:"Cho tôi xem địa chỉ",pr:"chaw toy sem dyah chee"}]},
+    {cat:"Asking for Help", en:"How many minutes on foot?", vn:"Đi bộ mấy phút?", pr:"dee boh may fut",
+      d:[{vn:"Bao xa?",pr:"bow sah"},{vn:"Đi xe mấy phút?",pr:"dee seh may fut"},{vn:"Bao lâu đi bộ?",pr:"bow loh dee boh"}]},
+    {cat:"Asking for Help", en:"Is it walkable from here?", vn:"Từ đây đi bộ được không?", pr:"tuh day dee boh duh-uk khome",
+      d:[{vn:"Đi xe máy được không?",pr:"dee seh my duh-uk khome"},{vn:"Gần đây không?",pr:"gun day khome"},{vn:"Xa lắm không?",pr:"sah lahm khome"}]},
+    {cat:"Airport & Stations", en:"Airport", vn:"sân bay", pr:"sun bay",
+      d:[{vn:"bến xe",pr:"ben seh"},{vn:"nhà ga",pr:"nyah gah"},{vn:"bến tàu",pr:"ben tow"}]},
+    {cat:"Airport & Stations", en:"Bus station", vn:"bến xe", pr:"ben seh",
+      d:[{vn:"sân bay",pr:"sun bay"},{vn:"nhà ga",pr:"nyah gah"},{vn:"bến tàu",pr:"ben tow"}]},
   ],
   expert: [
-    {cat:"Bargaining Transport", en:"How much to go to...?", vn:"�i... bao nhi�u ti?n?", pr:"dee... bow nyew tyen",
-      d:[{vn:"Bao xa d?n...?",pr:"bow sah den"},{vn:"Bao l�u d?n...?",pr:"bow loh den"},{vn:"�i... du?c kh�ng?",pr:"dee... duh-uk khome"}]},
-    {cat:"Bargaining Transport", en:"Too expensive, lower the price", vn:"�?t qu�, b?t di", pr:"dat kwah, buht dee",
-      d:[{vn:"�u?c r?i, t�i di",pr:"duh-uk roy, toy dee"},{vn:"Bao nhi�u ti?n?",pr:"bow nyew tyen"},{vn:"Kh�ng di du?c",pr:"khome dee duh-uk"}]},
-    {cat:"Bargaining Transport", en:"I'll give you [X] for it", vn:"T�i tr? [X] th�i", pr:"toy chah [X] thoy",
-      d:[{vn:"Bao nhi�u ti?n?",pr:"bow nyew tyen"},{vn:"�?t qu�",pr:"dat kwah"},{vn:"�u?c r?i",pr:"duh-uk roy"}]},
-    {cat:"Bargaining Transport", en:"Use the meter please", vn:"B?t d?ng h? di", pr:"but dome hoh dee",
-      d:[{vn:"Kh�ng d�ng d?ng h?",pr:"khome yoong dome hoh"},{vn:"Gi� bao nhi�u?",pr:"yah bow nyew"},{vn:"�i theo du?ng n�o?",pr:"dee theh-oh duh-ung now"}]},
-    {cat:"Getting Specific", en:"Take me to this address", vn:"�ua t�i d?n d?a ch? n�y", pr:"duh-ah toy den dyah chee nay",
-      d:[{vn:"�?a ch? n�y ? d�u?",pr:"dyah chee nay uh doh"},{vn:"T�i c?n d?n d�y",pr:"toy kun den day"},{vn:"B?n d? ? d�y",pr:"bahn doh uh day"}]},
-    {cat:"Getting Specific", en:"Please drop me off here", vn:"Cho t�i xu?ng d�y", pr:"chaw toy soo-ung day",
-      d:[{vn:"D?ng ? d�y",pr:"yung uh day"},{vn:"�i ti?p di",pr:"dee tyep dee"},{vn:"Quay l?i d�y",pr:"kway lie day"}]},
-    {cat:"Getting Specific", en:"Can you go faster?", vn:"�i nhanh hon du?c kh�ng?", pr:"dee nyan huhn duh-uk khome",
-      d:[{vn:"�i ch?m hon",pr:"dee chum huhn"},{vn:"D?ng l?i",pr:"yung lie"},{vn:"Quay l?i",pr:"kway lie"}]},
-    {cat:"Getting Specific", en:"Can you go slower?", vn:"�i ch?m hon du?c kh�ng?", pr:"dee chum huhn duh-uk khome",
-      d:[{vn:"�i nhanh hon",pr:"dee nyan huhn"},{vn:"D?ng l?i",pr:"yung lie"},{vn:"�i ti?p",pr:"dee tyep"}]},
-    {cat:"Local Transport", en:"Sleeper bus (long distance)", vn:"xe giu?ng n?m", pr:"seh yuh-ung num",
-      d:[{vn:"xe bu�t",pr:"seh bwit"},{vn:"xe kh�ch",pr:"seh khahk"},{vn:"t�u h?a",pr:"tow hwah"}]},
-    {cat:"Local Transport", en:"Train", vn:"t�u h?a", pr:"tow hwah",
-      d:[{vn:"xe bu�t",pr:"seh bwit"},{vn:"xe giu?ng n?m",pr:"seh yuh-ung num"},{vn:"m�y bay",pr:"my bay"}]},
-    {cat:"Local Transport", en:"Airplane", vn:"m�y bay", pr:"my bay",
-      d:[{vn:"t�u h?a",pr:"tow hwah"},{vn:"xe bu�t",pr:"seh bwit"},{vn:"t�u thuy?n",pr:"tow thwyen"}]},
-    {cat:"Local Transport", en:"Ferry / boat", vn:"t�u thuy?n", pr:"tow thwyen",
-      d:[{vn:"m�y bay",pr:"my bay"},{vn:"t�u h?a",pr:"tow hwah"},{vn:"xe bu�t",pr:"seh bwit"}]},
-    {cat:"Emergencies", en:"I had an accident", vn:"T�i b? tai n?n", pr:"toy bee tie nan",
-      d:[{vn:"T�i b? l?c",pr:"toy bee lahk"},{vn:"G?i c?nh s�t",pr:"goy kahn saht"},{vn:"T�i c?n gi�p d?",pr:"toy kun yoop duh"}]},
-    {cat:"Emergencies", en:"Call the police", vn:"G?i c?nh s�t", pr:"goy kahn saht",
-      d:[{vn:"G?i c?u thuong",pr:"goy kyew thuh-ung"},{vn:"T�i b? l?c",pr:"toy bee lahk"},{vn:"Gi�p t�i v?i",pr:"yoop toy vuh-ee"}]},
-    {cat:"Emergencies", en:"Call an ambulance", vn:"G?i c?u thuong", pr:"goy kyew thuh-ung",
-      d:[{vn:"G?i c?nh s�t",pr:"goy kahn saht"},{vn:"T�i b? tai n?n",pr:"toy bee tie nan"},{vn:"B?nh vi?n ? d�u?",pr:"beng vyen uh doh"}]},
+    {cat:"Bargaining Transport", en:"How much to go to...?", vn:"Đi... bao nhiêu tiền?", pr:"dee... bow nyew tyen",
+      d:[{vn:"Bao xa đến...?",pr:"bow sah den"},{vn:"Bao lâu đến...?",pr:"bow loh den"},{vn:"Đi... được không?",pr:"dee... duh-uk khome"}]},
+    {cat:"Bargaining Transport", en:"Too expensive, lower the price", vn:"Đắt quá, bớt đi", pr:"dat kwah, buht dee",
+      d:[{vn:"Được rồi, tôi đi",pr:"duh-uk roy, toy dee"},{vn:"Bao nhiêu tiền?",pr:"bow nyew tyen"},{vn:"Không đi được",pr:"khome dee duh-uk"}]},
+    {cat:"Bargaining Transport", en:"I'll give you [X] for it", vn:"Tôi trả [X] thôi", pr:"toy chah [X] thoy",
+      d:[{vn:"Bao nhiêu tiền?",pr:"bow nyew tyen"},{vn:"Đắt quá",pr:"dat kwah"},{vn:"Được rồi",pr:"duh-uk roy"}]},
+    {cat:"Bargaining Transport", en:"Use the meter please", vn:"Bật đồng hồ đi", pr:"but dome hoh dee",
+      d:[{vn:"Không dùng đồng hồ",pr:"khome yoong dome hoh"},{vn:"Giá bao nhiêu?",pr:"yah bow nyew"},{vn:"Đi theo đường nào?",pr:"dee theh-oh duh-ung now"}]},
+    {cat:"Getting Specific", en:"Take me to this address", vn:"Đưa tôi đến địa chỉ này", pr:"duh-ah toy den dyah chee nay",
+      d:[{vn:"Địa chỉ này ở đâu?",pr:"dyah chee nay uh doh"},{vn:"Tôi cần đến đây",pr:"toy kun den day"},{vn:"Bản đồ ở đây",pr:"bahn doh uh day"}]},
+    {cat:"Getting Specific", en:"Please drop me off here", vn:"Cho tôi xuống đây", pr:"chaw toy soo-ung day",
+      d:[{vn:"Dừng ở đây",pr:"yung uh day"},{vn:"Đi tiếp đi",pr:"dee tyep dee"},{vn:"Quay lại đây",pr:"kway lie day"}]},
+    {cat:"Getting Specific", en:"Can you go faster?", vn:"Đi nhanh hơn được không?", pr:"dee nyan huhn duh-uk khome",
+      d:[{vn:"Đi chậm hơn",pr:"dee chum huhn"},{vn:"Dừng lại",pr:"yung lie"},{vn:"Quay lại",pr:"kway lie"}]},
+    {cat:"Getting Specific", en:"Can you go slower?", vn:"Đi chậm hơn được không?", pr:"dee chum huhn duh-uk khome",
+      d:[{vn:"Đi nhanh hơn",pr:"dee nyan huhn"},{vn:"Dừng lại",pr:"yung lie"},{vn:"Đi tiếp",pr:"dee tyep"}]},
+    {cat:"Local Transport", en:"Sleeper bus (long distance)", vn:"xe giường nằm", pr:"seh yuh-ung num",
+      d:[{vn:"xe buýt",pr:"seh bwit"},{vn:"xe khách",pr:"seh khahk"},{vn:"tàu hỏa",pr:"tow hwah"}]},
+    {cat:"Local Transport", en:"Train", vn:"tàu hỏa", pr:"tow hwah",
+      d:[{vn:"xe buýt",pr:"seh bwit"},{vn:"xe giường nằm",pr:"seh yuh-ung num"},{vn:"máy bay",pr:"my bay"}]},
+    {cat:"Local Transport", en:"Airplane", vn:"máy bay", pr:"my bay",
+      d:[{vn:"tàu hỏa",pr:"tow hwah"},{vn:"xe buýt",pr:"seh bwit"},{vn:"tàu thuyền",pr:"tow thwyen"}]},
+    {cat:"Local Transport", en:"Ferry / boat", vn:"tàu thuyền", pr:"tow thwyen",
+      d:[{vn:"máy bay",pr:"my bay"},{vn:"tàu hỏa",pr:"tow hwah"},{vn:"xe buýt",pr:"seh bwit"}]},
+    {cat:"Emergencies", en:"I had an accident", vn:"Tôi bị tai nạn", pr:"toy bee tie nan",
+      d:[{vn:"Tôi bị lạc",pr:"toy bee lahk"},{vn:"Gọi cảnh sát",pr:"goy kahn saht"},{vn:"Tôi cần giúp đỡ",pr:"toy kun yoop duh"}]},
+    {cat:"Emergencies", en:"Call the police", vn:"Gọi cảnh sát", pr:"goy kahn saht",
+      d:[{vn:"Gọi cứu thương",pr:"goy kyew thuh-ung"},{vn:"Tôi bị lạc",pr:"toy bee lahk"},{vn:"Giúp tôi với",pr:"yoop toy vuh-ee"}]},
+    {cat:"Emergencies", en:"Call an ambulance", vn:"Gọi cứu thương", pr:"goy kyew thuh-ung",
+      d:[{vn:"Gọi cảnh sát",pr:"goy kahn saht"},{vn:"Tôi bị tai nạn",pr:"toy bee tie nan"},{vn:"Bệnh viện ở đâu?",pr:"beng vyen uh doh"}]},
   ]
 };
 
@@ -273,11 +273,11 @@ function selectAnswer(btn, selected, correct, correctPr) {
     score++;
     btn.style.background = 'rgba(46,204,113,0.3)'; btn.style.borderColor = '#2ecc71';
     feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(46,204,113,0.15);border-left:3px solid #2ecc71;color:#2ecc71;';
-    feedback.textContent = '? Correct! ' + getFact(questions[current]);
+    feedback.textContent = '✓ Correct! ' + getFact(questions[current]);
   } else {
     btn.style.background = 'rgba(231,76,60,0.3)'; btn.style.borderColor = '#e74c3c';
     feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(231,76,60,0.15);border-left:3px solid #e74c3c;color:#e74c3c;';
-    feedback.textContent = `? The answer is: ${correct} (${correctPr})`;
+    feedback.textContent = `✗ The answer is: ${correct} (${correctPr})`;
   }
   document.getElementById('scoreText').textContent = `Score: ${score}`;
   document.getElementById('nextBtn').style.display = 'block';
@@ -288,16 +288,16 @@ function nextQuestion() { showQuestion(); }
 
 function getFact(q) {
   const facts = {
-    'Basic Directions': 'When giving directions, Vietnamese people often use landmarks rather than street names � "turn left at the big tree" is totally normal.',
-    'Locations': 'Vietnamese addresses go from largest to smallest � province, district, street, number. The opposite of Western addresses.',
+    'Basic Directions': 'When giving directions, Vietnamese people often use landmarks rather than street names — "turn left at the big tree" is totally normal.',
+    'Locations': 'Vietnamese addresses go from largest to smallest — province, district, street, number. The opposite of Western addresses.',
     'Transport': 'Grab is the dominant ride-hailing app in Vietnam. It\'s cheaper, safer, and more reliable than flagging a random taxi.',
     'Grab & Apps': 'When your Grab driver can\'t find you, call them and say your exact location. They often speak some English too.',
     'Street Navigation': 'Vietnamese street signs show the street name but distances aren\'t marked. Locals navigate by landmarks and feel.',
     'Asking for Help': 'Most younger Vietnamese in cities have Google Maps on their phone and are happy to show you the way.',
-    'Airport & Stations': 'The Reunification Express train connects Ho Chi Minh City to Hanoi � a classic 30+ hour journey with stunning scenery.',
-    'Bargaining Transport': 'Always agree on a price before getting in a xe �m. "Bao nhi�u ti?n?" (how much?) is your first question.',
-    'Getting Specific': 'Show your driver the address on your phone in Vietnamese if possible � it\'s faster than trying to pronounce unfamiliar streets.',
-    'Local Transport': 'Sleeper buses (xe giu?ng n?m) are the budget traveler\'s staple for overnight journeys between cities.',
+    'Airport & Stations': 'The Reunification Express train connects Ho Chi Minh City to Hanoi — a classic 30+ hour journey with stunning scenery.',
+    'Bargaining Transport': 'Always agree on a price before getting in a xe ôm. "Bao nhiêu tiền?" (how much?) is your first question.',
+    'Getting Specific': 'Show your driver the address on your phone in Vietnamese if possible — it\'s faster than trying to pronounce unfamiliar streets.',
+    'Local Transport': 'Sleeper buses (xe giường nằm) are the budget traveler\'s staple for overnight journeys between cities.',
     'Emergencies': 'Emergency numbers in Vietnam: Police 113, Fire 114, Ambulance 115. Save these before you travel.',
   };
   return facts[q.cat] || 'Keep going!';
@@ -308,7 +308,7 @@ function showResults() {
   document.getElementById('resultsCard').style.display = 'block';
   const pct = score / questions.length;
   document.getElementById('finalScore').textContent = `You scored ${score} out of ${questions.length}`;
-  const msgs = [[0.9,"?? Xu?t s?c l?m! (Outstanding!) You're a natural!"],[0.8,"?? Gi?i l?m! (Very good!) Keep it up!"],[0.6,"?? Kh� t?t! (Pretty good!) Almost there!"],[0,"?? Keep practicing! B?n s? ti?n b?! (You will improve!)"]];
+  const msgs = [[0.9,"🏆 Xuất sắc lắm! (Outstanding!) You're a natural!"],[0.8,"🌟 Giỏi lắm! (Very good!) Keep it up!"],[0.6,"👍 Khá tốt! (Pretty good!) Almost there!"],[0,"💪 Keep practicing! Bạn sẽ tiến bộ! (You will improve!)"]];
   document.getElementById('resultsMsg').textContent = msgs.find(([t]) => pct >= t)[1];
 }
 
@@ -322,4 +322,3 @@ document.addEventListener('DOMContentLoaded', restartQuiz);
 
 </body>
 </html>
-

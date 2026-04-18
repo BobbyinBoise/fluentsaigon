@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -42,19 +42,19 @@
 <div class="quiz-page">
 
   <div class="quiz-header">
-    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">? All Subjects</a>
-    <h1 style="margin:12px 0 4px;">???????? Family & People</h1>
-    <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">Vietnamese address terms are unique � getting them right shows real respect.</p>
+    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">← All Subjects</a>
+    <h1 style="margin:12px 0 4px;">👨‍👩‍👧 Family & People</h1>
+    <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">Vietnamese address terms are unique — getting them right shows real respect.</p>
   </div>
 
   <!-- CHEAT SHEET CALLOUT -->
   <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
     <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
       <div>
-        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">?? PRO TIP</div>
-        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Vietnamese family terms double as pronouns � understanding this system is the key to sounding natural rather than robotic.</div>
+        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">💡 PRO TIP</div>
+        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Vietnamese family terms double as pronouns — understanding this system is the key to sounding natural rather than robotic.</div>
       </div>
-      <button onclick="openCheatSheet('cheatsheet-family.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet ?</button>
+      <button onclick="openCheatSheet('cheatsheet-family.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet →</button>
     </div>
   </div>
 
@@ -62,8 +62,8 @@
   <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
     <div style="display:flex;gap:8px;background:rgba(255,255,255,0.05);border-radius:12px;padding:6px;">
       <button id="tab-beginner" onclick="setDifficulty('beginner')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:var(--gold);color:#000;">Beginner</button>
-      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate ??</button>
-      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert ??</button>
+      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate 🔒</button>
+      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert 🔒</button>
     </div>
   </div>
 
@@ -85,17 +85,17 @@
 
       <div id="choicesGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;"></div>
       <div id="feedback" style="display:none;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;"></div>
-      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question ?</button>
+      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question →</button>
     </div>
 
     <div id="resultsCard" style="display:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 28px;text-align:center;">
-      <div style="font-size:3rem;margin-bottom:16px;">??</div>
+      <div style="font-size:3rem;margin-bottom:16px;">🎉</div>
       <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</h2>
       <div id="finalScore" style="font-size:1.1rem;color:var(--gold);font-weight:800;margin-bottom:8px;"></div>
       <div id="resultsMsg" style="font-size:0.9rem;color:rgba(255,255,255,0.6);margin-bottom:28px;"></div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="restartQuiz()" style="padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Try Again</button>
-        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">? Back to All Subjects</a>
+        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">← Back to All Subjects</a>
       </div>
     </div>
   </div>
@@ -103,7 +103,7 @@
 
 <div id="footer-placeholder"></div>
 <script src="../js/components.js"></script>
-<script src="../js/auth.js?v=2"></script>
+<script src="../js/auth.js"></script>
 <script>
 
 function openCheatSheet(url) {
@@ -113,100 +113,100 @@ function openCheatSheet(url) {
 
 const quizData = {
   beginner: [
-    {cat:"Immediate Family", en:"Mother", vn:"m?", pr:"meh",
-      d:[{vn:"b? / ba",pr:"boh / bah"},{vn:"ch?",pr:"chee"},{vn:"b�",pr:"bah"}]},
-    {cat:"Immediate Family", en:"Father", vn:"b? / ba", pr:"boh / bah",
-      d:[{vn:"m?",pr:"meh"},{vn:"anh",pr:"anh"},{vn:"�ng",pr:"ohng"}]},
-    {cat:"Immediate Family", en:"Older sister", vn:"ch?", pr:"chee",
-      d:[{vn:"em g�i",pr:"em gai"},{vn:"anh",pr:"anh"},{vn:"m?",pr:"meh"}]},
+    {cat:"Immediate Family", en:"Mother", vn:"mẹ", pr:"meh",
+      d:[{vn:"bố / ba",pr:"boh / bah"},{vn:"chị",pr:"chee"},{vn:"bà",pr:"bah"}]},
+    {cat:"Immediate Family", en:"Father", vn:"bố / ba", pr:"boh / bah",
+      d:[{vn:"mẹ",pr:"meh"},{vn:"anh",pr:"anh"},{vn:"ông",pr:"ohng"}]},
+    {cat:"Immediate Family", en:"Older sister", vn:"chị", pr:"chee",
+      d:[{vn:"em gái",pr:"em gai"},{vn:"anh",pr:"anh"},{vn:"mẹ",pr:"meh"}]},
     {cat:"Immediate Family", en:"Older brother", vn:"anh", pr:"anh",
-      d:[{vn:"em trai",pr:"em chai"},{vn:"ch?",pr:"chee"},{vn:"b?",pr:"boh"}]},
+      d:[{vn:"em trai",pr:"em chai"},{vn:"chị",pr:"chee"},{vn:"bố",pr:"boh"}]},
     {cat:"Immediate Family", en:"Younger sibling (boy or girl)", vn:"em", pr:"em",
-      d:[{vn:"anh",pr:"anh"},{vn:"ch?",pr:"chee"},{vn:"con",pr:"kawn"}]},
+      d:[{vn:"anh",pr:"anh"},{vn:"chị",pr:"chee"},{vn:"con",pr:"kawn"}]},
     {cat:"Immediate Family", en:"Child / children", vn:"con", pr:"kawn",
-      d:[{vn:"em",pr:"em"},{vn:"ch�u",pr:"chow"},{vn:"b�",pr:"beh"}]},
-    {cat:"Immediate Family", en:"Husband", vn:"ch?ng", pr:"chohng",
-      d:[{vn:"v?",pr:"vuh"},{vn:"b?n trai",pr:"bahn chai"},{vn:"anh",pr:"anh"}]},
-    {cat:"Immediate Family", en:"Wife", vn:"v?", pr:"vuh",
-      d:[{vn:"ch?ng",pr:"chohng"},{vn:"b?n g�i",pr:"bahn gai"},{vn:"ch?",pr:"chee"}]},
-    {cat:"Extended Family", en:"Grandmother", vn:"b�", pr:"bah",
-      d:[{vn:"�ng",pr:"ohng"},{vn:"m?",pr:"meh"},{vn:"d�",pr:"dee"}]},
-    {cat:"Extended Family", en:"Grandfather", vn:"�ng", pr:"ohng",
-      d:[{vn:"b�",pr:"bah"},{vn:"b?",pr:"boh"},{vn:"ch�",pr:"choo"}]},
-    {cat:"Extended Family", en:"Aunt (mother's younger sister)", vn:"d�", pr:"dee",
-      d:[{vn:"c�",pr:"koh"},{vn:"b�",pr:"bah"},{vn:"ch?",pr:"chee"}]},
-    {cat:"Extended Family", en:"Uncle (father's younger brother)", vn:"ch�", pr:"choo",
-      d:[{vn:"c?u",pr:"koh"},{vn:"�ng",pr:"ohng"},{vn:"anh",pr:"anh"}]},
-    {cat:"Extended Family", en:"Niece or nephew", vn:"ch�u", pr:"chow",
-      d:[{vn:"con",pr:"kawn"},{vn:"em",pr:"em"},{vn:"b�",pr:"beh"}]},
-    {cat:"Extended Family", en:"Cousin", vn:"anh/ch?/em h?", pr:"anh/chee/em haw",
-      d:[{vn:"ch�u",pr:"chow"},{vn:"anh em",pr:"anh em"},{vn:"b?n b�",pr:"bahn beh"}]},
-    {cat:"Relationships", en:"Boyfriend", vn:"b?n trai", pr:"bahn chai",
-      d:[{vn:"b?n g�i",pr:"bahn gai"},{vn:"ch?ng",pr:"chohng"},{vn:"b?n",pr:"bahn"}]},
+      d:[{vn:"em",pr:"em"},{vn:"cháu",pr:"chow"},{vn:"bé",pr:"beh"}]},
+    {cat:"Immediate Family", en:"Husband", vn:"chồng", pr:"chohng",
+      d:[{vn:"vợ",pr:"vuh"},{vn:"bạn trai",pr:"bahn chai"},{vn:"anh",pr:"anh"}]},
+    {cat:"Immediate Family", en:"Wife", vn:"vợ", pr:"vuh",
+      d:[{vn:"chồng",pr:"chohng"},{vn:"bạn gái",pr:"bahn gai"},{vn:"chị",pr:"chee"}]},
+    {cat:"Extended Family", en:"Grandmother", vn:"bà", pr:"bah",
+      d:[{vn:"ông",pr:"ohng"},{vn:"mẹ",pr:"meh"},{vn:"dì",pr:"dee"}]},
+    {cat:"Extended Family", en:"Grandfather", vn:"ông", pr:"ohng",
+      d:[{vn:"bà",pr:"bah"},{vn:"bố",pr:"boh"},{vn:"chú",pr:"choo"}]},
+    {cat:"Extended Family", en:"Aunt (mother's younger sister)", vn:"dì", pr:"dee",
+      d:[{vn:"cô",pr:"koh"},{vn:"bà",pr:"bah"},{vn:"chị",pr:"chee"}]},
+    {cat:"Extended Family", en:"Uncle (father's younger brother)", vn:"chú", pr:"choo",
+      d:[{vn:"cậu",pr:"koh"},{vn:"ông",pr:"ohng"},{vn:"anh",pr:"anh"}]},
+    {cat:"Extended Family", en:"Niece or nephew", vn:"cháu", pr:"chow",
+      d:[{vn:"con",pr:"kawn"},{vn:"em",pr:"em"},{vn:"bé",pr:"beh"}]},
+    {cat:"Extended Family", en:"Cousin", vn:"anh/chị/em họ", pr:"anh/chee/em haw",
+      d:[{vn:"cháu",pr:"chow"},{vn:"anh em",pr:"anh em"},{vn:"bạn bè",pr:"bahn beh"}]},
+    {cat:"Relationships", en:"Boyfriend", vn:"bạn trai", pr:"bahn chai",
+      d:[{vn:"bạn gái",pr:"bahn gai"},{vn:"chồng",pr:"chohng"},{vn:"bạn",pr:"bahn"}]},
   ],
   intermediate: [
-    {cat:"Pronouns as Family Terms", en:"I (neutral, general use)", vn:"t�i", pr:"toy",
-      d:[{vn:"em",pr:"em"},{vn:"m�nh",pr:"ming"},{vn:"tao",pr:"tow"}]},
+    {cat:"Pronouns as Family Terms", en:"I (neutral, general use)", vn:"tôi", pr:"toy",
+      d:[{vn:"em",pr:"em"},{vn:"mình",pr:"ming"},{vn:"tao",pr:"tow"}]},
     {cat:"Pronouns as Family Terms", en:"I (when speaking to elders)", vn:"em", pr:"em",
-      d:[{vn:"t�i",pr:"toy"},{vn:"m�nh",pr:"ming"},{vn:"con",pr:"kawn"}]},
+      d:[{vn:"tôi",pr:"toy"},{vn:"mình",pr:"ming"},{vn:"con",pr:"kawn"}]},
     {cat:"Pronouns as Family Terms", en:"You (addressing older male)", vn:"anh", pr:"anh",
-      d:[{vn:"ch?",pr:"chee"},{vn:"b?n",pr:"bahn"},{vn:"em",pr:"em"}]},
-    {cat:"Pronouns as Family Terms", en:"You (addressing older female)", vn:"ch?", pr:"chee",
-      d:[{vn:"anh",pr:"anh"},{vn:"b?n",pr:"bahn"},{vn:"c�",pr:"koh"}]},
-    {cat:"Pronouns as Family Terms", en:"You (addressing someone your age)", vn:"b?n", pr:"bahn",
-      d:[{vn:"anh",pr:"anh"},{vn:"ch?",pr:"chee"},{vn:"em",pr:"em"}]},
-    {cat:"Pronouns as Family Terms", en:"You (addressing much older male � uncle age)", vn:"ch�", pr:"choo",
-      d:[{vn:"�ng",pr:"ohng"},{vn:"anh",pr:"anh"},{vn:"c?u",pr:"koh"}]},
-    {cat:"Pronouns as Family Terms", en:"You (addressing much older female � auntie age)", vn:"c�", pr:"koh",
-      d:[{vn:"b�",pr:"bah"},{vn:"ch?",pr:"chee"},{vn:"d�",pr:"dee"}]},
-    {cat:"Pronouns as Family Terms", en:"You (addressing elderly man)", vn:"�ng", pr:"ohng",
-      d:[{vn:"b�",pr:"bah"},{vn:"ch�",pr:"choo"},{vn:"anh",pr:"anh"}]},
-    {cat:"Pronouns as Family Terms", en:"You (addressing elderly woman)", vn:"b�", pr:"bah",
-      d:[{vn:"�ng",pr:"ohng"},{vn:"c�",pr:"koh"},{vn:"ch?",pr:"chee"}]},
-    {cat:"Introducing Family", en:"This is my mother", vn:"��y l� m? t�i", pr:"day lah meh toy",
-      d:[{vn:"��y l� b? t�i",pr:"day lah boh toy"},{vn:"M? t�i t�n l�...",pr:"meh toy ten lah"},{vn:"T�i c� m?",pr:"toy kaw meh"}]},
-    {cat:"Introducing Family", en:"My family has four people", vn:"Gia d�nh t�i c� b?n ngu?i", pr:"yah ding toy kaw bone nguh-ee",
-      d:[{vn:"Gia d�nh t�i l?n",pr:"yah ding toy luhn"},{vn:"T�i c� hai anh ch? em",pr:"toy kaw hi anh chee em"},{vn:"Gia d�nh t�i nh?",pr:"yah ding toy nyaw"}]},
-    {cat:"Introducing Family", en:"I have two siblings", vn:"T�i c� hai anh ch? em", pr:"toy kaw hi anh chee em",
-      d:[{vn:"T�i l� con m?t",pr:"toy lah kawn moht"},{vn:"T�i c� ba anh ch? em",pr:"toy kaw bah anh chee em"},{vn:"T�i kh�ng c� anh ch? em",pr:"toy khome kaw anh chee em"}]},
-    {cat:"Introducing Family", en:"I'm an only child", vn:"T�i l� con m?t", pr:"toy lah kawn moht",
-      d:[{vn:"T�i c� anh ch? em",pr:"toy kaw anh chee em"},{vn:"T�i l� con c?",pr:"toy lah kawn kah"},{vn:"T�i l� con �t",pr:"toy lah kawn oot"}]},
-    {cat:"Introducing Family", en:"I'm the oldest child", vn:"T�i l� con c?", pr:"toy lah kawn kah",
-      d:[{vn:"T�i l� con �t",pr:"toy lah kawn oot"},{vn:"T�i l� con m?t",pr:"toy lah kawn moht"},{vn:"T�i l� con gi?a",pr:"toy lah kawn yuh-ah"}]},
-    {cat:"Introducing Family", en:"I'm the youngest child", vn:"T�i l� con �t", pr:"toy lah kawn oot",
-      d:[{vn:"T�i l� con c?",pr:"toy lah kawn kah"},{vn:"T�i l� con m?t",pr:"toy lah kawn moht"},{vn:"T�i l� con gi?a",pr:"toy lah kawn yuh-ah"}]},
+      d:[{vn:"chị",pr:"chee"},{vn:"bạn",pr:"bahn"},{vn:"em",pr:"em"}]},
+    {cat:"Pronouns as Family Terms", en:"You (addressing older female)", vn:"chị", pr:"chee",
+      d:[{vn:"anh",pr:"anh"},{vn:"bạn",pr:"bahn"},{vn:"cô",pr:"koh"}]},
+    {cat:"Pronouns as Family Terms", en:"You (addressing someone your age)", vn:"bạn", pr:"bahn",
+      d:[{vn:"anh",pr:"anh"},{vn:"chị",pr:"chee"},{vn:"em",pr:"em"}]},
+    {cat:"Pronouns as Family Terms", en:"You (addressing much older male — uncle age)", vn:"chú", pr:"choo",
+      d:[{vn:"ông",pr:"ohng"},{vn:"anh",pr:"anh"},{vn:"cậu",pr:"koh"}]},
+    {cat:"Pronouns as Family Terms", en:"You (addressing much older female — auntie age)", vn:"cô", pr:"koh",
+      d:[{vn:"bà",pr:"bah"},{vn:"chị",pr:"chee"},{vn:"dì",pr:"dee"}]},
+    {cat:"Pronouns as Family Terms", en:"You (addressing elderly man)", vn:"ông", pr:"ohng",
+      d:[{vn:"bà",pr:"bah"},{vn:"chú",pr:"choo"},{vn:"anh",pr:"anh"}]},
+    {cat:"Pronouns as Family Terms", en:"You (addressing elderly woman)", vn:"bà", pr:"bah",
+      d:[{vn:"ông",pr:"ohng"},{vn:"cô",pr:"koh"},{vn:"chị",pr:"chee"}]},
+    {cat:"Introducing Family", en:"This is my mother", vn:"Đây là mẹ tôi", pr:"day lah meh toy",
+      d:[{vn:"Đây là bố tôi",pr:"day lah boh toy"},{vn:"Mẹ tôi tên là...",pr:"meh toy ten lah"},{vn:"Tôi có mẹ",pr:"toy kaw meh"}]},
+    {cat:"Introducing Family", en:"My family has four people", vn:"Gia đình tôi có bốn người", pr:"yah ding toy kaw bone nguh-ee",
+      d:[{vn:"Gia đình tôi lớn",pr:"yah ding toy luhn"},{vn:"Tôi có hai anh chị em",pr:"toy kaw hi anh chee em"},{vn:"Gia đình tôi nhỏ",pr:"yah ding toy nyaw"}]},
+    {cat:"Introducing Family", en:"I have two siblings", vn:"Tôi có hai anh chị em", pr:"toy kaw hi anh chee em",
+      d:[{vn:"Tôi là con một",pr:"toy lah kawn moht"},{vn:"Tôi có ba anh chị em",pr:"toy kaw bah anh chee em"},{vn:"Tôi không có anh chị em",pr:"toy khome kaw anh chee em"}]},
+    {cat:"Introducing Family", en:"I'm an only child", vn:"Tôi là con một", pr:"toy lah kawn moht",
+      d:[{vn:"Tôi có anh chị em",pr:"toy kaw anh chee em"},{vn:"Tôi là con cả",pr:"toy lah kawn kah"},{vn:"Tôi là con út",pr:"toy lah kawn oot"}]},
+    {cat:"Introducing Family", en:"I'm the oldest child", vn:"Tôi là con cả", pr:"toy lah kawn kah",
+      d:[{vn:"Tôi là con út",pr:"toy lah kawn oot"},{vn:"Tôi là con một",pr:"toy lah kawn moht"},{vn:"Tôi là con giữa",pr:"toy lah kawn yuh-ah"}]},
+    {cat:"Introducing Family", en:"I'm the youngest child", vn:"Tôi là con út", pr:"toy lah kawn oot",
+      d:[{vn:"Tôi là con cả",pr:"toy lah kawn kah"},{vn:"Tôi là con một",pr:"toy lah kawn moht"},{vn:"Tôi là con giữa",pr:"toy lah kawn yuh-ah"}]},
   ],
   expert: [
-    {cat:"Marriage & Relationships", en:"Are you married?", vn:"B?n c� gia d�nh chua?", pr:"bahn kaw yah ding chuh-ah",
-      d:[{vn:"B?n c� b?n trai/g�i kh�ng?",pr:"bahn kaw bahn chai/gai khome"},{vn:"B?n d� k?t h�n chua?",pr:"bahn dah ket hohn chuh-ah"},{vn:"Gia d�nh b?n c� m?y ngu?i?",pr:"yah ding bahn kaw may nguh-ee"}]},
-    {cat:"Marriage & Relationships", en:"I'm married", vn:"T�i d� k?t h�n r?i", pr:"toy dah ket hohn roy",
-      d:[{vn:"T�i c�n d?c th�n",pr:"toy kawn dawk thun"},{vn:"T�i c� b?n trai",pr:"toy kaw bahn chai"},{vn:"T�i d� ly h�n",pr:"toy dah lee hohn"}]},
-    {cat:"Marriage & Relationships", en:"I'm single", vn:"T�i c�n d?c th�n", pr:"toy kawn dawk thun",
-      d:[{vn:"T�i d� k?t h�n",pr:"toy dah ket hohn"},{vn:"T�i c� b?n g�i",pr:"toy kaw bahn gai"},{vn:"T�i d� ly h�n",pr:"toy dah lee hohn"}]},
-    {cat:"Marriage & Relationships", en:"I'm divorced", vn:"T�i d� ly h�n", pr:"toy dah lee hohn",
-      d:[{vn:"T�i d� k?t h�n",pr:"toy dah ket hohn"},{vn:"T�i c�n d?c th�n",pr:"toy kawn dawk thun"},{vn:"T�i g�a v?/ch?ng",pr:"toy gwah vuh/chohng"}]},
-    {cat:"Children", en:"Do you have children?", vn:"B?n c� con chua?", pr:"bahn kaw kawn chuh-ah",
-      d:[{vn:"Con b?n m?y tu?i?",pr:"kawn bahn may too-oy"},{vn:"B?n mu?n c� con kh�ng?",pr:"bahn moo-uhn kaw kawn khome"},{vn:"Con b?n t�n g�?",pr:"kawn bahn ten yee"}]},
-    {cat:"Children", en:"I have one child", vn:"T�i c� m?t d?a con", pr:"toy kaw moht duh-ah kawn",
-      d:[{vn:"T�i chua c� con",pr:"toy chuh-ah kaw kawn"},{vn:"T�i c� hai d?a con",pr:"toy kaw hi duh-ah kawn"},{vn:"Con t�i c�n nh?",pr:"kawn toy kawn nyaw"}]},
-    {cat:"Children", en:"How old is your child?", vn:"Con b?n m?y tu?i?", pr:"kawn bahn may too-oy",
-      d:[{vn:"B?n c� con chua?",pr:"bahn kaw kawn chuh-ah"},{vn:"Con b?n t�n g�?",pr:"kawn bahn ten yee"},{vn:"Con b?n h?c l?p m?y?",pr:"kawn bahn hawk lup may"}]},
-    {cat:"Vietnamese Family Culture", en:"Family (the whole unit)", vn:"gia d�nh", pr:"yah ding",
-      d:[{vn:"h? h�ng",pr:"haw hahng"},{vn:"anh ch? em",pr:"anh chee em"},{vn:"b? m?",pr:"boh meh"}]},
-    {cat:"Vietnamese Family Culture", en:"Relatives / extended family", vn:"h? h�ng", pr:"haw hahng",
-      d:[{vn:"gia d�nh",pr:"yah ding"},{vn:"b?n b�",pr:"bahn beh"},{vn:"h�ng x�m",pr:"hahng sohm"}]},
-    {cat:"Vietnamese Family Culture", en:"Ancestors / grandparents (reverence)", vn:"t? ti�n", pr:"toh tyen",
-      d:[{vn:"�ng b�",pr:"ohng bah"},{vn:"h? h�ng",pr:"haw hahng"},{vn:"gia d�nh",pr:"yah ding"}]},
-    {cat:"Vietnamese Family Culture", en:"Lunar New Year family gathering", vn:"T?t", pr:"tet",
-      d:[{vn:"gi?",pr:"yoh"},{vn:"d�m cu?i",pr:"dahm kyuh-ee"},{vn:"sinh nh?t",pr:"sing nyut"}]},
-    {cat:"Vietnamese Family Culture", en:"Wedding", vn:"d�m cu?i", pr:"dahm kyuh-ee",
-      d:[{vn:"T?t",pr:"tet"},{vn:"sinh nh?t",pr:"sing nyut"},{vn:"gi?",pr:"yoh"}]},
-    {cat:"Vietnamese Family Culture", en:"Death anniversary / memorial day", vn:"gi?", pr:"yoh",
-      d:[{vn:"d�m cu?i",pr:"dahm kyuh-ee"},{vn:"T?t",pr:"tet"},{vn:"sinh nh?t",pr:"sing nyut"}]},
-    {cat:"Vietnamese Family Culture", en:"Birthday", vn:"sinh nh?t", pr:"sing nyut",
-      d:[{vn:"gi?",pr:"yoh"},{vn:"d�m cu?i",pr:"dahm kyuh-ee"},{vn:"T?t",pr:"tet"}]},
-    {cat:"Vietnamese Family Culture", en:"Happy birthday!", vn:"Ch�c m?ng sinh nh?t!", pr:"chook mung sing nyut",
-      d:[{vn:"Ch�c m?ng nam m?i!",pr:"chook mung num muh-ee"},{vn:"Ch�c m?ng!",pr:"chook mung"},{vn:"Sinh nh?t vui v?!",pr:"sing nyut voo-ee veh"}]},
+    {cat:"Marriage & Relationships", en:"Are you married?", vn:"Bạn có gia đình chưa?", pr:"bahn kaw yah ding chuh-ah",
+      d:[{vn:"Bạn có bạn trai/gái không?",pr:"bahn kaw bahn chai/gai khome"},{vn:"Bạn đã kết hôn chưa?",pr:"bahn dah ket hohn chuh-ah"},{vn:"Gia đình bạn có mấy người?",pr:"yah ding bahn kaw may nguh-ee"}]},
+    {cat:"Marriage & Relationships", en:"I'm married", vn:"Tôi đã kết hôn rồi", pr:"toy dah ket hohn roy",
+      d:[{vn:"Tôi còn độc thân",pr:"toy kawn dawk thun"},{vn:"Tôi có bạn trai",pr:"toy kaw bahn chai"},{vn:"Tôi đã ly hôn",pr:"toy dah lee hohn"}]},
+    {cat:"Marriage & Relationships", en:"I'm single", vn:"Tôi còn độc thân", pr:"toy kawn dawk thun",
+      d:[{vn:"Tôi đã kết hôn",pr:"toy dah ket hohn"},{vn:"Tôi có bạn gái",pr:"toy kaw bahn gai"},{vn:"Tôi đã ly hôn",pr:"toy dah lee hohn"}]},
+    {cat:"Marriage & Relationships", en:"I'm divorced", vn:"Tôi đã ly hôn", pr:"toy dah lee hohn",
+      d:[{vn:"Tôi đã kết hôn",pr:"toy dah ket hohn"},{vn:"Tôi còn độc thân",pr:"toy kawn dawk thun"},{vn:"Tôi góa vợ/chồng",pr:"toy gwah vuh/chohng"}]},
+    {cat:"Children", en:"Do you have children?", vn:"Bạn có con chưa?", pr:"bahn kaw kawn chuh-ah",
+      d:[{vn:"Con bạn mấy tuổi?",pr:"kawn bahn may too-oy"},{vn:"Bạn muốn có con không?",pr:"bahn moo-uhn kaw kawn khome"},{vn:"Con bạn tên gì?",pr:"kawn bahn ten yee"}]},
+    {cat:"Children", en:"I have one child", vn:"Tôi có một đứa con", pr:"toy kaw moht duh-ah kawn",
+      d:[{vn:"Tôi chưa có con",pr:"toy chuh-ah kaw kawn"},{vn:"Tôi có hai đứa con",pr:"toy kaw hi duh-ah kawn"},{vn:"Con tôi còn nhỏ",pr:"kawn toy kawn nyaw"}]},
+    {cat:"Children", en:"How old is your child?", vn:"Con bạn mấy tuổi?", pr:"kawn bahn may too-oy",
+      d:[{vn:"Bạn có con chưa?",pr:"bahn kaw kawn chuh-ah"},{vn:"Con bạn tên gì?",pr:"kawn bahn ten yee"},{vn:"Con bạn học lớp mấy?",pr:"kawn bahn hawk lup may"}]},
+    {cat:"Vietnamese Family Culture", en:"Family (the whole unit)", vn:"gia đình", pr:"yah ding",
+      d:[{vn:"họ hàng",pr:"haw hahng"},{vn:"anh chị em",pr:"anh chee em"},{vn:"bố mẹ",pr:"boh meh"}]},
+    {cat:"Vietnamese Family Culture", en:"Relatives / extended family", vn:"họ hàng", pr:"haw hahng",
+      d:[{vn:"gia đình",pr:"yah ding"},{vn:"bạn bè",pr:"bahn beh"},{vn:"hàng xóm",pr:"hahng sohm"}]},
+    {cat:"Vietnamese Family Culture", en:"Ancestors / grandparents (reverence)", vn:"tổ tiên", pr:"toh tyen",
+      d:[{vn:"ông bà",pr:"ohng bah"},{vn:"họ hàng",pr:"haw hahng"},{vn:"gia đình",pr:"yah ding"}]},
+    {cat:"Vietnamese Family Culture", en:"Lunar New Year family gathering", vn:"Tết", pr:"tet",
+      d:[{vn:"giỗ",pr:"yoh"},{vn:"đám cưới",pr:"dahm kyuh-ee"},{vn:"sinh nhật",pr:"sing nyut"}]},
+    {cat:"Vietnamese Family Culture", en:"Wedding", vn:"đám cưới", pr:"dahm kyuh-ee",
+      d:[{vn:"Tết",pr:"tet"},{vn:"sinh nhật",pr:"sing nyut"},{vn:"giỗ",pr:"yoh"}]},
+    {cat:"Vietnamese Family Culture", en:"Death anniversary / memorial day", vn:"giỗ", pr:"yoh",
+      d:[{vn:"đám cưới",pr:"dahm kyuh-ee"},{vn:"Tết",pr:"tet"},{vn:"sinh nhật",pr:"sing nyut"}]},
+    {cat:"Vietnamese Family Culture", en:"Birthday", vn:"sinh nhật", pr:"sing nyut",
+      d:[{vn:"giỗ",pr:"yoh"},{vn:"đám cưới",pr:"dahm kyuh-ee"},{vn:"Tết",pr:"tet"}]},
+    {cat:"Vietnamese Family Culture", en:"Happy birthday!", vn:"Chúc mừng sinh nhật!", pr:"chook mung sing nyut",
+      d:[{vn:"Chúc mừng năm mới!",pr:"chook mung num muh-ee"},{vn:"Chúc mừng!",pr:"chook mung"},{vn:"Sinh nhật vui vẻ!",pr:"sing nyut voo-ee veh"}]},
   ]
 };
 
@@ -273,11 +273,11 @@ function selectAnswer(btn, selected, correct, correctPr) {
     score++;
     btn.style.background = 'rgba(46,204,113,0.3)'; btn.style.borderColor = '#2ecc71';
     feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(46,204,113,0.15);border-left:3px solid #2ecc71;color:#2ecc71;';
-    feedback.textContent = '? Correct! ' + getFact(questions[current]);
+    feedback.textContent = '✓ Correct! ' + getFact(questions[current]);
   } else {
     btn.style.background = 'rgba(231,76,60,0.3)'; btn.style.borderColor = '#e74c3c';
     feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(231,76,60,0.15);border-left:3px solid #e74c3c;color:#e74c3c;';
-    feedback.textContent = `? The answer is: ${correct} (${correctPr})`;
+    feedback.textContent = `✗ The answer is: ${correct} (${correctPr})`;
   }
   document.getElementById('scoreText').textContent = `Score: ${score}`;
   document.getElementById('nextBtn').style.display = 'block';
@@ -288,14 +288,14 @@ function nextQuestion() { showQuestion(); }
 
 function getFact(q) {
   const facts = {
-    'Immediate Family': 'Vietnamese has separate words for older and younger siblings � there\'s no neutral word for "sibling." Age order matters deeply in Vietnamese culture.',
-    'Extended Family': 'Vietnamese has different words for maternal vs paternal aunts and uncles � the family tree is tracked with remarkable precision.',
-    'Relationships': '"B?n trai" literally means "male friend" and "b?n g�i" means "female friend" � context makes it clear when it means boyfriend/girlfriend.',
-    'Pronouns as Family Terms': 'Using the right pronoun shows respect and social awareness. Calling an older woman "ch?" instead of "b?n" immediately signals you understand Vietnamese culture.',
-    'Introducing Family': 'Vietnamese people love talking about family � it\'s the most common small talk topic. Being able to describe your family earns instant warmth.',
-    'Marriage & Relationships': 'Vietnamese people often ask about marriage and children quite directly � it\'s a sign of friendly interest, not rudeness.',
-    'Children': 'In Vietnam, grandparents often live with their children\'s family and help raise grandchildren � multigenerational households are common and respected.',
-    'Vietnamese Family Culture': 'T?t (Lunar New Year) is the most important holiday in Vietnam � families travel from across the country to be together. It\'s deeply family-centered.',
+    'Immediate Family': 'Vietnamese has separate words for older and younger siblings — there\'s no neutral word for "sibling." Age order matters deeply in Vietnamese culture.',
+    'Extended Family': 'Vietnamese has different words for maternal vs paternal aunts and uncles — the family tree is tracked with remarkable precision.',
+    'Relationships': '"Bạn trai" literally means "male friend" and "bạn gái" means "female friend" — context makes it clear when it means boyfriend/girlfriend.',
+    'Pronouns as Family Terms': 'Using the right pronoun shows respect and social awareness. Calling an older woman "chị" instead of "bạn" immediately signals you understand Vietnamese culture.',
+    'Introducing Family': 'Vietnamese people love talking about family — it\'s the most common small talk topic. Being able to describe your family earns instant warmth.',
+    'Marriage & Relationships': 'Vietnamese people often ask about marriage and children quite directly — it\'s a sign of friendly interest, not rudeness.',
+    'Children': 'In Vietnam, grandparents often live with their children\'s family and help raise grandchildren — multigenerational households are common and respected.',
+    'Vietnamese Family Culture': 'Tết (Lunar New Year) is the most important holiday in Vietnam — families travel from across the country to be together. It\'s deeply family-centered.',
   };
   return facts[q.cat] || 'Keep going!';
 }
@@ -305,7 +305,7 @@ function showResults() {
   document.getElementById('resultsCard').style.display = 'block';
   const pct = score / questions.length;
   document.getElementById('finalScore').textContent = `You scored ${score} out of ${questions.length}`;
-  const msgs = [[0.9,"?? Xu?t s?c l?m! (Outstanding!) You're a natural!"],[0.8,"?? Gi?i l?m! (Very good!) Keep it up!"],[0.6,"?? Kh� t?t! (Pretty good!) Almost there!"],[0,"?? Keep practicing! B?n s? ti?n b?! (You will improve!)"]];
+  const msgs = [[0.9,"🏆 Xuất sắc lắm! (Outstanding!) You're a natural!"],[0.8,"🌟 Giỏi lắm! (Very good!) Keep it up!"],[0.6,"👍 Khá tốt! (Pretty good!) Almost there!"],[0,"💪 Keep practicing! Bạn sẽ tiến bộ! (You will improve!)"]];
   document.getElementById('resultsMsg').textContent = msgs.find(([t]) => pct >= t)[1];
 }
 
@@ -319,4 +319,3 @@ document.addEventListener('DOMContentLoaded', restartQuiz);
 
 </body>
 </html>
-

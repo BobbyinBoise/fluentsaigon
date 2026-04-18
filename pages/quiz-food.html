@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -42,19 +42,19 @@
 <div class="quiz-page">
 
   <div class="quiz-header">
-    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">? All Subjects</a>
-    <h1 style="margin:12px 0 4px;">?? Food & Street Eats</h1>
-    <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">Order off-menu, ask what's fresh, eat where locals eat � not the tourist traps.</p>
+    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">← All Subjects</a>
+    <h1 style="margin:12px 0 4px;">🍜 Food & Street Eats</h1>
+    <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">Order off-menu, ask what's fresh, eat where locals eat — not the tourist traps.</p>
   </div>
 
   <!-- CHEAT SHEET CALLOUT -->
   <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
     <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
       <div>
-        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">?? PRO TIP</div>
+        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">💡 PRO TIP</div>
         <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Vietnamese food vocabulary is your most practical investment. Even 10 words will transform your eating experience. Read the cheat sheet first.</div>
       </div>
-      <button onclick="openCheatSheet('cheatsheet-food.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet ?</button>
+      <button onclick="openCheatSheet('cheatsheet-food.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet →</button>
     </div>
   </div>
 
@@ -62,8 +62,8 @@
   <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
     <div style="display:flex;gap:8px;background:rgba(255,255,255,0.05);border-radius:12px;padding:6px;">
       <button id="tab-beginner" onclick="setDifficulty('beginner')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:var(--gold);color:#000;">Beginner</button>
-      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate ??</button>
-      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert ??</button>
+      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate 🔒</button>
+      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert 🔒</button>
     </div>
   </div>
 
@@ -85,17 +85,17 @@
 
       <div id="choicesGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;"></div>
       <div id="feedback" style="display:none;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;"></div>
-      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question ?</button>
+      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question →</button>
     </div>
 
     <div id="resultsCard" style="display:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 28px;text-align:center;">
-      <div style="font-size:3rem;margin-bottom:16px;">??</div>
+      <div style="font-size:3rem;margin-bottom:16px;">🎉</div>
       <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</h2>
       <div id="finalScore" style="font-size:1.1rem;color:var(--gold);font-weight:800;margin-bottom:8px;"></div>
       <div id="resultsMsg" style="font-size:0.9rem;color:rgba(255,255,255,0.6);margin-bottom:28px;"></div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="restartQuiz()" style="padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Try Again</button>
-        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">? Back to All Subjects</a>
+        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">← Back to All Subjects</a>
       </div>
     </div>
   </div>
@@ -103,7 +103,7 @@
 
 <div id="footer-placeholder"></div>
 <script src="../js/components.js"></script>
-<script src="../js/auth.js?v=2"></script>
+<script src="../js/auth.js"></script>
 <script>
 
 function openCheatSheet(url) {
@@ -113,100 +113,100 @@ function openCheatSheet(url) {
 
 const quizData = {
   beginner: [
-    {cat:"Iconic Dishes", en:"Pho (noodle soup)", vn:"ph?", pr:"fuh",
-      d:[{vn:"b�n b�",pr:"boon baw"},{vn:"com t?m",pr:"kum tum"},{vn:"b�nh m�",pr:"bahn mee"}]},
-    {cat:"Iconic Dishes", en:"B�nh m� (Vietnamese sandwich)", vn:"b�nh m�", pr:"bahn mee",
-      d:[{vn:"ph?",pr:"fuh"},{vn:"b�nh x�o",pr:"bahn say-oh"},{vn:"g?i cu?n",pr:"goy koo-uhn"}]},
-    {cat:"Iconic Dishes", en:"Fresh spring rolls", vn:"g?i cu?n", pr:"goy koo-uhn",
-      d:[{vn:"ch? gi�",pr:"chah yaw"},{vn:"b�nh m�",pr:"bahn mee"},{vn:"ph?",pr:"fuh"}]},
-    {cat:"Iconic Dishes", en:"Fried spring rolls", vn:"ch? gi�", pr:"chah yaw",
-      d:[{vn:"g?i cu?n",pr:"goy koo-uhn"},{vn:"b�nh x�o",pr:"bahn say-oh"},{vn:"nem",pr:"nem"}]},
-    {cat:"Iconic Dishes", en:"Broken rice (Southern staple)", vn:"com t?m", pr:"kum tum",
-      d:[{vn:"com rang",pr:"kum rang"},{vn:"ch�o",pr:"chow"},{vn:"b�n b�",pr:"boon baw"}]},
-    {cat:"Drinks", en:"Vietnamese iced coffee with milk", vn:"c� ph� s?a d�", pr:"kah feh shuh-ah dah",
-      d:[{vn:"c� ph� den",pr:"kah feh den"},{vn:"tr� d�",pr:"chah dah"},{vn:"nu?c d?a",pr:"nyuhk yuh-ah"}]},
-    {cat:"Drinks", en:"Black coffee (no milk)", vn:"c� ph� den", pr:"kah feh den",
-      d:[{vn:"c� ph� s?a d�",pr:"kah feh shuh-ah dah"},{vn:"c� ph� tr?ng",pr:"kah feh chung"},{vn:"tr� d�",pr:"chah dah"}]},
-    {cat:"Drinks", en:"Iced tea (free at most restaurants)", vn:"tr� d�", pr:"chah dah",
-      d:[{vn:"nu?c l?c",pr:"nyuhk lawk"},{vn:"c� ph� den",pr:"kah feh den"},{vn:"sinh t?",pr:"sing toh"}]},
-    {cat:"Drinks", en:"Coconut water", vn:"nu?c d?a", pr:"nyuhk yuh-ah",
-      d:[{vn:"tr� d�",pr:"chah dah"},{vn:"sinh t?",pr:"sing toh"},{vn:"nu?c �p",pr:"nyuhk ep"}]},
-    {cat:"Ordering Basics", en:"Delicious!", vn:"Ngon l?m!", pr:"ngawn lahm",
-      d:[{vn:"Cay qu�!",pr:"kay kwah"},{vn:"Kh�ng ngon",pr:"khome ngawn"},{vn:"T?m du?c",pr:"tahm duh-uk"}]},
-    {cat:"Ordering Basics", en:"The bill please", vn:"T�nh ti?n di", pr:"ting tyen dee",
-      d:[{vn:"Cho t�i th�m",pr:"chaw toy tem"},{vn:"G?i m�n",pr:"goy mawn"},{vn:"Xin l?i",pr:"sin loy"}]},
-    {cat:"Ordering Basics", en:"I want to order", vn:"T�i mu?n g?i m�n", pr:"toy moo-uhn goy mawn",
-      d:[{vn:"T�nh ti?n di",pr:"ting tyen dee"},{vn:"Cho t�i xem",pr:"chaw toy sem"},{vn:"Ngon l?m",pr:"ngawn lahm"}]},
-    {cat:"Ordering Basics", en:"One bowl / one serving", vn:"m?t t�", pr:"moht toh",
-      d:[{vn:"hai t�",pr:"hi toh"},{vn:"m?t dia",pr:"moht dyah"},{vn:"m?t ly",pr:"moht lee"}]},
-    {cat:"Ordering Basics", en:"No ice please", vn:"Kh�ng d�", pr:"khome dah",
-      d:[{vn:"Th�m d�",pr:"tem dah"},{vn:"Kh�ng du?ng",pr:"khome duh-ung"},{vn:"�t d�",pr:"it dah"}]},
-    {cat:"Ordering Basics", en:"Not spicy", vn:"Kh�ng cay", pr:"khome kay",
-      d:[{vn:"Cay qu�",pr:"kay kwah"},{vn:"�t cay",pr:"it kay"},{vn:"R?t cay",pr:"rut kay"}]},
+    {cat:"Iconic Dishes", en:"Pho (noodle soup)", vn:"phở", pr:"fuh",
+      d:[{vn:"bún bò",pr:"boon baw"},{vn:"cơm tấm",pr:"kum tum"},{vn:"bánh mì",pr:"bahn mee"}]},
+    {cat:"Iconic Dishes", en:"Bánh mì (Vietnamese sandwich)", vn:"bánh mì", pr:"bahn mee",
+      d:[{vn:"phở",pr:"fuh"},{vn:"bánh xèo",pr:"bahn say-oh"},{vn:"gỏi cuốn",pr:"goy koo-uhn"}]},
+    {cat:"Iconic Dishes", en:"Fresh spring rolls", vn:"gỏi cuốn", pr:"goy koo-uhn",
+      d:[{vn:"chả giò",pr:"chah yaw"},{vn:"bánh mì",pr:"bahn mee"},{vn:"phở",pr:"fuh"}]},
+    {cat:"Iconic Dishes", en:"Fried spring rolls", vn:"chả giò", pr:"chah yaw",
+      d:[{vn:"gỏi cuốn",pr:"goy koo-uhn"},{vn:"bánh xèo",pr:"bahn say-oh"},{vn:"nem",pr:"nem"}]},
+    {cat:"Iconic Dishes", en:"Broken rice (Southern staple)", vn:"cơm tấm", pr:"kum tum",
+      d:[{vn:"cơm rang",pr:"kum rang"},{vn:"cháo",pr:"chow"},{vn:"bún bò",pr:"boon baw"}]},
+    {cat:"Drinks", en:"Vietnamese iced coffee with milk", vn:"cà phê sữa đá", pr:"kah feh shuh-ah dah",
+      d:[{vn:"cà phê đen",pr:"kah feh den"},{vn:"trà đá",pr:"chah dah"},{vn:"nước dừa",pr:"nyuhk yuh-ah"}]},
+    {cat:"Drinks", en:"Black coffee (no milk)", vn:"cà phê đen", pr:"kah feh den",
+      d:[{vn:"cà phê sữa đá",pr:"kah feh shuh-ah dah"},{vn:"cà phê trứng",pr:"kah feh chung"},{vn:"trà đá",pr:"chah dah"}]},
+    {cat:"Drinks", en:"Iced tea (free at most restaurants)", vn:"trà đá", pr:"chah dah",
+      d:[{vn:"nước lọc",pr:"nyuhk lawk"},{vn:"cà phê đen",pr:"kah feh den"},{vn:"sinh tố",pr:"sing toh"}]},
+    {cat:"Drinks", en:"Coconut water", vn:"nước dừa", pr:"nyuhk yuh-ah",
+      d:[{vn:"trà đá",pr:"chah dah"},{vn:"sinh tố",pr:"sing toh"},{vn:"nước ép",pr:"nyuhk ep"}]},
+    {cat:"Ordering Basics", en:"Delicious!", vn:"Ngon lắm!", pr:"ngawn lahm",
+      d:[{vn:"Cay quá!",pr:"kay kwah"},{vn:"Không ngon",pr:"khome ngawn"},{vn:"Tạm được",pr:"tahm duh-uk"}]},
+    {cat:"Ordering Basics", en:"The bill please", vn:"Tính tiền đi", pr:"ting tyen dee",
+      d:[{vn:"Cho tôi thêm",pr:"chaw toy tem"},{vn:"Gọi món",pr:"goy mawn"},{vn:"Xin lỗi",pr:"sin loy"}]},
+    {cat:"Ordering Basics", en:"I want to order", vn:"Tôi muốn gọi món", pr:"toy moo-uhn goy mawn",
+      d:[{vn:"Tính tiền đi",pr:"ting tyen dee"},{vn:"Cho tôi xem",pr:"chaw toy sem"},{vn:"Ngon lắm",pr:"ngawn lahm"}]},
+    {cat:"Ordering Basics", en:"One bowl / one serving", vn:"một tô", pr:"moht toh",
+      d:[{vn:"hai tô",pr:"hi toh"},{vn:"một đĩa",pr:"moht dyah"},{vn:"một ly",pr:"moht lee"}]},
+    {cat:"Ordering Basics", en:"No ice please", vn:"Không đá", pr:"khome dah",
+      d:[{vn:"Thêm đá",pr:"tem dah"},{vn:"Không đường",pr:"khome duh-ung"},{vn:"Ít đá",pr:"it dah"}]},
+    {cat:"Ordering Basics", en:"Not spicy", vn:"Không cay", pr:"khome kay",
+      d:[{vn:"Cay quá",pr:"kay kwah"},{vn:"Ít cay",pr:"it kay"},{vn:"Rất cay",pr:"rut kay"}]},
   ],
   intermediate: [
-    {cat:"Street Food", en:"Sizzling crepe with pork & shrimp", vn:"b�nh x�o", pr:"bahn say-oh",
-      d:[{vn:"b�nh cu?n",pr:"bahn koo-uhn"},{vn:"b�nh kh?t",pr:"bahn khawt"},{vn:"b�nh can",pr:"bahn kun"}]},
-    {cat:"Street Food", en:"Beef noodle soup (Hue style)", vn:"b�n b� Hu?", pr:"boon baw hweh",
-      d:[{vn:"ph? b�",pr:"fuh baw"},{vn:"b�n ri�u",pr:"boon ryew"},{vn:"h? ti?u",pr:"hoo tyew"}]},
-    {cat:"Street Food", en:"Rice vermicelli with grilled pork", vn:"b�n th?t nu?ng", pr:"boon tit nyuh-ung",
-      d:[{vn:"b�n b�",pr:"boon baw"},{vn:"b�n ch?",pr:"boon chah"},{vn:"b�n ri�u",pr:"boon ryew"}]},
-    {cat:"Street Food", en:"Grilled pork with rice noodles (Hanoi)", vn:"b�n ch?", pr:"boon chah",
-      d:[{vn:"b�n th?t nu?ng",pr:"boon tit nyuh-ung"},{vn:"b�n b�",pr:"boon baw"},{vn:"com t?m",pr:"kum tum"}]},
-    {cat:"Street Food", en:"Steamed rice rolls", vn:"b�nh cu?n", pr:"bahn koo-uhn",
-      d:[{vn:"b�nh x�o",pr:"bahn say-oh"},{vn:"b�nh m�",pr:"bahn mee"},{vn:"b�nh kh?t",pr:"bahn khawt"}]},
-    {cat:"Ingredients", en:"Beef", vn:"b�", pr:"baw",
-      d:[{vn:"g�",pr:"gah"},{vn:"heo",pr:"hey-oh"},{vn:"t�m",pr:"tome"}]},
-    {cat:"Ingredients", en:"Chicken", vn:"g�", pr:"gah",
-      d:[{vn:"b�",pr:"baw"},{vn:"heo",pr:"hey-oh"},{vn:"c�",pr:"kah"}]},
+    {cat:"Street Food", en:"Sizzling crepe with pork & shrimp", vn:"bánh xèo", pr:"bahn say-oh",
+      d:[{vn:"bánh cuốn",pr:"bahn koo-uhn"},{vn:"bánh khọt",pr:"bahn khawt"},{vn:"bánh căn",pr:"bahn kun"}]},
+    {cat:"Street Food", en:"Beef noodle soup (Hue style)", vn:"bún bò Huế", pr:"boon baw hweh",
+      d:[{vn:"phở bò",pr:"fuh baw"},{vn:"bún riêu",pr:"boon ryew"},{vn:"hủ tiếu",pr:"hoo tyew"}]},
+    {cat:"Street Food", en:"Rice vermicelli with grilled pork", vn:"bún thịt nướng", pr:"boon tit nyuh-ung",
+      d:[{vn:"bún bò",pr:"boon baw"},{vn:"bún chả",pr:"boon chah"},{vn:"bún riêu",pr:"boon ryew"}]},
+    {cat:"Street Food", en:"Grilled pork with rice noodles (Hanoi)", vn:"bún chả", pr:"boon chah",
+      d:[{vn:"bún thịt nướng",pr:"boon tit nyuh-ung"},{vn:"bún bò",pr:"boon baw"},{vn:"cơm tấm",pr:"kum tum"}]},
+    {cat:"Street Food", en:"Steamed rice rolls", vn:"bánh cuốn", pr:"bahn koo-uhn",
+      d:[{vn:"bánh xèo",pr:"bahn say-oh"},{vn:"bánh mì",pr:"bahn mee"},{vn:"bánh khọt",pr:"bahn khawt"}]},
+    {cat:"Ingredients", en:"Beef", vn:"bò", pr:"baw",
+      d:[{vn:"gà",pr:"gah"},{vn:"heo",pr:"hey-oh"},{vn:"tôm",pr:"tome"}]},
+    {cat:"Ingredients", en:"Chicken", vn:"gà", pr:"gah",
+      d:[{vn:"bò",pr:"baw"},{vn:"heo",pr:"hey-oh"},{vn:"cá",pr:"kah"}]},
     {cat:"Ingredients", en:"Pork", vn:"heo", pr:"hey-oh",
-      d:[{vn:"b�",pr:"baw"},{vn:"g�",pr:"gah"},{vn:"v?t",pr:"vit"}]},
-    {cat:"Ingredients", en:"Shrimp / Prawns", vn:"t�m", pr:"tome",
-      d:[{vn:"c�",pr:"kah"},{vn:"m?c",pr:"muk"},{vn:"cua",pr:"koo-ah"}]},
-    {cat:"Ingredients", en:"Fish", vn:"c�", pr:"kah",
-      d:[{vn:"t�m",pr:"tome"},{vn:"m?c",pr:"muk"},{vn:"heo",pr:"hey-oh"}]},
-    {cat:"Ordering Details", en:"A little spicy", vn:"�t cay", pr:"it kay",
-      d:[{vn:"kh�ng cay",pr:"khome kay"},{vn:"cay nhi?u",pr:"kay nyew"},{vn:"cay v?a",pr:"kay vyuh-ah"}]},
-    {cat:"Ordering Details", en:"More please / extra", vn:"th�m n?a di", pr:"tem nyuh dee",
-      d:[{vn:"b?t di",pr:"buht dee"},{vn:"d? r?i",pr:"doo roy"},{vn:"kh�ng c?n",pr:"khome kun"}]},
-    {cat:"Ordering Details", en:"What is this?", vn:"C�i n�y l� g�?", pr:"kai nay lah yee",
-      d:[{vn:"C�i n�y ngon kh�ng?",pr:"kai nay ngawn khome"},{vn:"C�i n�y bao nhi�u?",pr:"kai nay bow nyew"},{vn:"Cho t�i c�i n�y",pr:"chaw toy kai nay"}]},
-    {cat:"Ordering Details", en:"Give me one of these", vn:"Cho t�i m?t c�i n�y", pr:"chaw toy moht kai nay",
-      d:[{vn:"Cho t�i xem",pr:"chaw toy sem"},{vn:"C�i n�y l� g�?",pr:"kai nay lah yee"},{vn:"Kh�ng mu?n",pr:"khome moo-uhn"}]},
-    {cat:"Ordering Details", en:"Vegetarian / no meat", vn:"an chay", pr:"un chay",
-      d:[{vn:"an m?n",pr:"un mun"},{vn:"kh�ng th?t",pr:"khome tit"},{vn:"an ki�ng",pr:"un kyeng"}]},
+      d:[{vn:"bò",pr:"baw"},{vn:"gà",pr:"gah"},{vn:"vịt",pr:"vit"}]},
+    {cat:"Ingredients", en:"Shrimp / Prawns", vn:"tôm", pr:"tome",
+      d:[{vn:"cá",pr:"kah"},{vn:"mực",pr:"muk"},{vn:"cua",pr:"koo-ah"}]},
+    {cat:"Ingredients", en:"Fish", vn:"cá", pr:"kah",
+      d:[{vn:"tôm",pr:"tome"},{vn:"mực",pr:"muk"},{vn:"heo",pr:"hey-oh"}]},
+    {cat:"Ordering Details", en:"A little spicy", vn:"ít cay", pr:"it kay",
+      d:[{vn:"không cay",pr:"khome kay"},{vn:"cay nhiều",pr:"kay nyew"},{vn:"cay vừa",pr:"kay vyuh-ah"}]},
+    {cat:"Ordering Details", en:"More please / extra", vn:"thêm nữa đi", pr:"tem nyuh dee",
+      d:[{vn:"bớt đi",pr:"buht dee"},{vn:"đủ rồi",pr:"doo roy"},{vn:"không cần",pr:"khome kun"}]},
+    {cat:"Ordering Details", en:"What is this?", vn:"Cái này là gì?", pr:"kai nay lah yee",
+      d:[{vn:"Cái này ngon không?",pr:"kai nay ngawn khome"},{vn:"Cái này bao nhiêu?",pr:"kai nay bow nyew"},{vn:"Cho tôi cái này",pr:"chaw toy kai nay"}]},
+    {cat:"Ordering Details", en:"Give me one of these", vn:"Cho tôi một cái này", pr:"chaw toy moht kai nay",
+      d:[{vn:"Cho tôi xem",pr:"chaw toy sem"},{vn:"Cái này là gì?",pr:"kai nay lah yee"},{vn:"Không muốn",pr:"khome moo-uhn"}]},
+    {cat:"Ordering Details", en:"Vegetarian / no meat", vn:"ăn chay", pr:"un chay",
+      d:[{vn:"ăn mặn",pr:"un mun"},{vn:"không thịt",pr:"khome tit"},{vn:"ăn kiêng",pr:"un kyeng"}]},
   ],
   expert: [
-    {cat:"Regional Dishes", en:"Cao Lau (Hoi An noodles)", vn:"cao l?u", pr:"kow loh",
-      d:[{vn:"m� Qu?ng",pr:"mee kwang"},{vn:"b�n b�",pr:"boon baw"},{vn:"h? ti?u",pr:"hoo tyew"}]},
-    {cat:"Regional Dishes", en:"Quang noodles", vn:"m� Qu?ng", pr:"mee kwang",
-      d:[{vn:"cao l?u",pr:"kow loh"},{vn:"b�n b�",pr:"boon baw"},{vn:"ph?",pr:"fuh"}]},
-    {cat:"Regional Dishes", en:"Southern rice noodle soup", vn:"h? ti?u", pr:"hoo tyew",
-      d:[{vn:"ph?",pr:"fuh"},{vn:"b�n ri�u",pr:"boon ryew"},{vn:"b�n b�",pr:"boon baw"}]},
-    {cat:"Regional Dishes", en:"Crab noodle soup", vn:"b�n ri�u", pr:"boon ryew",
-      d:[{vn:"b�n b�",pr:"boon baw"},{vn:"h? ti?u",pr:"hoo tyew"},{vn:"ph?",pr:"fuh"}]},
-    {cat:"Condiments", en:"Fish sauce (the base of everything)", vn:"nu?c m?m", pr:"nyuhk mum",
-      d:[{vn:"tuong hoisin",pr:"tuh-ung hoy-sin"},{vn:"tuong ?t",pr:"tuh-ung uht"},{vn:"d?u h�o",pr:"yoh how"}]},
-    {cat:"Condiments", en:"Chili sauce", vn:"tuong ?t", pr:"tuh-ung uht",
-      d:[{vn:"nu?c m?m",pr:"nyuhk mum"},{vn:"tuong hoisin",pr:"tuh-ung hoy-sin"},{vn:"m?m t�m",pr:"mum tome"}]},
-    {cat:"Condiments", en:"Hoisin sauce", vn:"tuong hoisin", pr:"tuh-ung hoy-sin",
-      d:[{vn:"nu?c m?m",pr:"nyuhk mum"},{vn:"tuong ?t",pr:"tuh-ung uht"},{vn:"d?u h�o",pr:"yoh how"}]},
-    {cat:"Condiments", en:"Fresh chili", vn:"?t tuoi", pr:"uht tuh-ee",
-      d:[{vn:"tuong ?t",pr:"tuh-ung uht"},{vn:"?t kh�",pr:"uht khoh"},{vn:"ti�u",pr:"tyew"}]},
-    {cat:"Market Phrases", en:"Is this fresh today?", vn:"H�m nay m?i kh�ng?", pr:"home nay muh-ee khome",
-      d:[{vn:"C�i n�y ngon kh�ng?",pr:"kai nay ngawn khome"},{vn:"Bao nhi�u ti?n?",pr:"bow nyew tyen"},{vn:"Cho t�i xem",pr:"chaw toy sem"}]},
-    {cat:"Market Phrases", en:"I'll take half a kilo", vn:"Cho t�i n?a k�", pr:"chaw toy nyuh kee",
-      d:[{vn:"Cho t�i m?t k�",pr:"chaw toy moht kee"},{vn:"Cho t�i m?t ch�t",pr:"chaw toy moht choot"},{vn:"Bao nhi�u m?t k�?",pr:"bow nyew moht kee"}]},
-    {cat:"Market Phrases", en:"How much per kilo?", vn:"Bao nhi�u m?t k�?", pr:"bow nyew moht kee",
-      d:[{vn:"Bao nhi�u ti?n?",pr:"bow nyew tyen"},{vn:"Cho t�i n?a k�",pr:"chaw toy nyuh kee"},{vn:"Tuoi kh�ng?",pr:"tuh-ee khome"}]},
-    {cat:"Caf� Culture", en:"Egg coffee (Hanoi specialty)", vn:"c� ph� tr?ng", pr:"kah feh chung",
-      d:[{vn:"c� ph� s?a d�",pr:"kah feh shuh-ah dah"},{vn:"c� ph� c?t d?a",pr:"kah feh koht yuh-ah"},{vn:"b?c x?u",pr:"bahk syew"}]},
-    {cat:"Caf� Culture", en:"White coffee (more milk, Saigon style)", vn:"b?c x?u", pr:"bahk syew",
-      d:[{vn:"c� ph� s?a d�",pr:"kah feh shuh-ah dah"},{vn:"c� ph� den",pr:"kah feh den"},{vn:"c� ph� tr?ng",pr:"kah feh chung"}]},
-    {cat:"Caf� Culture", en:"Coconut coffee", vn:"c� ph� c?t d?a", pr:"kah feh koht yuh-ah",
-      d:[{vn:"c� ph� tr?ng",pr:"kah feh chung"},{vn:"b?c x?u",pr:"bahk syew"},{vn:"c� ph� den",pr:"kah feh den"}]},
-    {cat:"Caf� Culture", en:"Drip filter coffee", vn:"c� ph� phin", pr:"kah feh fin",
-      d:[{vn:"c� ph� pha m�y",pr:"kah feh fah my"},{vn:"c� ph� den",pr:"kah feh den"},{vn:"b?c x?u",pr:"bahk syew"}]},
+    {cat:"Regional Dishes", en:"Cao Lau (Hoi An noodles)", vn:"cao lầu", pr:"kow loh",
+      d:[{vn:"mì Quảng",pr:"mee kwang"},{vn:"bún bò",pr:"boon baw"},{vn:"hủ tiếu",pr:"hoo tyew"}]},
+    {cat:"Regional Dishes", en:"Quang noodles", vn:"mì Quảng", pr:"mee kwang",
+      d:[{vn:"cao lầu",pr:"kow loh"},{vn:"bún bò",pr:"boon baw"},{vn:"phở",pr:"fuh"}]},
+    {cat:"Regional Dishes", en:"Southern rice noodle soup", vn:"hủ tiếu", pr:"hoo tyew",
+      d:[{vn:"phở",pr:"fuh"},{vn:"bún riêu",pr:"boon ryew"},{vn:"bún bò",pr:"boon baw"}]},
+    {cat:"Regional Dishes", en:"Crab noodle soup", vn:"bún riêu", pr:"boon ryew",
+      d:[{vn:"bún bò",pr:"boon baw"},{vn:"hủ tiếu",pr:"hoo tyew"},{vn:"phở",pr:"fuh"}]},
+    {cat:"Condiments", en:"Fish sauce (the base of everything)", vn:"nước mắm", pr:"nyuhk mum",
+      d:[{vn:"tương hoisin",pr:"tuh-ung hoy-sin"},{vn:"tương ớt",pr:"tuh-ung uht"},{vn:"dầu hào",pr:"yoh how"}]},
+    {cat:"Condiments", en:"Chili sauce", vn:"tương ớt", pr:"tuh-ung uht",
+      d:[{vn:"nước mắm",pr:"nyuhk mum"},{vn:"tương hoisin",pr:"tuh-ung hoy-sin"},{vn:"mắm tôm",pr:"mum tome"}]},
+    {cat:"Condiments", en:"Hoisin sauce", vn:"tương hoisin", pr:"tuh-ung hoy-sin",
+      d:[{vn:"nước mắm",pr:"nyuhk mum"},{vn:"tương ớt",pr:"tuh-ung uht"},{vn:"dầu hào",pr:"yoh how"}]},
+    {cat:"Condiments", en:"Fresh chili", vn:"ớt tươi", pr:"uht tuh-ee",
+      d:[{vn:"tương ớt",pr:"tuh-ung uht"},{vn:"ớt khô",pr:"uht khoh"},{vn:"tiêu",pr:"tyew"}]},
+    {cat:"Market Phrases", en:"Is this fresh today?", vn:"Hôm nay mới không?", pr:"home nay muh-ee khome",
+      d:[{vn:"Cái này ngon không?",pr:"kai nay ngawn khome"},{vn:"Bao nhiêu tiền?",pr:"bow nyew tyen"},{vn:"Cho tôi xem",pr:"chaw toy sem"}]},
+    {cat:"Market Phrases", en:"I'll take half a kilo", vn:"Cho tôi nửa ký", pr:"chaw toy nyuh kee",
+      d:[{vn:"Cho tôi một ký",pr:"chaw toy moht kee"},{vn:"Cho tôi một chút",pr:"chaw toy moht choot"},{vn:"Bao nhiêu một ký?",pr:"bow nyew moht kee"}]},
+    {cat:"Market Phrases", en:"How much per kilo?", vn:"Bao nhiêu một ký?", pr:"bow nyew moht kee",
+      d:[{vn:"Bao nhiêu tiền?",pr:"bow nyew tyen"},{vn:"Cho tôi nửa ký",pr:"chaw toy nyuh kee"},{vn:"Tươi không?",pr:"tuh-ee khome"}]},
+    {cat:"Café Culture", en:"Egg coffee (Hanoi specialty)", vn:"cà phê trứng", pr:"kah feh chung",
+      d:[{vn:"cà phê sữa đá",pr:"kah feh shuh-ah dah"},{vn:"cà phê cốt dừa",pr:"kah feh koht yuh-ah"},{vn:"bạc xỉu",pr:"bahk syew"}]},
+    {cat:"Café Culture", en:"White coffee (more milk, Saigon style)", vn:"bạc xỉu", pr:"bahk syew",
+      d:[{vn:"cà phê sữa đá",pr:"kah feh shuh-ah dah"},{vn:"cà phê đen",pr:"kah feh den"},{vn:"cà phê trứng",pr:"kah feh chung"}]},
+    {cat:"Café Culture", en:"Coconut coffee", vn:"cà phê cốt dừa", pr:"kah feh koht yuh-ah",
+      d:[{vn:"cà phê trứng",pr:"kah feh chung"},{vn:"bạc xỉu",pr:"bahk syew"},{vn:"cà phê đen",pr:"kah feh den"}]},
+    {cat:"Café Culture", en:"Drip filter coffee", vn:"cà phê phin", pr:"kah feh fin",
+      d:[{vn:"cà phê pha máy",pr:"kah feh fah my"},{vn:"cà phê đen",pr:"kah feh den"},{vn:"bạc xỉu",pr:"bahk syew"}]},
   ]
 };
 
@@ -275,12 +275,12 @@ function selectAnswer(btn, selected, correct, correctPr) {
     btn.style.background = 'rgba(46,204,113,0.3)';
     btn.style.borderColor = '#2ecc71';
     feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(46,204,113,0.15);border-left:3px solid #2ecc71;color:#2ecc71;';
-    feedback.textContent = '? Correct! ' + getFoodFact(questions[current]);
+    feedback.textContent = '✓ Correct! ' + getFoodFact(questions[current]);
   } else {
     btn.style.background = 'rgba(231,76,60,0.3)';
     btn.style.borderColor = '#e74c3c';
     feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(231,76,60,0.15);border-left:3px solid #e74c3c;color:#e74c3c;';
-    feedback.textContent = `? The answer is: ${correct} (${correctPr})`;
+    feedback.textContent = `✗ The answer is: ${correct} (${correctPr})`;
   }
   document.getElementById('scoreText').textContent = `Score: ${score}`;
   document.getElementById('nextBtn').style.display = 'block';
@@ -291,16 +291,16 @@ function nextQuestion() { showQuestion(); }
 
 function getFoodFact(q) {
   const facts = {
-    'Iconic Dishes': "Ph? originated in the north but Saigon's version is sweeter and comes with more herbs and bean sprouts.",
-    'Drinks': 'Vietnamese coffee is brewed with a phin (drip filter) � much stronger than Western coffee. The condensed milk balances it perfectly.',
-    'Ordering Basics': 'Pointing at what you want and saying "cho t�i m?t" works at almost any street stall, even without more Vietnamese.',
-    'Street Food': "The best street food is usually found where locals queue � if there's a line of motorbikes outside, that's your sign.",
-    'Ingredients': 'Vietnamese cooking uses incredibly fresh ingredients � herbs, vegetables, and proteins are often sourced from the market that morning.',
-    'Ordering Details': 'Vietnamese restaurants rarely get offended by customization requests � asking for less spice or extra herbs is totally normal.',
-    'Regional Dishes': "Vietnam's cuisine changes dramatically by region � Saigon is sweeter, Hanoi is more savory, and Hue is the spiciest.",
-    'Condiments': 'Nu?c m?m (fish sauce) is the backbone of Vietnamese cooking. Phu Quoc island produces the most prized variety.',
+    'Iconic Dishes': "Phở originated in the north but Saigon's version is sweeter and comes with more herbs and bean sprouts.",
+    'Drinks': 'Vietnamese coffee is brewed with a phin (drip filter) — much stronger than Western coffee. The condensed milk balances it perfectly.',
+    'Ordering Basics': 'Pointing at what you want and saying "cho tôi một" works at almost any street stall, even without more Vietnamese.',
+    'Street Food': "The best street food is usually found where locals queue — if there's a line of motorbikes outside, that's your sign.",
+    'Ingredients': 'Vietnamese cooking uses incredibly fresh ingredients — herbs, vegetables, and proteins are often sourced from the market that morning.',
+    'Ordering Details': 'Vietnamese restaurants rarely get offended by customization requests — asking for less spice or extra herbs is totally normal.',
+    'Regional Dishes': "Vietnam's cuisine changes dramatically by region — Saigon is sweeter, Hanoi is more savory, and Hue is the spiciest.",
+    'Condiments': 'Nước mắm (fish sauce) is the backbone of Vietnamese cooking. Phu Quoc island produces the most prized variety.',
     'Market Phrases': 'Wet markets open at 5-6am with the freshest produce. Arrive early for the best selection and most authentic experience.',
-    'Caf� Culture': "Vietnam is the world's second largest coffee producer. Robusta beans give Vietnamese coffee its distinctive strong, slightly bitter flavor.",
+    'Café Culture': "Vietnam is the world's second largest coffee producer. Robusta beans give Vietnamese coffee its distinctive strong, slightly bitter flavor.",
   };
   return facts[q.cat] || 'Keep going!';
 }
@@ -310,7 +310,7 @@ function showResults() {
   document.getElementById('resultsCard').style.display = 'block';
   const pct = score / questions.length;
   document.getElementById('finalScore').textContent = `You scored ${score} out of ${questions.length}`;
-  const msgs = [[0.9,"?? Xu?t s?c l?m! (Outstanding!) You're a natural!"],[0.8,"?? Gi?i l?m! (Very good!) Keep it up!"],[0.6,"?? Kh� t?t! (Pretty good!) Almost there!"],[0,"?? Keep practicing! B?n s? ti?n b?! (You will improve!)"]];
+  const msgs = [[0.9,"🏆 Xuất sắc lắm! (Outstanding!) You're a natural!"],[0.8,"🌟 Giỏi lắm! (Very good!) Keep it up!"],[0.6,"👍 Khá tốt! (Pretty good!) Almost there!"],[0,"💪 Keep practicing! Bạn sẽ tiến bộ! (You will improve!)"]];
   document.getElementById('resultsMsg').textContent = msgs.find(([t]) => pct >= t)[1];
 }
 
@@ -324,4 +324,3 @@ document.addEventListener('DOMContentLoaded', restartQuiz);
 
 </body>
 </html>
-

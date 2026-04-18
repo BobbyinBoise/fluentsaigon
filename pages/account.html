@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Account - FluentSaigon</title>
 <link rel="stylesheet" href="../css/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>????</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇻🇳</text></svg>">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LN51VD3PC5"></script>
@@ -21,7 +21,7 @@
 
 <div style="max-width:600px;margin:0 auto;padding:80px 24px;position:relative;z-index:1;" id="accountContent">
   <div id="notLoggedIn" style="display:none;text-align:center;">
-    <div style="font-size:3rem;margin-bottom:16px;">??</div>
+    <div style="font-size:3rem;margin-bottom:16px;">🔒</div>
     <h2 style="font-family:var(--font-display);font-size:2rem;color:var(--gold);margin-bottom:12px;">Sign In to View Your Account</h2>
     <button class="btn btn-primary" onclick="AuthModal.open('login')">Sign In</button>
   </div>
@@ -40,20 +40,20 @@
     <!-- Plan status -->
     <div id="proStatus" style="background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.3);border-radius:12px;padding:24px;margin-bottom:20px;display:none;">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-        <span style="font-size:1.5rem;">?</span>
+        <span style="font-size:1.5rem;">⭐</span>
         <div>
           <div style="font-weight:800;color:var(--gold);">FluentSaigon Pro</div>
           <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);" id="planDetails">Active subscription</div>
         </div>
       </div>
       <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.6;">You have full access to all subjects, all difficulty levels, and every new subject we add. Manage your subscription anytime through Stripe's customer portal.</p>
-      <button class="btn btn-outline" style="margin-top:16px;font-size:0.85rem;padding:10px 24px;" onclick="openBillingPortal()">Manage Billing ?</button>
+      <button class="btn btn-outline" style="margin-top:16px;font-size:0.85rem;padding:10px 24px;" onclick="openBillingPortal()">Manage Billing →</button>
     </div>
 
     <div id="freeStatus" style="background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin-bottom:20px;display:none;">
       <div style="font-weight:800;margin-bottom:8px;">Free Plan</div>
       <p style="font-size:0.85rem;color:rgba(255,255,255,0.55);line-height:1.6;margin-bottom:16px;">You have access to Numbers (all levels) and Dates & Times (Beginner). Upgrade to unlock everything.</p>
-      <a href="pricing.html" class="btn btn-primary" style="font-size:0.9rem;padding:10px 24px;">Upgrade to Pro ?</a>
+      <a href="pricing.html" class="btn btn-primary" style="font-size:0.9rem;padding:10px 24px;">Upgrade to Pro →</a>
     </div>
 
     <!-- Quick links -->
@@ -61,13 +61,13 @@
       <div style="font-size:0.7rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:14px;">Quick Access</div>
       <div style="display:flex;flex-direction:column;gap:8px;">
         <a href="subjects.html" style="display:flex;align-items:center;gap:12px;padding:12px;background:rgba(255,255,255,0.05);border-radius:8px;text-decoration:none;color:var(--white);font-weight:700;font-size:0.9rem;transition:0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
-          ?? <span>All Subjects</span>
+          📚 <span>All Subjects</span>
         </a>
         <a href="quiz-numbers.html" style="display:flex;align-items:center;gap:12px;padding:12px;background:rgba(255,255,255,0.05);border-radius:8px;text-decoration:none;color:var(--white);font-weight:700;font-size:0.9rem;transition:0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
-          ?? <span>Numbers Quiz</span>
+          🔢 <span>Numbers Quiz</span>
         </a>
         <a href="quiz-dates.html" style="display:flex;align-items:center;gap:12px;padding:12px;background:rgba(255,255,255,0.05);border-radius:8px;text-decoration:none;color:var(--white);font-weight:700;font-size:0.9rem;transition:0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
-          ?? <span>Dates & Times Quiz</span>
+          📅 <span>Dates & Times Quiz</span>
         </a>
       </div>
     </div>
@@ -81,7 +81,7 @@
 
 <div id="footer-placeholder"></div>
 <script src="../js/components.js"></script>
-<script src="../js/auth.js?v=2"></script>
+<script src="../js/auth.js"></script>
 <script>
 function openBillingPortal() {
   // In production: redirect to Stripe customer portal
@@ -107,13 +107,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var isPro = Auth.isPro();
     var badge = document.getElementById('planBadge');
     if (isPro) {
-      badge.textContent = '? PRO';
+      badge.textContent = '⭐ PRO';
       badge.style.background = 'rgba(245,197,24,0.2)';
       badge.style.color = 'var(--gold)';
       badge.style.border = '1px solid rgba(245,197,24,0.4)';
       document.getElementById('proStatus').style.display = 'block';
       if (Auth.adminEmails && Auth.adminEmails.includes(email)) {
-        document.getElementById('planDetails').textContent = '?? Admin � Full access';
+        document.getElementById('planDetails').textContent = '👑 Admin — Full access';
       }
     } else {
       badge.textContent = 'FREE';
@@ -134,4 +134,3 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
-

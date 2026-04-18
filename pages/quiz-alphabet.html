@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -42,8 +42,8 @@
 <div class="quiz-page">
 
   <div class="quiz-header">
-    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">? All Subjects</a>
-    <h1 style="margin:12px 0 4px;">?? Alphabet & Tones</h1>
+    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">â† All Subjects</a>
+    <h1 style="margin:12px 0 4px;">ğŸ”¤ Alphabet & Tones</h1>
     <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">Vietnamese has 6 tones. This is where most learners give up. Don't be most learners.</p>
   </div>
 
@@ -51,10 +51,10 @@
   <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
     <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
       <div>
-        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">?? PRO TIP</div>
-        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Read the cheat sheet before this quiz — the tone system has a clear logic to it. Once you see the pattern, the marks stop looking random.</div>
+        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">ğŸ’¡ PRO TIP</div>
+        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Read the cheat sheet before this quiz â€” the tone system has a clear logic to it. Once you see the pattern, the marks stop looking random.</div>
       </div>
-      <button onclick="openCheatSheet('cheatsheet-alphabet.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet ?</button>
+      <button onclick="openCheatSheet('cheatsheet-alphabet.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet â†’</button>
     </div>
   </div>
 
@@ -62,8 +62,8 @@
   <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
     <div style="display:flex;gap:8px;background:rgba(255,255,255,0.05);border-radius:12px;padding:6px;">
       <button id="tab-beginner" onclick="setDifficulty('beginner')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:var(--gold);color:#000;">Beginner</button>
-      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate ??</button>
-      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert ??</button>
+      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate ğŸ”’</button>
+      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert ğŸ”’</button>
     </div>
   </div>
 
@@ -85,17 +85,17 @@
 
       <div id="choicesGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;"></div>
       <div id="feedback" style="display:none;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;"></div>
-      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question ?</button>
+      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question â†’</button>
     </div>
 
     <div id="resultsCard" style="display:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 28px;text-align:center;">
-      <div style="font-size:3rem;margin-bottom:16px;">??</div>
+      <div style="font-size:3rem;margin-bottom:16px;">ğŸ‰</div>
       <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</h2>
       <div id="finalScore" style="font-size:1.1rem;color:var(--gold);font-weight:800;margin-bottom:8px;"></div>
       <div id="resultsMsg" style="font-size:0.9rem;color:rgba(255,255,255,0.6);margin-bottom:28px;"></div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="restartQuiz()" style="padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Try Again</button>
-        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">? Back to All Subjects</a>
+        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">â† Back to All Subjects</a>
       </div>
     </div>
   </div>
@@ -103,7 +103,7 @@
 
 <div id="footer-placeholder"></div>
 <script src="../js/components.js"></script>
-<script src="../js/auth.js?v=2"></script>
+<script src="../js/auth.js"></script>
 <script>
 
 function openCheatSheet(url) {
@@ -112,100 +112,100 @@ function openCheatSheet(url) {
 }
 
 // Note: For this subject, 'vn' is the answer text and 'pr' is extra context shown in feedback.
-// The questionSub varies per question type — stored in q.sub.
+// The questionSub varies per question type â€” stored in q.sub.
 
 const quizData = {
   beginner: [
-    // The 6 tones — identify tone name from description
-    {cat:"The 6 Tones", en:"Flat, level tone — no mark needed", vn:"Ngang (flat)", pr:"e.g. ma — ghost",
+    // The 6 tones â€” identify tone name from description
+    {cat:"The 6 Tones", en:"Flat, level tone â€” no mark needed", vn:"Ngang (flat)", pr:"e.g. ma â€” ghost",
       sub:"Which tone is this?",
-      d:[{vn:"Huy?n (falling)",pr:"e.g. mà — but"},{vn:"S?c (rising)",pr:"e.g. má — cheek"},{vn:"N?ng (heavy)",pr:"e.g. m? — rice seedling"}]},
-    {cat:"The 6 Tones", en:"Low falling tone — grave accent ( ` )", vn:"Huy?n (falling)", pr:"e.g. mà — but",
+      d:[{vn:"Huyá»n (falling)",pr:"e.g. mÃ  â€” but"},{vn:"Sáº¯c (rising)",pr:"e.g. mÃ¡ â€” cheek"},{vn:"Náº·ng (heavy)",pr:"e.g. máº¡ â€” rice seedling"}]},
+    {cat:"The 6 Tones", en:"Low falling tone â€” grave accent ( ` )", vn:"Huyá»n (falling)", pr:"e.g. mÃ  â€” but",
       sub:"Which tone is this?",
-      d:[{vn:"Ngang (flat)",pr:"e.g. ma — ghost"},{vn:"S?c (rising)",pr:"e.g. má — cheek"},{vn:"H?i (questioning)",pr:"e.g. m? — tomb"}]},
-    {cat:"The 6 Tones", en:"High rising tone — acute accent ( ´ )", vn:"S?c (rising)", pr:"e.g. má — cheek / mum (Southern)",
+      d:[{vn:"Ngang (flat)",pr:"e.g. ma â€” ghost"},{vn:"Sáº¯c (rising)",pr:"e.g. mÃ¡ â€” cheek"},{vn:"Há»i (questioning)",pr:"e.g. máº£ â€” tomb"}]},
+    {cat:"The 6 Tones", en:"High rising tone â€” acute accent ( Â´ )", vn:"Sáº¯c (rising)", pr:"e.g. mÃ¡ â€” cheek / mum (Southern)",
       sub:"Which tone is this?",
-      d:[{vn:"Huy?n (falling)",pr:"e.g. mà — but"},{vn:"Ngang (flat)",pr:"e.g. ma — ghost"},{vn:"Ngã (broken)",pr:"e.g. mã — horse code"}]},
-    {cat:"The 6 Tones", en:"Dipping then rising — hook above ( ? )", vn:"H?i (questioning)", pr:"e.g. m? — tomb",
+      d:[{vn:"Huyá»n (falling)",pr:"e.g. mÃ  â€” but"},{vn:"Ngang (flat)",pr:"e.g. ma â€” ghost"},{vn:"NgÃ£ (broken)",pr:"e.g. mÃ£ â€” horse code"}]},
+    {cat:"The 6 Tones", en:"Dipping then rising â€” hook above ( Ì‰ )", vn:"Há»i (questioning)", pr:"e.g. máº£ â€” tomb",
       sub:"Which tone is this?",
-      d:[{vn:"N?ng (heavy)",pr:"e.g. m? — rice seedling"},{vn:"S?c (rising)",pr:"e.g. má — cheek"},{vn:"Ngã (broken)",pr:"e.g. mã — horse code"}]},
-    {cat:"The 6 Tones", en:"Rising then broken/creaky — tilde ( ~ )", vn:"Ngã (broken)", pr:"e.g. mã — horse / code",
+      d:[{vn:"Náº·ng (heavy)",pr:"e.g. máº¡ â€” rice seedling"},{vn:"Sáº¯c (rising)",pr:"e.g. mÃ¡ â€” cheek"},{vn:"NgÃ£ (broken)",pr:"e.g. mÃ£ â€” horse code"}]},
+    {cat:"The 6 Tones", en:"Rising then broken/creaky â€” tilde ( ~ )", vn:"NgÃ£ (broken)", pr:"e.g. mÃ£ â€” horse / code",
       sub:"Which tone is this?",
-      d:[{vn:"H?i (questioning)",pr:"e.g. m? — tomb"},{vn:"N?ng (heavy)",pr:"e.g. m? — rice seedling"},{vn:"S?c (rising)",pr:"e.g. má — cheek"}]},
-    {cat:"The 6 Tones", en:"Low, heavy, short — dot below ( . )", vn:"N?ng (heavy)", pr:"e.g. m? — rice seedling",
+      d:[{vn:"Há»i (questioning)",pr:"e.g. máº£ â€” tomb"},{vn:"Náº·ng (heavy)",pr:"e.g. máº¡ â€” rice seedling"},{vn:"Sáº¯c (rising)",pr:"e.g. mÃ¡ â€” cheek"}]},
+    {cat:"The 6 Tones", en:"Low, heavy, short â€” dot below ( . )", vn:"Náº·ng (heavy)", pr:"e.g. máº¡ â€” rice seedling",
       sub:"Which tone is this?",
-      d:[{vn:"Ngã (broken)",pr:"e.g. mã — horse code"},{vn:"Huy?n (falling)",pr:"e.g. mà — but"},{vn:"H?i (questioning)",pr:"e.g. m? — tomb"}]},
+      d:[{vn:"NgÃ£ (broken)",pr:"e.g. mÃ£ â€” horse code"},{vn:"Huyá»n (falling)",pr:"e.g. mÃ  â€” but"},{vn:"Há»i (questioning)",pr:"e.g. máº£ â€” tomb"}]},
     // Tone marks on real words
-    {cat:"Tone Marks", en:"Which word has the FLAT (ngang) tone?", vn:"ma", pr:"ghost — no tone mark",
+    {cat:"Tone Marks", en:"Which word has the FLAT (ngang) tone?", vn:"ma", pr:"ghost â€” no tone mark",
       sub:"Identify the tone mark",
-      d:[{vn:"mà",pr:"but — grave accent"},{vn:"má",pr:"cheek — acute accent"},{vn:"m?",pr:"rice seedling — dot below"}]},
-    {cat:"Tone Marks", en:"Which word has the FALLING (huy?n) tone?", vn:"mà", pr:"but — grave accent ( ` )",
+      d:[{vn:"mÃ ",pr:"but â€” grave accent"},{vn:"mÃ¡",pr:"cheek â€” acute accent"},{vn:"máº¡",pr:"rice seedling â€” dot below"}]},
+    {cat:"Tone Marks", en:"Which word has the FALLING (huyá»n) tone?", vn:"mÃ ", pr:"but â€” grave accent ( ` )",
       sub:"Identify the tone mark",
-      d:[{vn:"ma",pr:"ghost — no mark"},{vn:"má",pr:"cheek — acute accent"},{vn:"m?",pr:"tomb — hook above"}]},
-    {cat:"Tone Marks", en:"Which word has the RISING (s?c) tone?", vn:"má", pr:"cheek / mum — acute accent ( ´ )",
+      d:[{vn:"ma",pr:"ghost â€” no mark"},{vn:"mÃ¡",pr:"cheek â€” acute accent"},{vn:"máº£",pr:"tomb â€” hook above"}]},
+    {cat:"Tone Marks", en:"Which word has the RISING (sáº¯c) tone?", vn:"mÃ¡", pr:"cheek / mum â€” acute accent ( Â´ )",
       sub:"Identify the tone mark",
-      d:[{vn:"ma",pr:"ghost — no mark"},{vn:"mà",pr:"but — grave accent"},{vn:"mã",pr:"horse code — tilde"}]},
-    {cat:"Tone Marks", en:"Which word has the HEAVY (n?ng) tone?", vn:"m?", pr:"rice seedling — dot below ( . )",
+      d:[{vn:"ma",pr:"ghost â€” no mark"},{vn:"mÃ ",pr:"but â€” grave accent"},{vn:"mÃ£",pr:"horse code â€” tilde"}]},
+    {cat:"Tone Marks", en:"Which word has the HEAVY (náº·ng) tone?", vn:"máº¡", pr:"rice seedling â€” dot below ( . )",
       sub:"Identify the tone mark",
-      d:[{vn:"m?",pr:"tomb — hook above"},{vn:"mã",pr:"horse code — tilde"},{vn:"má",pr:"cheek — acute accent"}]},
-    {cat:"Why Tones Matter", en:"What does 'ma' (no tone) mean?", vn:"Ghost", pr:"ma — flat tone, no mark",
+      d:[{vn:"máº£",pr:"tomb â€” hook above"},{vn:"mÃ£",pr:"horse code â€” tilde"},{vn:"mÃ¡",pr:"cheek â€” acute accent"}]},
+    {cat:"Why Tones Matter", en:"What does 'ma' (no tone) mean?", vn:"Ghost", pr:"ma â€” flat tone, no mark",
       sub:"What is the meaning?",
-      d:[{vn:"Mother",pr:"m? or má"},{vn:"But / however",pr:"mà — falling tone"},{vn:"Rice seedling",pr:"m? — heavy tone"}]},
-    {cat:"Why Tones Matter", en:"What does 'm?' mean?", vn:"Mother", pr:"m? — heavy tone, dot below",
+      d:[{vn:"Mother",pr:"máº¹ or mÃ¡"},{vn:"But / however",pr:"mÃ  â€” falling tone"},{vn:"Rice seedling",pr:"máº¡ â€” heavy tone"}]},
+    {cat:"Why Tones Matter", en:"What does 'máº¹' mean?", vn:"Mother", pr:"máº¹ â€” heavy tone, dot below",
       sub:"What is the meaning?",
-      d:[{vn:"Ghost",pr:"ma — flat tone"},{vn:"Cheek",pr:"má — rising tone"},{vn:"But",pr:"mà — falling tone"}]},
-    {cat:"Why Tones Matter", en:"What does 'b?n' mean?", vn:"Friend / you", pr:"b?n — heavy tone, dot below",
+      d:[{vn:"Ghost",pr:"ma â€” flat tone"},{vn:"Cheek",pr:"mÃ¡ â€” rising tone"},{vn:"But",pr:"mÃ  â€” falling tone"}]},
+    {cat:"Why Tones Matter", en:"What does 'báº¡n' mean?", vn:"Friend / you", pr:"báº¡n â€” heavy tone, dot below",
       sub:"What is the meaning?",
-      d:[{vn:"Table",pr:"bàn — falling tone"},{vn:"Sell",pr:"bán — rising tone"},{vn:"Discuss",pr:"bàn — falling tone"}]},
-    {cat:"Why Tones Matter", en:"What does 'bán' mean?", vn:"To sell", pr:"bán — rising tone, acute accent",
+      d:[{vn:"Table",pr:"bÃ n â€” falling tone"},{vn:"Sell",pr:"bÃ¡n â€” rising tone"},{vn:"Discuss",pr:"bÃ n â€” falling tone"}]},
+    {cat:"Why Tones Matter", en:"What does 'bÃ¡n' mean?", vn:"To sell", pr:"bÃ¡n â€” rising tone, acute accent",
       sub:"What is the meaning?",
-      d:[{vn:"Friend",pr:"b?n — heavy tone"},{vn:"Table",pr:"bàn — falling tone"},{vn:"Half",pr:"bán — also means half!"}]},
-    {cat:"Why Tones Matter", en:"How many tones does Vietnamese have?", vn:"6 tones", pr:"Ngang, Huy?n, S?c, H?i, Ngã, N?ng",
+      d:[{vn:"Friend",pr:"báº¡n â€” heavy tone"},{vn:"Table",pr:"bÃ n â€” falling tone"},{vn:"Half",pr:"bÃ¡n â€” also means half!"}]},
+    {cat:"Why Tones Matter", en:"How many tones does Vietnamese have?", vn:"6 tones", pr:"Ngang, Huyá»n, Sáº¯c, Há»i, NgÃ£, Náº·ng",
       sub:"Choose the correct answer",
       d:[{vn:"4 tones",pr:"Mandarin Chinese has 4"},{vn:"5 tones",pr:"Thai has 5"},{vn:"8 tones",pr:"Cantonese has up to 9"}]},
   ],
   intermediate: [
     // Special letters and sounds
-    {cat:"Special Letters", en:"The letter Ğ / d sounds like...", vn:"'D' as in 'dog'", pr:"d — hard D sound, NOT like regular d",
+    {cat:"Special Letters", en:"The letter Ä / Ä‘ sounds like...", vn:"'D' as in 'dog'", pr:"Ä‘ â€” hard D sound, NOT like regular d",
       sub:"How is this letter pronounced?",
       d:[{vn:"'TH' as in 'the'",pr:"this is how 'd' sounds in Southern Vietnam"},{vn:"'Z' as in 'zero'",pr:"this is how 'd' sounds in Northern Vietnam"},{vn:"'Y' as in 'yes'",pr:"this is how 'gi' sounds"}]},
-    {cat:"Special Letters", en:"The letter D / d in Southern Vietnamese sounds like...", vn:"'Y' as in 'yes'", pr:"d ? y sound in Saigon dialect",
+    {cat:"Special Letters", en:"The letter D / d in Southern Vietnamese sounds like...", vn:"'Y' as in 'yes'", pr:"d â†’ y sound in Saigon dialect",
       sub:"How is this letter pronounced in the South?",
-      d:[{vn:"'D' as in 'dog'",pr:"this is d (with stroke)"},{vn:"'Z' as in 'zero'",pr:"this is Northern Vietnamese d"},{vn:"'V' as in 'van'",pr:"this is the letter v"}]},
-    {cat:"Special Letters", en:"The letters GI / gi sound like...", vn:"'Y' as in 'yes'", pr:"gi ? y sound — e.g. gi? = yuh (hour)",
+      d:[{vn:"'D' as in 'dog'",pr:"this is Ä‘ (with stroke)"},{vn:"'Z' as in 'zero'",pr:"this is Northern Vietnamese d"},{vn:"'V' as in 'van'",pr:"this is the letter v"}]},
+    {cat:"Special Letters", en:"The letters GI / gi sound like...", vn:"'Y' as in 'yes'", pr:"gi â†’ y sound â€” e.g. giá» = yuh (hour)",
       sub:"How is GI pronounced?",
       d:[{vn:"'G' as in 'go'",pr:"this is how g sounds before a, o, u"},{vn:"'J' as in 'jump'",pr:"there is no J sound in Vietnamese"},{vn:"'ZH' like measure",pr:"this is a Mandarin sound"}]},
-    {cat:"Special Letters", en:"The letter NH sounds like...", vn:"'NY' as in 'canyon'", pr:"nh ? ny sound — e.g. nh? = nyaw (small)",
+    {cat:"Special Letters", en:"The letter NH sounds like...", vn:"'NY' as in 'canyon'", pr:"nh â†’ ny sound â€” e.g. nhá» = nyaw (small)",
       sub:"How is NH pronounced?",
       d:[{vn:"'N' as in 'no'",pr:"n alone is just n"},{vn:"'NG' as in 'sing'",pr:"this is the ng/ngh combination"},{vn:"'NW' blend",pr:"this sound doesn't exist in Vietnamese"}]},
-    {cat:"Special Letters", en:"The letter NG / NGH sounds like...", vn:"'NG' as in 'sing'", pr:"ng ? ng sound — e.g. ngon = ngawn (delicious)",
+    {cat:"Special Letters", en:"The letter NG / NGH sounds like...", vn:"'NG' as in 'sing'", pr:"ng â†’ ng sound â€” e.g. ngon = ngawn (delicious)",
       sub:"How is NG pronounced?",
       d:[{vn:"'NY' as in 'canyon'",pr:"that's nh"},{vn:"'N' as in 'no'",pr:"n alone is just n"},{vn:"'GN' as in Italian",pr:"different language, different rule"}]},
-    {cat:"Special Letters", en:"The letter PH sounds like...", vn:"'F' as in 'fish'", pr:"ph ? f sound — e.g. ph? = fuh",
+    {cat:"Special Letters", en:"The letter PH sounds like...", vn:"'F' as in 'fish'", pr:"ph â†’ f sound â€” e.g. phá»Ÿ = fuh",
       sub:"How is PH pronounced?",
       d:[{vn:"'P' as in 'pan'",pr:"p alone is p with slight breath"},{vn:"'B' as in 'bed'",pr:"this is the letter b"},{vn:"'V' as in 'van'",pr:"this is the letter v"}]},
-    {cat:"Special Letters", en:"The letter TH sounds like...", vn:"'T' with a puff of air", pr:"th ? aspirated T — NOT like English 'the'",
+    {cat:"Special Letters", en:"The letter TH sounds like...", vn:"'T' with a puff of air", pr:"th â†’ aspirated T â€” NOT like English 'the'",
       sub:"How is TH pronounced?",
-      d:[{vn:"'TH' as in 'the'",pr:"Vietnamese TH is NOT this sound"},{vn:"'S' as in 'sun'",pr:"this is one way s sounds"},{vn:"'D' as in 'dog'",pr:"this is d"}]},
-    {cat:"Special Letters", en:"The letter C / K / Q all make...", vn:"A 'K' sound", pr:"c, k, q ? all produce the same K sound",
+      d:[{vn:"'TH' as in 'the'",pr:"Vietnamese TH is NOT this sound"},{vn:"'S' as in 'sun'",pr:"this is one way s sounds"},{vn:"'D' as in 'dog'",pr:"this is Ä‘"}]},
+    {cat:"Special Letters", en:"The letter C / K / Q all make...", vn:"A 'K' sound", pr:"c, k, q â†’ all produce the same K sound",
       sub:"What sound do C, K, and Q share?",
       d:[{vn:"Different sounds each",pr:"they look different but sound the same"},{vn:"'S' sound",pr:"x and s make this sound"},{vn:"'CH' sound",pr:"ch makes this sound"}]},
-    {cat:"Vowels", en:"The vowel O / o sounds like...", vn:"'UH' as in 'fur' (no R)", pr:"o ? like the sound in 'her' without the R",
+    {cat:"Vowels", en:"The vowel Æ  / Æ¡ sounds like...", vn:"'UH' as in 'fur' (no R)", pr:"Æ¡ â†’ like the sound in 'her' without the R",
       sub:"How is this vowel pronounced?",
-      d:[{vn:"'O' as in 'go'",pr:"that's ô"},{vn:"'AH' as in 'father'",pr:"that's a"},{vn:"'OO' as in 'food'",pr:"that's u or u"}]},
-    {cat:"Vowels", en:"The vowel U / u sounds like...", vn:"'UH' — lips rounded, further back", pr:"u ? like a rounded 'uh', deeper than o",
+      d:[{vn:"'O' as in 'go'",pr:"that's Ã´"},{vn:"'AH' as in 'father'",pr:"that's a"},{vn:"'OO' as in 'food'",pr:"that's u or Æ°"}]},
+    {cat:"Vowels", en:"The vowel Æ¯ / Æ° sounds like...", vn:"'UH' â€” lips rounded, further back", pr:"Æ° â†’ like a rounded 'uh', deeper than Æ¡",
       sub:"How is this vowel pronounced?",
-      d:[{vn:"'OO' as in 'food'",pr:"that's u — lips forward"},{vn:"'EE' as in 'see'",pr:"that's i or y"},{vn:"'AY' as in 'say'",pr:"that's ê"}]},
-    {cat:"Vowels", en:"The vowel Â / â sounds like...", vn:"Short 'UH' — quick and clipped", pr:"â ? very short uh sound, like the 'a' in 'about'",
+      d:[{vn:"'OO' as in 'food'",pr:"that's u â€” lips forward"},{vn:"'EE' as in 'see'",pr:"that's i or y"},{vn:"'AY' as in 'say'",pr:"that's Ãª"}]},
+    {cat:"Vowels", en:"The vowel Ã‚ / Ã¢ sounds like...", vn:"Short 'UH' â€” quick and clipped", pr:"Ã¢ â†’ very short uh sound, like the 'a' in 'about'",
       sub:"How is this vowel pronounced?",
-      d:[{vn:"'AH' as in 'father'",pr:"that's a (without hat)"},{vn:"'AY' as in 'day'",pr:"that's ê"},{vn:"'OH' as in 'go'",pr:"that's ô"}]},
-    {cat:"Vowels", en:"The vowel Ê / ê sounds like...", vn:"'EH' as in 'bed'", pr:"ê ? like the E in 'bed' or 'set'",
+      d:[{vn:"'AH' as in 'father'",pr:"that's a (without hat)"},{vn:"'AY' as in 'day'",pr:"that's Ãª"},{vn:"'OH' as in 'go'",pr:"that's Ã´"}]},
+    {cat:"Vowels", en:"The vowel ÃŠ / Ãª sounds like...", vn:"'EH' as in 'bed'", pr:"Ãª â†’ like the E in 'bed' or 'set'",
       sub:"How is this vowel pronounced?",
-      d:[{vn:"'EE' as in 'see'",pr:"that's i or y"},{vn:"'AY' as in 'say'",pr:"close but ê is shorter and more open"},{vn:"'UH' as in 'the'",pr:"that's o or â"}]},
-    {cat:"Vowels", en:"The vowel Ô / ô sounds like...", vn:"'OH' as in 'go'", pr:"ô ? like the O in 'phone' or 'go'",
+      d:[{vn:"'EE' as in 'see'",pr:"that's i or y"},{vn:"'AY' as in 'say'",pr:"close but Ãª is shorter and more open"},{vn:"'UH' as in 'the'",pr:"that's Æ¡ or Ã¢"}]},
+    {cat:"Vowels", en:"The vowel Ã” / Ã´ sounds like...", vn:"'OH' as in 'go'", pr:"Ã´ â†’ like the O in 'phone' or 'go'",
       sub:"How is this vowel pronounced?",
-      d:[{vn:"'AW' as in 'law'",pr:"that's o (without hat)"},{vn:"'OO' as in 'food'",pr:"that's u"},{vn:"'UH' as in 'fur'",pr:"that's o"}]},
-    {cat:"Alphabet Facts", en:"How many letters are in the Vietnamese alphabet?", vn:"29 letters", pr:"Compared to English's 26 — Vietnamese adds Ğ, O, U and modified vowels",
+      d:[{vn:"'AW' as in 'law'",pr:"that's o (without hat)"},{vn:"'OO' as in 'food'",pr:"that's u"},{vn:"'UH' as in 'fur'",pr:"that's Æ¡"}]},
+    {cat:"Alphabet Facts", en:"How many letters are in the Vietnamese alphabet?", vn:"29 letters", pr:"Compared to English's 26 â€” Vietnamese adds Ä, Æ , Æ¯ and modified vowels",
       sub:"Choose the correct answer",
       d:[{vn:"26 letters",pr:"that's English"},{vn:"32 letters",pr:"not quite"},{vn:"24 letters",pr:"too few"}]},
     {cat:"Alphabet Facts", en:"Which letters from the English alphabet are NOT in Vietnamese?", vn:"F, J, W, Z", pr:"These 4 letters don't appear in native Vietnamese words",
@@ -213,51 +213,51 @@ const quizData = {
       d:[{vn:"Q, X, Y, Z",pr:"Q, X, Y are used in Vietnamese"},{vn:"B, D, G, H",pr:"all of these are in Vietnamese"},{vn:"V, K, C, P",pr:"all of these are in Vietnamese"}]},
   ],
   expert: [
-    {cat:"Tone Pairs", en:"'Bà' (grandmother) vs 'Ba' (three/father) — what's different?", vn:"The tone — bà has falling tone, ba has flat", pr:"bà = grave accent (falling) · ba = no mark (flat)",
+    {cat:"Tone Pairs", en:"'BÃ ' (grandmother) vs 'Ba' (three/father) â€” what's different?", vn:"The tone â€” bÃ  has falling tone, ba has flat", pr:"bÃ  = grave accent (falling) Â· ba = no mark (flat)",
       sub:"What is the difference?",
-      d:[{vn:"The vowel — bà has a different a",pr:"both use the same 'a' vowel"},{vn:"The consonant — bà starts differently",pr:"both start with 'b'"},{vn:"Nothing — they sound the same",pr:"they sound very different to locals"}]},
-    {cat:"Tone Pairs", en:"'C?' (all/elder) vs 'Cá' (fish) — how do they differ?", vn:"C? has h?i tone (dip-rise), cá has s?c (rising)", pr:"c? = hook above · cá = acute accent",
+      d:[{vn:"The vowel â€” bÃ  has a different a",pr:"both use the same 'a' vowel"},{vn:"The consonant â€” bÃ  starts differently",pr:"both start with 'b'"},{vn:"Nothing â€” they sound the same",pr:"they sound very different to locals"}]},
+    {cat:"Tone Pairs", en:"'Cáº£' (all/elder) vs 'CÃ¡' (fish) â€” how do they differ?", vn:"Cáº£ has há»i tone (dip-rise), cÃ¡ has sáº¯c (rising)", pr:"cáº£ = hook above Â· cÃ¡ = acute accent",
       sub:"What is the tonal difference?",
-      d:[{vn:"They are the same tone",pr:"look closely at the marks"},{vn:"C? is rising, cá is falling",pr:"it's the opposite"},{vn:"Neither has a tone mark",pr:"both have marks"}]},
-    {cat:"Tone Pairs", en:"'Ğu?ng' (road/sugar) vs 'D?ng' (stop) — which is correct for 'stop'?", vn:"D?ng (stop)", pr:"d?ng = d + ? + ng + falling tone",
+      d:[{vn:"They are the same tone",pr:"look closely at the marks"},{vn:"Cáº£ is rising, cÃ¡ is falling",pr:"it's the opposite"},{vn:"Neither has a tone mark",pr:"both have marks"}]},
+    {cat:"Tone Pairs", en:"'ÄÆ°á»ng' (road/sugar) vs 'Dá»«ng' (stop) â€” which is correct for 'stop'?", vn:"Dá»«ng (stop)", pr:"dá»«ng = d + á»« + ng + falling tone",
       sub:"Which word means 'stop'?",
-      d:[{vn:"Ğu?ng (road/sugar)",pr:"du?ng means road or sugar"},{vn:"Ğ?ng (don't!)",pr:"d?ng means 'don't' — close but different!"},{vn:"Dung (no meaning)",pr:"not a word"}]},
-    {cat:"North vs South", en:"In Northern Vietnamese, the letter 'D' sounds like...", vn:"'Z' as in 'zero'", pr:"Northern: d ? z · Southern: d ? y",
+      d:[{vn:"ÄÆ°á»ng (road/sugar)",pr:"Ä‘Æ°á»ng means road or sugar"},{vn:"Äá»«ng (don't!)",pr:"Ä‘á»«ng means 'don't' â€” close but different!"},{vn:"DÆ°ng (no meaning)",pr:"not a word"}]},
+    {cat:"North vs South", en:"In Northern Vietnamese, the letter 'D' sounds like...", vn:"'Z' as in 'zero'", pr:"Northern: d â†’ z Â· Southern: d â†’ y",
       sub:"How does Northern Vietnamese pronounce D?",
-      d:[{vn:"'Y' as in 'yes'",pr:"that's Southern Vietnamese"},{vn:"'D' as in 'dog'",pr:"that's the letter d (with stroke)"},{vn:"'V' as in 'van'",pr:"that's the letter v"}]},
-    {cat:"North vs South", en:"In Northern Vietnamese, the letters 'GI' sound like...", vn:"'Z' as in 'zero'", pr:"Northern: gi ? z · Southern: gi ? y",
+      d:[{vn:"'Y' as in 'yes'",pr:"that's Southern Vietnamese"},{vn:"'D' as in 'dog'",pr:"that's the letter Ä‘ (with stroke)"},{vn:"'V' as in 'van'",pr:"that's the letter v"}]},
+    {cat:"North vs South", en:"In Northern Vietnamese, the letters 'GI' sound like...", vn:"'Z' as in 'zero'", pr:"Northern: gi â†’ z Â· Southern: gi â†’ y",
       sub:"How does Northern Vietnamese pronounce GI?",
       d:[{vn:"'Y' as in 'yes'",pr:"that's Southern Vietnamese"},{vn:"'G' as in 'go'",pr:"g alone can sound like this"},{vn:"'J' as in 'jump'",pr:"no J sound in Vietnamese"}]},
     {cat:"North vs South", en:"Which dialect does FluentSaigon primarily teach?", vn:"Southern Vietnamese (Saigon dialect)", pr:"Southern pronunciation is used in Ho Chi Minh City and most of the south",
       sub:"Choose the correct answer",
       d:[{vn:"Northern Vietnamese (Hanoi dialect)",pr:"Hanoi has different pronunciations for d, gi, x, s"},{vn:"Central Vietnamese (Hue dialect)",pr:"Hue has the most distinct accent"},{vn:"Standard formal Vietnamese",pr:"formal Vietnamese is closest to Northern"}]},
-    {cat:"Reading Vietnamese", en:"How is 'Ph?' pronounced?", vn:"Fuh (with falling-dipping h?i tone)", pr:"Ph = F · ? = uh · tone = h?i (dip then rise)",
+    {cat:"Reading Vietnamese", en:"How is 'Phá»Ÿ' pronounced?", vn:"Fuh (with falling-dipping há»i tone)", pr:"Ph = F Â· á»Ÿ = uh Â· tone = há»i (dip then rise)",
       sub:"Choose the correct pronunciation",
-      d:[{vn:"Foh (rhymes with go)",pr:"? is not an 'oh' sound"},{vn:"Pho (like 'phone')",pr:"ph = F, not P"},{vn:"Buh",pr:"ph = F not B"}]},
-    {cat:"Reading Vietnamese", en:"How is 'Xin chào' pronounced?", vn:"Sin chow", pr:"x = s · i = ee · n · ch = ch · ào = ow (falling)",
+      d:[{vn:"Foh (rhymes with go)",pr:"á»Ÿ is not an 'oh' sound"},{vn:"Pho (like 'phone')",pr:"ph = F, not P"},{vn:"Buh",pr:"ph = F not B"}]},
+    {cat:"Reading Vietnamese", en:"How is 'Xin chÃ o' pronounced?", vn:"Sin chow", pr:"x = s Â· i = ee Â· n Â· ch = ch Â· Ã o = ow (falling)",
       sub:"Choose the correct pronunciation",
       d:[{vn:"Zin chow",pr:"x sounds like s, not z"},{vn:"Sin cow",pr:"ch is always ch, not k"},{vn:"Shin jow",pr:"x = s not sh, ch = ch not j"}]},
-    {cat:"Reading Vietnamese", en:"How is 'C?m on' pronounced?", vn:"Cahm uhn", pr:"c = k · ?m = ahm (h?i tone) · on = uhn",
+    {cat:"Reading Vietnamese", en:"How is 'Cáº£m Æ¡n' pronounced?", vn:"Cahm uhn", pr:"c = k Â· áº£m = ahm (há»i tone) Â· Æ¡n = uhn",
       sub:"Choose the correct pronunciation",
-      d:[{vn:"Gahm uhn",pr:"c sounds like k, not g"},{vn:"Cahm awn",pr:"on = uhn, not awn"},{vn:"Sahm uhn",pr:"c = k not s"}]},
-    {cat:"Reading Vietnamese", en:"How is 'Không' pronounced?", vn:"Khome", pr:"kh = kh (breathy k) · ông = ohng · no tone mark = flat",
+      d:[{vn:"Gahm uhn",pr:"c sounds like k, not g"},{vn:"Cahm awn",pr:"Æ¡n = uhn, not awn"},{vn:"Sahm uhn",pr:"c = k not s"}]},
+    {cat:"Reading Vietnamese", en:"How is 'KhÃ´ng' pronounced?", vn:"Khome", pr:"kh = kh (breathy k) Â· Ã´ng = ohng Â· no tone mark = flat",
       sub:"Choose the correct pronunciation",
-      d:[{vn:"Kong",pr:"kh = breathy k, and ông ? ong"},{vn:"Khong",pr:"ông rhymes with 'home' not 'long'"},{vn:"Zong",pr:"kh is not a z sound"}]},
-    {cat:"Reading Vietnamese", en:"How is 'Ngon' pronounced?", vn:"Ngawn", pr:"ng = ng (as in sing) · on = awn · flat tone",
+      d:[{vn:"Kong",pr:"kh = breathy k, and Ã´ng â‰  ong"},{vn:"Khong",pr:"Ã´ng rhymes with 'home' not 'long'"},{vn:"Zong",pr:"kh is not a z sound"}]},
+    {cat:"Reading Vietnamese", en:"How is 'Ngon' pronounced?", vn:"Ngawn", pr:"ng = ng (as in sing) Â· on = awn Â· flat tone",
       sub:"Choose the correct pronunciation",
-      d:[{vn:"Non (silent ng)",pr:"the ng is pronounced — start the sound in your throat"},{vn:"Gon",pr:"ng ? g"},{vn:"Nhon",pr:"nh ? ng"}]},
-    {cat:"Reading Vietnamese", en:"How is 'Ğu?ng' pronounced?", vn:"Duh-ung", pr:"d = hard d · u?ng = uh-ung · falling tone (huy?n)",
+      d:[{vn:"Non (silent ng)",pr:"the ng is pronounced â€” start the sound in your throat"},{vn:"Gon",pr:"ng â‰  g"},{vn:"Nhon",pr:"nh â‰  ng"}]},
+    {cat:"Reading Vietnamese", en:"How is 'ÄÆ°á»ng' pronounced?", vn:"Duh-ung", pr:"Ä‘ = hard d Â· Æ°á»ng = uh-ung Â· falling tone (huyá»n)",
       sub:"Choose the correct pronunciation",
-      d:[{vn:"Thuh-ung",pr:"d = hard d, not th"},{vn:"Yuh-ung",pr:"d = hard d · regular d = y in south"},{vn:"Doh-ung",pr:"u?ng = uh-ung, not oh-ung"}]},
-    {cat:"Reading Vietnamese", en:"How is 'B?n' pronounced?", vn:"Bahn (with heavy/low tone)", pr:"b · ? = ah (heavy tone, dot below) · n",
+      d:[{vn:"Thuh-ung",pr:"Ä‘ = hard d, not th"},{vn:"Yuh-ung",pr:"Ä‘ = hard d Â· regular d = y in south"},{vn:"Doh-ung",pr:"Æ°á»ng = uh-ung, not oh-ung"}]},
+    {cat:"Reading Vietnamese", en:"How is 'Báº¡n' pronounced?", vn:"Bahn (with heavy/low tone)", pr:"b Â· áº¡ = ah (heavy tone, dot below) Â· n",
       sub:"Choose the correct pronunciation",
-      d:[{vn:"Ban (flat tone)",pr:"the dot below makes the tone low and short"},{vn:"Ban",pr:"? ? a"},{vn:"Bern",pr:"a in Vietnamese = ah, not er"}]},
-    {cat:"Reading Vietnamese", en:"How is 'Tôi' pronounced?", vn:"Toy", pr:"t · ôi = oy (as in boy) · flat tone",
+      d:[{vn:"Ban (flat tone)",pr:"the dot below makes the tone low and short"},{vn:"BÄƒn",pr:"áº¡ â‰  Äƒ"},{vn:"Bern",pr:"a in Vietnamese = ah, not er"}]},
+    {cat:"Reading Vietnamese", en:"How is 'TÃ´i' pronounced?", vn:"Toy", pr:"t Â· Ã´i = oy (as in boy) Â· flat tone",
       sub:"Choose the correct pronunciation",
-      d:[{vn:"Toe-ee",pr:"ôi = oy as one sound, not two"},{vn:"Twoy",pr:"no W sound — t + ôi"},{vn:"Toh",pr:"ôi ? ô"}]},
-    {cat:"Reading Vietnamese", en:"How is 'R?t' pronounced?", vn:"Rut", pr:"r · ?t = ut (very short â + t) · heavy tone",
+      d:[{vn:"Toe-ee",pr:"Ã´i = oy as one sound, not two"},{vn:"Twoy",pr:"no W sound â€” t + Ã´i"},{vn:"Toh",pr:"Ã´i â‰  Ã´"}]},
+    {cat:"Reading Vietnamese", en:"How is 'Ráº¥t' pronounced?", vn:"Rut", pr:"r Â· áº¥t = ut (very short Ã¢ + t) Â· heavy tone",
       sub:"Choose the correct pronunciation",
-      d:[{vn:"Rat",pr:"â = short uh, not 'a' as in cat"},{vn:"Ret",pr:"?t = ut, not et"},{vn:"Raht",pr:"â is short uh, not long ah"}]},
+      d:[{vn:"Rat",pr:"Ã¢ = short uh, not 'a' as in cat"},{vn:"Ret",pr:"áº¥t = ut, not et"},{vn:"Raht",pr:"Ã¢ is short uh, not long ah"}]},
   ]
 };
 
@@ -324,11 +324,11 @@ function selectAnswer(btn, selected, correct, correctPr) {
     score++;
     btn.style.background = 'rgba(46,204,113,0.3)'; btn.style.borderColor = '#2ecc71';
     feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(46,204,113,0.15);border-left:3px solid #2ecc71;color:#2ecc71;';
-    feedback.textContent = '? Correct! ' + getFact(questions[current]);
+    feedback.textContent = 'âœ“ Correct! ' + getFact(questions[current]);
   } else {
     btn.style.background = 'rgba(231,76,60,0.3)'; btn.style.borderColor = '#e74c3c';
     feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(231,76,60,0.15);border-left:3px solid #e74c3c;color:#e74c3c;';
-    feedback.textContent = `? The answer is: ${correct} — ${correctPr}`;
+    feedback.textContent = `âœ— The answer is: ${correct} â€” ${correctPr}`;
   }
   document.getElementById('scoreText').textContent = `Score: ${score}`;
   document.getElementById('nextBtn').style.display = 'block';
@@ -339,15 +339,15 @@ function nextQuestion() { showQuestion(); }
 
 function getFact(q) {
   const facts = {
-    'The 6 Tones': 'The 6 tones are the hardest part of Vietnamese — but also the most logical. Each tone has a consistent mark (or no mark) that always means the same thing.',
-    'Tone Marks': 'The same syllable with different tones = completely different words. "Ma" can mean ghost, cheek, but, tomb, horse code, or rice seedling — just from the tone!',
-    'Why Tones Matter': 'Getting tones wrong is fine when you\'re learning — locals will figure it out from context. But learning them correctly from the start saves you from embarrassing mix-ups.',
+    'The 6 Tones': 'The 6 tones are the hardest part of Vietnamese â€” but also the most logical. Each tone has a consistent mark (or no mark) that always means the same thing.',
+    'Tone Marks': 'The same syllable with different tones = completely different words. "Ma" can mean ghost, cheek, but, tomb, horse code, or rice seedling â€” just from the tone!',
+    'Why Tones Matter': 'Getting tones wrong is fine when you\'re learning â€” locals will figure it out from context. But learning them correctly from the start saves you from embarrassing mix-ups.',
     'Special Letters': 'Vietnamese was created by Jesuit missionaries in the 17th century using the Latin alphabet with added marks. That\'s why it looks somewhat familiar but sounds so different.',
-    'Vowels': 'Vietnamese has 12 distinct vowel sounds compared to English\'s 5 written vowels. The extra letters (o, u, â, ê, ô) each represent a unique sound.',
-    'Alphabet Facts': 'The Vietnamese alphabet was standardized by Alexandre de Rhodes in 1651. Before that, Vietnamese was written in Chinese characters (ch? Nôm).',
-    'Tone Pairs': 'Native Vietnamese speakers find tonal confusion extremely funny and endearing — mispronouncing tones is a great icebreaker!',
-    'North vs South': 'Northern and Southern Vietnamese have different pronunciations for several consonants, especially d, gi, x, and s. Neither is "more correct" — they\'re regional dialects.',
-    'Reading Vietnamese': 'Once you learn the pronunciation rules, Vietnamese is highly phonetic — every letter makes the same sound every time. It\'s more consistent than English in this way.',
+    'Vowels': 'Vietnamese has 12 distinct vowel sounds compared to English\'s 5 written vowels. The extra letters (Æ¡, Æ°, Ã¢, Ãª, Ã´) each represent a unique sound.',
+    'Alphabet Facts': 'The Vietnamese alphabet was standardized by Alexandre de Rhodes in 1651. Before that, Vietnamese was written in Chinese characters (chá»¯ NÃ´m).',
+    'Tone Pairs': 'Native Vietnamese speakers find tonal confusion extremely funny and endearing â€” mispronouncing tones is a great icebreaker!',
+    'North vs South': 'Northern and Southern Vietnamese have different pronunciations for several consonants, especially d, gi, x, and s. Neither is "more correct" â€” they\'re regional dialects.',
+    'Reading Vietnamese': 'Once you learn the pronunciation rules, Vietnamese is highly phonetic â€” every letter makes the same sound every time. It\'s more consistent than English in this way.',
   };
   return facts[q.cat] || 'Keep going!';
 }
@@ -357,7 +357,7 @@ function showResults() {
   document.getElementById('resultsCard').style.display = 'block';
   const pct = score / questions.length;
   document.getElementById('finalScore').textContent = `You scored ${score} out of ${questions.length}`;
-  const msgs = [[0.9,"?? Xu?t s?c l?m! (Outstanding!) You're a natural!"],[0.8,"?? Gi?i l?m! (Very good!) Keep it up!"],[0.6,"?? Khá t?t! (Pretty good!) Almost there!"],[0,"?? Keep practicing! B?n s? ti?n b?! (You will improve!)"]];
+  const msgs = [[0.9,"ğŸ† Xuáº¥t sáº¯c láº¯m! (Outstanding!) You're a natural!"],[0.8,"ğŸŒŸ Giá»i láº¯m! (Very good!) Keep it up!"],[0.6,"ğŸ‘ KhÃ¡ tá»‘t! (Pretty good!) Almost there!"],[0,"ğŸ’ª Keep practicing! Báº¡n sáº½ tiáº¿n bá»™! (You will improve!)"]];
   document.getElementById('resultsMsg').textContent = msgs.find(([t]) => pct >= t)[1];
 }
 
@@ -371,4 +371,3 @@ document.addEventListener('DOMContentLoaded', restartQuiz);
 
 </body>
 </html>
-

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -42,8 +42,8 @@
 <div class="quiz-page">
 
   <div class="quiz-header">
-    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">? All Subjects</a>
-    <h1 style="margin:12px 0 4px;">?? Health & Emergencies</h1>
+    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">← All Subjects</a>
+    <h1 style="margin:12px 0 4px;">🏥 Health & Emergencies</h1>
     <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">The vocabulary you hope you never need, but absolutely should have.</p>
   </div>
 
@@ -51,10 +51,10 @@
   <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
     <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
       <div>
-        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">?? PRO TIP</div>
-        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Save Vietnam's emergency numbers before you travel: Police 113 � Fire 114 � Ambulance 115. Read the cheat sheet before your trip.</div>
+        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">💡 PRO TIP</div>
+        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Save Vietnam's emergency numbers before you travel: Police 113 · Fire 114 · Ambulance 115. Read the cheat sheet before your trip.</div>
       </div>
-      <button onclick="openCheatSheet('cheatsheet-health.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet ?</button>
+      <button onclick="openCheatSheet('cheatsheet-health.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet →</button>
     </div>
   </div>
 
@@ -62,8 +62,8 @@
   <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
     <div style="display:flex;gap:8px;background:rgba(255,255,255,0.05);border-radius:12px;padding:6px;">
       <button id="tab-beginner" onclick="setDifficulty('beginner')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:var(--gold);color:#000;">Beginner</button>
-      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate ??</button>
-      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert ??</button>
+      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate 🔒</button>
+      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert 🔒</button>
     </div>
   </div>
 
@@ -85,17 +85,17 @@
 
       <div id="choicesGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;"></div>
       <div id="feedback" style="display:none;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;"></div>
-      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question ?</button>
+      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question →</button>
     </div>
 
     <div id="resultsCard" style="display:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 28px;text-align:center;">
-      <div style="font-size:3rem;margin-bottom:16px;">??</div>
+      <div style="font-size:3rem;margin-bottom:16px;">🎉</div>
       <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</h2>
       <div id="finalScore" style="font-size:1.1rem;color:var(--gold);font-weight:800;margin-bottom:8px;"></div>
       <div id="resultsMsg" style="font-size:0.9rem;color:rgba(255,255,255,0.6);margin-bottom:28px;"></div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="restartQuiz()" style="padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Try Again</button>
-        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">? Back to All Subjects</a>
+        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">← Back to All Subjects</a>
       </div>
     </div>
   </div>
@@ -103,7 +103,7 @@
 
 <div id="footer-placeholder"></div>
 <script src="../js/components.js"></script>
-<script src="../js/auth.js?v=2"></script>
+<script src="../js/auth.js"></script>
 <script>
 
 function openCheatSheet(url) {
@@ -113,100 +113,100 @@ function openCheatSheet(url) {
 
 const quizData = {
   beginner: [
-    {cat:"Emergency Phrases", en:"Help!", vn:"C?u t�i v?i!", pr:"kyew toy vuh-ee",
-      d:[{vn:"Gi�p t�i di!",pr:"yoop toy dee"},{vn:"Nguy hi?m!",pr:"ngwee hyem"},{vn:"C?n th?n!",pr:"kun thun"}]},
-    {cat:"Emergency Phrases", en:"Call an ambulance!", vn:"G?i c?u thuong!", pr:"goy kyew thuh-ung",
-      d:[{vn:"G?i c?nh s�t!",pr:"goy kahn saht"},{vn:"G?i b�c si!",pr:"goy bahk shee"},{vn:"G?i c?u h?a!",pr:"goy kyew hwah"}]},
-    {cat:"Emergency Phrases", en:"Call the police!", vn:"G?i c?nh s�t!", pr:"goy kahn saht",
-      d:[{vn:"G?i c?u thuong!",pr:"goy kyew thuh-ung"},{vn:"G?i b�c si!",pr:"goy bahk shee"},{vn:"C?u t�i!",pr:"kyew toy"}]},
-    {cat:"Emergency Phrases", en:"I need a doctor", vn:"T�i c?n b�c si", pr:"toy kun bahk shee",
-      d:[{vn:"T�i c?n thu?c",pr:"toy kun thoo-uk"},{vn:"T�i c?n b?nh vi?n",pr:"toy kun beng vyen"},{vn:"T�i c?n gi�p d?",pr:"toy kun yoop duh"}]},
-    {cat:"Emergency Phrases", en:"Where is the hospital?", vn:"B?nh vi?n ? d�u?", pr:"beng vyen uh doh",
-      d:[{vn:"Nh� thu?c ? d�u?",pr:"nyah thoo-uk uh doh"},{vn:"Ph�ng kh�m ? d�u?",pr:"fawng kahm uh doh"},{vn:"C?nh s�t ? d�u?",pr:"kahn saht uh doh"}]},
-    {cat:"Feeling Sick", en:"I feel sick", vn:"T�i b? b?nh", pr:"toy bee beng",
-      d:[{vn:"T�i kh?e",pr:"toy khway"},{vn:"T�i m?t",pr:"toy met"},{vn:"T�i b? dau",pr:"toy bee dow"}]},
-    {cat:"Feeling Sick", en:"I'm in pain / it hurts", vn:"T�i b? dau", pr:"toy bee dow",
-      d:[{vn:"T�i b? b?nh",pr:"toy bee beng"},{vn:"T�i kh�ng sao",pr:"toy khome sow"},{vn:"T�i m?t qu�",pr:"toy met kwah"}]},
-    {cat:"Feeling Sick", en:"I have a headache", vn:"T�i b? dau d?u", pr:"toy bee dow doh",
-      d:[{vn:"T�i b? dau b?ng",pr:"toy bee dow boong"},{vn:"T�i b? s?t",pr:"toy bee soht"},{vn:"T�i b? ch�ng m?t",pr:"toy bee chawng mut"}]},
-    {cat:"Feeling Sick", en:"I have a stomachache", vn:"T�i b? dau b?ng", pr:"toy bee dow boong",
-      d:[{vn:"T�i b? dau d?u",pr:"toy bee dow doh"},{vn:"T�i b? s?t",pr:"toy bee soht"},{vn:"T�i b? bu?n n�n",pr:"toy bee boo-uhn nohn"}]},
-    {cat:"Feeling Sick", en:"I have a fever", vn:"T�i b? s?t", pr:"toy bee soht",
-      d:[{vn:"T�i b? c?m",pr:"toy bee kahm"},{vn:"T�i b? dau d?u",pr:"toy bee dow doh"},{vn:"T�i b? ?n l?nh",pr:"toy bee uhn lahn"}]},
-    {cat:"Feeling Sick", en:"I feel dizzy", vn:"T�i b? ch�ng m?t", pr:"toy bee chawng mut",
-      d:[{vn:"T�i b? dau d?u",pr:"toy bee dow doh"},{vn:"T�i b? m?t",pr:"toy bee met"},{vn:"T�i b? ng�",pr:"toy bee ngah"}]},
-    {cat:"Feeling Sick", en:"I feel nauseous", vn:"T�i b? bu?n n�n", pr:"toy bee boo-uhn nohn",
-      d:[{vn:"T�i b? dau b?ng",pr:"toy bee dow boong"},{vn:"T�i b? ch�ng m?t",pr:"toy bee chawng mut"},{vn:"T�i b? n�n",pr:"toy bee nohn"}]},
-    {cat:"Places", en:"Hospital", vn:"b?nh vi?n", pr:"beng vyen",
-      d:[{vn:"ph�ng kh�m",pr:"fawng kahm"},{vn:"nh� thu?c",pr:"nyah thoo-uk"},{vn:"tr?m y t?",pr:"chahm ee teh"}]},
-    {cat:"Places", en:"Pharmacy / drugstore", vn:"nh� thu?c", pr:"nyah thoo-uk",
-      d:[{vn:"b?nh vi?n",pr:"beng vyen"},{vn:"ph�ng kh�m",pr:"fawng kahm"},{vn:"c?p c?u",pr:"kup kyew"}]},
-    {cat:"Places", en:"Clinic / doctor's office", vn:"ph�ng kh�m", pr:"fawng kahm",
-      d:[{vn:"b?nh vi?n",pr:"beng vyen"},{vn:"nh� thu?c",pr:"nyah thoo-uk"},{vn:"c?p c?u",pr:"kup kyew"}]},
+    {cat:"Emergency Phrases", en:"Help!", vn:"Cứu tôi với!", pr:"kyew toy vuh-ee",
+      d:[{vn:"Giúp tôi đi!",pr:"yoop toy dee"},{vn:"Nguy hiểm!",pr:"ngwee hyem"},{vn:"Cẩn thận!",pr:"kun thun"}]},
+    {cat:"Emergency Phrases", en:"Call an ambulance!", vn:"Gọi cứu thương!", pr:"goy kyew thuh-ung",
+      d:[{vn:"Gọi cảnh sát!",pr:"goy kahn saht"},{vn:"Gọi bác sĩ!",pr:"goy bahk shee"},{vn:"Gọi cứu hỏa!",pr:"goy kyew hwah"}]},
+    {cat:"Emergency Phrases", en:"Call the police!", vn:"Gọi cảnh sát!", pr:"goy kahn saht",
+      d:[{vn:"Gọi cứu thương!",pr:"goy kyew thuh-ung"},{vn:"Gọi bác sĩ!",pr:"goy bahk shee"},{vn:"Cứu tôi!",pr:"kyew toy"}]},
+    {cat:"Emergency Phrases", en:"I need a doctor", vn:"Tôi cần bác sĩ", pr:"toy kun bahk shee",
+      d:[{vn:"Tôi cần thuốc",pr:"toy kun thoo-uk"},{vn:"Tôi cần bệnh viện",pr:"toy kun beng vyen"},{vn:"Tôi cần giúp đỡ",pr:"toy kun yoop duh"}]},
+    {cat:"Emergency Phrases", en:"Where is the hospital?", vn:"Bệnh viện ở đâu?", pr:"beng vyen uh doh",
+      d:[{vn:"Nhà thuốc ở đâu?",pr:"nyah thoo-uk uh doh"},{vn:"Phòng khám ở đâu?",pr:"fawng kahm uh doh"},{vn:"Cảnh sát ở đâu?",pr:"kahn saht uh doh"}]},
+    {cat:"Feeling Sick", en:"I feel sick", vn:"Tôi bị bệnh", pr:"toy bee beng",
+      d:[{vn:"Tôi khỏe",pr:"toy khway"},{vn:"Tôi mệt",pr:"toy met"},{vn:"Tôi bị đau",pr:"toy bee dow"}]},
+    {cat:"Feeling Sick", en:"I'm in pain / it hurts", vn:"Tôi bị đau", pr:"toy bee dow",
+      d:[{vn:"Tôi bị bệnh",pr:"toy bee beng"},{vn:"Tôi không sao",pr:"toy khome sow"},{vn:"Tôi mệt quá",pr:"toy met kwah"}]},
+    {cat:"Feeling Sick", en:"I have a headache", vn:"Tôi bị đau đầu", pr:"toy bee dow doh",
+      d:[{vn:"Tôi bị đau bụng",pr:"toy bee dow boong"},{vn:"Tôi bị sốt",pr:"toy bee soht"},{vn:"Tôi bị chóng mặt",pr:"toy bee chawng mut"}]},
+    {cat:"Feeling Sick", en:"I have a stomachache", vn:"Tôi bị đau bụng", pr:"toy bee dow boong",
+      d:[{vn:"Tôi bị đau đầu",pr:"toy bee dow doh"},{vn:"Tôi bị sốt",pr:"toy bee soht"},{vn:"Tôi bị buồn nôn",pr:"toy bee boo-uhn nohn"}]},
+    {cat:"Feeling Sick", en:"I have a fever", vn:"Tôi bị sốt", pr:"toy bee soht",
+      d:[{vn:"Tôi bị cảm",pr:"toy bee kahm"},{vn:"Tôi bị đau đầu",pr:"toy bee dow doh"},{vn:"Tôi bị ớn lạnh",pr:"toy bee uhn lahn"}]},
+    {cat:"Feeling Sick", en:"I feel dizzy", vn:"Tôi bị chóng mặt", pr:"toy bee chawng mut",
+      d:[{vn:"Tôi bị đau đầu",pr:"toy bee dow doh"},{vn:"Tôi bị mệt",pr:"toy bee met"},{vn:"Tôi bị ngã",pr:"toy bee ngah"}]},
+    {cat:"Feeling Sick", en:"I feel nauseous", vn:"Tôi bị buồn nôn", pr:"toy bee boo-uhn nohn",
+      d:[{vn:"Tôi bị đau bụng",pr:"toy bee dow boong"},{vn:"Tôi bị chóng mặt",pr:"toy bee chawng mut"},{vn:"Tôi bị nôn",pr:"toy bee nohn"}]},
+    {cat:"Places", en:"Hospital", vn:"bệnh viện", pr:"beng vyen",
+      d:[{vn:"phòng khám",pr:"fawng kahm"},{vn:"nhà thuốc",pr:"nyah thoo-uk"},{vn:"trạm y tế",pr:"chahm ee teh"}]},
+    {cat:"Places", en:"Pharmacy / drugstore", vn:"nhà thuốc", pr:"nyah thoo-uk",
+      d:[{vn:"bệnh viện",pr:"beng vyen"},{vn:"phòng khám",pr:"fawng kahm"},{vn:"cấp cứu",pr:"kup kyew"}]},
+    {cat:"Places", en:"Clinic / doctor's office", vn:"phòng khám", pr:"fawng kahm",
+      d:[{vn:"bệnh viện",pr:"beng vyen"},{vn:"nhà thuốc",pr:"nyah thoo-uk"},{vn:"cấp cứu",pr:"kup kyew"}]},
   ],
   intermediate: [
-    {cat:"Body Parts", en:"Head", vn:"d?u", pr:"doh",
-      d:[{vn:"c?",pr:"koh"},{vn:"ng?c",pr:"nguhk"},{vn:"b?ng",pr:"boong"}]},
-    {cat:"Body Parts", en:"Neck", vn:"c?", pr:"koh",
-      d:[{vn:"d?u",pr:"doh"},{vn:"vai",pr:"vie"},{vn:"lung",pr:"lyung"}]},
-    {cat:"Body Parts", en:"Chest", vn:"ng?c", pr:"nguhk",
-      d:[{vn:"b?ng",pr:"boong"},{vn:"lung",pr:"lyung"},{vn:"vai",pr:"vie"}]},
-    {cat:"Body Parts", en:"Stomach / abdomen", vn:"b?ng", pr:"boong",
-      d:[{vn:"ng?c",pr:"nguhk"},{vn:"lung",pr:"lyung"},{vn:"h�ng",pr:"hohng"}]},
-    {cat:"Body Parts", en:"Back", vn:"lung", pr:"lyung",
-      d:[{vn:"b?ng",pr:"boong"},{vn:"ng?c",pr:"nguhk"},{vn:"vai",pr:"vie"}]},
-    {cat:"Body Parts", en:"Arm", vn:"c�nh tay", pr:"kahn tie",
-      d:[{vn:"ch�n",pr:"chun"},{vn:"b�n tay",pr:"bahn tie"},{vn:"ng�n tay",pr:"ngawn tie"}]},
-    {cat:"Body Parts", en:"Leg / foot", vn:"ch�n", pr:"chun",
-      d:[{vn:"c�nh tay",pr:"kahn tie"},{vn:"d?u g?i",pr:"doh goy"},{vn:"b�n ch�n",pr:"bahn chun"}]},
-    {cat:"Body Parts", en:"Eye", vn:"m?t", pr:"mut",
-      d:[{vn:"tai",pr:"tie"},{vn:"mui",pr:"moo-ee"},{vn:"mi?ng",pr:"myeng"}]},
-    {cat:"Symptoms", en:"I have a cold / flu", vn:"T�i b? c?m", pr:"toy bee kahm",
-      d:[{vn:"T�i b? s?t",pr:"toy bee soht"},{vn:"T�i b? ho",pr:"toy bee haw"},{vn:"T�i b? dau h?ng",pr:"toy bee dow hawng"}]},
-    {cat:"Symptoms", en:"I have a cough", vn:"T�i b? ho", pr:"toy bee haw",
-      d:[{vn:"T�i b? c?m",pr:"toy bee kahm"},{vn:"T�i b? s? mui",pr:"toy bee shoh moo-ee"},{vn:"T�i b? dau h?ng",pr:"toy bee dow hawng"}]},
-    {cat:"Symptoms", en:"I have a sore throat", vn:"T�i b? dau h?ng", pr:"toy bee dow hawng",
-      d:[{vn:"T�i b? ho",pr:"toy bee haw"},{vn:"T�i b? c?m",pr:"toy bee kahm"},{vn:"T�i b? s?t",pr:"toy bee soht"}]},
-    {cat:"Symptoms", en:"I have diarrhea", vn:"T�i b? ti�u ch?y", pr:"toy bee tyew chay",
-      d:[{vn:"T�i b? dau b?ng",pr:"toy bee dow boong"},{vn:"T�i b? t�o b�n",pr:"toy bee tow bawn"},{vn:"T�i b? bu?n n�n",pr:"toy bee boo-uhn nohn"}]},
-    {cat:"Symptoms", en:"I was in an accident", vn:"T�i b? tai n?n", pr:"toy bee tie nan",
-      d:[{vn:"T�i b? ng�",pr:"toy bee ngah"},{vn:"T�i b? thuong",pr:"toy bee thuh-ung"},{vn:"T�i b? cu?p",pr:"toy bee kyuh-up"}]},
-    {cat:"Symptoms", en:"I'm bleeding", vn:"T�i dang ch?y m�u", pr:"toy dang chay mow",
-      d:[{vn:"T�i b? g�y xuong",pr:"toy bee gay syuh-ung"},{vn:"T�i b? b?ng",pr:"toy bee bawng"},{vn:"T�i b? v?t thuong",pr:"toy bee vet thuh-ung"}]},
-    {cat:"Symptoms", en:"I broke a bone", vn:"T�i b? g�y xuong", pr:"toy bee gay syuh-ung",
-      d:[{vn:"T�i dang ch?y m�u",pr:"toy dang chay mow"},{vn:"T�i b? bong g�n",pr:"toy bee bawng gun"},{vn:"T�i b? b?ng",pr:"toy bee bawng"}]},
+    {cat:"Body Parts", en:"Head", vn:"đầu", pr:"doh",
+      d:[{vn:"cổ",pr:"koh"},{vn:"ngực",pr:"nguhk"},{vn:"bụng",pr:"boong"}]},
+    {cat:"Body Parts", en:"Neck", vn:"cổ", pr:"koh",
+      d:[{vn:"đầu",pr:"doh"},{vn:"vai",pr:"vie"},{vn:"lưng",pr:"lyung"}]},
+    {cat:"Body Parts", en:"Chest", vn:"ngực", pr:"nguhk",
+      d:[{vn:"bụng",pr:"boong"},{vn:"lưng",pr:"lyung"},{vn:"vai",pr:"vie"}]},
+    {cat:"Body Parts", en:"Stomach / abdomen", vn:"bụng", pr:"boong",
+      d:[{vn:"ngực",pr:"nguhk"},{vn:"lưng",pr:"lyung"},{vn:"hông",pr:"hohng"}]},
+    {cat:"Body Parts", en:"Back", vn:"lưng", pr:"lyung",
+      d:[{vn:"bụng",pr:"boong"},{vn:"ngực",pr:"nguhk"},{vn:"vai",pr:"vie"}]},
+    {cat:"Body Parts", en:"Arm", vn:"cánh tay", pr:"kahn tie",
+      d:[{vn:"chân",pr:"chun"},{vn:"bàn tay",pr:"bahn tie"},{vn:"ngón tay",pr:"ngawn tie"}]},
+    {cat:"Body Parts", en:"Leg / foot", vn:"chân", pr:"chun",
+      d:[{vn:"cánh tay",pr:"kahn tie"},{vn:"đầu gối",pr:"doh goy"},{vn:"bàn chân",pr:"bahn chun"}]},
+    {cat:"Body Parts", en:"Eye", vn:"mắt", pr:"mut",
+      d:[{vn:"tai",pr:"tie"},{vn:"mũi",pr:"moo-ee"},{vn:"miệng",pr:"myeng"}]},
+    {cat:"Symptoms", en:"I have a cold / flu", vn:"Tôi bị cảm", pr:"toy bee kahm",
+      d:[{vn:"Tôi bị sốt",pr:"toy bee soht"},{vn:"Tôi bị ho",pr:"toy bee haw"},{vn:"Tôi bị đau họng",pr:"toy bee dow hawng"}]},
+    {cat:"Symptoms", en:"I have a cough", vn:"Tôi bị ho", pr:"toy bee haw",
+      d:[{vn:"Tôi bị cảm",pr:"toy bee kahm"},{vn:"Tôi bị sổ mũi",pr:"toy bee shoh moo-ee"},{vn:"Tôi bị đau họng",pr:"toy bee dow hawng"}]},
+    {cat:"Symptoms", en:"I have a sore throat", vn:"Tôi bị đau họng", pr:"toy bee dow hawng",
+      d:[{vn:"Tôi bị ho",pr:"toy bee haw"},{vn:"Tôi bị cảm",pr:"toy bee kahm"},{vn:"Tôi bị sốt",pr:"toy bee soht"}]},
+    {cat:"Symptoms", en:"I have diarrhea", vn:"Tôi bị tiêu chảy", pr:"toy bee tyew chay",
+      d:[{vn:"Tôi bị đau bụng",pr:"toy bee dow boong"},{vn:"Tôi bị táo bón",pr:"toy bee tow bawn"},{vn:"Tôi bị buồn nôn",pr:"toy bee boo-uhn nohn"}]},
+    {cat:"Symptoms", en:"I was in an accident", vn:"Tôi bị tai nạn", pr:"toy bee tie nan",
+      d:[{vn:"Tôi bị ngã",pr:"toy bee ngah"},{vn:"Tôi bị thương",pr:"toy bee thuh-ung"},{vn:"Tôi bị cướp",pr:"toy bee kyuh-up"}]},
+    {cat:"Symptoms", en:"I'm bleeding", vn:"Tôi đang chảy máu", pr:"toy dang chay mow",
+      d:[{vn:"Tôi bị gãy xương",pr:"toy bee gay syuh-ung"},{vn:"Tôi bị bỏng",pr:"toy bee bawng"},{vn:"Tôi bị vết thương",pr:"toy bee vet thuh-ung"}]},
+    {cat:"Symptoms", en:"I broke a bone", vn:"Tôi bị gãy xương", pr:"toy bee gay syuh-ung",
+      d:[{vn:"Tôi đang chảy máu",pr:"toy dang chay mow"},{vn:"Tôi bị bong gân",pr:"toy bee bawng gun"},{vn:"Tôi bị bỏng",pr:"toy bee bawng"}]},
   ],
   expert: [
-    {cat:"At the Doctor", en:"Where does it hurt?", vn:"�au ? d�u?", pr:"dow uh doh",
-      d:[{vn:"�au nhu th? n�o?",pr:"dow nyuh theh now"},{vn:"�au t? khi n�o?",pr:"dow tuh khee now"},{vn:"�au nhi?u kh�ng?",pr:"dow nyew khome"}]},
-    {cat:"At the Doctor", en:"How long have you had this pain?", vn:"�au t? khi n�o?", pr:"dow tuh khee now",
-      d:[{vn:"�au ? d�u?",pr:"dow uh doh"},{vn:"�au nhu th? n�o?",pr:"dow nyuh theh now"},{vn:"�au c� thu?ng xuy�n kh�ng?",pr:"dow kaw thuh-ung swyen khome"}]},
-    {cat:"At the Doctor", en:"I'm allergic to...", vn:"T�i b? d? ?ng v?i...", pr:"toy bee yee ung vuh-ee",
-      d:[{vn:"T�i kh�ng b? d? ?ng",pr:"toy khome bee yee ung"},{vn:"T�i b? d? ?ng th?c an",pr:"toy bee yee ung thuk un"},{vn:"T�i b? d? ?ng thu?c",pr:"toy bee yee ung thoo-uk"}]},
-    {cat:"At the Doctor", en:"I'm allergic to penicillin", vn:"T�i b? d? ?ng penicillin", pr:"toy bee yee ung pen-ih-sil-in",
-      d:[{vn:"T�i b? d? ?ng aspirin",pr:"toy bee yee ung as-pih-rin"},{vn:"T�i kh�ng b? d? ?ng",pr:"toy khome bee yee ung"},{vn:"T�i b? d? ?ng h?i s?n",pr:"toy bee yee ung hi sahn"}]},
-    {cat:"At the Doctor", en:"I have diabetes", vn:"T�i b? ti?u du?ng", pr:"toy bee tyew duh-ung",
-      d:[{vn:"T�i b? huy?t �p cao",pr:"toy bee hwyet ahp kow"},{vn:"T�i b? hen suy?n",pr:"toy bee hen swyen"},{vn:"T�i b? tim m?ch",pr:"toy bee tim mahk"}]},
-    {cat:"At the Doctor", en:"I have high blood pressure", vn:"T�i b? huy?t �p cao", pr:"toy bee hwyet ahp kow",
-      d:[{vn:"T�i b? ti?u du?ng",pr:"toy bee tyew duh-ung"},{vn:"T�i b? hen suy?n",pr:"toy bee hen swyen"},{vn:"T�i b? huy?t �p th?p",pr:"toy bee hwyet ahp tup"}]},
-    {cat:"At the Doctor", en:"I have asthma", vn:"T�i b? hen suy?n", pr:"toy bee hen swyen",
-      d:[{vn:"T�i b? ti?u du?ng",pr:"toy bee tyew duh-ung"},{vn:"T�i b? huy?t �p cao",pr:"toy bee hwyet ahp kow"},{vn:"T�i b? d? ?ng",pr:"toy bee yee ung"}]},
-    {cat:"Pharmacy", en:"I need this medicine", vn:"T�i c?n thu?c n�y", pr:"toy kun thoo-uk nay",
-      d:[{vn:"Thu?c n�y d�ng nhu th? n�o?",pr:"thoo-uk nay yoong nyuh theh now"},{vn:"Thu?c n�y bao nhi�u?",pr:"thoo-uk nay bow nyew"},{vn:"C� thu?c kh�c kh�ng?",pr:"kaw thoo-uk khahk khome"}]},
-    {cat:"Pharmacy", en:"How do I take this medicine?", vn:"Thu?c n�y d�ng nhu th? n�o?", pr:"thoo-uk nay yoong nyuh theh now",
-      d:[{vn:"T�i c?n thu?c n�y",pr:"toy kun thoo-uk nay"},{vn:"U?ng m?y vi�n?",pr:"oo-ung may vyen"},{vn:"U?ng bao l�u?",pr:"oo-ung bow loh"}]},
-    {cat:"Pharmacy", en:"How many pills per dose?", vn:"U?ng m?y vi�n?", pr:"oo-ung may vyen",
-      d:[{vn:"U?ng m?y l?n m?t ng�y?",pr:"oo-ung may lun moht ngay"},{vn:"Thu?c n�y d�ng nhu th? n�o?",pr:"thoo-uk nay yoong nyuh theh now"},{vn:"U?ng bao l�u?",pr:"oo-ung bow loh"}]},
-    {cat:"Pharmacy", en:"How many times per day?", vn:"U?ng m?y l?n m?t ng�y?", pr:"oo-ung may lun moht ngay",
-      d:[{vn:"U?ng m?y vi�n?",pr:"oo-ung may vyen"},{vn:"U?ng tru?c hay sau an?",pr:"oo-ung chuh-uk hay sow un"},{vn:"U?ng bao l�u?",pr:"oo-ung bow loh"}]},
-    {cat:"Pharmacy", en:"Before or after eating?", vn:"U?ng tru?c hay sau an?", pr:"oo-ung chuh-uk hay sow un",
-      d:[{vn:"U?ng m?y l?n m?t ng�y?",pr:"oo-ung may lun moht ngay"},{vn:"U?ng m?y vi�n?",pr:"oo-ung may vyen"},{vn:"U?ng v?i nu?c",pr:"oo-ung vuh-ee nyuhk"}]},
-    {cat:"Safety", en:"Danger!", vn:"Nguy hi?m!", pr:"ngwee hyem",
-      d:[{vn:"C?n th?n!",pr:"kun thun"},{vn:"C?u t�i!",pr:"kyew toy"},{vn:"D?ng l?i!",pr:"yung lie"}]},
-    {cat:"Safety", en:"Be careful!", vn:"C?n th?n!", pr:"kun thun",
-      d:[{vn:"Nguy hi?m!",pr:"ngwee hyem"},{vn:"D?ng l?i!",pr:"yung lie"},{vn:"Kh�ng du?c!",pr:"khome duh-uk"}]},
-    {cat:"Safety", en:"I was robbed", vn:"T�i b? cu?p", pr:"toy bee kyuh-up",
-      d:[{vn:"T�i b? m?t d?",pr:"toy bee mut doh"},{vn:"T�i b? tai n?n",pr:"toy bee tie nan"},{vn:"G?i c?nh s�t",pr:"goy kahn saht"}]},
+    {cat:"At the Doctor", en:"Where does it hurt?", vn:"Đau ở đâu?", pr:"dow uh doh",
+      d:[{vn:"Đau như thế nào?",pr:"dow nyuh theh now"},{vn:"Đau từ khi nào?",pr:"dow tuh khee now"},{vn:"Đau nhiều không?",pr:"dow nyew khome"}]},
+    {cat:"At the Doctor", en:"How long have you had this pain?", vn:"Đau từ khi nào?", pr:"dow tuh khee now",
+      d:[{vn:"Đau ở đâu?",pr:"dow uh doh"},{vn:"Đau như thế nào?",pr:"dow nyuh theh now"},{vn:"Đau có thường xuyên không?",pr:"dow kaw thuh-ung swyen khome"}]},
+    {cat:"At the Doctor", en:"I'm allergic to...", vn:"Tôi bị dị ứng với...", pr:"toy bee yee ung vuh-ee",
+      d:[{vn:"Tôi không bị dị ứng",pr:"toy khome bee yee ung"},{vn:"Tôi bị dị ứng thức ăn",pr:"toy bee yee ung thuk un"},{vn:"Tôi bị dị ứng thuốc",pr:"toy bee yee ung thoo-uk"}]},
+    {cat:"At the Doctor", en:"I'm allergic to penicillin", vn:"Tôi bị dị ứng penicillin", pr:"toy bee yee ung pen-ih-sil-in",
+      d:[{vn:"Tôi bị dị ứng aspirin",pr:"toy bee yee ung as-pih-rin"},{vn:"Tôi không bị dị ứng",pr:"toy khome bee yee ung"},{vn:"Tôi bị dị ứng hải sản",pr:"toy bee yee ung hi sahn"}]},
+    {cat:"At the Doctor", en:"I have diabetes", vn:"Tôi bị tiểu đường", pr:"toy bee tyew duh-ung",
+      d:[{vn:"Tôi bị huyết áp cao",pr:"toy bee hwyet ahp kow"},{vn:"Tôi bị hen suyễn",pr:"toy bee hen swyen"},{vn:"Tôi bị tim mạch",pr:"toy bee tim mahk"}]},
+    {cat:"At the Doctor", en:"I have high blood pressure", vn:"Tôi bị huyết áp cao", pr:"toy bee hwyet ahp kow",
+      d:[{vn:"Tôi bị tiểu đường",pr:"toy bee tyew duh-ung"},{vn:"Tôi bị hen suyễn",pr:"toy bee hen swyen"},{vn:"Tôi bị huyết áp thấp",pr:"toy bee hwyet ahp tup"}]},
+    {cat:"At the Doctor", en:"I have asthma", vn:"Tôi bị hen suyễn", pr:"toy bee hen swyen",
+      d:[{vn:"Tôi bị tiểu đường",pr:"toy bee tyew duh-ung"},{vn:"Tôi bị huyết áp cao",pr:"toy bee hwyet ahp kow"},{vn:"Tôi bị dị ứng",pr:"toy bee yee ung"}]},
+    {cat:"Pharmacy", en:"I need this medicine", vn:"Tôi cần thuốc này", pr:"toy kun thoo-uk nay",
+      d:[{vn:"Thuốc này dùng như thế nào?",pr:"thoo-uk nay yoong nyuh theh now"},{vn:"Thuốc này bao nhiêu?",pr:"thoo-uk nay bow nyew"},{vn:"Có thuốc khác không?",pr:"kaw thoo-uk khahk khome"}]},
+    {cat:"Pharmacy", en:"How do I take this medicine?", vn:"Thuốc này dùng như thế nào?", pr:"thoo-uk nay yoong nyuh theh now",
+      d:[{vn:"Tôi cần thuốc này",pr:"toy kun thoo-uk nay"},{vn:"Uống mấy viên?",pr:"oo-ung may vyen"},{vn:"Uống bao lâu?",pr:"oo-ung bow loh"}]},
+    {cat:"Pharmacy", en:"How many pills per dose?", vn:"Uống mấy viên?", pr:"oo-ung may vyen",
+      d:[{vn:"Uống mấy lần một ngày?",pr:"oo-ung may lun moht ngay"},{vn:"Thuốc này dùng như thế nào?",pr:"thoo-uk nay yoong nyuh theh now"},{vn:"Uống bao lâu?",pr:"oo-ung bow loh"}]},
+    {cat:"Pharmacy", en:"How many times per day?", vn:"Uống mấy lần một ngày?", pr:"oo-ung may lun moht ngay",
+      d:[{vn:"Uống mấy viên?",pr:"oo-ung may vyen"},{vn:"Uống trước hay sau ăn?",pr:"oo-ung chuh-uk hay sow un"},{vn:"Uống bao lâu?",pr:"oo-ung bow loh"}]},
+    {cat:"Pharmacy", en:"Before or after eating?", vn:"Uống trước hay sau ăn?", pr:"oo-ung chuh-uk hay sow un",
+      d:[{vn:"Uống mấy lần một ngày?",pr:"oo-ung may lun moht ngay"},{vn:"Uống mấy viên?",pr:"oo-ung may vyen"},{vn:"Uống với nước",pr:"oo-ung vuh-ee nyuhk"}]},
+    {cat:"Safety", en:"Danger!", vn:"Nguy hiểm!", pr:"ngwee hyem",
+      d:[{vn:"Cẩn thận!",pr:"kun thun"},{vn:"Cứu tôi!",pr:"kyew toy"},{vn:"Dừng lại!",pr:"yung lie"}]},
+    {cat:"Safety", en:"Be careful!", vn:"Cẩn thận!", pr:"kun thun",
+      d:[{vn:"Nguy hiểm!",pr:"ngwee hyem"},{vn:"Dừng lại!",pr:"yung lie"},{vn:"Không được!",pr:"khome duh-uk"}]},
+    {cat:"Safety", en:"I was robbed", vn:"Tôi bị cướp", pr:"toy bee kyuh-up",
+      d:[{vn:"Tôi bị mất đồ",pr:"toy bee mut doh"},{vn:"Tôi bị tai nạn",pr:"toy bee tie nan"},{vn:"Gọi cảnh sát",pr:"goy kahn saht"}]},
   ]
 };
 
@@ -273,11 +273,11 @@ function selectAnswer(btn, selected, correct, correctPr) {
     score++;
     btn.style.background = 'rgba(46,204,113,0.3)'; btn.style.borderColor = '#2ecc71';
     feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(46,204,113,0.15);border-left:3px solid #2ecc71;color:#2ecc71;';
-    feedback.textContent = '? Correct! ' + getFact(questions[current]);
+    feedback.textContent = '✓ Correct! ' + getFact(questions[current]);
   } else {
     btn.style.background = 'rgba(231,76,60,0.3)'; btn.style.borderColor = '#e74c3c';
     feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(231,76,60,0.15);border-left:3px solid #e74c3c;color:#e74c3c;';
-    feedback.textContent = `? The answer is: ${correct} (${correctPr})`;
+    feedback.textContent = `✗ The answer is: ${correct} (${correctPr})`;
   }
   document.getElementById('scoreText').textContent = `Score: ${score}`;
   document.getElementById('nextBtn').style.display = 'block';
@@ -288,13 +288,13 @@ function nextQuestion() { showQuestion(); }
 
 function getFact(q) {
   const facts = {
-    'Emergency Phrases': 'Save these numbers before you travel: Police 113 � Fire 114 � Ambulance 115. They work anywhere in Vietnam.',
+    'Emergency Phrases': 'Save these numbers before you travel: Police 113 · Fire 114 · Ambulance 115. They work anywhere in Vietnam.',
     'Feeling Sick': 'Traveler\'s diarrhea is the most common health issue in Vietnam. Stay hydrated, carry oral rehydration salts, and know where the nearest pharmacy is.',
     'Places': 'International-standard hospitals in Vietnam: FV Hospital and Vinmec in Saigon, Vinmec and French Hospital in Hanoi. Save the addresses before you travel.',
-    'Body Parts': 'Pointing to the body part while saying it is perfectly acceptable and often clearer than speaking alone � combine both for best results.',
-    'Symptoms': '"T�i b?..." (I have/am suffering from...) is the structure for all health complaints. Learn this pattern and you can describe almost any symptom.',
+    'Body Parts': 'Pointing to the body part while saying it is perfectly acceptable and often clearer than speaking alone — combine both for best results.',
+    'Symptoms': '"Tôi bị..." (I have/am suffering from...) is the structure for all health complaints. Learn this pattern and you can describe almost any symptom.',
     'At the Doctor': 'Many doctors in major Vietnamese cities speak some English, especially in international hospitals. But knowing basic Vietnamese shows respect and helps in emergencies.',
-    'Pharmacy': 'Vietnamese pharmacies (nh� thu?c) are everywhere and many medicines available by prescription elsewhere can be bought over the counter. Bring your medication name written down.',
+    'Pharmacy': 'Vietnamese pharmacies (nhà thuốc) are everywhere and many medicines available by prescription elsewhere can be bought over the counter. Bring your medication name written down.',
     'Safety': 'Bag snatching from motorbikes is the most common theft in Saigon. Carry bags away from the road and keep phones in your pocket when walking.',
   };
   return facts[q.cat] || 'Keep going!';
@@ -305,7 +305,7 @@ function showResults() {
   document.getElementById('resultsCard').style.display = 'block';
   const pct = score / questions.length;
   document.getElementById('finalScore').textContent = `You scored ${score} out of ${questions.length}`;
-  const msgs = [[0.9,"?? Xu?t s?c l?m! (Outstanding!) You're a natural!"],[0.8,"?? Gi?i l?m! (Very good!) Keep it up!"],[0.6,"?? Kh� t?t! (Pretty good!) Almost there!"],[0,"?? Keep practicing! B?n s? ti?n b?! (You will improve!)"]];
+  const msgs = [[0.9,"🏆 Xuất sắc lắm! (Outstanding!) You're a natural!"],[0.8,"🌟 Giỏi lắm! (Very good!) Keep it up!"],[0.6,"👍 Khá tốt! (Pretty good!) Almost there!"],[0,"💪 Keep practicing! Bạn sẽ tiến bộ! (You will improve!)"]];
   document.getElementById('resultsMsg').textContent = msgs.find(([t]) => pct >= t)[1];
 }
 
@@ -319,4 +319,3 @@ document.addEventListener('DOMContentLoaded', restartQuiz);
 
 </body>
 </html>
-
