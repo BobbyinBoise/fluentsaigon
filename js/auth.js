@@ -26,7 +26,7 @@ const Auth = {
            user.email.split('@')[0];
   },
 
-  async login(email, password) {
+  nc login(email, password) {
     const ni = window.netlifyIdentity;
     if (!ni) throw new Error('Auth not loaded');
     return new Promise((resolve, reject) => {
@@ -37,9 +37,20 @@ const Auth = {
   },
 
   async signup(email, password, name) {
-    const ni = window.netlifyIdentity;
-    if (!ni) throw new Error('Auth not loaded');
-    return ni.signup(email, password, { full_name: name });
+    const response = await fetch('https://fluentsaigon.com/.netlify/identity/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email,
+        password,
+        data: { full_name: name }
+      })
+    });
+    if (!response.ok) {
+      const err = await response.json();
+      throw new Error(err.msg || 'Signup failed');
+    }
+    return response.json();
   },
 
   logout() {
@@ -48,7 +59,7 @@ const Auth = {
       ni.logout();
     }
   },
-
+asy
   loginWithGoogle() {
     window.location.href = 'https://fluentsaigon.com/.netlify/identity/authorize?provider=google';
   },
