@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -47,6 +47,7 @@
   .pattern-box code { color: #c0392b !important; }
   .tab-bar { display: none !important; }
   .tab-section { display: block !important; opacity: 1 !important; }
+  .local-audio-bar { display: none !important; }
 }
 
 /* ── PAGE LAYOUT ───────────────────────────────────────────── */
@@ -302,6 +303,49 @@
 .pill .vn-p { color: #fff; font-weight: 800; }
 .pill .pr-p { color: rgba(255,255,255,0.35); font-size: 0.7rem; font-style: italic; }
 
+/* ── LOCAL AUDIO BAR ───────────────────────────────────────── */
+.local-audio-bar {
+  margin-top: 20px;
+  background: rgba(245,197,24,0.06);
+  border: 1px solid rgba(245,197,24,0.2);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.local-audio-bar .audio-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 160px;
+}
+.local-audio-bar .audio-label .audio-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.local-audio-bar .audio-label .audio-sub {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+}
+.local-audio-bar audio {
+  flex: 2;
+  min-width: 200px;
+  height: 36px;
+  accent-color: var(--gold);
+  filter: invert(0);
+}
+/* Style the native audio player to match the dark theme */
+@media (prefers-color-scheme: dark) {
+  .local-audio-bar audio { filter: invert(1) hue-rotate(180deg); }
+}
+
 </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LN51VD3PC5"></script>
@@ -360,6 +404,19 @@
           <tr><td>10</td><td class="vn">mười</td><td class="pr">muh-ee</td><td>Tone changes in compounds</td></tr>
         </tbody>
       </table>
+
+      <!-- LOCAL AUDIO PLAYER -->
+      <div class="local-audio-bar no-print">
+        <div class="audio-label">
+          <span class="audio-title">🎙️ Hear it spoken by a local!</span>
+          <span class="audio-sub">0–10 counted by a native Saigon speaker</span>
+        </div>
+        <audio controls preload="none">
+          <source src="https://pub-967101976d8849b39ec38bcccaa26569.r2.dev/audio/numbers_kim_0-10.mp3" type="audio/mpeg">
+          Your browser does not support audio playback.
+        </audio>
+      </div>
+
     </div>
 
     <div class="cs-section">
