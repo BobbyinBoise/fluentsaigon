@@ -26,3 +26,6 @@
   for = "/js/*"
   [headers.values]
     Cache-Control = "public, max-age=3600, must-revalidate"
+
+[identity]
+  redirect_urls = ["https://fluentsaigon.com/pages/subjects.html"]
