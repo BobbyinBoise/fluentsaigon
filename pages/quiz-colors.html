@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -42,8 +42,8 @@
 <div class="quiz-page">
 
   <div class="quiz-header">
-    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">← All Subjects</a>
-    <h1 style="margin:12px 0 4px;">🎨 Colors & Descriptions</h1>
+    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">? All Subjects</a>
+    <h1 style="margin:12px 0 4px;">?? Colors & Descriptions</h1>
     <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">Describe what you see, what you want, what doesn't fit quite right.</p>
   </div>
 
@@ -51,10 +51,10 @@
   <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
     <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
       <div>
-        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">💡 PRO TIP</div>
-        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Colors and adjectives are a vocabulary multiplier — once you know them, you can describe almost anything even with limited Vietnamese.</div>
+        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">?? PRO TIP</div>
+        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Colors and adjectives are a vocabulary multiplier � once you know them, you can describe almost anything even with limited Vietnamese.</div>
       </div>
-      <button onclick="openCheatSheet('cheatsheet-colors.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet →</button>
+      <button onclick="openCheatSheet('cheatsheet-colors.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet ?</button>
     </div>
   </div>
 
@@ -62,8 +62,8 @@
   <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
     <div style="display:flex;gap:8px;background:rgba(255,255,255,0.05);border-radius:12px;padding:6px;">
       <button id="tab-beginner" onclick="setDifficulty('beginner')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:var(--gold);color:#000;">Beginner</button>
-      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate 🔒</button>
-      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert 🔒</button>
+      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate ??</button>
+      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert ??</button>
     </div>
   </div>
 
@@ -85,17 +85,17 @@
 
       <div id="choicesGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;"></div>
       <div id="feedback" style="display:none;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;"></div>
-      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question →</button>
+      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question ?</button>
     </div>
 
     <div id="resultsCard" style="display:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 28px;text-align:center;">
-      <div style="font-size:3rem;margin-bottom:16px;">🎉</div>
+      <div style="font-size:3rem;margin-bottom:16px;">??</div>
       <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</h2>
       <div id="finalScore" style="font-size:1.1rem;color:var(--gold);font-weight:800;margin-bottom:8px;"></div>
       <div id="resultsMsg" style="font-size:0.9rem;color:rgba(255,255,255,0.6);margin-bottom:28px;"></div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="restartQuiz()" style="padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Try Again</button>
-        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">← Back to All Subjects</a>
+        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">? Back to All Subjects</a>
       </div>
     </div>
   </div>
@@ -103,7 +103,7 @@
 
 <div id="footer-placeholder"></div>
 <script src="../js/components.js"></script>
-<script src="../js/auth.js"></script>
+<script src="../js/auth.js?v=2"></script>
 <script>
 
 function openCheatSheet(url) {
@@ -113,100 +113,100 @@ function openCheatSheet(url) {
 
 const quizData = {
   beginner: [
-    {cat:"Basic Colors", en:"Red", vn:"đỏ", pr:"daw",
-      d:[{vn:"xanh",pr:"sahn"},{vn:"vàng",pr:"vahng"},{vn:"trắng",pr:"chung"}]},
-    {cat:"Basic Colors", en:"Blue", vn:"xanh dương", pr:"sahn yuh-ung",
-      d:[{vn:"xanh lá",pr:"sahn lah"},{vn:"tím",pr:"tim"},{vn:"đen",pr:"den"}]},
-    {cat:"Basic Colors", en:"Green", vn:"xanh lá", pr:"sahn lah",
-      d:[{vn:"xanh dương",pr:"sahn yuh-ung"},{vn:"vàng",pr:"vahng"},{vn:"nâu",pr:"noh"}]},
-    {cat:"Basic Colors", en:"Yellow", vn:"vàng", pr:"vahng",
-      d:[{vn:"cam",pr:"kahm"},{vn:"đỏ",pr:"daw"},{vn:"trắng",pr:"chung"}]},
-    {cat:"Basic Colors", en:"White", vn:"trắng", pr:"chung",
-      d:[{vn:"đen",pr:"den"},{vn:"xám",pr:"sahm"},{vn:"nâu",pr:"noh"}]},
-    {cat:"Basic Colors", en:"Black", vn:"đen", pr:"den",
-      d:[{vn:"trắng",pr:"chung"},{vn:"xám",pr:"sahm"},{vn:"nâu",pr:"noh"}]},
+    {cat:"Basic Colors", en:"Red", vn:"d?", pr:"daw",
+      d:[{vn:"xanh",pr:"sahn"},{vn:"v�ng",pr:"vahng"},{vn:"tr?ng",pr:"chung"}]},
+    {cat:"Basic Colors", en:"Blue", vn:"xanh duong", pr:"sahn yuh-ung",
+      d:[{vn:"xanh l�",pr:"sahn lah"},{vn:"t�m",pr:"tim"},{vn:"den",pr:"den"}]},
+    {cat:"Basic Colors", en:"Green", vn:"xanh l�", pr:"sahn lah",
+      d:[{vn:"xanh duong",pr:"sahn yuh-ung"},{vn:"v�ng",pr:"vahng"},{vn:"n�u",pr:"noh"}]},
+    {cat:"Basic Colors", en:"Yellow", vn:"v�ng", pr:"vahng",
+      d:[{vn:"cam",pr:"kahm"},{vn:"d?",pr:"daw"},{vn:"tr?ng",pr:"chung"}]},
+    {cat:"Basic Colors", en:"White", vn:"tr?ng", pr:"chung",
+      d:[{vn:"den",pr:"den"},{vn:"x�m",pr:"sahm"},{vn:"n�u",pr:"noh"}]},
+    {cat:"Basic Colors", en:"Black", vn:"den", pr:"den",
+      d:[{vn:"tr?ng",pr:"chung"},{vn:"x�m",pr:"sahm"},{vn:"n�u",pr:"noh"}]},
     {cat:"Basic Colors", en:"Orange", vn:"cam", pr:"kahm",
-      d:[{vn:"vàng",pr:"vahng"},{vn:"đỏ",pr:"daw"},{vn:"hồng",pr:"hohng"}]},
-    {cat:"Basic Colors", en:"Pink", vn:"hồng", pr:"hohng",
-      d:[{vn:"tím",pr:"tim"},{vn:"đỏ",pr:"daw"},{vn:"cam",pr:"kahm"}]},
-    {cat:"Basic Colors", en:"Purple", vn:"tím", pr:"tim",
-      d:[{vn:"hồng",pr:"hohng"},{vn:"xanh dương",pr:"sahn yuh-ung"},{vn:"nâu",pr:"noh"}]},
-    {cat:"Basic Colors", en:"Brown", vn:"nâu", pr:"noh",
-      d:[{vn:"đen",pr:"den"},{vn:"xám",pr:"sahm"},{vn:"vàng",pr:"vahng"}]},
-    {cat:"Basic Colors", en:"Grey", vn:"xám", pr:"sahm",
-      d:[{vn:"trắng",pr:"chung"},{vn:"đen",pr:"den"},{vn:"nâu",pr:"noh"}]},
-    {cat:"Using Colors", en:"What color is it?", vn:"Màu gì?", pr:"mow yee",
-      d:[{vn:"Màu nào?",pr:"mow now"},{vn:"Có màu khác không?",pr:"kaw mow khahk khome"},{vn:"Tôi thích màu này",pr:"toy tick mow nay"}]},
-    {cat:"Using Colors", en:"I like this color", vn:"Tôi thích màu này", pr:"toy tick mow nay",
-      d:[{vn:"Tôi không thích màu này",pr:"toy khome tick mow nay"},{vn:"Màu gì?",pr:"mow yee"},{vn:"Màu đẹp",pr:"mow dep"}]},
-    {cat:"Using Colors", en:"Do you have another color?", vn:"Có màu khác không?", pr:"kaw mow khahk khome",
-      d:[{vn:"Màu gì?",pr:"mow yee"},{vn:"Tôi thích màu này",pr:"toy tick mow nay"},{vn:"Màu nào đẹp hơn?",pr:"mow now dep huhn"}]},
-    {cat:"Using Colors", en:"Beautiful color", vn:"Màu đẹp", pr:"mow dep",
-      d:[{vn:"Màu xấu",pr:"mow soh"},{vn:"Màu lạ",pr:"mow lah"},{vn:"Màu nhạt",pr:"mow nyat"}]},
+      d:[{vn:"v�ng",pr:"vahng"},{vn:"d?",pr:"daw"},{vn:"h?ng",pr:"hohng"}]},
+    {cat:"Basic Colors", en:"Pink", vn:"h?ng", pr:"hohng",
+      d:[{vn:"t�m",pr:"tim"},{vn:"d?",pr:"daw"},{vn:"cam",pr:"kahm"}]},
+    {cat:"Basic Colors", en:"Purple", vn:"t�m", pr:"tim",
+      d:[{vn:"h?ng",pr:"hohng"},{vn:"xanh duong",pr:"sahn yuh-ung"},{vn:"n�u",pr:"noh"}]},
+    {cat:"Basic Colors", en:"Brown", vn:"n�u", pr:"noh",
+      d:[{vn:"den",pr:"den"},{vn:"x�m",pr:"sahm"},{vn:"v�ng",pr:"vahng"}]},
+    {cat:"Basic Colors", en:"Grey", vn:"x�m", pr:"sahm",
+      d:[{vn:"tr?ng",pr:"chung"},{vn:"den",pr:"den"},{vn:"n�u",pr:"noh"}]},
+    {cat:"Using Colors", en:"What color is it?", vn:"M�u g�?", pr:"mow yee",
+      d:[{vn:"M�u n�o?",pr:"mow now"},{vn:"C� m�u kh�c kh�ng?",pr:"kaw mow khahk khome"},{vn:"T�i th�ch m�u n�y",pr:"toy tick mow nay"}]},
+    {cat:"Using Colors", en:"I like this color", vn:"T�i th�ch m�u n�y", pr:"toy tick mow nay",
+      d:[{vn:"T�i kh�ng th�ch m�u n�y",pr:"toy khome tick mow nay"},{vn:"M�u g�?",pr:"mow yee"},{vn:"M�u d?p",pr:"mow dep"}]},
+    {cat:"Using Colors", en:"Do you have another color?", vn:"C� m�u kh�c kh�ng?", pr:"kaw mow khahk khome",
+      d:[{vn:"M�u g�?",pr:"mow yee"},{vn:"T�i th�ch m�u n�y",pr:"toy tick mow nay"},{vn:"M�u n�o d?p hon?",pr:"mow now dep huhn"}]},
+    {cat:"Using Colors", en:"Beautiful color", vn:"M�u d?p", pr:"mow dep",
+      d:[{vn:"M�u x?u",pr:"mow soh"},{vn:"M�u l?",pr:"mow lah"},{vn:"M�u nh?t",pr:"mow nyat"}]},
   ],
   intermediate: [
-    {cat:"Shades & Intensity", en:"Light (shade) / pale", vn:"nhạt", pr:"nyat",
-      d:[{vn:"đậm",pr:"dum"},{vn:"sáng",pr:"sahng"},{vn:"tối",pr:"toy"}]},
-    {cat:"Shades & Intensity", en:"Dark (shade) / deep", vn:"đậm", pr:"dum",
-      d:[{vn:"nhạt",pr:"nyat"},{vn:"sáng",pr:"sahng"},{vn:"tối",pr:"toy"}]},
-    {cat:"Shades & Intensity", en:"Light blue", vn:"xanh nhạt", pr:"sahn nyat",
-      d:[{vn:"xanh đậm",pr:"sahn dum"},{vn:"xanh lá",pr:"sahn lah"},{vn:"xanh dương",pr:"sahn yuh-ung"}]},
-    {cat:"Shades & Intensity", en:"Dark green", vn:"xanh lá đậm", pr:"sahn lah dum",
-      d:[{vn:"xanh lá nhạt",pr:"sahn lah nyat"},{vn:"xanh dương đậm",pr:"sahn yuh-ung dum"},{vn:"xanh lá cây",pr:"sahn lah kay"}]},
-    {cat:"Sizes", en:"Big / large", vn:"to / lớn", pr:"taw / luhn",
-      d:[{vn:"nhỏ / bé",pr:"nyaw / beh"},{vn:"vừa",pr:"vyuh-ah"},{vn:"dài",pr:"die"}]},
-    {cat:"Sizes", en:"Small / little", vn:"nhỏ / bé", pr:"nyaw / beh",
-      d:[{vn:"to / lớn",pr:"taw / luhn"},{vn:"vừa",pr:"vyuh-ah"},{vn:"ngắn",pr:"ngun"}]},
-    {cat:"Sizes", en:"Medium / just right", vn:"vừa", pr:"vyuh-ah",
-      d:[{vn:"to",pr:"taw"},{vn:"nhỏ",pr:"nyaw"},{vn:"quá lớn",pr:"kwah luhn"}]},
-    {cat:"Sizes", en:"Long", vn:"dài", pr:"die",
-      d:[{vn:"ngắn",pr:"ngun"},{vn:"rộng",pr:"rawng"},{vn:"hẹp",pr:"hep"}]},
-    {cat:"Sizes", en:"Short / brief", vn:"ngắn", pr:"ngun",
-      d:[{vn:"dài",pr:"die"},{vn:"nhỏ",pr:"nyaw"},{vn:"thấp",pr:"tup"}]},
-    {cat:"Adjectives", en:"Beautiful / pretty", vn:"đẹp", pr:"dep",
-      d:[{vn:"xấu",pr:"soh"},{vn:"bình thường",pr:"bing thuh-ung"},{vn:"tốt",pr:"tote"}]},
-    {cat:"Adjectives", en:"Ugly", vn:"xấu", pr:"soh",
-      d:[{vn:"đẹp",pr:"dep"},{vn:"bình thường",pr:"bing thuh-ung"},{vn:"lạ",pr:"lah"}]},
-    {cat:"Adjectives", en:"New", vn:"mới", pr:"muh-ee",
-      d:[{vn:"cũ",pr:"koo"},{vn:"đẹp",pr:"dep"},{vn:"tốt",pr:"tote"}]},
-    {cat:"Adjectives", en:"Old / used", vn:"cũ", pr:"koo",
-      d:[{vn:"mới",pr:"muh-ee"},{vn:"xấu",pr:"soh"},{vn:"rẻ",pr:"reh"}]},
-    {cat:"Adjectives", en:"Heavy", vn:"nặng", pr:"nung",
-      d:[{vn:"nhẹ",pr:"nyeh"},{vn:"to",pr:"taw"},{vn:"dày",pr:"day"}]},
-    {cat:"Adjectives", en:"Light (in weight)", vn:"nhẹ", pr:"nyeh",
-      d:[{vn:"nặng",pr:"nung"},{vn:"mỏng",pr:"mawng"},{vn:"nhỏ",pr:"nyaw"}]},
+    {cat:"Shades & Intensity", en:"Light (shade) / pale", vn:"nh?t", pr:"nyat",
+      d:[{vn:"d?m",pr:"dum"},{vn:"s�ng",pr:"sahng"},{vn:"t?i",pr:"toy"}]},
+    {cat:"Shades & Intensity", en:"Dark (shade) / deep", vn:"d?m", pr:"dum",
+      d:[{vn:"nh?t",pr:"nyat"},{vn:"s�ng",pr:"sahng"},{vn:"t?i",pr:"toy"}]},
+    {cat:"Shades & Intensity", en:"Light blue", vn:"xanh nh?t", pr:"sahn nyat",
+      d:[{vn:"xanh d?m",pr:"sahn dum"},{vn:"xanh l�",pr:"sahn lah"},{vn:"xanh duong",pr:"sahn yuh-ung"}]},
+    {cat:"Shades & Intensity", en:"Dark green", vn:"xanh l� d?m", pr:"sahn lah dum",
+      d:[{vn:"xanh l� nh?t",pr:"sahn lah nyat"},{vn:"xanh duong d?m",pr:"sahn yuh-ung dum"},{vn:"xanh l� c�y",pr:"sahn lah kay"}]},
+    {cat:"Sizes", en:"Big / large", vn:"to / l?n", pr:"taw / luhn",
+      d:[{vn:"nh? / b�",pr:"nyaw / beh"},{vn:"v?a",pr:"vyuh-ah"},{vn:"d�i",pr:"die"}]},
+    {cat:"Sizes", en:"Small / little", vn:"nh? / b�", pr:"nyaw / beh",
+      d:[{vn:"to / l?n",pr:"taw / luhn"},{vn:"v?a",pr:"vyuh-ah"},{vn:"ng?n",pr:"ngun"}]},
+    {cat:"Sizes", en:"Medium / just right", vn:"v?a", pr:"vyuh-ah",
+      d:[{vn:"to",pr:"taw"},{vn:"nh?",pr:"nyaw"},{vn:"qu� l?n",pr:"kwah luhn"}]},
+    {cat:"Sizes", en:"Long", vn:"d�i", pr:"die",
+      d:[{vn:"ng?n",pr:"ngun"},{vn:"r?ng",pr:"rawng"},{vn:"h?p",pr:"hep"}]},
+    {cat:"Sizes", en:"Short / brief", vn:"ng?n", pr:"ngun",
+      d:[{vn:"d�i",pr:"die"},{vn:"nh?",pr:"nyaw"},{vn:"th?p",pr:"tup"}]},
+    {cat:"Adjectives", en:"Beautiful / pretty", vn:"d?p", pr:"dep",
+      d:[{vn:"x?u",pr:"soh"},{vn:"b�nh thu?ng",pr:"bing thuh-ung"},{vn:"t?t",pr:"tote"}]},
+    {cat:"Adjectives", en:"Ugly", vn:"x?u", pr:"soh",
+      d:[{vn:"d?p",pr:"dep"},{vn:"b�nh thu?ng",pr:"bing thuh-ung"},{vn:"l?",pr:"lah"}]},
+    {cat:"Adjectives", en:"New", vn:"m?i", pr:"muh-ee",
+      d:[{vn:"cu",pr:"koo"},{vn:"d?p",pr:"dep"},{vn:"t?t",pr:"tote"}]},
+    {cat:"Adjectives", en:"Old / used", vn:"cu", pr:"koo",
+      d:[{vn:"m?i",pr:"muh-ee"},{vn:"x?u",pr:"soh"},{vn:"r?",pr:"reh"}]},
+    {cat:"Adjectives", en:"Heavy", vn:"n?ng", pr:"nung",
+      d:[{vn:"nh?",pr:"nyeh"},{vn:"to",pr:"taw"},{vn:"d�y",pr:"day"}]},
+    {cat:"Adjectives", en:"Light (in weight)", vn:"nh?", pr:"nyeh",
+      d:[{vn:"n?ng",pr:"nung"},{vn:"m?ng",pr:"mawng"},{vn:"nh?",pr:"nyaw"}]},
   ],
   expert: [
-    {cat:"Patterns & Textures", en:"Striped", vn:"có sọc", pr:"kaw sawk",
-      d:[{vn:"có hoa",pr:"kaw hwah"},{vn:"trơn",pr:"chuhn"},{vn:"có ô vuông",pr:"kaw oh voo-ung"}]},
-    {cat:"Patterns & Textures", en:"Floral / with flower pattern", vn:"có hoa", pr:"kaw hwah",
-      d:[{vn:"có sọc",pr:"kaw sawk"},{vn:"trơn",pr:"chuhn"},{vn:"có chấm bi",pr:"kaw chum bee"}]},
-    {cat:"Patterns & Textures", en:"Plain / solid color", vn:"trơn", pr:"chuhn",
-      d:[{vn:"có sọc",pr:"kaw sawk"},{vn:"có hoa",pr:"kaw hwah"},{vn:"có họa tiết",pr:"kaw hwah tyet"}]},
-    {cat:"Patterns & Textures", en:"Polka dot", vn:"có chấm bi", pr:"kaw chum bee",
-      d:[{vn:"có sọc",pr:"kaw sawk"},{vn:"có hoa",pr:"kaw hwah"},{vn:"trơn",pr:"chuhn"}]},
-    {cat:"Patterns & Textures", en:"Smooth / soft texture", vn:"mịn", pr:"min",
-      d:[{vn:"thô",pr:"thoh"},{vn:"mềm",pr:"mem"},{vn:"cứng",pr:"kyung"}]},
-    {cat:"Patterns & Textures", en:"Rough texture", vn:"thô", pr:"thoh",
-      d:[{vn:"mịn",pr:"min"},{vn:"mềm",pr:"mem"},{vn:"trơn",pr:"chuhn"}]},
-    {cat:"Describing Objects", en:"Thick", vn:"dày", pr:"day",
-      d:[{vn:"mỏng",pr:"mawng"},{vn:"nặng",pr:"nung"},{vn:"rộng",pr:"rawng"}]},
-    {cat:"Describing Objects", en:"Thin", vn:"mỏng", pr:"mawng",
-      d:[{vn:"dày",pr:"day"},{vn:"nhẹ",pr:"nyeh"},{vn:"hẹp",pr:"hep"}]},
-    {cat:"Describing Objects", en:"Wide / broad", vn:"rộng", pr:"rawng",
-      d:[{vn:"hẹp",pr:"hep"},{vn:"dài",pr:"die"},{vn:"to",pr:"taw"}]},
-    {cat:"Describing Objects", en:"Narrow", vn:"hẹp", pr:"hep",
-      d:[{vn:"rộng",pr:"rawng"},{vn:"ngắn",pr:"ngun"},{vn:"nhỏ",pr:"nyaw"}]},
+    {cat:"Patterns & Textures", en:"Striped", vn:"c� s?c", pr:"kaw sawk",
+      d:[{vn:"c� hoa",pr:"kaw hwah"},{vn:"tron",pr:"chuhn"},{vn:"c� � vu�ng",pr:"kaw oh voo-ung"}]},
+    {cat:"Patterns & Textures", en:"Floral / with flower pattern", vn:"c� hoa", pr:"kaw hwah",
+      d:[{vn:"c� s?c",pr:"kaw sawk"},{vn:"tron",pr:"chuhn"},{vn:"c� ch?m bi",pr:"kaw chum bee"}]},
+    {cat:"Patterns & Textures", en:"Plain / solid color", vn:"tron", pr:"chuhn",
+      d:[{vn:"c� s?c",pr:"kaw sawk"},{vn:"c� hoa",pr:"kaw hwah"},{vn:"c� h?a ti?t",pr:"kaw hwah tyet"}]},
+    {cat:"Patterns & Textures", en:"Polka dot", vn:"c� ch?m bi", pr:"kaw chum bee",
+      d:[{vn:"c� s?c",pr:"kaw sawk"},{vn:"c� hoa",pr:"kaw hwah"},{vn:"tron",pr:"chuhn"}]},
+    {cat:"Patterns & Textures", en:"Smooth / soft texture", vn:"m?n", pr:"min",
+      d:[{vn:"th�",pr:"thoh"},{vn:"m?m",pr:"mem"},{vn:"c?ng",pr:"kyung"}]},
+    {cat:"Patterns & Textures", en:"Rough texture", vn:"th�", pr:"thoh",
+      d:[{vn:"m?n",pr:"min"},{vn:"m?m",pr:"mem"},{vn:"tron",pr:"chuhn"}]},
+    {cat:"Describing Objects", en:"Thick", vn:"d�y", pr:"day",
+      d:[{vn:"m?ng",pr:"mawng"},{vn:"n?ng",pr:"nung"},{vn:"r?ng",pr:"rawng"}]},
+    {cat:"Describing Objects", en:"Thin", vn:"m?ng", pr:"mawng",
+      d:[{vn:"d�y",pr:"day"},{vn:"nh?",pr:"nyeh"},{vn:"h?p",pr:"hep"}]},
+    {cat:"Describing Objects", en:"Wide / broad", vn:"r?ng", pr:"rawng",
+      d:[{vn:"h?p",pr:"hep"},{vn:"d�i",pr:"die"},{vn:"to",pr:"taw"}]},
+    {cat:"Describing Objects", en:"Narrow", vn:"h?p", pr:"hep",
+      d:[{vn:"r?ng",pr:"rawng"},{vn:"ng?n",pr:"ngun"},{vn:"nh?",pr:"nyaw"}]},
     {cat:"Describing People", en:"Tall", vn:"cao", pr:"kow",
-      d:[{vn:"thấp",pr:"tup"},{vn:"to",pr:"taw"},{vn:"gầy",pr:"gay"}]},
-    {cat:"Describing People", en:"Short (height)", vn:"thấp", pr:"tup",
-      d:[{vn:"cao",pr:"kow"},{vn:"nhỏ",pr:"nyaw"},{vn:"béo",pr:"bay-oh"}]},
-    {cat:"Describing People", en:"Thin / slim", vn:"gầy", pr:"gay",
-      d:[{vn:"béo",pr:"bay-oh"},{vn:"cao",pr:"kow"},{vn:"nhỏ",pr:"nyaw"}]},
-    {cat:"Describing People", en:"Fat / chubby", vn:"béo", pr:"bay-oh",
-      d:[{vn:"gầy",pr:"gay"},{vn:"to",pr:"taw"},{vn:"thấp",pr:"tup"}]},
-    {cat:"Describing People", en:"Young", vn:"trẻ", pr:"cheh",
-      d:[{vn:"già",pr:"yah"},{vn:"nhỏ",pr:"nyaw"},{vn:"mới",pr:"muh-ee"}]},
+      d:[{vn:"th?p",pr:"tup"},{vn:"to",pr:"taw"},{vn:"g?y",pr:"gay"}]},
+    {cat:"Describing People", en:"Short (height)", vn:"th?p", pr:"tup",
+      d:[{vn:"cao",pr:"kow"},{vn:"nh?",pr:"nyaw"},{vn:"b�o",pr:"bay-oh"}]},
+    {cat:"Describing People", en:"Thin / slim", vn:"g?y", pr:"gay",
+      d:[{vn:"b�o",pr:"bay-oh"},{vn:"cao",pr:"kow"},{vn:"nh?",pr:"nyaw"}]},
+    {cat:"Describing People", en:"Fat / chubby", vn:"b�o", pr:"bay-oh",
+      d:[{vn:"g?y",pr:"gay"},{vn:"to",pr:"taw"},{vn:"th?p",pr:"tup"}]},
+    {cat:"Describing People", en:"Young", vn:"tr?", pr:"cheh",
+      d:[{vn:"gi�",pr:"yah"},{vn:"nh?",pr:"nyaw"},{vn:"m?i",pr:"muh-ee"}]},
   ]
 };
 
@@ -273,11 +273,11 @@ function selectAnswer(btn, selected, correct, correctPr) {
     score++;
     btn.style.background = 'rgba(46,204,113,0.3)'; btn.style.borderColor = '#2ecc71';
     feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(46,204,113,0.15);border-left:3px solid #2ecc71;color:#2ecc71;';
-    feedback.textContent = '✓ Correct! ' + getFact(questions[current]);
+    feedback.textContent = '? Correct! ' + getFact(questions[current]);
   } else {
     btn.style.background = 'rgba(231,76,60,0.3)'; btn.style.borderColor = '#e74c3c';
     feedback.style.cssText = 'display:block;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;background:rgba(231,76,60,0.15);border-left:3px solid #e74c3c;color:#e74c3c;';
-    feedback.textContent = `✗ The answer is: ${correct} (${correctPr})`;
+    feedback.textContent = `? The answer is: ${correct} (${correctPr})`;
   }
   document.getElementById('scoreText').textContent = `Score: ${score}`;
   document.getElementById('nextBtn').style.display = 'block';
@@ -288,14 +288,14 @@ function nextQuestion() { showQuestion(); }
 
 function getFact(q) {
   const facts = {
-    'Basic Colors': 'Vietnamese uses "xanh" for both blue and green — context tells you which one. "Xanh dương" (ocean blue) and "xanh lá" (leaf green) remove the ambiguity.',
-    'Using Colors': 'In Vietnamese, adjectives come AFTER the noun they describe — "áo đỏ" = shirt red = red shirt. The opposite of English!',
-    'Shades & Intensity': 'Adding "nhạt" (pale) or "đậm" (deep) after any color creates light or dark shades — simple and logical.',
-    'Sizes': 'Vietnamese has two words for small: "nhỏ" (small in size) and "bé" (small/young, used more for people). Both work for objects.',
-    'Adjectives': 'In Vietnamese, "đẹp" means beautiful for both objects and people. "Bạn đẹp lắm" is a genuine compliment that will make anyone smile.',
+    'Basic Colors': 'Vietnamese uses "xanh" for both blue and green � context tells you which one. "Xanh duong" (ocean blue) and "xanh l�" (leaf green) remove the ambiguity.',
+    'Using Colors': 'In Vietnamese, adjectives come AFTER the noun they describe � "�o d?" = shirt red = red shirt. The opposite of English!',
+    'Shades & Intensity': 'Adding "nh?t" (pale) or "d?m" (deep) after any color creates light or dark shades � simple and logical.',
+    'Sizes': 'Vietnamese has two words for small: "nh?" (small in size) and "b�" (small/young, used more for people). Both work for objects.',
+    'Adjectives': 'In Vietnamese, "d?p" means beautiful for both objects and people. "B?n d?p l?m" is a genuine compliment that will make anyone smile.',
     'Patterns & Textures': 'When shopping for fabric or clothing at Vietnamese markets, knowing pattern words saves enormous time and confusion.',
-    'Describing Objects': 'These adjectives are shopping survival vocabulary — "dày" vs "mỏng" (thick vs thin) and "rộng" vs "hẹp" (wide vs narrow) come up constantly.',
-    'Describing People': 'Vietnamese people describe physical appearance very directly and without the social awkwardness found in Western cultures. "Béo" (fat) is said matter-of-factly.',
+    'Describing Objects': 'These adjectives are shopping survival vocabulary � "d�y" vs "m?ng" (thick vs thin) and "r?ng" vs "h?p" (wide vs narrow) come up constantly.',
+    'Describing People': 'Vietnamese people describe physical appearance very directly and without the social awkwardness found in Western cultures. "B�o" (fat) is said matter-of-factly.',
   };
   return facts[q.cat] || 'Keep going!';
 }
@@ -305,7 +305,7 @@ function showResults() {
   document.getElementById('resultsCard').style.display = 'block';
   const pct = score / questions.length;
   document.getElementById('finalScore').textContent = `You scored ${score} out of ${questions.length}`;
-  const msgs = [[0.9,"🏆 Xuất sắc lắm! (Outstanding!) You're a natural!"],[0.8,"🌟 Giỏi lắm! (Very good!) Keep it up!"],[0.6,"👍 Khá tốt! (Pretty good!) Almost there!"],[0,"💪 Keep practicing! Bạn sẽ tiến bộ! (You will improve!)"]];
+  const msgs = [[0.9,"?? Xu?t s?c l?m! (Outstanding!) You're a natural!"],[0.8,"?? Gi?i l?m! (Very good!) Keep it up!"],[0.6,"?? Kh� t?t! (Pretty good!) Almost there!"],[0,"?? Keep practicing! B?n s? ti?n b?! (You will improve!)"]];
   document.getElementById('resultsMsg').textContent = msgs.find(([t]) => pct >= t)[1];
 }
 
@@ -319,3 +319,4 @@ document.addEventListener('DOMContentLoaded', restartQuiz);
 
 </body>
 </html>
+

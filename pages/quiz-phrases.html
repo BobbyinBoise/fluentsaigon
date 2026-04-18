@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -42,19 +42,19 @@
 <div class="quiz-page">
 
   <div class="quiz-header">
-    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">← All Subjects</a>
-    <h1 style="margin:12px 0 4px;">👋 Common Phrases & Greetings</h1>
-    <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">The phrases locals actually use — from hello to thank you and beyond</p>
+    <a href="subjects.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:700;">? All Subjects</a>
+    <h1 style="margin:12px 0 4px;">?? Common Phrases & Greetings</h1>
+    <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">The phrases locals actually use � from hello to thank you and beyond</p>
   </div>
 
   <!-- CHEAT SHEET CALLOUT -->
   <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
     <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,183,0,0.3);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
       <div>
-        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">💡 PRO TIP</div>
-        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Vietnamese greetings change based on who you're talking to. Read the cheat sheet first — it explains the pronoun system that makes everything click.</div>
+        <div style="font-size:0.75rem;font-weight:800;color:var(--gold);letter-spacing:0.08em;margin-bottom:4px;">?? PRO TIP</div>
+        <div style="font-size:0.88rem;color:rgba(255,255,255,0.7);">Vietnamese greetings change based on who you're talking to. Read the cheat sheet first � it explains the pronoun system that makes everything click.</div>
       </div>
-      <button onclick="openCheatSheet('cheatsheet-phrases.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet →</button>
+      <button onclick="openCheatSheet('cheatsheet-phrases.html')" style="background:var(--gold);color:#000;padding:8px 16px;border-radius:8px;font-size:0.8rem;font-weight:800;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-body);">View Cheat Sheet ?</button>
     </div>
   </div>
 
@@ -62,8 +62,8 @@
   <div style="max-width:680px;margin:0 auto 24px;padding:0 16px;">
     <div style="display:flex;gap:8px;background:rgba(255,255,255,0.05);border-radius:12px;padding:6px;">
       <button id="tab-beginner" onclick="setDifficulty('beginner')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:var(--gold);color:#000;">Beginner</button>
-      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate 🔒</button>
-      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert 🔒</button>
+      <button id="tab-intermediate" onclick="setDifficulty('intermediate')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Intermediate ??</button>
+      <button id="tab-expert" onclick="setDifficulty('expert')" style="flex:1;padding:10px;border:none;border-radius:8px;font-family:var(--font-body);font-weight:800;font-size:0.85rem;cursor:pointer;background:transparent;color:rgba(255,255,255,0.5);">Expert ??</button>
     </div>
   </div>
 
@@ -94,18 +94,18 @@
       <div id="feedback" style="display:none;padding:14px 18px;border-radius:10px;font-weight:700;font-size:0.9rem;margin-bottom:16px;"></div>
 
       <!-- Next button -->
-      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question →</button>
+      <button id="nextBtn" onclick="nextQuestion()" style="display:none;width:100%;padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Next Question ?</button>
     </div>
 
     <!-- Results card -->
     <div id="resultsCard" style="display:none;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 28px;text-align:center;">
-      <div style="font-size:3rem;margin-bottom:16px;">🎉</div>
+      <div style="font-size:3rem;margin-bottom:16px;">??</div>
       <h2 style="font-size:1.8rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</h2>
       <div id="finalScore" style="font-size:1.1rem;color:var(--gold);font-weight:800;margin-bottom:8px;"></div>
       <div id="resultsMsg" style="font-size:0.9rem;color:rgba(255,255,255,0.6);margin-bottom:28px;"></div>
       <div style="display:flex;flex-direction:column;gap:12px;">
         <button onclick="restartQuiz()" style="padding:14px;background:var(--gold);color:#000;border:none;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:1rem;cursor:pointer;">Try Again</button>
-        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">← Back to All Subjects</a>
+        <a href="subjects.html" style="display:block;padding:14px;background:rgba(255,255,255,0.08);color:white;border-radius:10px;font-family:var(--font-body);font-weight:800;font-size:0.9rem;text-decoration:none;">? Back to All Subjects</a>
       </div>
     </div>
 
@@ -114,7 +114,7 @@
 
 <div id="footer-placeholder"></div>
 <script src="../js/components.js"></script>
-<script src="../js/auth.js"></script>
+<script src="../js/auth.js?v=2"></script>
 <script>
 
 function openCheatSheet(url) {
@@ -122,109 +122,109 @@ function openCheatSheet(url) {
   if (isMobile) { window.location.href = url; } else { window.open(url, '_blank'); }
 }
 
-// ── QUIZ DATA ────────────────────────────────────────────────────────────────
+// -- QUIZ DATA ----------------------------------------------------------------
 // vn = Vietnamese text, pr = English pronunciation guide, d = distractors
 
 const quizData = {
   beginner: [
-    {cat:"Greetings", en:"Hello", vn:"Xin chào", pr:"sin chow",
-      d:[{vn:"Tạm biệt",pr:"tahm byet"},{vn:"Cảm ơn",pr:"cahm uhn"},{vn:"Xin lỗi",pr:"sin loy"}]},
-    {cat:"Greetings", en:"Goodbye", vn:"Tạm biệt", pr:"tahm byet",
-      d:[{vn:"Xin chào",pr:"sin chow"},{vn:"Hẹn gặp lại",pr:"hen gup lie"},{vn:"Cảm ơn",pr:"cahm uhn"}]},
-    {cat:"Greetings", en:"See you again", vn:"Hẹn gặp lại", pr:"hen gup lie",
-      d:[{vn:"Tạm biệt",pr:"tahm byet"},{vn:"Xin chào",pr:"sin chow"},{vn:"Tốt lắm",pr:"tote lahm"}]},
-    {cat:"Greetings", en:"Good morning", vn:"Chào buổi sáng", pr:"chow boo-oy sahng",
-      d:[{vn:"Chào buổi tối",pr:"chow boo-oy toy"},{vn:"Chào buổi chiều",pr:"chow boo-oy chyew"},{vn:"Xin chào",pr:"sin chow"}]},
-    {cat:"Greetings", en:"Good evening", vn:"Chào buổi tối", pr:"chow boo-oy toy",
-      d:[{vn:"Chào buổi sáng",pr:"chow boo-oy sahng"},{vn:"Chào buổi chiều",pr:"chow boo-oy chyew"},{vn:"Tạm biệt",pr:"tahm byet"}]},
-    {cat:"Polite Words", en:"Thank you", vn:"Cảm ơn", pr:"cahm uhn",
-      d:[{vn:"Xin lỗi",pr:"sin loy"},{vn:"Không có gì",pr:"khome kaw yee"},{vn:"Dạ",pr:"yah"}]},
-    {cat:"Polite Words", en:"You're welcome", vn:"Không có gì", pr:"khome kaw yee",
-      d:[{vn:"Cảm ơn",pr:"cahm uhn"},{vn:"Xin lỗi",pr:"sin loy"},{vn:"Dạ",pr:"yah"}]},
-    {cat:"Polite Words", en:"Sorry / Excuse me", vn:"Xin lỗi", pr:"sin loy",
-      d:[{vn:"Cảm ơn",pr:"cahm uhn"},{vn:"Không có gì",pr:"khome kaw yee"},{vn:"Tạm biệt",pr:"tahm byet"}]},
-    {cat:"Polite Words", en:"Yes (polite)", vn:"Dạ", pr:"yah",
-      d:[{vn:"Không",pr:"khome"},{vn:"Vâng",pr:"vung"},{vn:"Ừ",pr:"uh"}]},
-    {cat:"Polite Words", en:"No", vn:"Không", pr:"khome",
-      d:[{vn:"Dạ",pr:"yah"},{vn:"Vâng",pr:"vung"},{vn:"Ừ",pr:"uh"}]},
-    {cat:"Basic Questions", en:"How are you?", vn:"Bạn khỏe không?", pr:"bahn khway khome",
-      d:[{vn:"Bạn tên gì?",pr:"bahn ten yee"},{vn:"Bạn ở đâu?",pr:"bahn uh doh"},{vn:"Bạn bao nhiêu tuổi?",pr:"bahn bow nyew too-oy"}]},
-    {cat:"Basic Questions", en:"I'm fine", vn:"Tôi khỏe", pr:"toy khway",
-      d:[{vn:"Tôi không khỏe",pr:"toy khome khway"},{vn:"Cảm ơn",pr:"cahm uhn"},{vn:"Xin lỗi",pr:"sin loy"}]},
-    {cat:"Basic Questions", en:"What is your name?", vn:"Bạn tên gì?", pr:"bahn ten yee",
-      d:[{vn:"Bạn khỏe không?",pr:"bahn khway khome"},{vn:"Bạn ở đâu?",pr:"bahn uh doh"},{vn:"Tên tôi là",pr:"ten toy lah"}]},
-    {cat:"Basic Questions", en:"My name is...", vn:"Tên tôi là...", pr:"ten toy lah",
-      d:[{vn:"Tôi là...",pr:"toy lah"},{vn:"Bạn tên gì?",pr:"bahn ten yee"},{vn:"Tôi khỏe",pr:"toy khway"}]},
-    {cat:"Basic Questions", en:"Nice to meet you", vn:"Rất vui được gặp bạn", pr:"rut voo-ee duh-uk gup bahn",
-      d:[{vn:"Hẹn gặp lại",pr:"hen gup lie"},{vn:"Tạm biệt",pr:"tahm byet"},{vn:"Xin chào",pr:"sin chow"}]},
+    {cat:"Greetings", en:"Hello", vn:"Xin ch�o", pr:"sin chow",
+      d:[{vn:"T?m bi?t",pr:"tahm byet"},{vn:"C?m on",pr:"cahm uhn"},{vn:"Xin l?i",pr:"sin loy"}]},
+    {cat:"Greetings", en:"Goodbye", vn:"T?m bi?t", pr:"tahm byet",
+      d:[{vn:"Xin ch�o",pr:"sin chow"},{vn:"H?n g?p l?i",pr:"hen gup lie"},{vn:"C?m on",pr:"cahm uhn"}]},
+    {cat:"Greetings", en:"See you again", vn:"H?n g?p l?i", pr:"hen gup lie",
+      d:[{vn:"T?m bi?t",pr:"tahm byet"},{vn:"Xin ch�o",pr:"sin chow"},{vn:"T?t l?m",pr:"tote lahm"}]},
+    {cat:"Greetings", en:"Good morning", vn:"Ch�o bu?i s�ng", pr:"chow boo-oy sahng",
+      d:[{vn:"Ch�o bu?i t?i",pr:"chow boo-oy toy"},{vn:"Ch�o bu?i chi?u",pr:"chow boo-oy chyew"},{vn:"Xin ch�o",pr:"sin chow"}]},
+    {cat:"Greetings", en:"Good evening", vn:"Ch�o bu?i t?i", pr:"chow boo-oy toy",
+      d:[{vn:"Ch�o bu?i s�ng",pr:"chow boo-oy sahng"},{vn:"Ch�o bu?i chi?u",pr:"chow boo-oy chyew"},{vn:"T?m bi?t",pr:"tahm byet"}]},
+    {cat:"Polite Words", en:"Thank you", vn:"C?m on", pr:"cahm uhn",
+      d:[{vn:"Xin l?i",pr:"sin loy"},{vn:"Kh�ng c� g�",pr:"khome kaw yee"},{vn:"D?",pr:"yah"}]},
+    {cat:"Polite Words", en:"You're welcome", vn:"Kh�ng c� g�", pr:"khome kaw yee",
+      d:[{vn:"C?m on",pr:"cahm uhn"},{vn:"Xin l?i",pr:"sin loy"},{vn:"D?",pr:"yah"}]},
+    {cat:"Polite Words", en:"Sorry / Excuse me", vn:"Xin l?i", pr:"sin loy",
+      d:[{vn:"C?m on",pr:"cahm uhn"},{vn:"Kh�ng c� g�",pr:"khome kaw yee"},{vn:"T?m bi?t",pr:"tahm byet"}]},
+    {cat:"Polite Words", en:"Yes (polite)", vn:"D?", pr:"yah",
+      d:[{vn:"Kh�ng",pr:"khome"},{vn:"V�ng",pr:"vung"},{vn:"?",pr:"uh"}]},
+    {cat:"Polite Words", en:"No", vn:"Kh�ng", pr:"khome",
+      d:[{vn:"D?",pr:"yah"},{vn:"V�ng",pr:"vung"},{vn:"?",pr:"uh"}]},
+    {cat:"Basic Questions", en:"How are you?", vn:"B?n kh?e kh�ng?", pr:"bahn khway khome",
+      d:[{vn:"B?n t�n g�?",pr:"bahn ten yee"},{vn:"B?n ? d�u?",pr:"bahn uh doh"},{vn:"B?n bao nhi�u tu?i?",pr:"bahn bow nyew too-oy"}]},
+    {cat:"Basic Questions", en:"I'm fine", vn:"T�i kh?e", pr:"toy khway",
+      d:[{vn:"T�i kh�ng kh?e",pr:"toy khome khway"},{vn:"C?m on",pr:"cahm uhn"},{vn:"Xin l?i",pr:"sin loy"}]},
+    {cat:"Basic Questions", en:"What is your name?", vn:"B?n t�n g�?", pr:"bahn ten yee",
+      d:[{vn:"B?n kh?e kh�ng?",pr:"bahn khway khome"},{vn:"B?n ? d�u?",pr:"bahn uh doh"},{vn:"T�n t�i l�",pr:"ten toy lah"}]},
+    {cat:"Basic Questions", en:"My name is...", vn:"T�n t�i l�...", pr:"ten toy lah",
+      d:[{vn:"T�i l�...",pr:"toy lah"},{vn:"B?n t�n g�?",pr:"bahn ten yee"},{vn:"T�i kh?e",pr:"toy khway"}]},
+    {cat:"Basic Questions", en:"Nice to meet you", vn:"R?t vui du?c g?p b?n", pr:"rut voo-ee duh-uk gup bahn",
+      d:[{vn:"H?n g?p l?i",pr:"hen gup lie"},{vn:"T?m bi?t",pr:"tahm byet"},{vn:"Xin ch�o",pr:"sin chow"}]},
   ],
   intermediate: [
-    {cat:"Getting Help", en:"I don't understand", vn:"Tôi không hiểu", pr:"toy khome hyew",
-      d:[{vn:"Tôi hiểu",pr:"toy hyew"},{vn:"Tôi không biết",pr:"toy khome byet"},{vn:"Nói lại đi",pr:"noy lie dee"}]},
-    {cat:"Getting Help", en:"Please say that again", vn:"Nói lại đi", pr:"noy lie dee",
-      d:[{vn:"Nói chậm hơn",pr:"noy chum huhn"},{vn:"Tôi không hiểu",pr:"toy khome hyew"},{vn:"Bạn nói gì?",pr:"bahn noy yee"}]},
-    {cat:"Getting Help", en:"Please speak more slowly", vn:"Nói chậm hơn", pr:"noy chum huhn",
-      d:[{vn:"Nói lại đi",pr:"noy lie dee"},{vn:"Tôi không hiểu",pr:"toy khome hyew"},{vn:"Nói tiếng Anh không?",pr:"noy tyeng anh khome"}]},
-    {cat:"Getting Help", en:"Do you speak English?", vn:"Bạn nói tiếng Anh không?", pr:"bahn noy tyeng anh khome",
-      d:[{vn:"Tôi không nói tiếng Việt",pr:"toy khome noy tyeng vyet"},{vn:"Nói chậm hơn",pr:"noy chum huhn"},{vn:"Bạn hiểu không?",pr:"bahn hyew khome"}]},
-    {cat:"Getting Help", en:"I don't speak Vietnamese well", vn:"Tôi nói tiếng Việt không giỏi", pr:"toy noy tyeng vyet khome yoy",
-      d:[{vn:"Tôi nói tiếng Anh",pr:"toy noy tyeng anh"},{vn:"Tôi không hiểu",pr:"toy khome hyew"},{vn:"Tôi học tiếng Việt",pr:"toy hawk tyeng vyet"}]},
-    {cat:"Directions", en:"Where is...?", vn:"...ở đâu?", pr:"uh doh",
-      d:[{vn:"...là gì?",pr:"lah yee"},{vn:"...bao nhiêu?",pr:"bow nyew"},{vn:"...khi nào?",pr:"khee now"}]},
-    {cat:"Directions", en:"Turn left", vn:"Rẽ trái", pr:"reh chai",
-      d:[{vn:"Rẽ phải",pr:"reh fai"},{vn:"Đi thẳng",pr:"dee tung"},{vn:"Quay lại",pr:"kway lie"}]},
-    {cat:"Directions", en:"Turn right", vn:"Rẽ phải", pr:"reh fai",
-      d:[{vn:"Rẽ trái",pr:"reh chai"},{vn:"Đi thẳng",pr:"dee tung"},{vn:"Quay lại",pr:"kway lie"}]},
-    {cat:"Directions", en:"Go straight", vn:"Đi thẳng", pr:"dee tung",
-      d:[{vn:"Rẽ trái",pr:"reh chai"},{vn:"Rẽ phải",pr:"reh fai"},{vn:"Quay lại",pr:"kway lie"}]},
+    {cat:"Getting Help", en:"I don't understand", vn:"T�i kh�ng hi?u", pr:"toy khome hyew",
+      d:[{vn:"T�i hi?u",pr:"toy hyew"},{vn:"T�i kh�ng bi?t",pr:"toy khome byet"},{vn:"N�i l?i di",pr:"noy lie dee"}]},
+    {cat:"Getting Help", en:"Please say that again", vn:"N�i l?i di", pr:"noy lie dee",
+      d:[{vn:"N�i ch?m hon",pr:"noy chum huhn"},{vn:"T�i kh�ng hi?u",pr:"toy khome hyew"},{vn:"B?n n�i g�?",pr:"bahn noy yee"}]},
+    {cat:"Getting Help", en:"Please speak more slowly", vn:"N�i ch?m hon", pr:"noy chum huhn",
+      d:[{vn:"N�i l?i di",pr:"noy lie dee"},{vn:"T�i kh�ng hi?u",pr:"toy khome hyew"},{vn:"N�i ti?ng Anh kh�ng?",pr:"noy tyeng anh khome"}]},
+    {cat:"Getting Help", en:"Do you speak English?", vn:"B?n n�i ti?ng Anh kh�ng?", pr:"bahn noy tyeng anh khome",
+      d:[{vn:"T�i kh�ng n�i ti?ng Vi?t",pr:"toy khome noy tyeng vyet"},{vn:"N�i ch?m hon",pr:"noy chum huhn"},{vn:"B?n hi?u kh�ng?",pr:"bahn hyew khome"}]},
+    {cat:"Getting Help", en:"I don't speak Vietnamese well", vn:"T�i n�i ti?ng Vi?t kh�ng gi?i", pr:"toy noy tyeng vyet khome yoy",
+      d:[{vn:"T�i n�i ti?ng Anh",pr:"toy noy tyeng anh"},{vn:"T�i kh�ng hi?u",pr:"toy khome hyew"},{vn:"T�i h?c ti?ng Vi?t",pr:"toy hawk tyeng vyet"}]},
+    {cat:"Directions", en:"Where is...?", vn:"...? d�u?", pr:"uh doh",
+      d:[{vn:"...l� g�?",pr:"lah yee"},{vn:"...bao nhi�u?",pr:"bow nyew"},{vn:"...khi n�o?",pr:"khee now"}]},
+    {cat:"Directions", en:"Turn left", vn:"R? tr�i", pr:"reh chai",
+      d:[{vn:"R? ph?i",pr:"reh fai"},{vn:"�i th?ng",pr:"dee tung"},{vn:"Quay l?i",pr:"kway lie"}]},
+    {cat:"Directions", en:"Turn right", vn:"R? ph?i", pr:"reh fai",
+      d:[{vn:"R? tr�i",pr:"reh chai"},{vn:"�i th?ng",pr:"dee tung"},{vn:"Quay l?i",pr:"kway lie"}]},
+    {cat:"Directions", en:"Go straight", vn:"�i th?ng", pr:"dee tung",
+      d:[{vn:"R? tr�i",pr:"reh chai"},{vn:"R? ph?i",pr:"reh fai"},{vn:"Quay l?i",pr:"kway lie"}]},
     {cat:"Directions", en:"How far is it?", vn:"Bao xa?", pr:"bow sah",
-      d:[{vn:"Bao lâu?",pr:"bow loh"},{vn:"Bao nhiêu?",pr:"bow nyew"},{vn:"Ở đâu?",pr:"uh doh"}]},
-    {cat:"Eating Out", en:"I want to order", vn:"Tôi muốn gọi món", pr:"toy moo-uhn goy mawn",
-      d:[{vn:"Tính tiền đi",pr:"ting tyen dee"},{vn:"Ngon lắm",pr:"ngawn lahm"},{vn:"Cho tôi xem thực đơn",pr:"chaw toy sem thuk duhn"}]},
-    {cat:"Eating Out", en:"The bill please", vn:"Tính tiền đi", pr:"ting tyen dee",
-      d:[{vn:"Tôi muốn gọi món",pr:"toy moo-uhn goy mawn"},{vn:"Ngon lắm",pr:"ngawn lahm"},{vn:"Thêm nữa đi",pr:"tem nyuh dee"}]},
-    {cat:"Eating Out", en:"Delicious!", vn:"Ngon lắm!", pr:"ngawn lahm",
-      d:[{vn:"Không ngon",pr:"khome ngawn"},{vn:"Cay quá",pr:"kay kwah"},{vn:"Thêm nữa đi",pr:"tem nyuh dee"}]},
-    {cat:"Eating Out", en:"Too spicy", vn:"Cay quá", pr:"kay kwah",
-      d:[{vn:"Ngon lắm",pr:"ngawn lahm"},{vn:"Không cay",pr:"khome kay"},{vn:"Thêm ớt đi",pr:"tem uht dee"}]},
-    {cat:"Eating Out", en:"No ice please", vn:"Không đá", pr:"khome dah",
-      d:[{vn:"Thêm đá",pr:"tem dah"},{vn:"Không đường",pr:"khome duh-ung"},{vn:"Ít đá",pr:"it dah"}]},
+      d:[{vn:"Bao l�u?",pr:"bow loh"},{vn:"Bao nhi�u?",pr:"bow nyew"},{vn:"? d�u?",pr:"uh doh"}]},
+    {cat:"Eating Out", en:"I want to order", vn:"T�i mu?n g?i m�n", pr:"toy moo-uhn goy mawn",
+      d:[{vn:"T�nh ti?n di",pr:"ting tyen dee"},{vn:"Ngon l?m",pr:"ngawn lahm"},{vn:"Cho t�i xem th?c don",pr:"chaw toy sem thuk duhn"}]},
+    {cat:"Eating Out", en:"The bill please", vn:"T�nh ti?n di", pr:"ting tyen dee",
+      d:[{vn:"T�i mu?n g?i m�n",pr:"toy moo-uhn goy mawn"},{vn:"Ngon l?m",pr:"ngawn lahm"},{vn:"Th�m n?a di",pr:"tem nyuh dee"}]},
+    {cat:"Eating Out", en:"Delicious!", vn:"Ngon l?m!", pr:"ngawn lahm",
+      d:[{vn:"Kh�ng ngon",pr:"khome ngawn"},{vn:"Cay qu�",pr:"kay kwah"},{vn:"Th�m n?a di",pr:"tem nyuh dee"}]},
+    {cat:"Eating Out", en:"Too spicy", vn:"Cay qu�", pr:"kay kwah",
+      d:[{vn:"Ngon l?m",pr:"ngawn lahm"},{vn:"Kh�ng cay",pr:"khome kay"},{vn:"Th�m ?t di",pr:"tem uht dee"}]},
+    {cat:"Eating Out", en:"No ice please", vn:"Kh�ng d�", pr:"khome dah",
+      d:[{vn:"Th�m d�",pr:"tem dah"},{vn:"Kh�ng du?ng",pr:"khome duh-ung"},{vn:"�t d�",pr:"it dah"}]},
   ],
   expert: [
-    {cat:"Social Phrases", en:"How long have you been in Vietnam?", vn:"Bạn ở Việt Nam bao lâu rồi?", pr:"bahn uh vyet nahm bow loh roy",
-      d:[{vn:"Bạn từ đâu đến?",pr:"bahn tuh doh den"},{vn:"Bạn làm gì?",pr:"bahn lahm yee"},{vn:"Bạn thích Việt Nam không?",pr:"bahn tick vyet nahm khome"}]},
-    {cat:"Social Phrases", en:"I love Vietnam", vn:"Tôi yêu Việt Nam", pr:"toy yew vyet nahm",
-      d:[{vn:"Tôi ghét Việt Nam",pr:"toy get vyet nahm"},{vn:"Tôi thích Việt Nam",pr:"toy tick vyet nahm"},{vn:"Việt Nam đẹp lắm",pr:"vyet nahm dep lahm"}]},
-    {cat:"Social Phrases", en:"The weather is very hot", vn:"Thời tiết nóng quá", pr:"thuh-ee tyet nawng kwah",
-      d:[{vn:"Thời tiết lạnh quá",pr:"thuh-ee tyet lahn kwah"},{vn:"Trời mưa",pr:"chuh-ee myuh"},{vn:"Thời tiết đẹp",pr:"thuh-ee tyet dep"}]},
-    {cat:"Social Phrases", en:"I miss Vietnam", vn:"Tôi nhớ Việt Nam", pr:"toy nyuh vyet nahm",
-      d:[{vn:"Tôi yêu Việt Nam",pr:"toy yew vyet nahm"},{vn:"Tôi ghét Việt Nam",pr:"toy get vyet nahm"},{vn:"Tôi ở Việt Nam",pr:"toy uh vyet nahm"}]},
-    {cat:"Bargaining", en:"Give me a better price", vn:"Bớt giá đi", pr:"buht yah dee",
-      d:[{vn:"Đắt quá",pr:"dat kwah"},{vn:"Tôi mua",pr:"toy moo-ah"},{vn:"Giá bao nhiêu?",pr:"yah bow nyew"}]},
-    {cat:"Bargaining", en:"That's too expensive", vn:"Đắt quá", pr:"dat kwah",
-      d:[{vn:"Rẻ lắm",pr:"reh lahm"},{vn:"Bớt giá đi",pr:"buht yah dee"},{vn:"Tôi không mua",pr:"toy khome moo-ah"}]},
-    {cat:"Bargaining", en:"I'll buy it", vn:"Tôi mua", pr:"toy moo-ah",
-      d:[{vn:"Tôi không mua",pr:"toy khome moo-ah"},{vn:"Bớt giá đi",pr:"buht yah dee"},{vn:"Cái này bao nhiêu?",pr:"kai nay bow nyew"}]},
-    {cat:"Bargaining", en:"I'm just looking", vn:"Tôi chỉ xem thôi", pr:"toy chee sem thoy",
-      d:[{vn:"Tôi muốn mua",pr:"toy moo-uhn moo-ah"},{vn:"Cái này bao nhiêu?",pr:"kai nay bow nyew"},{vn:"Cho tôi thử",pr:"chaw toy thuh"}]},
-    {cat:"Compliments", en:"Your Vietnamese is very good!", vn:"Tiếng Việt của bạn giỏi lắm!", pr:"tyeng vyet koo-ah bahn yoy lahm",
-      d:[{vn:"Bạn nói tiếng Anh không?",pr:"bahn noy tyeng anh khome"},{vn:"Tôi học tiếng Việt",pr:"toy hawk tyeng vyet"},{vn:"Tiếng Việt khó lắm",pr:"tyeng vyet kaw lahm"}]},
-    {cat:"Compliments", en:"You are very kind", vn:"Bạn tốt lắm", pr:"bahn tote lahm",
-      d:[{vn:"Cảm ơn",pr:"cahm uhn"},{vn:"Bạn đẹp lắm",pr:"bahn dep lahm"},{vn:"Bạn giỏi lắm",pr:"bahn yoy lahm"}]},
-    {cat:"Feelings", en:"I'm happy", vn:"Tôi vui", pr:"toy voo-ee",
-      d:[{vn:"Tôi buồn",pr:"toy boo-uhn"},{vn:"Tôi mệt",pr:"toy met"},{vn:"Tôi khỏe",pr:"toy khway"}]},
-    {cat:"Feelings", en:"I'm tired", vn:"Tôi mệt", pr:"toy met",
-      d:[{vn:"Tôi vui",pr:"toy voo-ee"},{vn:"Tôi buồn",pr:"toy boo-uhn"},{vn:"Tôi đói",pr:"toy doy"}]},
-    {cat:"Feelings", en:"I'm hungry", vn:"Tôi đói", pr:"toy doy",
-      d:[{vn:"Tôi khát",pr:"toy kaht"},{vn:"Tôi mệt",pr:"toy met"},{vn:"Tôi no",pr:"toy naw"}]},
-    {cat:"Feelings", en:"I'm full (after eating)", vn:"Tôi no", pr:"toy naw",
-      d:[{vn:"Tôi đói",pr:"toy doy"},{vn:"Tôi khát",pr:"toy kaht"},{vn:"Tôi mệt",pr:"toy met"}]},
-    {cat:"Feelings", en:"I'm lost", vn:"Tôi bị lạc", pr:"toy bee lahk",
-      d:[{vn:"Tôi không hiểu",pr:"toy khome hyew"},{vn:"Tôi cần giúp đỡ",pr:"toy kun yoop duh"},{vn:"Tôi ở đâu?",pr:"toy uh doh"}]},
+    {cat:"Social Phrases", en:"How long have you been in Vietnam?", vn:"B?n ? Vi?t Nam bao l�u r?i?", pr:"bahn uh vyet nahm bow loh roy",
+      d:[{vn:"B?n t? d�u d?n?",pr:"bahn tuh doh den"},{vn:"B?n l�m g�?",pr:"bahn lahm yee"},{vn:"B?n th�ch Vi?t Nam kh�ng?",pr:"bahn tick vyet nahm khome"}]},
+    {cat:"Social Phrases", en:"I love Vietnam", vn:"T�i y�u Vi?t Nam", pr:"toy yew vyet nahm",
+      d:[{vn:"T�i gh�t Vi?t Nam",pr:"toy get vyet nahm"},{vn:"T�i th�ch Vi?t Nam",pr:"toy tick vyet nahm"},{vn:"Vi?t Nam d?p l?m",pr:"vyet nahm dep lahm"}]},
+    {cat:"Social Phrases", en:"The weather is very hot", vn:"Th?i ti?t n�ng qu�", pr:"thuh-ee tyet nawng kwah",
+      d:[{vn:"Th?i ti?t l?nh qu�",pr:"thuh-ee tyet lahn kwah"},{vn:"Tr?i mua",pr:"chuh-ee myuh"},{vn:"Th?i ti?t d?p",pr:"thuh-ee tyet dep"}]},
+    {cat:"Social Phrases", en:"I miss Vietnam", vn:"T�i nh? Vi?t Nam", pr:"toy nyuh vyet nahm",
+      d:[{vn:"T�i y�u Vi?t Nam",pr:"toy yew vyet nahm"},{vn:"T�i gh�t Vi?t Nam",pr:"toy get vyet nahm"},{vn:"T�i ? Vi?t Nam",pr:"toy uh vyet nahm"}]},
+    {cat:"Bargaining", en:"Give me a better price", vn:"B?t gi� di", pr:"buht yah dee",
+      d:[{vn:"�?t qu�",pr:"dat kwah"},{vn:"T�i mua",pr:"toy moo-ah"},{vn:"Gi� bao nhi�u?",pr:"yah bow nyew"}]},
+    {cat:"Bargaining", en:"That's too expensive", vn:"�?t qu�", pr:"dat kwah",
+      d:[{vn:"R? l?m",pr:"reh lahm"},{vn:"B?t gi� di",pr:"buht yah dee"},{vn:"T�i kh�ng mua",pr:"toy khome moo-ah"}]},
+    {cat:"Bargaining", en:"I'll buy it", vn:"T�i mua", pr:"toy moo-ah",
+      d:[{vn:"T�i kh�ng mua",pr:"toy khome moo-ah"},{vn:"B?t gi� di",pr:"buht yah dee"},{vn:"C�i n�y bao nhi�u?",pr:"kai nay bow nyew"}]},
+    {cat:"Bargaining", en:"I'm just looking", vn:"T�i ch? xem th�i", pr:"toy chee sem thoy",
+      d:[{vn:"T�i mu?n mua",pr:"toy moo-uhn moo-ah"},{vn:"C�i n�y bao nhi�u?",pr:"kai nay bow nyew"},{vn:"Cho t�i th?",pr:"chaw toy thuh"}]},
+    {cat:"Compliments", en:"Your Vietnamese is very good!", vn:"Ti?ng Vi?t c?a b?n gi?i l?m!", pr:"tyeng vyet koo-ah bahn yoy lahm",
+      d:[{vn:"B?n n�i ti?ng Anh kh�ng?",pr:"bahn noy tyeng anh khome"},{vn:"T�i h?c ti?ng Vi?t",pr:"toy hawk tyeng vyet"},{vn:"Ti?ng Vi?t kh� l?m",pr:"tyeng vyet kaw lahm"}]},
+    {cat:"Compliments", en:"You are very kind", vn:"B?n t?t l?m", pr:"bahn tote lahm",
+      d:[{vn:"C?m on",pr:"cahm uhn"},{vn:"B?n d?p l?m",pr:"bahn dep lahm"},{vn:"B?n gi?i l?m",pr:"bahn yoy lahm"}]},
+    {cat:"Feelings", en:"I'm happy", vn:"T�i vui", pr:"toy voo-ee",
+      d:[{vn:"T�i bu?n",pr:"toy boo-uhn"},{vn:"T�i m?t",pr:"toy met"},{vn:"T�i kh?e",pr:"toy khway"}]},
+    {cat:"Feelings", en:"I'm tired", vn:"T�i m?t", pr:"toy met",
+      d:[{vn:"T�i vui",pr:"toy voo-ee"},{vn:"T�i bu?n",pr:"toy boo-uhn"},{vn:"T�i d�i",pr:"toy doy"}]},
+    {cat:"Feelings", en:"I'm hungry", vn:"T�i d�i", pr:"toy doy",
+      d:[{vn:"T�i kh�t",pr:"toy kaht"},{vn:"T�i m?t",pr:"toy met"},{vn:"T�i no",pr:"toy naw"}]},
+    {cat:"Feelings", en:"I'm full (after eating)", vn:"T�i no", pr:"toy naw",
+      d:[{vn:"T�i d�i",pr:"toy doy"},{vn:"T�i kh�t",pr:"toy kaht"},{vn:"T�i m?t",pr:"toy met"}]},
+    {cat:"Feelings", en:"I'm lost", vn:"T�i b? l?c", pr:"toy bee lahk",
+      d:[{vn:"T�i kh�ng hi?u",pr:"toy khome hyew"},{vn:"T�i c?n gi�p d?",pr:"toy kun yoop duh"},{vn:"T�i ? d�u?",pr:"toy uh doh"}]},
   ]
 };
 
-// ── QUIZ ENGINE ──────────────────────────────────────────────────────────────
+// -- QUIZ ENGINE --------------------------------------------------------------
 
 let currentDifficulty = 'beginner';
 let questions = [];
@@ -331,7 +331,7 @@ function selectAnswer(btn, selected, correct, correctPr) {
     feedback.style.background = 'rgba(46,204,113,0.15)';
     feedback.style.borderLeft = '3px solid #2ecc71';
     feedback.style.color = '#2ecc71';
-    feedback.textContent = '✓ Correct! ' + getPhraseFact(questions[current]);
+    feedback.textContent = '? Correct! ' + getPhraseFact(questions[current]);
   } else {
     btn.style.background = 'rgba(231,76,60,0.3)';
     btn.style.borderColor = '#e74c3c';
@@ -339,7 +339,7 @@ function selectAnswer(btn, selected, correct, correctPr) {
     feedback.style.background = 'rgba(231,76,60,0.15)';
     feedback.style.borderLeft = '3px solid #e74c3c';
     feedback.style.color = '#e74c3c';
-    feedback.textContent = `✗ The answer is: ${correct} (${correctPr})`;
+    feedback.textContent = `? The answer is: ${correct} (${correctPr})`;
   }
 
   document.getElementById('scoreText').textContent = `Score: ${score}`;
@@ -351,16 +351,16 @@ function nextQuestion() { showQuestion(); }
 
 function getPhraseFact(q) {
   const facts = {
-    'Greetings': 'In Vietnam, greetings change based on age — "anh", "chị", "em" replace "bạn" depending on who you\'re talking to.',
-    'Polite Words': '"Dạ" is a Southern Vietnamese way of saying yes politely — you\'ll hear it constantly in Saigon!',
-    'Basic Questions': 'Vietnamese uses pronouns based on relationship. "Bạn" (friend) works with strangers your own age.',
-    'Getting Help': 'Locals appreciate any effort to speak Vietnamese — even a simple "xin lỗi" goes a long way.',
-    'Directions': 'When asking directions, point and use "ở đâu?" — locals will understand even if your accent isn\'t perfect.',
-    'Eating Out': 'Street food vendors love when foreigners order in Vietnamese — you might even get a better price!',
+    'Greetings': 'In Vietnam, greetings change based on age � "anh", "ch?", "em" replace "b?n" depending on who you\'re talking to.',
+    'Polite Words': '"D?" is a Southern Vietnamese way of saying yes politely � you\'ll hear it constantly in Saigon!',
+    'Basic Questions': 'Vietnamese uses pronouns based on relationship. "B?n" (friend) works with strangers your own age.',
+    'Getting Help': 'Locals appreciate any effort to speak Vietnamese � even a simple "xin l?i" goes a long way.',
+    'Directions': 'When asking directions, point and use "? d�u?" � locals will understand even if your accent isn\'t perfect.',
+    'Eating Out': 'Street food vendors love when foreigners order in Vietnamese � you might even get a better price!',
     'Bargaining': 'Bargaining is normal at markets but not in shops with fixed prices. Start at 50% of the asking price.',
-    'Social Phrases': 'Vietnamese people love asking personal questions — it\'s friendly curiosity, not rudeness!',
-    'Compliments': 'Complimenting someone\'s Vietnamese always gets a big smile — they rarely expect foreigners to try!',
-    'Feelings': 'Expressing feelings simply is totally fine in Vietnamese — locals will appreciate the effort.',
+    'Social Phrases': 'Vietnamese people love asking personal questions � it\'s friendly curiosity, not rudeness!',
+    'Compliments': 'Complimenting someone\'s Vietnamese always gets a big smile � they rarely expect foreigners to try!',
+    'Feelings': 'Expressing feelings simply is totally fine in Vietnamese � locals will appreciate the effort.',
   };
   return facts[q.cat] || 'Keep going!';
 }
@@ -371,10 +371,10 @@ function showResults() {
   const pct = score / questions.length;
   document.getElementById('finalScore').textContent = `You scored ${score} out of ${questions.length}`;
   const msgs = [
-    [0.9, '🏆 Xuất sắc lắm! (Outstanding!) You\'re a natural!'],
-    [0.8, '🌟 Giỏi lắm! (Very good!) Keep it up!'],
-    [0.6, '👍 Khá tốt! (Pretty good!) Almost there!'],
-    [0, '💪 Keep practicing! Bạn sẽ tiến bộ! (You will improve!)']
+    [0.9, '?? Xu?t s?c l?m! (Outstanding!) You\'re a natural!'],
+    [0.8, '?? Gi?i l?m! (Very good!) Keep it up!'],
+    [0.6, '?? Kh� t?t! (Pretty good!) Almost there!'],
+    [0, '?? Keep practicing! B?n s? ti?n b?! (You will improve!)']
   ];
   document.getElementById('resultsMsg').textContent = msgs.find(([t]) => pct >= t)[1];
 }
@@ -401,3 +401,4 @@ document.addEventListener('DOMContentLoaded', restartQuiz);
 
 </body>
 </html>
+
