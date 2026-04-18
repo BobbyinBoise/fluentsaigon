@@ -1,11 +1,28 @@
 // ── AUTH & SUBSCRIPTION SYSTEM ──────────────────────────────────────────────
-// Real Netlify Identity auth — replaces localStorage simulation
+// Real Netlify Identity auth using GoTrue directly — custom UI, no Netlify popup
+
+let _goTrue = null;
+
+function getGoTrue() {
+  if (_goTrue) return _goTrue;
+  if (window.netlifyIdentity && window.netlifyIdentity.gotrue) {
+    _goTrue = window.netlifyIdentity.gotrue;
+    return _goTrue;
+  }
+  // Fallback: initialize GoTrue directly
+  _goTrue = new window.GoTrue({
+    APIUrl: 'https://fluentsaigon.com/.netlify/identity',
+    setCookie: true,
+  });
+  return _goTrue;
+}
 
 const Auth = {
   getUser() {
-    const netlifyIdentity = window.netlifyIdentity;
-    if (!netlifyIdentity) return null;
-    return netlifyIdentity.currentUser();
+    try {
+      const gt = getGoTrue();
+      return gt ? gt.currentUser() : null;
+    } catch { return null; }
   },
 
   isLoggedIn() {
@@ -22,45 +39,39 @@ const Auth = {
   getUserDisplayName() {
     const user = this.getUser();
     if (!user) return null;
-    return user.user_metadata?.full_name || user.email.split('@')[0];
+    return user.user_metadata?.full_name ||
+           user.user_metadata?.name ||
+           user.email.split('@')[0];
   },
 
-  getUserPlan() {
-    return this.isPro() ? 'pro' : 'free';
+  async login(email, password) {
+    const gt = getGoTrue();
+    const user = await gt.login(email, password, true);
+    return user;
   },
 
-  login(email, password) {
-    return new Promise((resolve, reject) => {
-      const netlifyIdentity = window.netlifyIdentity;
-      if (!netlifyIdentity) return reject(new Error('Auth not loaded'));
-      netlifyIdentity.open('login');
-      resolve();
-    });
-  },
-
-  signup(email, password, name) {
-    return new Promise((resolve, reject) => {
-      const netlifyIdentity = window.netlifyIdentity;
-      if (!netlifyIdentity) return reject(new Error('Auth not loaded'));
-      netlifyIdentity.open('signup');
-      resolve();
-    });
+  async signup(email, password, name) {
+    const gt = getGoTrue();
+    const user = await gt.signup(email, password, { full_name: name });
+    return user;
   },
 
   logout() {
-    const netlifyIdentity = window.netlifyIdentity;
-    if (netlifyIdentity) {
-      netlifyIdentity.logout();
+    const user = this.getUser();
+    if (user) {
+      user.logout().then(() => {
+        updateNavForUser();
+        showToast('You\'ve been logged out.', 'info');
+        window.location.href = '/index.html';
+      });
     }
   },
 
   loginWithGoogle() {
-    const netlifyIdentity = window.netlifyIdentity;
-    if (!netlifyIdentity) {
-      showToast('Auth not loaded', 'error');
-      return;
-    }
-    netlifyIdentity.open('login');
+    const gt = getGoTrue();
+    if (!gt) { showToast('Auth not loaded', 'error'); return; }
+    // Redirect to Google OAuth via Netlify Identity
+    window.location.href = 'https://fluentsaigon.com/.netlify/identity/authorize?provider=google';
   },
 
   upgradeToPro() {
@@ -75,29 +86,74 @@ const Auth = {
 // ── AUTH MODAL ───────────────────────────────────────────────────────────────
 const AuthModal = {
   open(mode = 'login') {
-    const netlifyIdentity = window.netlifyIdentity;
-    if (netlifyIdentity) {
-      netlifyIdentity.open(mode === 'signup' ? 'signup' : 'login');
-    }
+    const backdrop = document.getElementById('authModal');
+    if (!backdrop) return;
+    backdrop.classList.add('open');
+    this.setMode(mode);
   },
 
   close() {
-    const netlifyIdentity = window.netlifyIdentity;
-    if (netlifyIdentity) netlifyIdentity.close();
+    const backdrop = document.getElementById('authModal');
+    if (backdrop) backdrop.classList.remove('open');
   },
 
   setMode(mode) {
-    this.open(mode);
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSub = document.getElementById('modalSub');
+    if (!loginForm) return;
+    if (mode === 'login') {
+      loginForm.style.display = 'block';
+      signupForm.style.display = 'none';
+      modalTitle.textContent = 'Welcome Back';
+      modalSub.textContent = 'Sign in to continue your Vietnamese journey';
+    } else {
+      loginForm.style.display = 'none';
+      signupForm.style.display = 'block';
+      modalTitle.textContent = 'Start Learning Free';
+      modalSub.textContent = '7-day Pro trial included — no charge until day 8';
+    }
   },
 
-  handleLogin(e) {
-    if (e) e.preventDefault();
-    AuthModal.open('login');
+  async handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    const btn = e.target.querySelector('button[type=submit]');
+    btn.textContent = 'Signing in...';
+    btn.disabled = true;
+    try {
+      await Auth.login(email, password);
+      AuthModal.close();
+      updateNavForUser();
+      showToast('Welcome back! 👋');
+    } catch (err) {
+      showToast(err.message || 'Login failed', 'error');
+      btn.textContent = 'Sign In';
+      btn.disabled = false;
+    }
   },
 
-  handleSignup(e) {
-    if (e) e.preventDefault();
-    AuthModal.open('signup');
+  async handleSignup(e) {
+    e.preventDefault();
+    const name = document.getElementById('signupName').value;
+    const email = document.getElementById('signupEmail').value;
+    const password = document.getElementById('signupPassword').value;
+    const btn = e.target.querySelector('button[type=submit]');
+    btn.textContent = 'Creating account...';
+    btn.disabled = true;
+    try {
+      await Auth.signup(email, password, name);
+      AuthModal.close();
+      showToast('Almost there! Check your email to confirm your account 📧', 'info');
+      btn.textContent = 'Create Free Account';
+      btn.disabled = false;
+    } catch (err) {
+      showToast(err.message || 'Signup failed', 'error');
+      btn.textContent = 'Create Free Account';
+      btn.disabled = false;
+    }
   }
 };
 
@@ -174,41 +230,45 @@ function initNav() {
   updateNavForUser();
 }
 
-// ── NETLIFY IDENTITY INIT ────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  initNav();
+// ── HANDLE OAUTH CALLBACK ────────────────────────────────────────────────────
+function handleOAuthCallback() {
+  // After Google OAuth, Netlify redirects back with a token in the URL hash
+  if (window.location.hash && window.location.hash.includes('access_token')) {
+    const gt = getGoTrue();
+    if (gt) {
+      gt.currentUser()?.reload().then(() => {
+        updateNavForUser();
+        showToast('Welcome! 🎉');
+        // Clean up the URL hash
+        history.replaceState(null, '', window.location.pathname);
+      });
+    }
+  }
+}
 
-  const netlifyIdentity = window.netlifyIdentity;
-  if (!netlifyIdentity) {
-    console.warn('Netlify Identity not loaded');
-    return;
+// ── INIT ─────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  // Wait for netlifyIdentity to be ready
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', () => {
+      initNav();
+      handleOAuthCallback();
+    });
+    window.netlifyIdentity.init({ container: '#modal-placeholder' });
+  } else {
+    initNav();
+    handleOAuthCallback();
   }
 
-  // Init
-  netlifyIdentity.init();
+  const loginForm = document.getElementById('loginForm');
+  const signupForm = document.getElementById('signupForm');
+  if (loginForm) loginForm.addEventListener('submit', AuthModal.handleLogin);
+  if (signupForm) signupForm.addEventListener('submit', AuthModal.handleSignup);
 
-  // After login
-  netlifyIdentity.on('login', (user) => {
-    netlifyIdentity.close();
-    updateNavForUser();
-    const name = Auth.getUserDisplayName();
-    showToast('Welcome back, ' + name + '! 👋');
-  });
-
-  // After signup
-  netlifyIdentity.on('init', (user) => {
-    updateNavForUser();
-  });
-
-  // After logout
-  netlifyIdentity.on('logout', () => {
-    updateNavForUser();
-    showToast('You\'ve been logged out.', 'info');
-    window.location.href = '/index.html';
-  });
-
-  // Handle email confirmation redirects
-  if (window.location.hash && window.location.hash.includes('confirmation_token')) {
-    netlifyIdentity.on('init', () => netlifyIdentity.open());
+  const backdrop = document.getElementById('authModal');
+  if (backdrop) {
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) AuthModal.close();
+    });
   }
 });
