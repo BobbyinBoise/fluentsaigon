@@ -1,142 +1,103 @@
 // ── AUTH & SUBSCRIPTION SYSTEM ──────────────────────────────────────────────
-// Currently uses localStorage to simulate auth state
-// TODO: Replace login/signup/logout with real Netlify Identity before launch
+// Real Netlify Identity auth — replaces localStorage simulation
 
 const Auth = {
   getUser() {
-    try { return JSON.parse(localStorage.getItem('lv_user')) || null; }
-    catch { return null; }
+    const netlifyIdentity = window.netlifyIdentity;
+    if (!netlifyIdentity) return null;
+    return netlifyIdentity.currentUser();
   },
 
-  isLoggedIn() { return !!this.getUser(); },
+  isLoggedIn() {
+    return !!this.getUser();
+  },
 
   isPro() {
     const user = this.getUser();
-    return user && user.plan === 'pro';
+    if (!user) return false;
+    const roles = user.app_metadata?.roles || [];
+    return roles.includes('pro');
+  },
+
+  getUserDisplayName() {
+    const user = this.getUser();
+    if (!user) return null;
+    return user.user_metadata?.full_name || user.email.split('@')[0];
+  },
+
+  getUserPlan() {
+    return this.isPro() ? 'pro' : 'free';
   },
 
   login(email, password) {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (email && password.length >= 6) {
-          const user = { email, plan: 'free', name: email.split('@')[0] };
-          localStorage.setItem('lv_user', JSON.stringify(user));
-          resolve(user);
-        } else {
-          reject(new Error('Invalid credentials'));
-        }
-      }, 800);
+      const netlifyIdentity = window.netlifyIdentity;
+      if (!netlifyIdentity) return reject(new Error('Auth not loaded'));
+      netlifyIdentity.open('login');
+      resolve();
     });
   },
 
   signup(email, password, name) {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (email && password.length >= 6) {
-          const user = { email, plan: 'free', name: name || email.split('@')[0] };
-          localStorage.setItem('lv_user', JSON.stringify(user));
-          resolve(user);
-        } else {
-          reject(new Error('Please use a valid email and password (6+ chars)'));
-        }
-      }, 800);
+      const netlifyIdentity = window.netlifyIdentity;
+      if (!netlifyIdentity) return reject(new Error('Auth not loaded'));
+      netlifyIdentity.open('signup');
+      resolve();
     });
   },
 
   logout() {
-    localStorage.removeItem('lv_user');
-    window.location.href = '/index.html';
+    const netlifyIdentity = window.netlifyIdentity;
+    if (netlifyIdentity) {
+      netlifyIdentity.logout();
+    }
   },
 
-  // TODO: Wire to real Google OAuth before launch
   loginWithGoogle() {
-    showToast('Google login coming soon! Use email for now.', 'info');
+    const netlifyIdentity = window.netlifyIdentity;
+    if (!netlifyIdentity) {
+      showToast('Auth not loaded', 'error');
+      return;
+    }
+    netlifyIdentity.open('login');
   },
 
   upgradeToPro() {
-    const user = this.getUser();
-    if (user) {
-      // TODO: Replace with real Stripe checkout before launch
-      // window.location.href = '/.netlify/functions/create-checkout?plan=pro';
-      user.plan = 'pro';
-      localStorage.setItem('lv_user', JSON.stringify(user));
-      window.location.reload();
-    } else {
+    if (!this.isLoggedIn()) {
       AuthModal.open('signup');
+      return;
     }
+    window.location.href = '/pages/pricing.html';
   }
 };
 
 // ── AUTH MODAL ───────────────────────────────────────────────────────────────
 const AuthModal = {
   open(mode = 'login') {
-    const backdrop = document.getElementById('authModal');
-    if (!backdrop) return;
-    backdrop.classList.add('open');
-    this.setMode(mode);
+    const netlifyIdentity = window.netlifyIdentity;
+    if (netlifyIdentity) {
+      netlifyIdentity.open(mode === 'signup' ? 'signup' : 'login');
+    }
   },
 
   close() {
-    const backdrop = document.getElementById('authModal');
-    if (backdrop) backdrop.classList.remove('open');
+    const netlifyIdentity = window.netlifyIdentity;
+    if (netlifyIdentity) netlifyIdentity.close();
   },
 
   setMode(mode) {
-    const loginForm = document.getElementById('loginForm');
-    const signupForm = document.getElementById('signupForm');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalSub = document.getElementById('modalSub');
-    if (!loginForm) return;
-    if (mode === 'login') {
-      loginForm.style.display = 'block';
-      signupForm.style.display = 'none';
-      modalTitle.textContent = 'Welcome Back';
-      modalSub.textContent = 'Sign in to continue your Vietnamese journey';
-    } else {
-      loginForm.style.display = 'none';
-      signupForm.style.display = 'block';
-      modalTitle.textContent = 'Start Learning Free';
-      modalSub.textContent = '7-day Pro trial included — no charge until day 8';
-    }
+    this.open(mode);
   },
 
-  async handleLogin(e) {
-    e.preventDefault();
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-    const btn = e.target.querySelector('button[type=submit]');
-    btn.textContent = 'Signing in...';
-    btn.disabled = true;
-    try {
-      await Auth.login(email, password);
-      AuthModal.close();
-      updateNavForUser();
-      showToast('Welcome back! 👋');
-    } catch (err) {
-      showToast(err.message, 'error');
-      btn.textContent = 'Sign In';
-      btn.disabled = false;
-    }
+  handleLogin(e) {
+    if (e) e.preventDefault();
+    AuthModal.open('login');
   },
 
-  async handleSignup(e) {
-    e.preventDefault();
-    const name = document.getElementById('signupName').value;
-    const email = document.getElementById('signupEmail').value;
-    const password = document.getElementById('signupPassword').value;
-    const btn = e.target.querySelector('button[type=submit]');
-    btn.textContent = 'Creating account...';
-    btn.disabled = true;
-    try {
-      await Auth.signup(email, password, name);
-      AuthModal.close();
-      updateNavForUser();
-      showToast('Chào mừng ' + name + '! 🎉 Welcome to FluentSaigon!');
-    } catch (err) {
-      showToast(err.message, 'error');
-      btn.textContent = 'Create Free Account';
-      btn.disabled = false;
-    }
+  handleSignup(e) {
+    if (e) e.preventDefault();
+    AuthModal.open('signup');
   }
 };
 
@@ -166,19 +127,17 @@ function updateNavForUser() {
   const navLogout = document.getElementById('navLogout');
 
   if (user) {
-    // Logged in: hide Sign In + Start Free, show username + logout
     if (navSignIn) navSignIn.style.display = 'none';
     if (navCta) navCta.style.display = 'none';
     if (navUser) {
       navUser.style.display = 'flex';
       const nameEl = document.getElementById('navUserName');
-      if (nameEl) nameEl.textContent = user.name;
+      if (nameEl) nameEl.textContent = Auth.getUserDisplayName();
       const planEl = document.getElementById('navUserPlan');
-      if (planEl) planEl.textContent = user.plan === 'pro' ? '⭐ PRO' : 'Free';
+      if (planEl) planEl.textContent = Auth.isPro() ? '⭐ PRO' : 'Free';
     }
     if (navLogout) navLogout.style.display = 'list-item';
   } else {
-    // Logged out: show Sign In + Start Free, hide username + logout
     if (navSignIn) navSignIn.style.display = 'list-item';
     if (navCta) navCta.style.display = 'list-item';
     if (navUser) navUser.style.display = 'none';
@@ -215,19 +174,41 @@ function initNav() {
   updateNavForUser();
 }
 
-// ── INIT ─────────────────────────────────────────────────────────────────────
+// ── NETLIFY IDENTITY INIT ────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
 
-  const loginForm = document.getElementById('loginForm');
-  const signupForm = document.getElementById('signupForm');
-  if (loginForm) loginForm.addEventListener('submit', AuthModal.handleLogin);
-  if (signupForm) signupForm.addEventListener('submit', AuthModal.handleSignup);
+  const netlifyIdentity = window.netlifyIdentity;
+  if (!netlifyIdentity) {
+    console.warn('Netlify Identity not loaded');
+    return;
+  }
 
-  const backdrop = document.getElementById('authModal');
-  if (backdrop) {
-    backdrop.addEventListener('click', (e) => {
-      if (e.target === backdrop) AuthModal.close();
-    });
+  // Init
+  netlifyIdentity.init();
+
+  // After login
+  netlifyIdentity.on('login', (user) => {
+    netlifyIdentity.close();
+    updateNavForUser();
+    const name = Auth.getUserDisplayName();
+    showToast('Welcome back, ' + name + '! 👋');
+  });
+
+  // After signup
+  netlifyIdentity.on('init', (user) => {
+    updateNavForUser();
+  });
+
+  // After logout
+  netlifyIdentity.on('logout', () => {
+    updateNavForUser();
+    showToast('You\'ve been logged out.', 'info');
+    window.location.href = '/index.html';
+  });
+
+  // Handle email confirmation redirects
+  if (window.location.hash && window.location.hash.includes('confirmation_token')) {
+    netlifyIdentity.on('init', () => netlifyIdentity.open());
   }
 });
