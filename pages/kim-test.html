@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FluentSaigon — Tester Access</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;700;800&display=swap');
+
+  :root {
+    --navy: #0d1b3e;
+    --navy-mid: #112050;
+    --gold: #f5c518;
+    --red: #c0392b;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .card {
+    background: var(--navy-mid);
+    border: 1px solid rgba(245,197,24,0.25);
+    border-radius: 24px;
+    padding: 40px 28px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  }
+
+  .flag { font-size: 3rem; margin-bottom: 12px; }
+
+  .site-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(245,197,24,0.15);
+    border: 1px solid rgba(245,197,24,0.4);
+    color: var(--gold);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+  }
+
+  .greeting {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .greeting strong {
+    color: var(--white);
+    font-weight: 800;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    border-radius: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.15s, opacity 0.15s;
+  }
+
+  .btn:active { transform: scale(0.97); opacity: 0.9; }
+
+  .btn-primary {
+    background: var(--gold);
+    color: #000;
+    margin-bottom: 12px;
+  }
+
+  .btn-secondary {
+    background: rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .status {
+    margin-top: 28px;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: none;
+  }
+
+  .status.success {
+    background: rgba(46,204,113,0.12);
+    border: 1px solid rgba(46,204,113,0.3);
+    color: #2ecc71;
+    display: block;
+  }
+
+  .status.error {
+    background: rgba(231,76,60,0.12);
+    border: 1px solid rgba(231,76,60,0.3);
+    color: #e74c3c;
+    display: block;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin: 28px 0;
+  }
+
+  .label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 12px;
+  }
+
+  .reset-btn {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.3);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 16px;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="flag">🇻🇳</div>
+  <div class="site-name">FluentSaigon</div>
+  <div class="badge">⭐ Tester Access — Kim</div>
+
+  <p class="greeting">
+    Xin chào Kim! 👋<br><br>
+    Tap the button below to activate <strong>full Pro access</strong> and start testing the site.
+  </p>
+
+  <button class="btn btn-primary" onclick="activatePro()">
+    ✅ Activate Pro Access
+  </button>
+
+  <a href="/pages/subjects.html" class="btn btn-secondary" id="go-btn" style="display:none;">
+    → Go to Subjects
+  </a>
+
+  <div class="status" id="status"></div>
+
+  <hr class="divider">
+
+  <div class="label">Quick Links</div>
+  <a href="/pages/subjects.html" class="btn btn-secondary" style="margin-bottom:10px;">📚 All Subjects</a>
+  <a href="/pages/quiz-numbers.html" class="btn btn-secondary" style="margin-bottom:10px;">🔢 Numbers Quiz</a>
+  <a href="/pages/quiz-phrases.html" class="btn btn-secondary">👋 Phrases Quiz</a>
+
+  <br>
+  <button class="reset-btn" onclick="resetAccess()">Reset / Log Out</button>
+</div>
+
+<script>
+  function activatePro() {
+    try {
+      localStorage.setItem('fs_user', JSON.stringify({
+        email: 'kim@fluentsaigon-test.com',
+        plan: 'pro',
+        name: 'Kim'
+      }));
+
+      const status = document.getElementById('status');
+      status.className = 'status success';
+      status.textContent = '✅ Pro access activated! You can now access all subjects and quiz levels.';
+
+      document.getElementById('go-btn').style.display = 'block';
+
+      // Auto-redirect after 2 seconds
+      setTimeout(() => {
+        window.location.href = '/pages/subjects.html';
+      }, 2000);
+
+    } catch (e) {
+      const status = document.getElementById('status');
+      status.className = 'status error';
+      status.textContent = '❌ Something went wrong. Please try refreshing the page.';
+    }
+  }
+
+  function resetAccess() {
+    localStorage.removeItem('fs_user');
+    const status = document.getElementById('status');
+    status.className = 'status success';
+    status.textContent = '✅ Logged out. Tap Activate Pro Access to log back in.';
+    document.getElementById('go-btn').style.display = 'none';
+  }
+
+  // Check if already activated
+  window.addEventListener('load', () => {
+    const user = localStorage.getItem('fs_user');
+    if (user) {
+      const status = document.getElementById('status');
+      status.className = 'status success';
+      status.textContent = '✅ Pro access is already active!';
+      document.getElementById('go-btn').style.display = 'block';
+    }
+  });
+</script>
+
+</body>
+</html>
