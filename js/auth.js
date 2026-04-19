@@ -81,28 +81,19 @@ const AuthModal = {
     this.setMode(mode);
   },
 
+  forgotPassword() {
+    const email = document.getElementById('loginEmail').value.trim();
+    if (!email) {
+      alert('Enter your email address first, then click Forgot password.');
+      return;
+    }
+    netlifyIdentity.requestPasswordRecovery(email);
+    alert('Password reset email sent! Check your inbox.');
+  },
+
   close() {
     const backdrop = document.getElementById('authModal');
     if (backdrop) backdrop.classList.remove('open');
-  },
-
-  setMode(mode) {
-    const loginForm = document.getElementById('loginForm');
-    const signupForm = document.getElementById('signupForm');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalSub = document.getElementById('modalSub');
-    if (!loginForm) return;
-    if (mode === 'login') {
-      loginForm.style.display = 'block';
-      signupForm.style.display = 'none';
-      modalTitle.textContent = 'Welcome Back';
-      modalSub.textContent = 'Sign in to continue your Vietnamese journey';
-    } else {
-      loginForm.style.display = 'none';
-      signupForm.style.display = 'block';
-      modalTitle.textContent = 'Start Learning Free';
-      modalSub.textContent = '7-day Pro trial included - no charge until day 8';
-    }
   },
 
   async handleLogin(e) {

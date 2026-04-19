@@ -57,6 +57,9 @@ function getAuthModal() {
         <input type="password" id="loginPassword" placeholder="••••••••" required>
       </div>
       <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Sign In</button>
+      <div style="text-align:right;margin-top:-8px;margin-bottom:12px;">
+        <a href="#" onclick="AuthModal.forgotPassword();return false;" style="font-size:0.78rem;color:rgba(255,255,255,0.4);">Forgot password?</a>
+      </div>
       <div class="form-switch">Don't have an account? <a href="#" onclick="AuthModal.setMode('signup');return false;">Sign up free</a></div>
     </form>
 
