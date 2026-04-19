@@ -106,10 +106,43 @@ const AuthModal = {
       if (socialButtons) socialButtons.style.display = 'flex';
       if (title) title.textContent = 'Welcome Back';
       if (sub) sub.textContent = 'Sign in to continue your Vietnamese journey';
+      this.tickCooldown();
+    }
+  },
+
+  _cooldownTimer: null,
+
+  startCooldown() {
+    const COOLDOWN = 60;
+    localStorage.setItem('fs_reset_cooldown', Date.now() + COOLDOWN * 1000);
+    this.tickCooldown();
+  },
+
+  tickCooldown() {
+    const link = document.getElementById('forgotPasswordLink');
+    if (!link) return;
+    const expiry = parseInt(localStorage.getItem('fs_reset_cooldown') || '0');
+    const remaining = Math.ceil((expiry - Date.now()) / 1000);
+    if (remaining <= 0) {
+      localStorage.removeItem('fs_reset_cooldown');
+      link.style.pointerEvents = '';
+      link.style.opacity = '';
+      link.textContent = 'Forgot password?';
+      clearInterval(this._cooldownTimer);
+      this._cooldownTimer = null;
+      return;
+    }
+    link.style.pointerEvents = 'none';
+    link.style.opacity = '0.4';
+    link.textContent = 'Resend in ' + remaining + 's';
+    if (!this._cooldownTimer) {
+      this._cooldownTimer = setInterval(() => this.tickCooldown(), 1000);
     }
   },
 
   async forgotPassword() {
+    const expiry = parseInt(localStorage.getItem('fs_reset_cooldown') || '0');
+    if (Date.now() < expiry) return;
     const email = document.getElementById('loginEmail').value.trim();
     if (!email) {
       showToast('Enter your email address first, then click Forgot password.', 'error');
@@ -123,9 +156,11 @@ const AuthModal = {
       });
       if (response.status === 429) {
         showToast('Too many attempts — please wait a few minutes and try again.', 'error');
+        this.startCooldown();
         return;
       }
       if (!response.ok) throw new Error('Request failed');
+      this.startCooldown();
       AuthModal.close();
       showToast('Password reset email sent! Check your inbox.', 'info');
     } catch (err) {
