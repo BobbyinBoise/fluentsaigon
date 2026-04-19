@@ -1,0 +1,8 @@
+{
+  "text": "không <break time=\"1s\"/> một <break time=\"1s\"/> hai <break time=\"1s\"/> ba <break time=\"1s\"/> bốn <break time=\"1s\"/> năm <break time=\"1s\"/> sáu <break time=\"1s\"/> bảy <break time=\"1s\"/> tám <break time=\"1s\"/> chín <break time=\"1s\"/> mười",
+  "model_id": "eleven_multilingual_v2",
+  "voice_settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75
+  }
+}
