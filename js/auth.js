@@ -81,14 +81,40 @@ const AuthModal = {
     this.setMode(mode);
   },
 
-  forgotPassword() {
+  setMode(mode) {
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const title = document.getElementById('modalTitle');
+    if (mode === 'signup') {
+      if (loginForm) loginForm.style.display = 'none';
+      if (signupForm) signupForm.style.display = '';
+      if (title) title.textContent = 'Create Account';
+    } else {
+      if (loginForm) loginForm.style.display = '';
+      if (signupForm) signupForm.style.display = 'none';
+      if (title) title.textContent = 'Welcome Back';
+    }
+  },
+
+  async forgotPassword() {
     const email = document.getElementById('loginEmail').value.trim();
     if (!email) {
-      alert('Enter your email address first, then click Forgot password.');
+      showToast('Enter your email address first, then click Forgot password.', 'error');
       return;
     }
-    netlifyIdentity.requestPasswordRecovery(email);
-    alert('Password reset email sent! Check your inbox.');
+    try {
+      const response = await fetch('https://fluentsaigon.com/.netlify/identity/recover', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      if (!response.ok) throw new Error('Request failed');
+      AuthModal.close();
+      showToast('Password reset email sent! Check your inbox.', 'info');
+    } catch (err) {
+      console.error('forgotPassword failed:', err);
+      showToast('Could not send reset email. Make sure that address has an account.', 'error');
+    }
   },
 
   close() {
