@@ -86,6 +86,19 @@ function getAuthModal() {
       <div class="form-switch">Already have an account? <a href="#" onclick="AuthModal.setMode('login');return false;">Sign in</a></div>
     </form>
 
+    <form id="resetForm" style="display:none" onsubmit="AuthModal.handleResetPassword(event)">
+      <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.5;">Choose a new password for your account.</p>
+      <div class="form-group">
+        <label>New Password</label>
+        <input type="password" id="resetPassword" placeholder="6+ characters" required minlength="6">
+      </div>
+      <div class="form-group">
+        <label>Confirm New Password</label>
+        <input type="password" id="resetPasswordConfirm" placeholder="••••••••" required minlength="6">
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Set New Password</button>
+    </form>
+
   </div>
 </div>`;
 }

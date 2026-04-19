@@ -84,15 +84,28 @@ const AuthModal = {
   setMode(mode) {
     const loginForm = document.getElementById('loginForm');
     const signupForm = document.getElementById('signupForm');
+    const resetForm = document.getElementById('resetForm');
     const title = document.getElementById('modalTitle');
+    const sub = document.getElementById('modalSub');
+    const socialButtons = document.getElementById('socialButtons');
+    if (loginForm) loginForm.style.display = 'none';
+    if (signupForm) signupForm.style.display = 'none';
+    if (resetForm) resetForm.style.display = 'none';
     if (mode === 'signup') {
-      if (loginForm) loginForm.style.display = 'none';
       if (signupForm) signupForm.style.display = '';
+      if (socialButtons) socialButtons.style.display = 'flex';
       if (title) title.textContent = 'Create Account';
+      if (sub) sub.textContent = 'Start your Vietnamese journey for free';
+    } else if (mode === 'reset') {
+      if (resetForm) resetForm.style.display = '';
+      if (socialButtons) socialButtons.style.display = 'none';
+      if (title) title.textContent = 'Set New Password';
+      if (sub) sub.textContent = '';
     } else {
       if (loginForm) loginForm.style.display = '';
-      if (signupForm) signupForm.style.display = 'none';
+      if (socialButtons) socialButtons.style.display = 'flex';
       if (title) title.textContent = 'Welcome Back';
+      if (sub) sub.textContent = 'Sign in to continue your Vietnamese journey';
     }
   },
 
@@ -108,6 +121,10 @@ const AuthModal = {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email })
       });
+      if (response.status === 429) {
+        showToast('Too many attempts — please wait a few minutes and try again.', 'error');
+        return;
+      }
       if (!response.ok) throw new Error('Request failed');
       AuthModal.close();
       showToast('Password reset email sent! Check your inbox.', 'info');
@@ -158,6 +175,32 @@ const AuthModal = {
     } catch (err) {
       showToast(err.message || 'Signup failed', 'error');
       btn.textContent = 'Create Free Account';
+      btn.disabled = false;
+    }
+  },
+
+  async handleResetPassword(e) {
+    e.preventDefault();
+    const password = document.getElementById('resetPassword').value;
+    const confirm = document.getElementById('resetPasswordConfirm').value;
+    if (password !== confirm) {
+      showToast('Passwords do not match', 'error');
+      return;
+    }
+    const btn = e.target.querySelector('button[type=submit]');
+    btn.textContent = 'Saving...';
+    btn.disabled = true;
+    try {
+      const ni = window.netlifyIdentity;
+      const user = ni ? ni.currentUser() : null;
+      if (!user) throw new Error('Session expired — please request a new reset link.');
+      await user.update({ password });
+      AuthModal.close();
+      updateNavForUser();
+      showToast('Password updated! You are now signed in.');
+    } catch (err) {
+      showToast(err.message || 'Could not update password', 'error');
+      btn.textContent = 'Set New Password';
       btn.disabled = false;
     }
   }
@@ -238,10 +281,14 @@ document.addEventListener('DOMContentLoaded', () => {
     ni.on('init', (user) => {
       ni.close();
       initNav();
-      if (window.location.hash.includes('access_token')) {
+      const hash = window.location.hash;
+      if (hash.includes('recovery_token') || hash.includes('type=recovery')) {
+        history.replaceState(null, '', window.location.pathname);
+        AuthModal.open('reset');
+      } else if (hash.includes('access_token')) {
+        history.replaceState(null, '', window.location.pathname);
         updateNavForUser();
         showToast('Welcome!');
-        history.replaceState(null, '', window.location.pathname);
       }
     });
 
