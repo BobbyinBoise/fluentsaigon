@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vietnamese Numbers Cheat Sheet - FluentSaigon</title>
 <meta name="description" content="Vietnamese numbers cheat sheet — 0 to 1,000,000, telling time, money, and street tips.">
-  <!-- SEO + Open Graph -->
   <meta name="robots" content="index, follow">
   <meta name="author" content="FluentSaigon">
   <meta name="keywords" content="learn Vietnamese, Vietnamese phrases, Vietnamese for travelers, Vietnamese language, speak Vietnamese">
@@ -28,7 +27,6 @@
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
 
-/* ── PRINT STYLES ──────────────────────────────────────────── */
 @media print {
   body { background: #fff !important; color: #000 !important; }
   nav, #nav-placeholder, #footer-placeholder, #modal-placeholder,
@@ -47,314 +45,97 @@
   .pattern-box code { color: #c0392b !important; }
   .tab-bar { display: none !important; }
   .tab-section { display: block !important; opacity: 1 !important; }
-  .local-audio-bar { display: none !important; }
+  .play-btn, .local-audio-bar { display: none !important; }
 }
 
-/* ── PAGE LAYOUT ───────────────────────────────────────────── */
-.cs-page {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 0 20px 80px;
-}
+.cs-page { max-width: 860px; margin: 0 auto; padding: 0 20px 80px; }
 
-/* ── HERO ──────────────────────────────────────────────────── */
-.cs-hero {
-  padding: 48px 0 32px;
-  text-align: center;
-}
-.cs-hero .breadcrumb {
-  color: rgba(255,255,255,0.45);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-decoration: none;
-  letter-spacing: 0.04em;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 20px;
-  transition: color 0.2s;
-}
+.cs-hero { padding: 48px 0 32px; text-align: center; }
+.cs-hero .breadcrumb { color: rgba(255,255,255,0.45); font-size: 0.8rem; font-weight: 700; text-decoration: none; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 20px; transition: color 0.2s; }
 .cs-hero .breadcrumb:hover { color: var(--gold); }
-.cs-hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2.8rem, 8vw, 5rem);
-  letter-spacing: 0.03em;
-  color: var(--white);
-  margin-bottom: 10px;
-  line-height: 1;
-}
+.cs-hero h1 { font-family: var(--font-display); font-size: clamp(2.8rem, 8vw, 5rem); letter-spacing: 0.03em; color: var(--white); margin-bottom: 10px; line-height: 1; }
 .cs-hero h1 span { color: var(--gold); }
-.cs-hero p {
-  color: rgba(255,255,255,0.55);
-  font-size: 1rem;
-  font-weight: 600;
-  max-width: 480px;
-  margin: 0 auto 24px;
-  line-height: 1.6;
-}
-.cs-hero-actions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+.cs-hero p { color: rgba(255,255,255,0.55); font-size: 1rem; font-weight: 600; max-width: 480px; margin: 0 auto 24px; line-height: 1.6; }
+.cs-hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
-/* ── BUTTONS ───────────────────────────────────────────────── */
-.btn-quiz {
-  background: var(--gold);
-  color: #000;
-  font-weight: 800;
-  font-size: 0.85rem;
-  padding: 10px 22px;
-  border-radius: var(--radius-pill);
-  text-decoration: none;
-  letter-spacing: 0.04em;
-  transition: 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
+.btn-quiz { background: var(--gold); color: #000; font-weight: 800; font-size: 0.85rem; padding: 10px 22px; border-radius: var(--radius-pill); text-decoration: none; letter-spacing: 0.04em; transition: 0.2s; display: inline-flex; align-items: center; gap: 6px; }
 .btn-quiz:hover { background: var(--gold-light); transform: translateY(-1px); }
-.btn-print {
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.7);
-  font-weight: 800;
-  font-size: 0.85rem;
-  padding: 10px 22px;
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(255,255,255,0.15);
-  cursor: pointer;
-  letter-spacing: 0.04em;
-  transition: 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-body);
-}
+.btn-print { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); font-weight: 800; font-size: 0.85rem; padding: 10px 22px; border-radius: var(--radius-pill); border: 1px solid rgba(255,255,255,0.15); cursor: pointer; letter-spacing: 0.04em; transition: 0.2s; display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-body); }
 .btn-print:hover { background: rgba(255,255,255,0.14); color: #fff; }
 
-/* ── TAB BAR ───────────────────────────────────────────────── */
-.tab-bar {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-bottom: 28px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: var(--radius-pill);
-  padding: 5px;
-}
-.tab-btn {
-  flex: 1;
-  min-width: 120px;
-  padding: 9px 16px;
-  border-radius: var(--radius-pill);
-  border: none;
-  background: transparent;
-  color: rgba(255,255,255,0.45);
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+/* ── PLAY BUTTON ───────────────────────────────────────────── */
+.play-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(245,197,24,0.12);
+  border: 1px solid rgba(245,197,24,0.3);
   cursor: pointer;
-  transition: 0.2s;
-  white-space: nowrap;
+  transition: all 0.2s;
+  font-size: 0.7rem;
+  color: var(--gold);
+  flex-shrink: 0;
 }
+.play-btn:hover { background: rgba(245,197,24,0.25); border-color: var(--gold); transform: scale(1.1); }
+.play-btn.playing { background: var(--gold); color: #000; border-color: var(--gold); }
+
+.tab-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 28px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-pill); padding: 5px; }
+.tab-btn { flex: 1; min-width: 120px; padding: 9px 16px; border-radius: var(--radius-pill); border: none; background: transparent; color: rgba(255,255,255,0.45); font-family: var(--font-body); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: 0.2s; white-space: nowrap; }
 .tab-btn.active { background: var(--gold); color: #000; }
 .tab-btn:not(.active):hover { background: rgba(255,255,255,0.08); color: #fff; }
 .tab-section { display: none; }
 .tab-section.active { display: block; }
 
-/* ── SECTION CARD ──────────────────────────────────────────── */
-.cs-section {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 28px;
-  margin-bottom: 20px;
-}
-.cs-section-title {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  letter-spacing: 0.05em;
-  color: var(--gold);
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+.cs-section { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px; margin-bottom: 20px; }
+.cs-section-title { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.05em; color: var(--gold); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; }
 
-/* ── TABLE ─────────────────────────────────────────────────── */
-.cs-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
-}
-.cs-table th {
-  background: rgba(245,197,24,0.1);
-  color: var(--gold);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 10px 14px;
-  text-align: left;
-}
+.cs-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.cs-table th { background: rgba(245,197,24,0.1); color: var(--gold); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 14px; text-align: left; }
 .cs-table th:first-child { border-radius: 8px 0 0 8px; }
 .cs-table th:last-child { border-radius: 0 8px 8px 0; }
-.cs-table td {
-  padding: 11px 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  color: rgba(255,255,255,0.85);
-  font-weight: 600;
-  vertical-align: middle;
-}
+.cs-table td { padding: 11px 14px; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.85); font-weight: 600; vertical-align: middle; }
 .cs-table tr:last-child td { border-bottom: none; }
 .cs-table tr:hover td { background: rgba(255,255,255,0.03); }
-.vn {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: #fff;
-}
-.pr {
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.4);
-  font-style: italic;
-  font-weight: 500;
-}
-.cs-tag {
-  display: inline-block;
-  background: rgba(245,197,24,0.12);
-  color: var(--gold);
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 4px;
-}
+.vn { font-size: 1.05rem; font-weight: 800; color: #fff; }
+.pr { font-size: 0.82rem; color: rgba(255,255,255,0.4); font-style: italic; font-weight: 500; }
+.cs-tag { display: inline-block; background: rgba(245,197,24,0.12); color: var(--gold); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; }
 .cs-tag.green { background: rgba(46,204,113,0.12); color: var(--green); }
 
-/* ── PATTERN BOX ───────────────────────────────────────────── */
-.pattern-box {
-  background: rgba(0,0,0,0.2);
-  border: 1px solid rgba(245,197,24,0.2);
-  border-radius: 10px;
-  padding: 18px 20px;
-  margin: 16px 0;
-  font-size: 0.9rem;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.8);
-}
+.pattern-box { background: rgba(0,0,0,0.2); border: 1px solid rgba(245,197,24,0.2); border-radius: 10px; padding: 18px 20px; margin: 16px 0; font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.8); }
 .pattern-box strong { color: #fff; }
-.pattern-box code {
-  color: var(--gold);
-  font-size: 1rem;
-  font-weight: 800;
-  font-family: monospace;
-}
+.pattern-box code { color: var(--gold); font-size: 1rem; font-weight: 800; font-family: monospace; }
 
-/* ── TIP BOX ───────────────────────────────────────────────── */
-.cs-tip {
-  background: rgba(245,197,24,0.07);
-  border-left: 3px solid var(--gold);
-  border-radius: 0 10px 10px 0;
-  padding: 14px 18px;
-  margin: 16px 0 0;
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.6;
-}
+.cs-tip { background: rgba(245,197,24,0.07); border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; padding: 14px 18px; margin: 16px 0 0; font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
 .cs-tip strong { color: var(--gold); }
 
-/* ── TWO-COL GRID ──────────────────────────────────────────── */
-.cs-grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-@media (max-width: 580px) {
-  .cs-grid-2 { grid-template-columns: 1fr; }
-}
+.cs-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 580px) { .cs-grid-2 { grid-template-columns: 1fr; } }
 
-/* ── QUICK REF PILLS ───────────────────────────────────────── */
-.pill-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 4px;
-}
-.pill {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
-  padding: 8px 14px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: rgba(255,255,255,0.8);
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
+.pill-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.pill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 14px; font-size: 0.82rem; font-weight: 700; color: rgba(255,255,255,0.8); display: flex; flex-direction: column; gap: 2px; }
 .pill .en { color: rgba(255,255,255,0.45); font-size: 0.75rem; }
 .pill .vn-p { color: #fff; font-weight: 800; }
 .pill .pr-p { color: rgba(255,255,255,0.35); font-size: 0.7rem; font-style: italic; }
 
 /* ── LOCAL AUDIO BAR ───────────────────────────────────────── */
-.local-audio-bar {
-  margin-top: 20px;
-  background: rgba(245,197,24,0.06);
-  border: 1px solid rgba(245,197,24,0.2);
-  border-radius: 12px;
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.local-audio-bar .audio-label {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  flex: 1;
-  min-width: 160px;
-}
-.local-audio-bar .audio-label .audio-title {
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: var(--gold);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.local-audio-bar .audio-label .audio-sub {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.45);
-  font-style: italic;
-}
-.local-audio-bar audio {
-  flex: 2;
-  min-width: 200px;
-  height: 36px;
-  accent-color: var(--gold);
-  filter: invert(0);
-}
-/* Style the native audio player to match the dark theme */
-@media (prefers-color-scheme: dark) {
-  .local-audio-bar audio { filter: invert(1) hue-rotate(180deg); }
-}
+.local-audio-bar { margin-top: 20px; background: rgba(245,197,24,0.06); border: 1px solid rgba(245,197,24,0.2); border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.local-audio-bar .audio-label { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 160px; }
+.local-audio-bar .audio-label .audio-title { font-size: 0.8rem; font-weight: 800; color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase; }
+.local-audio-bar .audio-label .audio-sub { font-size: 0.78rem; color: rgba(255,255,255,0.45); font-style: italic; }
+.local-audio-bar audio { flex: 2; min-width: 200px; height: 36px; accent-color: var(--gold); }
 
 </style>
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LN51VD3PC5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-LN51VD3PC5');
-  </script></head>
+  </script>
+</head>
 <body>
 
 <div id="nav-placeholder" data-page="subjects"></div>
@@ -363,7 +144,6 @@
 
 <div class="cs-page">
 
-  <!-- HERO -->
   <div class="cs-hero">
     <a href="subjects.html" class="breadcrumb">← All Subjects</a>
     <h1>🔢 Numbers <span>Cheat Sheet</span></h1>
@@ -374,7 +154,6 @@
     </div>
   </div>
 
-  <!-- TAB BAR -->
   <div class="tab-bar no-print">
     <button class="tab-btn active" onclick="showTab('core')">Core Numbers</button>
     <button class="tab-btn" onclick="showTab('patterns')">Patterns & Logic</button>
@@ -383,29 +162,36 @@
     <button class="tab-btn" onclick="showTab('street')">Street Tips</button>
   </div>
 
-  <!-- TAB: CORE NUMBERS -->
   <div class="tab-section active" id="tab-core">
 
     <div class="cs-section">
       <div class="cs-section-title">0 – 10 · The Foundation</div>
       <table class="cs-table">
-        <thead><tr><th>Number</th><th>Vietnamese</th><th>Pronunciation</th><th>Note</th></tr></thead>
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>Vietnamese</th>
+            <th>Pronunciation</th>
+            <th>Note</th>
+            <th class="no-print" style="width:44px;text-align:center;">▶</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td>0</td><td class="vn">không</td><td class="pr">khome</td><td>Also means "no / zero"</td></tr>
-          <tr><td>1</td><td class="vn">một</td><td class="pr">moht</td><td>Becomes <strong>mốt</strong> in some compounds</td></tr>
-          <tr><td>2</td><td class="vn">hai</td><td class="pr">hi</td><td></td></tr>
-          <tr><td>3</td><td class="vn">ba</td><td class="pr">bah</td><td></td></tr>
-          <tr><td>4</td><td class="vn">bốn</td><td class="pr">bone</td><td>Becomes <strong>tư</strong> in dates & time</td></tr>
-          <tr><td>5</td><td class="vn">năm</td><td class="pr">num</td><td>Also means "year"</td></tr>
-          <tr><td>6</td><td class="vn">sáu</td><td class="pr">sow</td><td></td></tr>
-          <tr><td>7</td><td class="vn">bảy</td><td class="pr">bay</td><td></td></tr>
-          <tr><td>8</td><td class="vn">tám</td><td class="pr">tahm</td><td></td></tr>
-          <tr><td>9</td><td class="vn">chín</td><td class="pr">chin</td><td></td></tr>
-          <tr><td>10</td><td class="vn">mười</td><td class="pr">muh-ee</td><td>Tone changes in compounds</td></tr>
+          <tr><td>0</td><td class="vn">không</td><td class="pr">khome</td><td>Also means "no / zero"</td><td class="no-print" style="text-align:center;"><button class="play-btn" onclick="playNumber(this,'number_0')" title="Hear pronunciation">▶</button></td></tr>
+          <tr><td>1</td><td class="vn">một</td><td class="pr">moht</td><td>Becomes <strong>mốt</strong> in some compounds</td><td class="no-print" style="text-align:center;"><button class="play-btn" onclick="playNumber(this,'number_1')" title="Hear pronunciation">▶</button></td></tr>
+          <tr><td>2</td><td class="vn">hai</td><td class="pr">hi</td><td></td><td class="no-print" style="text-align:center;"><button class="play-btn" onclick="playNumber(this,'number_2')" title="Hear pronunciation">▶</button></td></tr>
+          <tr><td>3</td><td class="vn">ba</td><td class="pr">bah</td><td></td><td class="no-print" style="text-align:center;"><button class="play-btn" onclick="playNumber(this,'number_3')" title="Hear pronunciation">▶</button></td></tr>
+          <tr><td>4</td><td class="vn">bốn</td><td class="pr">bone</td><td>Becomes <strong>tư</strong> in dates & time</td><td class="no-print" style="text-align:center;"><button class="play-btn" onclick="playNumber(this,'number_4')" title="Hear pronunciation">▶</button></td></tr>
+          <tr><td>5</td><td class="vn">năm</td><td class="pr">num</td><td>Also means "year"</td><td class="no-print" style="text-align:center;"><button class="play-btn" onclick="playNumber(this,'number_5')" title="Hear pronunciation">▶</button></td></tr>
+          <tr><td>6</td><td class="vn">sáu</td><td class="pr">sow</td><td></td><td class="no-print" style="text-align:center;"><button class="play-btn" onclick="playNumber(this,'number_6')" title="Hear pronunciation">▶</button></td></tr>
+          <tr><td>7</td><td class="vn">bảy</td><td class="pr">bay</td><td></td><td class="no-print" style="text-align:center;"><button class="play-btn" onclick="playNumber(this,'number_7')" title="Hear pronunciation">▶</button></td></tr>
+          <tr><td>8</td><td class="vn">tám</td><td class="pr">tahm</td><td></td><td class="no-print" style="text-align:center;"><button class="play-btn" onclick="playNumber(this,'number_8')" title="Hear pronunciation">▶</button></td></tr>
+          <tr><td>9</td><td class="vn">chín</td><td class="pr">chin</td><td></td><td class="no-print" style="text-align:center;"><button class="play-btn" onclick="playNumber(this,'number_9')" title="Hear pronunciation">▶</button></td></tr>
+          <tr><td>10</td><td class="vn">mười</td><td class="pr">muh-ee</td><td>Tone changes in compounds</td><td class="no-print" style="text-align:center;"><button class="play-btn" onclick="playNumber(this,'number_10')" title="Hear pronunciation">▶</button></td></tr>
         </tbody>
       </table>
 
-      <!-- LOCAL AUDIO PLAYER -->
+      <!-- KIM'S FULL RECORDING -->
       <div class="local-audio-bar no-print">
         <div class="audio-label">
           <span class="audio-title">🎙️ Hear it spoken by a local!</span>
@@ -416,7 +202,6 @@
           Your browser does not support audio playback.
         </audio>
       </div>
-
     </div>
 
     <div class="cs-section">
@@ -483,77 +268,42 @@
 
   </div>
 
-  <!-- TAB: PATTERNS & LOGIC -->
   <div class="tab-section" id="tab-patterns">
-
     <div class="cs-section">
       <div class="cs-section-title">🧠 The Big Pattern</div>
       <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-bottom:16px;line-height:1.7;">Vietnamese numbers are completely logical. Once you know 0–10, you can say any number just by combining words. There are no exceptions after you learn the two small rules below.</p>
-      <div class="pattern-box">
-        <strong>Teens (11–19):</strong> &nbsp;<code>mười</code> + digit<br>
-        12 = mười hai &nbsp;·&nbsp; 17 = mười bảy &nbsp;·&nbsp; 19 = mười chín
-      </div>
-      <div class="pattern-box">
-        <strong>Tens (20–99):</strong> &nbsp;digit + <code>mươi</code> + digit<br>
-        23 = hai mươi ba &nbsp;·&nbsp; 46 = bốn mươi sáu &nbsp;·&nbsp; 78 = bảy mươi tám
-      </div>
-      <div class="pattern-box">
-        <strong>Hundreds (100–999):</strong> &nbsp;digit + <code>trăm</code> + rest<br>
-        350 = ba trăm năm mươi &nbsp;·&nbsp; 999 = chín trăm chín mươi chín
-      </div>
-      <div class="pattern-box">
-        <strong>Thousands (1,000+):</strong> &nbsp;digit + <code>nghìn/ngàn</code> + rest<br>
-        2,500 = hai nghìn năm trăm
-      </div>
+      <div class="pattern-box"><strong>Teens (11–19):</strong> &nbsp;<code>mười</code> + digit<br>12 = mười hai &nbsp;·&nbsp; 17 = mười bảy &nbsp;·&nbsp; 19 = mười chín</div>
+      <div class="pattern-box"><strong>Tens (20–99):</strong> &nbsp;digit + <code>mươi</code> + digit<br>23 = hai mươi ba &nbsp;·&nbsp; 46 = bốn mươi sáu &nbsp;·&nbsp; 78 = bảy mươi tám</div>
+      <div class="pattern-box"><strong>Hundreds (100–999):</strong> &nbsp;digit + <code>trăm</code> + rest<br>350 = ba trăm năm mươi &nbsp;·&nbsp; 999 = chín trăm chín mươi chín</div>
+      <div class="pattern-box"><strong>Thousands (1,000+):</strong> &nbsp;digit + <code>nghìn/ngàn</code> + rest<br>2,500 = hai nghìn năm trăm</div>
     </div>
-
     <div class="cs-section">
       <div class="cs-section-title">⚡ The Two Rules You Must Know</div>
       <div class="cs-grid-2">
         <div style="background:rgba(231,76,60,0.08);border:1px solid rgba(231,76,60,0.2);border-radius:12px;padding:20px;">
           <div style="color:#e74c3c;font-weight:800;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Rule 1 · Five becomes lăm</div>
           <p style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.6;">When 5 comes <em>after</em> a tens digit, <strong style="color:#fff;">năm → lăm</strong></p>
-          <div style="margin-top:10px;font-size:0.85rem;color:rgba(255,255,255,0.55);">
-            ✓ năm mươi (fifty) — 5 IS the tens digit<br>
-            ✓ hai mươi <strong style="color:var(--gold);">lăm</strong> (25) — 5 comes after<br>
-            ✓ mười <strong style="color:var(--gold);">lăm</strong> (15) — same rule
-          </div>
+          <div style="margin-top:10px;font-size:0.85rem;color:rgba(255,255,255,0.55);">✓ năm mươi (fifty) — 5 IS the tens digit<br>✓ hai mươi <strong style="color:var(--gold);">lăm</strong> (25) — 5 comes after<br>✓ mười <strong style="color:var(--gold);">lăm</strong> (15) — same rule</div>
         </div>
         <div style="background:rgba(46,204,113,0.08);border:1px solid rgba(46,204,113,0.2);border-radius:12px;padding:20px;">
           <div style="color:var(--green);font-weight:800;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Rule 2 · One becomes mốt</div>
           <p style="color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.6;">When 1 comes <em>after</em> a tens digit, <strong style="color:#fff;">một → mốt</strong></p>
-          <div style="margin-top:10px;font-size:0.85rem;color:rgba(255,255,255,0.55);">
-            ✓ một trăm (one hundred) — 1 IS the lead<br>
-            ✓ hai mươi <strong style="color:var(--gold);">mốt</strong> (21)<br>
-            ✓ bảy mươi <strong style="color:var(--gold);">mốt</strong> (71)
-          </div>
+          <div style="margin-top:10px;font-size:0.85rem;color:rgba(255,255,255,0.55);">✓ một trăm (one hundred) — 1 IS the lead<br>✓ hai mươi <strong style="color:var(--gold);">mốt</strong> (21)<br>✓ bảy mươi <strong style="color:var(--gold);">mốt</strong> (71)</div>
         </div>
       </div>
       <div class="cs-tip">💡 <strong>Why does this matter?</strong> These two rules are the only "irregular" parts of Vietnamese numbers. Memorize them and you're done — you can build any number from 0 to 999,999.</div>
     </div>
-
     <div class="cs-section">
       <div class="cs-section-title">📅 Numbers in Dates</div>
-      <div class="pattern-box">
-        Dates use <code>ngày</code> (day) + <code>tháng</code> (month) + <code>năm</code> (year)<br>
-        <strong>March 15, 2025</strong> = ngày 15 tháng 3 năm 2025<br>
-        <strong>Note:</strong> Month 4 uses <code>tư</code>, not <code>bốn</code> &nbsp;→&nbsp; tháng tư = April
-      </div>
+      <div class="pattern-box">Dates use <code>ngày</code> (day) + <code>tháng</code> (month) + <code>năm</code> (year)<br><strong>March 15, 2025</strong> = ngày 15 tháng 3 năm 2025<br><strong>Note:</strong> Month 4 uses <code>tư</code>, not <code>bốn</code> &nbsp;→&nbsp; tháng tư = April</div>
     </div>
-
   </div>
 
-  <!-- TAB: TELLING TIME -->
   <div class="tab-section" id="tab-time">
-
     <div class="cs-section">
       <div class="cs-section-title">🕐 How Time Works</div>
-      <div class="pattern-box">
-        <strong>Pattern:</strong> number + <code>giờ</code> (yuh — hour) + minutes + time-of-day<br><br>
-        <code>sáng</code> (sahng) = morning &nbsp;·&nbsp; <code>trưa</code> (chuh-ah) = midday &nbsp;·&nbsp; <code>chiều</code> (chyew) = afternoon &nbsp;·&nbsp; <code>tối</code> (toy) = evening
-      </div>
+      <div class="pattern-box"><strong>Pattern:</strong> number + <code>giờ</code> (yuh — hour) + minutes + time-of-day<br><br><code>sáng</code> (sahng) = morning &nbsp;·&nbsp; <code>trưa</code> (chuh-ah) = midday &nbsp;·&nbsp; <code>chiều</code> (chyew) = afternoon &nbsp;·&nbsp; <code>tối</code> (toy) = evening</div>
     </div>
-
     <div class="cs-section">
       <div class="cs-section-title">Common Times</div>
       <table class="cs-table">
@@ -569,7 +319,6 @@
         </tbody>
       </table>
     </div>
-
     <div class="cs-section">
       <div class="cs-section-title">Asking & Answering</div>
       <table class="cs-table">
@@ -584,18 +333,12 @@
       </table>
       <div class="cs-tip">💡 <strong>rưỡi</strong> (ruh-ee) = half past. "6 giờ rưỡi" is extremely common — memorize this one.</div>
     </div>
-
   </div>
 
-  <!-- TAB: MONEY & PRICES -->
   <div class="tab-section" id="tab-money">
-
     <div class="cs-section">
       <div class="cs-section-title">💰 Vietnamese Dong (VND)</div>
-      <div class="pattern-box">
-        The currency is <code>đồng</code> (dome — ₫). Prices are large numbers — don't panic!<br>
-        Always drop three zeros when thinking in USD: 100,000₫ ≈ $4
-      </div>
+      <div class="pattern-box">The currency is <code>đồng</code> (dome — ₫). Prices are large numbers — don't panic!<br>Always drop three zeros when thinking in USD: 100,000₫ ≈ $4</div>
       <table class="cs-table">
         <thead><tr><th>Amount</th><th>Vietnamese</th><th>Pronunciation</th><th>Approx. USD</th></tr></thead>
         <tbody>
@@ -610,7 +353,6 @@
         </tbody>
       </table>
     </div>
-
     <div class="cs-section">
       <div class="cs-section-title">Key Money Phrases</div>
       <table class="cs-table">
@@ -627,12 +369,9 @@
       </table>
       <div class="cs-tip">💡 <strong>Market tip:</strong> Start by saying <strong>"Đắt quá!"</strong> (dat kwah — Too expensive!) and start walking away — this is standard bargaining. The price will drop.</div>
     </div>
-
   </div>
 
-  <!-- TAB: STREET TIPS -->
   <div class="tab-section" id="tab-street">
-
     <div class="cs-section">
       <div class="cs-section-title">🛵 Real-World Number Usage</div>
       <div class="cs-grid-2">
@@ -655,16 +394,11 @@
         </div>
       </div>
     </div>
-
     <div class="cs-section">
       <div class="cs-section-title">📞 Phone & Address Numbers</div>
-      <div class="pattern-box">
-        Vietnamese people read phone numbers digit by digit — same as English.<br>
-        Just say each number: <code>0</code> <code>9</code> <code>0</code> → <strong>không chín không</strong> (khome chin khome)
-      </div>
+      <div class="pattern-box">Vietnamese people read phone numbers digit by digit — same as English.<br>Just say each number: <code>0</code> <code>9</code> <code>0</code> → <strong>không chín không</strong> (khome chin khome)</div>
       <div class="cs-tip">💡 <strong>Pro tip:</strong> Vietnamese phone numbers often start with <strong>0</strong> (không). Don't skip it — locals will be confused if you drop it.</div>
     </div>
-
     <div class="cs-section">
       <div class="cs-section-title">🎯 Quick Reference — Numbers That Matter Most</div>
       <p style="color:rgba(255,255,255,0.5);font-size:0.82rem;margin-bottom:16px;">Learn these first. They cover 80% of daily number situations.</p>
@@ -683,28 +417,51 @@
         <div class="pill"><span class="vn-p">Mấy giờ?</span><span class="pr-p">may yuh</span><span class="en">What time?</span></div>
       </div>
     </div>
-
     <div class="cs-section">
       <div class="cs-section-title">✅ Ready to Test Yourself?</div>
       <p style="color:rgba(255,255,255,0.6);margin-bottom:20px;line-height:1.6;">You've read the cheat sheet — now lock it in with the quiz. The quiz uses everything on this page.</p>
       <a href="quiz-numbers.html" class="btn-quiz no-print" style="display:inline-flex;">🎯 Take the Numbers Quiz →</a>
     </div>
-
   </div>
 
-</div><!-- end cs-page -->
+</div>
 
 <div id="footer-placeholder"></div>
 <script src="../js/components.js"></script>
 <script src="../js/auth.js?v=2"></script>
 
 <script>
+const R2_BASE = "https://pub-967101976d8849b39ec38bcccaa26569.r2.dev/audio/";
+let currentAudio = null;
+let currentBtn = null;
+
+function playNumber(btn, filename) {
+  // If something is playing, stop it
+  if (currentAudio && !currentAudio.paused) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+    if (currentBtn) { currentBtn.classList.remove('playing'); currentBtn.textContent = '▶'; }
+    // Toggle off if same button
+    if (currentBtn === btn) { currentAudio = null; currentBtn = null; return; }
+  }
+  // Play new
+  const audio = new Audio(R2_BASE + filename + '.mp3');
+  currentAudio = audio;
+  currentBtn = btn;
+  btn.classList.add('playing');
+  btn.textContent = '■';
+  audio.play();
+  audio.onended = function() { btn.classList.remove('playing'); btn.textContent = '▶'; currentAudio = null; currentBtn = null; };
+  audio.onerror = function() { btn.classList.remove('playing'); btn.textContent = '▶'; currentAudio = null; currentBtn = null; };
+}
+
 function showTab(id) {
   document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
   event.target.classList.add('active');
 }
+
 function openCheatSheet(url) {
   const isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
   if (isMobile) { window.location.href = url; } else { window.open(url, '_blank'); }
