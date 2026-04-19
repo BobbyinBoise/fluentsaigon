@@ -1,0 +1,31 @@
+# FluentSaigon
+
+> Teach Vietnamese the way it's actually spoken in Saigon, Hanoi, and Hoi An — with logic-first lessons, zero fluff, and enough vocabulary to have real conversations.
+
+FluentSaigon is a Vietnamese language learning website targeting English-speaking travelers, expats, and people with a personal connection to Vietnam. It teaches street-level Vietnamese — how locals actually speak — not the formal textbook language taught by apps like Duolingo.
+
+## What's on this site
+
+- 12 subject areas with interactive flashcard quizzes at 3 difficulty levels (Beginner, Intermediate, Expert)
+- 540 total quiz questions with pronunciation guides
+- 12 cheat sheets with vocabulary, grammar notes, and pronunciation
+- Freemium model: Beginner levels are free, Intermediate and Expert require a Pro subscription ($9.99/mo)
+
+## Subject Areas
+
+Numbers, Dates & Times, Common Phrases & Greetings, Alphabet & Tones, Food & Street Eats, Getting Around, Markets & Bargaining, Cafe Culture, Colors & Descriptions, Family & People, Health & Emergencies, Weather & Seasons
+
+## Key Pages
+
+- [Home](https://fluentsaigon.com/)
+- [All Subjects](https://fluentsaigon.com/pages/subjects.html)
+- [Pricing](https://fluentsaigon.com/pages/pricing.html)
+- [About](https://fluentsaigon.com/pages/about.html)
+
+## Who this is for
+
+Travelers preparing for a Vietnam trip, expats living in Vietnam, people in relationships with Vietnamese speakers, heritage learners reconnecting with the language, and language hobbyists who prefer logic-first learning over rote memorization.
+
+## Business
+
+FluentSaigon is a product of HelpMeGrow LLC, an Idaho-based company. The site is hosted on Netlify and uses Stripe for subscription billing.
