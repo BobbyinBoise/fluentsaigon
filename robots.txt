@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /pages/account.html
+Disallow: /pages/kim-test.html
+Disallow: /pages/success.html
+
+Sitemap: https://fluentsaigon.com/sitemap.xml
